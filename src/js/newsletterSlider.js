@@ -9,6 +9,8 @@ export default function newsletterSlider() {
         const container = element.querySelector('.swiper');
 
         const instance = new Swiper(container, {
+            observer: true,
+            observeParents: true,
             effect: 'fade',
             autoHeight: true,
             fadeEffect: {
@@ -27,7 +29,5 @@ export default function newsletterSlider() {
                 instance.updateAutoHeight(400);
             });
         }
-
-        instance.updateAutoHeight();
     });
 }
