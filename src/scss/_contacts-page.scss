@@ -51,7 +51,7 @@
         font-weight: 500;
         font-size: 1.2rem;
         line-height: 170%;
-        margin-top: .8rem;
+        margin-top: 0.8rem;
         p {
             margin-bottom: 0.5rem;
         }
@@ -69,15 +69,12 @@
     background: #ede8dd;
     color: #000000;
     padding: 4rem;
-    display: flex;
-    flex-direction: column;
-
     margin: 7rem 0;
+    margin-left: auto;
 
     @include breakpointMF(small-tablet) {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
-        justify-self: flex-end;
         z-index: 5;
     }
 
@@ -156,10 +153,12 @@
     flex-direction: column;
     grid-gap: 0.5rem;
     margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
 
     @include breakpoint(mobile) {
         align-items: center;
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -181,6 +180,7 @@
 .contacts-page__social-list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2.4rem;
     row-gap: 1.2rem;
     flex-wrap: wrap;
@@ -354,9 +354,8 @@
         }
     }
 
-
     @include breakpoint(mobile) {
-        &[href^="tel:"] {
+        &[href^='tel:'] {
             &::before {
                 transform: scaleX(1);
             }
@@ -364,13 +363,11 @@
     }
 }
 
-
-
 .contacts-page__plan {
     align-self: flex-start;
     font-style: normal;
     font-weight: 500;
-   
+
     font-size: 1.8rem;
     line-height: 140%;
     text-transform: uppercase;
@@ -386,7 +383,7 @@
         top: 100%;
         width: 100%;
         background-color: currentColor;
-        transition: transform .2s;
+        transition: transform 0.2s;
         transform-origin: left center;
     }
 
@@ -397,7 +394,6 @@
         line-height: 120%;
         margin-top: 2rem;
         align-self: center;
-       
     }
     .no-touch &:hover,
     .touch &:active {
