@@ -105,8 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
     promosSlider();
     promoDetailSlider();
     newsletter();
-    newsletterSlider();
 });
+
+newsletterSlider();
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));
 function onAlways() {
