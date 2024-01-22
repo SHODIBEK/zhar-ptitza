@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
     selectBookingRoom();
     promosSlider();
     promoDetailSlider();
-    newsletterSlider();
     newsletter();
+    newsletterSlider();
 });
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));

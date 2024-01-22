@@ -27,5 +27,7 @@ export default function newsletterSlider() {
                 instance.updateAutoHeight(400);
             });
         }
+
+        instance.updateAutoHeight();
     });
 }
