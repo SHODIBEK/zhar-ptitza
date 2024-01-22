@@ -9,6 +9,12 @@
         padding-top: 3.4rem;
         padding-bottom: 4rem;
     }
+
+    *::selection {
+        color: inherit;
+        background-color: #fff;
+        -webkit-text-fill-color: unset;
+    }
 }
 
 .apartments__heading {
