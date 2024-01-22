@@ -347,6 +347,7 @@
 
             .page-header__nav-submenu-count {
                 color: inherit;
+                stroke: var(--text-color);
             }
         }
     }
@@ -355,8 +356,9 @@
 .page-header__nav-submenu-count {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     color: #968a71;
+    stroke: #968a71;
 }
 
 .page-header__order-link {
