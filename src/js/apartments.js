@@ -9,7 +9,7 @@ export default function apartments() {
     elements.forEach(element => {
         const container = element.querySelector('.swiper');
 
-        new Swiper(container, {
+        const swiper = new Swiper(container, {
             slidesPerView: 'auto',
             slidesPerGroup: 1,
             spaceBetween: 0,
@@ -30,6 +30,17 @@ export default function apartments() {
                     spaceBetween: convertRemToPixels(14)
                 }
             }
+        });
+
+        swiper.on('slideChange', function() {
+            const videos = element.querySelectorAll('video');
+
+            videos.forEach(element => {
+                if (element != null) {
+                    element.pause();
+                    element.parentElement.parentElement.classList.remove('video-shown');
+                }
+            });
         });
     });
 }
