@@ -196,6 +196,57 @@
     margin-bottom: 2rem;
 }
 
+.contacts-links {
+    margin-bottom: 4.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+
+    &__list {
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 140%;
+        text-transform: uppercase;
+        transition: all 0.2s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 1px;
+            top: 100%;
+            width: 100%;
+            background-color: currentColor;
+            transition: transform 0.2s;
+            transform-origin: left center;
+        }
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 120%;
+        }
+
+        .no-touch &:hover,
+        .touch &:active {
+            text-decoration-color: transparent;
+            &::before {
+                transform: scaleX(0);
+            }
+        }
+    }
+}
+
 .contacts__plan {
     align-self: flex-start;
     font-style: normal;
