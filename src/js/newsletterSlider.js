@@ -21,6 +21,12 @@ export default function newsletterSlider() {
                 el: element.querySelector('.newsletter__slider-pagination'),
                 type: 'bullets',
                 clickable: true
+            },
+            on: {
+                init: function(swiper) {
+                    var activeSlide = swiper.slides.eq(swiper.activeIndex)[0];
+                    console.log(activeSlide.clientHeight);
+                }
             }
         });
 
