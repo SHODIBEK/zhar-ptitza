@@ -105,9 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
     promosSlider();
     promoDetailSlider();
     newsletter();
-});
 
-newsletterSlider();
+    setTimeout(() => {
+        newsletterSlider();
+    }, 100);
+});
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));
 function onAlways() {
