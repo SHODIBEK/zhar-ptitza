@@ -434,33 +434,7 @@
 
 
 
-<section class="subscribe">
-    <div class="container">
-        <div class="subscribe__content">
-            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
-            <h4 class="subscribe__heading">
-                Подписаться на&nbsp;рассылку
-            </h4>
-            <div class="subscribe__heading-text">
-                <p>
-                    Чтобы не пропустить классные акции и предложения
-                </p>
-            </div>
-            <form action="/" method="POST" class="subscribe__form" data-need-validation="" id="subscribe-errors">
-                <div class="subscribe__form-row">
-                    <input type="email" name="email" class="subscribe__form-input" required="" placeholder="Email"
-                        data-parsley-errors-container="#subscribe-errors">
-                    <button class="subscribe__form-submit" type="submit">
-                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
-                    </button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</section>
+{{> subscribe }}
 
 
 {{/content}}

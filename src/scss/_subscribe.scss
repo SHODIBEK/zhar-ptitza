@@ -10,6 +10,16 @@
         padding-top: 4rem;
         padding-bottom: 0;
     }
+
+    &__success {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        display: none;
+
+        @include breakpoint(mobile) {
+            font-size: 1rem;
+        }
+    }
 }
 
 .subscribe__content {
