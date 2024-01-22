@@ -250,6 +250,10 @@
                     visibility: inherit;
                     transition: opacity 0.4s, visibility 0.4s;
                 }
+
+                & > a {
+                    background-size: 100% 1px;
+                }
             }
             & > a {
                 font-style: normal;
@@ -299,8 +303,16 @@
     gap: 1.4rem;
 }
 
+.page-header__nav-submenu-list-item {
+    width: 100%;
+}
+
 .page-header__nav-submenu-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
     font-size: 1.6rem;
     line-height: 1.2;
     position: relative;
@@ -332,8 +344,19 @@
                 visibility: inherit;
                 transition: opacity 0.2s, visibility 0.2s;
             }
+
+            .page-header__nav-submenu-count {
+                color: inherit;
+            }
         }
     }
+}
+
+.page-header__nav-submenu-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #968a71;
 }
 
 .page-header__order-link {
