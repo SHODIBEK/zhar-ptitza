@@ -1,0 +1,471 @@
+{{#extend "layout"}}
+    {{#content "main"}}
+
+
+        <section class="booking">
+            <div class="container">
+                <div class="booking__content">
+                    <h1 class="booking__heading">
+                        Общественные бани
+                    </h1>
+                    <div class="booking__inner">
+
+                        <form action="/" method="POST" class="booking__form">
+                            <div class="booking__common-search">
+                                <div class="booking__common-search-field" id="date-container">
+                                    <div class="booking__common-search-field-label">
+                                        Дата
+                                    </div>
+                                    <input type="text"
+                                        class="booking__common-search-input booking__common-search-input--calendar js-datepicker"
+                                        value="29.08.2022" data-picker-container="#date-container" readonly="">
+                                </div>
+                                <div class="booking__common-search-field js-time-dropdown">
+                                    <div class="booking__common-search-field-label">
+                                        Слот
+                                    </div>
+                                    <input type="text"
+                                        class="booking__common-search-input booking__common-search-input--time"
+                                        value="8:00 - 11:00" readonly="">
+                                    <div class="booking__common-search-dropdown">
+                                        <div class="booking__common-search-dropdown-inner">
+                                            <div class="booking__common-search-dropdown-header">
+                                                <span class="booking__common-search-dropdown-header-title">
+                                                    Слоты
+                                                </span>
+                                                <span class="booking__common-search-dropdown-header-title">
+                                                    Доступно
+                                                </span>
+
+                                            </div>
+                                            <div class="booking__common-search-dropdown-scroll-wrapper">
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="08:00 - 11:00" disabled="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            08:00 - 11:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                0
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                0
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="11:00 - 13:00">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            11:00 - 13:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                10
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                66
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="13:00 - 16:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            13:00 - 16:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                23
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                15
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="16:00 - 19:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            16:00 - 19:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                17
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                12
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="19:00 - 22:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            19:00 - 22:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                5
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                3
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="booking__tickets">
+                                <h3 class="booking__tickets-heading">
+                                    Выберите количество билетов
+                                </h3>
+                                <ul class="booking__tickets-list">
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/1.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Общая зона посадки
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    2 500 Руб<br>
+                                                    за гостя
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="0" max="4">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/2.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Общая зона посадки
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    2 500 Руб<br>
+                                                    за гостя
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/3.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Vip-комната № 1
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    10 500 Руб<br>
+                                                    за 6 человек
+
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/3.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Vip-комната № 2 и № 3
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    12 500 Руб<br>
+                                                    за 6 человек
+
+
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="booking__bottom-row">
+                                <a href="#" class="booking__back-btn">
+
+
+                                    <span class="booking__back-btn-text">
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                        Назад
+
+                                    </span>
+                                </a>
+                                <div class="booking__total">
+                                    Итого : 10 000 Руб
+                                </div>
+                                <button class="booking__submit-btn" type="submit">
+                                    <span class="booking__submit-btn-text">
+                                        Далее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscribe__content">
+                    <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+                    <h4 class="subscribe__heading">
+                        Подписаться на&nbsp;рассылку
+                    </h4>
+                    <div class="subscribe__heading-text">
+                        <p>
+                            Чтобы не пропустить классные акции и предложения
+                        </p>
+                    </div>
+                    <form action="/" method="POST" class="subscribe__form" data-need-validation=""
+                        id="subscribe-errors">
+                        <div class="subscribe__form-row">
+                            <input type="email" name="email" class="subscribe__form-input" required=""
+                                placeholder="Email" data-parsley-errors-container="#subscribe-errors">
+                            <button class="subscribe__form-submit" type="submit">
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    {{/content}}
+{{/extend}}

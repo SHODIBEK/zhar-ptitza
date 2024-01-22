@@ -1,0 +1,45 @@
+.my-content {
+    padding: 13rem 0;
+
+    &__row {
+        display: flex;
+    }
+
+    &__left {
+        flex: 0 0 auto;
+        width: 38rem;
+    }
+
+    &__right {
+        flex: 0 0 auto;
+        width: calc(100% - 38rem);
+        padding-left: 12rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 640px) {
+    .my-content {
+
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        
+        > .container {
+            padding: 0;
+        }
+
+        &__row {
+            display: block;
+        }
+
+        &__left {
+            width: auto;
+        }
+
+        &__right {
+            width: auto;
+            padding: 0 var(--content-padding);
+        }
+    }
+}

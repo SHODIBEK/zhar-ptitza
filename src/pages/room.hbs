@@ -1,0 +1,916 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="room js-room-slider">
+    <div class="container">
+        <div class="room__top-row">
+            <div class="room__breadcrumbs">
+                <a href="#">
+                    Главная
+                </a>
+                <a href="#">
+                    Банные номера
+                </a>
+                <a href="#">
+                    Шале
+                </a>
+            </div>
+
+            <div class="room__slider-arrows">
+                <button class="room__slider-arrow room__slider-arrow--prev">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="room__slider-arrow room__slider-arrow--next">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="room__slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="room__slider-card">
+                            <div class="room__slider-card-parallax js-parallax-image-wrapper">
+                                <img src="img/room/1.jpg" alt="" class="room__slider-card-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="room__slider-card">
+                            <div class="room__slider-card-parallax js-parallax-image-wrapper">
+                                <img src="img/room/2.jpg" alt="" class="room__slider-card-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="room__slider-card">
+                            <div class="room__slider-card-parallax js-parallax-image-wrapper">
+                                <img src="img/room/3.jpg" alt="" class="room__slider-card-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="room__content">
+            <div class="room__left-col">
+                <div class="room__heading-block">
+                    <div class="room__heading-block-text">
+                        Банный номер
+                    </div>
+                    <h1 class="room__heading-block-title">
+                        ШАЛЕ
+                    </h1>
+                </div>
+
+                <div class="room__desc">
+                    <h3 class="room__desc-title">
+                        О номере
+                    </h3>
+                    <div class="room__desc-text">
+                        <p>
+                            Это – наш самый просторный банный номер, который воссоздает традиционный деревянный домик в
+                            горах. Атмосферу пасторального отдыха поддерживают деревянная отделка, электрический камин и
+                            большие окна.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="room__schedule">
+                    <div class="room__schedule-item">
+                        <div class="room__schedule-item-key">
+                            Будние дни
+                        </div>
+                        <div class="room__schedule-item-value">
+                            5 000 РУБ/ЧАС
+                        </div>
+                    </div>
+                    <div class="room__schedule-item">
+                        <div class="room__schedule-item-key">
+                            Выходные и праздники
+                        </div>
+                        <div class="room__schedule-item-value">
+                            7 000 РУБ/ЧАС
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="room__order-link">
+                    <span class="room__order-link-text">
+                        Забронировать
+                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                            <use xlink:href="#medium-arrow-right"></use>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="room__right-col">
+                <ul class="room__features-list">
+                    <li class="room__features-list-item">
+                        <div class="room__features-card">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-capacity">
+                                <use xlink:href="#capacity"></use>
+                            </svg>
+                            <h4 class="room__features-card-title">
+                                Вместимость
+                            </h4>
+                            <div class="room__features-card-text">
+                                до 10 гостей
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="room__features-list-item">
+                        <div class="room__features-card">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-area">
+                                <use xlink:href="#area"></use>
+                            </svg>
+                            <h4 class="room__features-card-title">
+                                Общая площадь
+                            </h4>
+                            <div class="room__features-card-text">
+                                170м2
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="room__features-list-item">
+                        <div class="room__features-card">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-time">
+                                <use xlink:href="#time"></use>
+                            </svg>
+                            <h4 class="room__features-card-title">
+                                Время пребывания
+                            </h4>
+                            <div class="room__features-card-text">
+                                от 3 часов
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="room-advantages">
+    <div class="container">
+        <div class="room-advantages__content">
+            <h2 class="room-advantages__heading">
+                Какие удобства вас ждут:
+            </h2>
+            <ul class="room-advantages__list">
+                <li class="room-advantages__list-item">
+                    Русская парная
+                </li>
+                <li class="room-advantages__list-item">
+                    Ледяная бочка
+                </li>
+                <li class="room-advantages__list-item">
+                    Душевые с ведрами
+                </li>
+                <li class="room-advantages__list-item">
+                    Комната для мыльного массажа
+                </li>
+                <li class="room-advantages__list-item">
+                    Купель
+                </li>
+                <li class="room-advantages__list-item">
+                    Травяная бочка
+                </li>
+                <li class="room-advantages__list-item">
+                    Хаммам
+                </li>
+                <li class="room-advantages__list-item">
+                    Банный комплект
+
+                </li>
+            </ul>
+            <div class="room-advantages__links">
+                <a href="#" class="room-advantages__link">
+                    ТОВАРЫ ДЛЯ БАНИ
+                </a>
+                <a href="#" class="room-advantages__link">
+                    ПРАВИЛА И БЕЗОПАСНОСТЬ
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="features__content">
+            <div class="features__left-col features__left-col--mobile-fullwidth">
+                <div class="features__image-wrapper js-parallax-image">
+                    <div class="features__image-parallax js-parallax-image-wrapper">
+                        <img src="img/female-features-1.jpg" alt="" class="features__image">
+                    </div>
+                </div>
+                <h3 class="features__title">
+                    Spa услуги
+                </h3>
+                <div class="features__text features__text--fullwidth">
+                    <ul>
+                        <li>
+                            Классические и авторские техники парения
+                        </li>
+                        <li>
+                            Массаж и Пилинги
+                        </li>
+                        <li>
+                            Ароматные веники, отвары и банные перины
+                        </li>
+
+                    </ul>
+                </div>
+                <a href="#" class="features__link">
+                    Все услуги и цены
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                        <use xlink:href="#medium-arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="features__right-col features__right-col--mobile-right-aligned">
+                <div class="features__slider js-features-slider">
+
+                    <div class="features__slider-arrows">
+                        <button class="features__slider-arrow features__slider-arrow--prev">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                <use xlink:href="#arrow-left"></use>
+                            </svg>
+                        </button>
+                        <button class="features__slider-arrow features__slider-arrow--next">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="features__slider-card">
+                                    <div class="features__slider-card-image-container js-parallax-image">
+                                        <div class="features__slider-card-parallax js-parallax-image-wrapper">
+                                            <img src="img/features/2.jpg" alt="" class="features__slider-card-image">
+                                        </div>
+                                    </div>
+                                    <h4 class="features__slider-card-title">
+                                        Бар и кухня
+                                    </h4>
+                                    <div class="features__slider-card-text">
+                                        <p>
+                                            В барной зоне располагаются удобные барные стулья и лежаки. Вас ждет богатый
+                                            выбор авторских напитков, а также специальное меню закусок.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="features__slider-card-link">
+                                        Меню бара
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="features__slider-card">
+                                    <div class="features__slider-card-image-container js-parallax-image">
+                                        <div class="features__slider-card-parallax js-parallax-image-wrapper">
+                                            <img src="img/features/2.jpg" alt="" class="features__slider-card-image">
+                                        </div>
+                                    </div>
+                                    <h4 class="features__slider-card-title">
+                                        Бар и кухня
+                                    </h4>
+                                    <div class="features__slider-card-text">
+                                        <p>
+                                            В барной зоне располагаются удобные барные стулья и лежаки. Вас ждет богатый
+                                            выбор авторских напитков, а также специальное меню закусок.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="features__slider-card-link">
+                                        Меню бара
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="apartments js-apartments">
+    <div class="container">
+        <h2 class="apartments__heading js-heading">
+            Другие<br>
+            номера
+        </h2>
+        <div class="apartments__slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="apartments__slider-card">
+                            <div class="apartments__slider-card-image-container js-parallax-image">
+                                <div class="apartments__slider-card-image-parallax-wrapper js-parallax-image-wrapper">
+                                    <img src="img/apartments/1.jpg" alt="" class="apartments__slider-card-image">
+                                </div>
+                                <div class="apartments__slider-card-video-wrapper">
+                                    <video preload="metadata" muted="" class="stories__slider-card-bg-image">
+                                        <source src="assets/video/stories-video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <h4 class="apartments__slider-card-title">
+                                ссср
+                            </h4>
+                            <div class="apartments__slider-card-text">
+                                <p>
+                                    Ностальгия и легкий юмор.
+                                </p>
+                            </div>
+                            <div class="apartments__slider-card-features">
+                                <div class="apartments__slider-card-features-item">
+                                    до 8 гостей
+                                </div>
+                                <div class="apartments__slider-card-features-item">
+                                    от 15000 Руб
+                                </div>
+                            </div>
+                            <a href="#" class="apartments__slider-card-mobile-btn">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </a>
+                            <div class="apartments__slider-card-btns">
+                                <a href="#" class="apartments__slider-card-btn">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Подробнее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a href="#" class="apartments__slider-card-btn apartments__slider-card-btn--filled">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Забронировать
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="apartments__slider-card">
+                            <div class="apartments__slider-card-image-container js-parallax-image">
+                                <div class="apartments__slider-card-image-parallax-wrapper js-parallax-image-wrapper">
+                                    <img src="img/apartments/2.jpg" alt="" class="apartments__slider-card-image">
+                                </div>
+                                <div class="apartments__slider-card-video-wrapper">
+                                    <video preload="metadata" muted="" class="stories__slider-card-bg-image">
+                                        <source src="assets/video/stories-video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <h4 class="apartments__slider-card-title">
+                                плёс
+                            </h4>
+                            <div class="apartments__slider-card-text">
+                                <p>
+                                    Погружение в истоки банных традиций.
+                                </p>
+                            </div>
+                            <div class="apartments__slider-card-features">
+                                <div class="apartments__slider-card-features-item">
+                                    до 8 гостей
+                                </div>
+                                <div class="apartments__slider-card-features-item">
+                                    от 15000 Руб
+                                </div>
+                            </div>
+                            <a href="#" class="apartments__slider-card-mobile-btn">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </a>
+                            <div class="apartments__slider-card-btns">
+                                <a href="#" class="apartments__slider-card-btn">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Подробнее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a href="#" class="apartments__slider-card-btn apartments__slider-card-btn--filled">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Забронировать
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="apartments__slider-card">
+                            <div class="apartments__slider-card-image-container js-parallax-image">
+                                <div class="apartments__slider-card-image-parallax-wrapper js-parallax-image-wrapper">
+                                    <img src="img/apartments/1.jpg" alt="" class="apartments__slider-card-image">
+                                </div>
+                                <div class="apartments__slider-card-video-wrapper">
+                                    <video preload="metadata" muted="" class="stories__slider-card-bg-image">
+                                        <source src="assets/video/stories-video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <h4 class="apartments__slider-card-title">
+                                ссср
+                            </h4>
+                            <div class="apartments__slider-card-text">
+                                <p>
+                                    Ностальгия и легкий юмор.
+                                </p>
+                            </div>
+                            <div class="apartments__slider-card-features">
+                                <div class="apartments__slider-card-features-item">
+                                    до 8 гостей
+                                </div>
+                                <div class="apartments__slider-card-features-item">
+                                    от 15000 Руб
+                                </div>
+                            </div>
+                            <a href="#" class="apartments__slider-card-mobile-btn">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </a>
+                            <div class="apartments__slider-card-btns">
+                                <a href="#" class="apartments__slider-card-btn">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Подробнее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a href="#" class="apartments__slider-card-btn apartments__slider-card-btn--filled">
+
+                                    <span class="apartments__slider-card-btn-text">
+                                        Забронировать
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="apartments__slider-card">
+                            <div class="apartments__slider-card-image-container js-parallax-image">
+                                <div class="apartments__slider-card-image-parallax-wrapper js-parallax-image-wrapper">
+                                    <img src="img/apartments/2.jpg" alt="" class="apartments__slider-card-image">
+                                </div>
+                                <div class="apartments__slider-card-video-wrapper">
+                                    <video preload="metadata" muted="" class="stories__slider-card-bg-image">
+                                        <source src="assets/video/stories-video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <h4 class="apartments__slider-card-title">
+                                плёс
+                            </h4>
+                            <div class="apartments__slider-card-text">
+                                <p>
+                                    Погружение в истоки банных традиций.
+                                </p>
+                            </div>
+                            <div class="apartments__slider-card-features">
+                                <div class="apartments__slider-card-features-item">
+                                    до 8 гостей
+                                </div>
+                                <div class="apartments__slider-card-features-item">
+                                    от 15000 Руб
+                                </div>
+                            </div>
+                            <a href="#" class="apartments__slider-card-mobile-btn">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </a>
+                            <div class="apartments__slider-card-btns">
+                                <a href="#" class="apartments__slider-card-btn">
+
+                                    <span class="apartments__slider-card-btn-text">
+                                        Подробнее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a href="#" class="apartments__slider-card-btn apartments__slider-card-btn--filled">
+                                    <span class="apartments__slider-card-btn-text">
+                                        Забронировать
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="apartments__slider-controls">
+                <button class="apartments__slider-arrow apartments__slider-arrow--prev">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <div class="apartments__slider-pagination">
+                    1/6
+                </div>
+                <button class="apartments__slider-arrow apartments__slider-arrow--next">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news js-news">
+    <div class="container">
+        <div class="news__top-row">
+            <h2 class="news__heading js-heading">
+                Новости и&nbsp;акции
+            </h2>
+            <div class="news__arrows">
+                <button class="news__arrows-btn news__arrows-btn--prev">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="news__arrows-btn news__arrows-btn--next">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="news__slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Утром дешевле
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    В будние дни с 9 до 12
+                                    скидка 25% на всё!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Ваш день
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    За 7 дней до и 7 дней
+                                    после дня рождения
+                                    скидка 15%
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Бьюти-девичник
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    Специальные условия на пакетное предложение!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Мужской день
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    Специальные условия на аренду VIP кабинета в дневное время!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Утром дешевле
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    В будние дни с 9 до 12
+                                    скидка 25% на всё!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Ваш день
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    За 7 дней до и 7 дней
+                                    после дня рождения
+                                    скидка 15%
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Бьюти-девичник
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    Специальные условия на пакетное предложение!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="news__slider-card">
+                            <div class="news__slider-card-image-container">
+
+                            </div>
+                            <h4 class="news__slider-card-title">
+                                Мужской день
+                            </h4>
+                            <div class="news__slider-card-text">
+                                <p>
+                                    Специальные условия на аренду VIP кабинета в дневное время!
+                                </p>
+                            </div>
+                            <div class="news__slider-card-link">
+                                Подробнее
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="contacts">
+    <div class="container">
+        <div class="contacts__content">
+
+
+            <div class="contacts__row">
+                <div class="contacts__info">
+                    <h2 class="contacts__heading">
+                        Контакты
+                    </h2>
+                    <a href="tel:+79813342222" class="contacts__phone-link"> +7 981 334 22 22</a>
+                    <div class="contacts__text">
+                        <p>
+                            Нижняя Масловка, 15<br>
+                            Ежедневно 8:00-00:00<br>
+                        </p>
+                    </div>
+                    <ul class="contacts__closest">
+                        <li class="contacts__closest-item">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                <use xlink:href="#metro"></use>
+                            </svg>
+                            Динамо 10 мин
+                        </li>
+                        <li class="contacts__closest-item">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                <use xlink:href="#metro"></use>
+                            </svg>
+                            Савеловская 5 мин
+                        </li>
+                        <li class="contacts__closest-item">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-location">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            Рядом с ТТК
+                        </li>
+                        <li class="contacts__closest-item">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-parking">
+                                <use xlink:href="#parking"></use>
+                            </svg>
+                            Своя парковка
+                        </li>
+                    </ul>
+
+                    <a href="#" class="contacts__plan">
+                        карта и план проезда
+                    </a>
+
+                    <ul class="contacts__social-list">
+                        <li class="contacts__social-list-item">
+                            <a href="#" class="contacts__social-link">
+                                <img src="img/social/facebook-dark.svg" alt="" class="contacts__social-link-icon">
+                            </a>
+                        </li>
+                        <li class="contacts__social-list-item">
+                            <a href="#" class="contacts__social-link">
+                                <img src="img/social/telegram-dark.svg" alt="" class="contacts__social-link-icon">
+                            </a>
+                        </li>
+                        <li class="contacts__social-list-item">
+                            <a href="#" class="contacts__social-link">
+                                <img src="img/social/vkontakte-dark.svg" alt="" class="contacts__social-link-icon">
+                            </a>
+                        </li>
+                        <li class="contacts__social-list-item">
+                            <a href="#" class="contacts__social-link">
+                                <img src="img/social/instagram-dark.svg" alt="" class="contacts__social-link-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts__map-wrapper js-map" data-coords="55.791081, 37.574525"
+                    data-center="55.791081, 37.574525" data-zoom="14">
+                    <div class="contacts__map js-map-element">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gallery">
+    <div class="container">
+        <div class="gallery__slider js-gallery-slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery__slider-card gallery__slider-card--type-1">
+                            <img src="img/gallery/1.jpg" alt="" class="gallery__slider-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__slider-card gallery__slider-card--type-2">
+                            <img src="img/gallery/2.jpg" alt="" class="gallery__slider-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__slider-card gallery__slider-card--type-3">
+                            <img src="img/gallery/3.jpg" alt="" class="gallery__slider-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__slider-card gallery__slider-card--type-1">
+                            <img src="img/gallery/4.jpg" alt="" class="gallery__slider-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__slider-card gallery__slider-card--type-2">
+                            <img src="img/gallery/5.jpg" alt="" class="gallery__slider-card-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subscribe">
+    <div class="container">
+        <div class="subscribe__content">
+            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+            <h4 class="subscribe__heading">
+                Подписаться на&nbsp;рассылку
+            </h4>
+            <div class="subscribe__heading-text">
+                <p>
+                    Чтобы не пропустить классные акции и предложения
+                </p>
+            </div>
+            <form action="/" method="POST" class="subscribe__form" data-need-validation="" id="subscribe-errors">
+                <div class="subscribe__form-row">
+                    <input type="email" name="email" class="subscribe__form-input" required="" placeholder="Email"
+                        data-parsley-errors-container="#subscribe-errors">
+                    <button class="subscribe__form-submit" type="submit">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}

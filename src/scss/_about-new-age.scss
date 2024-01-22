@@ -1,0 +1,113 @@
+.about-new-age {
+    padding-bottom: 8.8rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 7rem;
+    }
+}
+
+.about-new-age__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-new-age__small-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 140%;
+    text-align: center;
+    font-family: var(--zhar-ptitza);
+    color: #3a241f;
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 140%;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+}
+
+.about-new-age__large-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9rem;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: var(--zhar-ptitza);
+    color: #3a241f;
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 3.8rem;
+        line-height: 120%;
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+}
+
+.about-new-age__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 1.4rem 2.8rem;
+    width: 27rem;
+    background: #000000;
+    color: white;
+    transition: background-color 0.2s, color 0.2s;
+    align-self: center;
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        width: 100%;
+        padding: 1.3rem 2.6rem;
+        align-self: stretch;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover {
+        .about-new-age__link-text {
+            transform: translateX(-1rem);
+
+            svg {
+                opacity: 1;
+                visibility: inherit;
+                transition: opacity 0.2s, visibility 0.2s;
+            }
+        }
+    }
+}
+
+.about-new-age__link-text {
+    position: relative;
+    transition: transform 0.2s;
+    display: block;
+    svg {
+        position: absolute;
+        left: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0s linear 0.2s;
+        fill: currentColor;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0.2rem;
+    }
+}

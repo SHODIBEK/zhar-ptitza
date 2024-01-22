@@ -1,0 +1,419 @@
+.page-footer {
+    padding-top: 5.5rem;
+    background: #332927;
+    color: white;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 3rem;
+    }
+    &::after {
+        content: '';
+        height: 52.8rem;
+        width: 100%;
+        display: block;
+        background-image: url('../img/footer-pattern.svg');
+        background-repeat: repeat-x;
+        background-size: auto 120%;
+        background-position: center top;
+
+        @include breakpoint(mobile) {
+            height: 30rem;
+            background-size: auto 130%;
+        }
+    }
+}
+
+.page-footer__top-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 2rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 0;
+    }
+}
+
+.page-footer__nav {
+    @include breakpointMF(small-tablet) {
+        grid-column: span 3;
+    }
+
+    & > ul {
+        @include breakpointMF(small-tablet) {
+            column-count: 3;
+            column-gap: 2rem;
+        }
+        & > li {
+            @include breakpointMF(small-tablet) {
+                break-inside: avoid;
+                margin-bottom: 4.5rem;
+            }
+
+            @include breakpoint(mobile) {
+                border-bottom: 1px solid rgba(206, 193, 163, 0.2);
+            }
+            & > a {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 2.8rem;
+                // display: block;
+                line-height: 120%;
+                letter-spacing: 0.02em;
+
+                &:link,
+                &:visited {
+                    color: white;
+                }
+                @include breakpointMF(small-tablet) {
+                    display: inline;
+                    text-decoration: none;
+                    background-image: linear-gradient(rgba(white, 1), rgba(white, 1));
+                    background-position: 0% 100%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 1px;
+                    transition: background-size 0.25s ease-out, color 0.2s;
+
+                    &:hover {
+                        color: white;
+                        background-size: 100% 1px;
+                    }
+                }
+
+                @include breakpoint(mobile) {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.6rem;
+                    line-height: 120%;
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    justify-content: space-between;
+                    padding: 1.7rem 0;
+
+                    &::after {
+                        content: '';
+                        width: 1.7rem;
+                        height: 1.7rem;
+                        flex-shrink: 0;
+                        background-image: url('../img/diamond-shape.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transition: transform 0.3s;
+                    }
+                }
+            }
+
+            & > ul {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                grid-gap: 1rem;
+                margin-top: 1.2rem;
+
+                @include breakpoint(mobile) {
+                    margin: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+                & > li {
+                    @include breakpoint(mobile) {
+                        &:last-child {
+                            padding-bottom: 2.5rem;
+                        }
+                    }
+                    & > a {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 1.6rem;
+                        line-height: 120%;
+                        color: #cec1a3;
+
+                        display: inline;
+                        text-decoration: none;
+                        background-image: linear-gradient(rgba(white, 1), rgba(white, 1));
+                        background-position: 0% 100%;
+                        background-repeat: no-repeat;
+                        background-size: 0% 1px;
+                        transition: background-size 0.25s ease-out, color 0.2s;
+
+                        &:link,
+                        &:visited {
+                            color: #cec1a3;
+                        }
+
+                        &:hover {
+                            color: white;
+                            background-size: 100% 1px;
+                        }
+
+                        @include breakpoint(mobile) {
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 1.4rem;
+                            line-height: 130%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(mobile) {
+        .js-accordion.active .js-accordion-btn {
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.page-footer__contacts-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 1.7rem 0;
+        margin: 0;
+        &::after {
+            content: '';
+            width: 1.7rem;
+            height: 1.7rem;
+            flex-shrink: 0;
+            background-image: url('../img/diamond-shape.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+.page-footer__contacts-content {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: #cec1a3;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 150%;
+
+        height: 0;
+        overflow: hidden;
+    }
+
+    a {
+        background-image: linear-gradient(rgba(white, 1), rgba(white, 1));
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 1px;
+        transition: background-size 0.25s ease-out, color 0.2s;
+
+        &:hover {
+            color: white;
+            background-size: 100% 1px;
+        }
+    }
+}
+
+.page-footer__contacts-content-inner {
+    @include breakpoint(mobile) {
+        padding-bottom: 2.5rem;
+    }
+}
+
+.page-footer__social-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.8rem;
+    row-gap: 1.4rem;
+    margin-top: 5rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 3.7rem;
+        gap: 2.4rem;
+        row-gap: 1.2rem;
+    }
+}
+
+.page-footer__social-link {
+    display: block;
+}
+
+.page-footer__social-link-icon {
+    height: 2.5rem;
+    width: auto;
+    display: block;
+    max-width: none;
+    object-fit: contain;
+
+    @include breakpoint(mobile) {
+        height: 2.2rem;
+    }
+}
+
+.page-footer__bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(206, 193, 163, 0.5);
+    padding-bottom: 6.2rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+        margin-top: 2rem;
+        padding-bottom: 3.2rem;
+    }
+}
+
+.page-footer__bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 4.7rem;
+    row-gap: 2.4rem;
+    flex-wrap: wrap;
+
+    @include breakpoint(mobile) {
+        gap: 0.8rem;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.page-footer__bottom-link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: #cec1a3;
+    display: inline;
+    text-decoration: none;
+    background-image: linear-gradient(rgba(white, 1), rgba(white, 1));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.25s ease-out, color 0.2s;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+    }
+    &:link,
+    &:visited {
+        color: #cec1a3;
+    }
+
+    &:hover {
+        color: white;
+        background-size: 100% 1px;
+    }
+}
+
+.page-footer__copyright {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: #cec1a3;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+    }
+    &:link,
+    &:visited {
+        color: #cec1a3;
+    }
+}
+
+.page-footer__arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 2.7rem;
+        padding-bottom: 0;
+        margin-top: -4.5rem;
+    }
+}
+
+.page-footer__contacts-wrapper {
+    @include breakpoint(mobile) {
+        border-bottom: 1px solid rgba(206, 193, 163, 0.2);
+    }
+}
+
+.page-footer__contacts-content-inner {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        align-self: flex-start;
+    }
+
+    p {
+        margin-top: 1.5rem;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.page-footer__arrow-up {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 9.2rem;
+    height: 9.2rem;
+    border-radius: 50%;
+    border: 1px solid #cec1a3;
+
+    @include breakpoint(mobile) {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+
+    svg {
+        width: 3.7rem;
+        height: 5rem;
+        fill: #cec1a3;
+        transition: fill 0.3s, transform 0.3s;
+
+        @include breakpoint(mobile) {
+            width: 2.7rem;
+            height: 3.5rem;
+        }
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        svg {
+            transform: translateY(-0.5rem);
+            transition: fill 0.3s, transform 0.3s ease-out;
+        }
+    }
+}

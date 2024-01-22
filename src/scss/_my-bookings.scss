@@ -1,0 +1,58 @@
+.my-bookings {
+    margin: 5rem 0;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
+
+    &__list {
+        
+    }
+
+    &__item {
+        margin-top: 2rem;
+        padding-right: 2rem;
+        font-size: 1.6rem;
+        font-weight: 450;
+        line-height: 1.4;
+
+        p {
+            margin: .8rem 0;
+        }
+    }
+
+    &__code {
+        font-weight: 750;
+    }
+
+    &__footer {
+        margin-top: 2rem;
+        color: #968A71;
+    }
+
+    &__btn-more {
+        font-size: 1.6rem;
+        font-weight: 450;
+        line-height: 1.4;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .my-bookings {
+
+        &__title {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        &__item {
+            font-size: 1.4rem;
+        }
+
+      
+    }
+
+}

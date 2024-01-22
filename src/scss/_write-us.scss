@@ -1,0 +1,184 @@
+.write-us {
+    background: #332927;
+    color: white;
+    padding-top: 10rem;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 3.8rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.write-us__content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 68rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        margin: 0;
+    }
+}
+
+.write-us__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 140%;
+    text-align: center;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.2rem;
+        text-align: center;
+        letter-spacing: 0.05em;
+        line-height: 100%;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.write-us__form {
+    display: flex;
+    flex-direction: column;
+
+    .parsley-errors-list.filled {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-top: 0.5rem;
+        font-weight: 500;
+    }
+}
+
+.write-us__form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+    grid-row-gap: 3rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+.write-us__form-field--fullwidth {
+    grid-column: 1 / -1;
+
+    @include breakpoint(mobile) {
+        margin-top: 2.5rem;
+    }
+}
+
+.write-us__form-input {
+    height: 3.7rem;
+    width: 100%;
+    font: inherit;
+    color: white;
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid rgba(206, 193, 163, 0.5);
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        height: 4.2rem;
+        font-size: 2rem;
+        line-height: 120%;
+        padding: 0;
+    }
+
+    &--name {
+        background-image: url('../img/name.svg');
+        background-size: 2.4rem 2.4rem;
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+
+        @include breakpoint(mobile) {
+            background-size: 2.7rem 2.7rem;
+            background-position: right center;
+        }
+    }
+
+    &--email {
+        background-image: url('../img/email.svg');
+        background-size: 2.4rem 2.4rem;
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+
+        @include breakpoint(mobile) {
+            background-size: 2.7rem 2.7rem;
+            background-position: right center;
+        }
+    }
+
+    @include placeholder {
+        color: white;
+    }
+}
+
+textarea.write-us__form-input {
+    border: 1px solid rgba(206, 193, 163, 0.5);
+    height: 18rem;
+    padding: 1.7rem;
+    resize: none;
+
+   
+    @include placeholder {
+        color: rgba(150, 138, 113, 0.5);
+    }
+
+    @include breakpoint(mobile) {
+        height: 16rem;
+        font-style: normal;
+        font-weight: 450;
+        font-size: 1.4rem;
+        line-height: 120%;
+        padding: 1.1rem 1.8rem;
+
+        @include placeholder {
+            color: #CEC1A3;
+        }
+    }
+}
+
+.write-us__form-submit {
+    align-self: center;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 140%;
+    width: 30rem;
+    border: 1px solid #cec1a3;
+    padding: 1.2rem 2.4rem;
+    color: white;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    margin-top: 3.5rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 140%;
+        margin-top: 2.4rem;
+        padding: 1.2rem 2.4rem;
+        text-align: center;
+        width: 100%;
+    }
+    .no-touch &:hover,
+    .touch &:active {
+        background: #cec1a3;
+    }
+}

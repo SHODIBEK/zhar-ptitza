@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/styles.css" />
+        <title>
+            Главная страница
+        </title>
+    </head>
+
+    <body class="no-touch" ontouchstart="">
+        <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 20 20" id="area" xmlns="http://www.w3.org/2000/svg"><path d="M15 17.75H5.45a3 3 0 01-3-3v-9.5a3 3 0 013-3H15a3 3 0 013 3v9.5a3 3 0 01-3 3zM5.45 3.55a1.7 1.7 0 00-1.7 1.7v9.5a1.7 1.7 0 001.7 1.7H15a1.7 1.7 0 001.7-1.7v-9.5a1.7 1.7 0 00-1.7-1.7z"/><path d="M6.03 9.2h-1.3V4.53h4.66v1.3H6.03V9.2zM15.67 15.47H11v-1.3h3.37V10.8h1.3v4.67z"/></symbol><symbol viewBox="0 0 50.1 37.9" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M13.1 13a18.36 18.36 0 005.4-13h1.1a19.56 19.56 0 01-1.1 6.4 19.25 19.25 0 01-12.1 12h43.7v1.1H6.5a19.41 19.41 0 0111.9 12 19.11 19.11 0 011.1 6.4h-1.1a18.36 18.36 0 00-5.4-13A18.07 18.07 0 00.6 19.6H0v-1.1A19.58 19.58 0 0013.1 13z"/></symbol><symbol viewBox="0 0 50.1 37.9" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M37 13a18.36 18.36 0 01-5.4-13h-1.1a19.56 19.56 0 001.1 6.4 19.25 19.25 0 0012.1 12H0v1.1h43.6a19.41 19.41 0 00-11.9 12 19.11 19.11 0 00-1.1 6.4h1.1a18.36 18.36 0 015.4-13 18.07 18.07 0 0112.4-5.3h.6v-1.1A19.58 19.58 0 0137 13z"/></symbol><symbol viewBox="0 0 37.57 49.83" id="arrow-up" xmlns="http://www.w3.org/2000/svg"><path d="M24.73 13A18.23 18.23 0 0119.36.19V0h-1.15v.22A18.28 18.28 0 0112.84 13 18.27 18.27 0 010 18.4v1.15a16.86 16.86 0 006.33-1.15A19.28 19.28 0 0018.21 6.54v43.29h1.15V6.53A19.25 19.25 0 0031.24 18.4a16.86 16.86 0 006.33 1.15V18.4A18.27 18.27 0 0124.73 13z"/></symbol><symbol viewBox="0 0 20 20" id="capacity" xmlns="http://www.w3.org/2000/svg"><path d="M10 11.39a5.26 5.26 0 115.26-5.26A5.26 5.26 0 0110 11.39zm0-9.21a4 4 0 103.95 4 4 4 0 00-3.95-4zM18.27 19.24H17a5.31 5.31 0 00-5.37-5.37h-3a5.3 5.3 0 00-5.37 5.37H1.92a6.6 6.6 0 016.67-6.67h3a6.6 6.6 0 016.68 6.67z"/></symbol><symbol id="checkmark" viewBox="0 0 10 7" xmlns="http://www.w3.org/2000/svg"><defs><style>.afcls-1{fill-rule:evenodd}</style></defs><path class="afcls-1" d="M9.85.15a.48.48 0 010 .7l-6 6A.47.47 0 013.5 7a.49.49 0 01-.36-.15l-3-3a.48.48 0 010-.7.48.48 0 01.7 0L3.5 5.79 9.15.15a.48.48 0 01.7 0z"/></symbol><symbol viewBox="0 0 26 29" id="complex" xmlns="http://www.w3.org/2000/svg"><path d="M17.678 12.93a7.922 7.922 0 00-7.955 7.954 7.922 7.922 0 007.955 7.955 7.922 7.922 0 007.955-7.955 7.922 7.922 0 00-7.955-7.955zm5.177 13.131c-1.39 1.39-3.157 2.147-5.177 2.147-2.02 0-3.915-.884-5.177-2.147-1.39-1.389-2.147-3.156-2.147-5.177 0-2.02.884-3.914 2.147-5.177 1.389-1.389 3.156-2.146 5.177-2.146 2.02 0 3.914.883 5.177 2.146C24.244 17.097 25 18.864 25 20.884c0 2.02-.884 3.915-2.146 5.177z"/><path d="M20.455 20.631h-2.778v-4.419a.272.272 0 00-.253-.252.271.271 0 00-.252.252v4.672l.126.253.253.126h3.157a.272.272 0 00.252-.253c-.126-.252-.253-.379-.505-.379zM3.662 12.045a.758.758 0 100-1.515.758.758 0 000 1.515zM3.662 17.349a.758.758 0 100-1.516.758.758 0 000 1.516zM8.966 12.045a.758.758 0 100-1.515.758.758 0 000 1.515zM14.268 12.045a.758.758 0 100-1.515.758.758 0 000 1.515z"/><path d="M.631 19.243V8.13H17.3v3.662h.631V5.227c0-1.01-.883-1.894-1.894-1.894h-.252V.303A.272.272 0 0015.53.05a.272.272 0 00-.252.252v2.904H3.157V.302A.272.272 0 002.904.05c-.252-.127-.379 0-.379.252v2.904h-.63C.883 3.206 0 4.09 0 5.226v14.017c0 1.01.884 1.894 1.894 1.894h6.692v-.632H1.894C1.136 20.632.631 20 .631 19.243zm0-14.016c0-.758.632-1.263 1.263-1.263h14.142c.758 0 1.263.631 1.263 1.263v2.399H.631v-2.4z"/></symbol><symbol viewBox="0 0 29 29" id="contacts-1" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M24.18 20.82H22.1L23.66 25l-5.2-4.18H4.08A2 2 0 012 18.73V8.09A2 2 0 014.08 6h20.1a2 2 0 012.08 2.09v10.64a2.11 2.11 0 01-2.08 2.09zM6.16 10.71h13.69M6.16 15.59h9.53" vector-effect="non-scaling-stroke"/></symbol><symbol viewBox="0 0 30 31" id="contacts-2" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M23.13 7.42l-3.3 4.36c-.34.35-.17.87 0 1.22l2.26 2.79a18.81 18.81 0 01-3.3 4.36 16.22 16.22 0 01-4.15 3.14L11.86 21a.83.83 0 00-1.21 0l-4.33 3.33A.85.85 0 006 25.38l1.39 4a1.67 1.67 0 002.42 1 33.1 33.1 0 0011.79-7.84 36.22 36.22 0 007.8-11.86 2 2 0 00-1-2.44l-4-1.39H24a.94.94 0 00-.87.57zM5.79 16.49v-1a9 9 0 019-9.06" vector-effect="non-scaling-stroke"/><path fill="none" d="M.6 17.36v-1.57A14.76 14.76 0 0115.33 1" vector-effect="non-scaling-stroke"/></symbol><symbol viewBox="0 0 29 29" id="contacts-3" xmlns="http://www.w3.org/2000/svg"><path fill="none" vector-effect="non-scaling-stroke" d="M9.76 20.87H6.47L3 26.27h23.39l-2.94-5.4h-3.64"/><path fill="none" vector-effect="non-scaling-stroke" d="M12.88 2.21a8.54 8.54 0 00-6.58 7 8.35 8.35 0 002.42 7.49l5.37 5.41a.65.65 0 001 0l5.38-5.41a8.44 8.44 0 002.77-6.27 8.61 8.61 0 00-10.36-8.22zm1.73 11.68a3.3 3.3 0 01-3.29-3.31 3.19 3.19 0 013.29-3.31 3.3 3.3 0 013.3 3.31 3.2 3.2 0 01-3.3 3.31z"/></symbol><symbol viewBox="0 0 32 32" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M16.71 16l8.64-8.65a.49.49 0 10-.7-.7L16 15.29 7.35 6.65a.49.49 0 00-.7.7L15.29 16l-8.64 8.65a.48.48 0 000 .7.48.48 0 00.7 0L16 16.71l8.65 8.64a.48.48 0 00.7 0 .48.48 0 000-.7z"/></symbol><symbol viewBox="0 0 19 19" id="diamond" xmlns="http://www.w3.org/2000/svg"><path d="M.15 9.5H0h.338C5.445 9.387 9.575 5.165 9.575 0c0 5.165 4.13 9.387 9.237 9.5h.113-.075.15-.338c-5.107.113-9.237 4.335-9.237 9.5 0-5.165-4.13-9.387-9.237-9.5H.075.15z"/></symbol><symbol viewBox="0 0 21 20" id="female" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10.58 5.66A2.66 2.66 0 1113.24 3a2.66 2.66 0 01-2.66 2.66z"/><path d="M10.58 6a3 3 0 113-3 3 3 0 01-3 3zm0-5a2 2 0 102 2 2 2 0 00-2-2zM.5 20a17.93 17.93 0 001.9-.55A9.44 9.44 0 005.82 17a18.38 18.38 0 004.45-8.71c.15-.65.22-1.31.32-2 0 .27.07.54.11.81a18.69 18.69 0 003.2 8.09 12.91 12.91 0 003.56 3.58A7.56 7.56 0 0020.58 20h.08zm4.69-1H16a18.53 18.53 0 01-5.4-8 18.45 18.45 0 01-5.41 8z"/><path fill="currentColor" d="M16.5 19.34H4.67a20.29 20.29 0 005.92-8.79 20.33 20.33 0 005.91 8.79z"/></symbol><symbol fill="none" viewBox="0 0 141 141" id="gift" xmlns="http://www.w3.org/2000/svg"><path d="M90.609 107.83h-70.78a10.42 10.42 0 01-7.372-3.046 10.416 10.416 0 01-3.055-7.369V43.572A10.415 10.415 0 0119.804 33.17h101.379a10.415 10.415 0 0110.415 10.402v53.843a10.41 10.41 0 01-3.051 7.364 10.411 10.411 0 01-7.364 3.051H90.609zM94.919 33.17v74.66M9.402 82.804h122.196" vector-effect="non-scaling-stroke"/><path d="M77.717 65.248a17.203 17.203 0 0117.202 17.215v.354H77.717a8.772 8.772 0 01-8.772-8.772 8.847 8.847 0 018.772-8.797z" vector-effect="non-scaling-stroke"/><path d="M112.108 65.248a17.191 17.191 0 00-17.19 17.215v.354h17.19a8.848 8.848 0 008.784-8.772 8.847 8.847 0 00-8.784-8.797z" vector-effect="non-scaling-stroke"/></symbol><symbol id="location" viewBox="0 0 13 15" xmlns="http://www.w3.org/2000/svg"><defs><style>.aocls-1{fill-rule:evenodd}</style></defs><path class="aocls-1" d="M5.11.16A6.5 6.5 0 0113 6.27 6.28 6.28 0 0110.9 11l-3.76 3.68a1 1 0 01-.71.32 1.05 1.05 0 01-.72-.32L1.94 11A6.22 6.22 0 01.1 5.36 6.42 6.42 0 015.11.16zM12 6.29a5.51 5.51 0 00-6.68-5.15 5.42 5.42 0 00-4.23 4.38 5.16 5.16 0 001.56 4.72L6.41 14l3.76-3.71a5.28 5.28 0 001.83-4zM6.43 5a1.42 1.42 0 100 2.83 1.42 1.42 0 100-2.83zM4 6.4A2.4 2.4 0 016.43 4a2.42 2.42 0 110 4.83A2.4 2.4 0 014 6.4z"/></symbol><symbol viewBox="0 0 21 22" id="male" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10 5.66A2.66 2.66 0 1112.66 3 2.66 2.66 0 0110 5.66z"/><path d="M10 6a3 3 0 113-3 3 3 0 01-3 3zm0-5a2 2 0 102 2 2 2 0 00-2-2zM20.5 8a17.27 17.27 0 00-1.9.55A9.56 9.56 0 0015.17 11a18.46 18.46 0 00-4.44 8.71c-.15.65-.22 1.31-.33 2 0-.27-.06-.54-.1-.81a18.69 18.69 0 00-3.2-8.09 12.91 12.91 0 00-3.56-3.57A7.55 7.55 0 00.41 8H.33zm-4.69 1H5a18.6 18.6 0 015.39 8 18.56 18.56 0 015.42-8z"/><path fill="currentColor" d="M4.5 8.66h11.83a20.29 20.29 0 00-5.92 8.79A20.41 20.41 0 004.5 8.66z"/></symbol><symbol viewBox="0 0 24.4 18.4" id="medium-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M24.21 8.79a9.24 9.24 0 01-6.15-2.56 8.47 8.47 0 01-2.52-6V0h-.93v.2a9.56 9.56 0 00.54 3.11 9.37 9.37 0 004.93 5.43H0v.92h20.08a9.36 9.36 0 00-4.88 5.43 9.05 9.05 0 00-.54 3.11v.2h.93v-.2a8.5 8.5 0 018.32-8.49h.49v-.92z"/></symbol><symbol viewBox="0 0 25 25" id="menu-close" xmlns="http://www.w3.org/2000/svg"><path d="M24.26 23.55L13 12.41l11-11a.38.38 0 000-.53.37.37 0 00-.53 0l-11.06 11L1.26.73a.37.37 0 00-.52.54L12 12.41l-11 11a.38.38 0 00.27.64.38.38 0 00.26-.11l11.05-11 11.16 11.14a.33.33 0 00.26.11.4.4 0 00.27-.11.38.38 0 00-.01-.53z"/></symbol><symbol viewBox="0 0 17 12" id="metro" xmlns="http://www.w3.org/2000/svg"><path d="M15.83 10.324L11.86 0 8.5 6.035 5.154 0 1.17 10.324H0v1.564h6.011v-1.564h-.897l.87-2.57L8.5 12l2.516-4.247.87 2.57h-.897v1.565H17v-1.564h-1.17z"/></symbol><symbol viewBox="0 0 20 20" id="minus" xmlns="http://www.w3.org/2000/svg"><path d="M16.19 10.5H3.81a.5.5 0 010-1h12.38a.5.5 0 010 1z"/></symbol><symbol id="newsletter-close" viewBox="0 0 13.5 13.4" xmlns="http://www.w3.org/2000/svg"><defs><style>.aucls-1{fill-rule:evenodd}</style></defs><path class="aucls-1" d="M13.35 12.54L7.46 6.7 13.25.95c.2-.19.2-.51 0-.71-.19-.2-.51-.2-.71 0L6.75 6 .85.15C.65-.04.34-.04.14.15s-.19.51 0 .71l5.9 5.84-5.79 5.74c-.2.19-.2.51 0 .71.19.2.51.2.71 0L6.75 7.4l5.9 5.85c.2.19.51.19.71 0 .19-.2.19-.51 0-.71z"/></symbol><symbol viewBox="0 0 26 29" id="order" xmlns="http://www.w3.org/2000/svg"><path d="M17.68 12.93a8 8 0 108 8 7.92 7.92 0 00-8-8zm5.17 13.13a7.12 7.12 0 01-5.17 2.15 7.47 7.47 0 01-5.18-2.15 7.16 7.16 0 01-2.15-5.18 7.45 7.45 0 012.15-5.17 7.16 7.16 0 015.18-2.15 7.41 7.41 0 015.17 2.15A7.14 7.14 0 0125 20.88a7.43 7.43 0 01-2.15 5.18z"/><path d="M20.45 20.63h-2.77v-4.42a.26.26 0 00-.51 0v4.67l.13.26.25.12h3.16A.27.27 0 0021 21c-.17-.24-.29-.37-.55-.37zM3.66 10.53a.76.76 0 00-.76.76.76.76 0 001.52 0 .76.76 0 00-.76-.76zM3.66 15.83a.76.76 0 10.76.76.76.76 0 00-.76-.76zM9 10.53a.76.76 0 00-.76.76.76.76 0 10.76-.76zM13.51 11.29a.76.76 0 001.52 0 .76.76 0 00-1.52 0z"/><path d="M.63 19.24V8.13H17.3v3.66h.63V5.23A1.94 1.94 0 0016 3.33h-.26V.3a.27.27 0 00-.25-.25.28.28 0 00-.25.25v2.91H3.16V.3A.28.28 0 002.9.05c-.25-.13-.37 0-.37.25v2.91h-.64A2 2 0 000 5.23v14a1.94 1.94 0 001.89 1.9h6.7v-.63h-6.7c-.75.13-1.26-.5-1.26-1.26zm0-14A1.27 1.27 0 011.89 4H16a1.28 1.28 0 011.3 1.23v2.4H.63z"/></symbol><symbol id="parking" viewBox="0 0 14.71 14" xmlns="http://www.w3.org/2000/svg"><defs><style>.awcls-1{fill-rule:evenodd}</style></defs><path d="M5.6 10.46V3.25H8c1.82 0 2.72.7 2.72 2.09A1.82 1.82 0 019.9 7a3.64 3.64 0 01-2 .51h-1v3zM6.89 6.4h.89c1.07 0 1.6-.35 1.6-1.06A.79.79 0 009 4.55a2.39 2.39 0 00-1.13-.22h-.98z"/><path class="awcls-1" d="M3.64 1A2.66 2.66 0 001 3.64v6.72A2.66 2.66 0 003.64 13h7.43a2.66 2.66 0 002.64-2.64V3.64A2.66 2.66 0 0011.07 1zM0 3.64A3.67 3.67 0 013.64 0h7.43a3.67 3.67 0 013.64 3.64v6.72A3.67 3.67 0 0111.07 14H3.64A3.67 3.67 0 010 10.36z"/></symbol><symbol id="person" viewBox="0 0 19.7 22.5" xmlns="http://www.w3.org/2000/svg"><defs><style>.axcls-1{fill-rule:evenodd}</style></defs><path class="axcls-1" d="M9.74 1A5.22 5.22 0 1015 6.22 5.22 5.22 0 009.74 1zM3.52 6.22a6.22 6.22 0 116.22 6.22 6.21 6.21 0 01-6.22-6.22zM8 15.52a6.92 6.92 0 00-7 7H0a7.91 7.91 0 018-8h3.74a7.91 7.91 0 018 8h-1a6.92 6.92 0 00-7-7z"/></symbol><symbol fill="none" viewBox="0 0 32 32" id="person-2" xmlns="http://www.w3.org/2000/svg"><path d="M15.873 16.5a6.504 6.504 0 100-13.007 6.504 6.504 0 000 13.007zM5.369 28.508c0-4.753 3.752-8.505 8.505-8.505h4.252c4.753 0 8.505 3.752 8.505 8.505" vector-effect="non-scaling-stroke"/></symbol><symbol viewBox="0 0 20 20" id="plus" xmlns="http://www.w3.org/2000/svg"><path d="M14.54 9.34h-4.2v-4.2a.5.5 0 00-.5-.5.5.5 0 00-.5.5v4.2h-4.2a.5.5 0 00-.5.5.5.5 0 00.5.5h4.2v4.2a.5.5 0 00.5.5.51.51 0 00.5-.5v-4.2h4.2a.51.51 0 00.5-.5.5.5 0 00-.5-.5z"/></symbol><symbol viewBox="0 0 479.55 639.26" id="room" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M112.39 371.09H367.3v252.22H112.39zM105.23 309.37l81.39-101.07 53.23-97.49 55 102.58 90.33 95.98H105.23z"/><path d="M95.81 639.26c-.09-2.16-.26-4.32-.26-6.48V363.34c0-2.45.21-4.91.34-7.84h283.58a48.34 48.34 0 01.58 5.34v274.94c0 1.16-.16 2.32-.25 3.48zm255.11-28.67V384.1H124.61v226.49zM0 326.19C148.23 302.87 225.1 134.43 240.36 0c12.27 136.86 92.19 300.29 239.19 326.89H.08zm352.65-28.49c-52.1-46.89-87.07-104-112.84-168.63C214.06 194 179 250.87 127.06 297.7z"/></symbol><symbol viewBox="0 0 20 20" id="time" xmlns="http://www.w3.org/2000/svg"><path d="M10 19a9 9 0 119-9 9 9 0 01-9 9zm0-16.7a7.7 7.7 0 107.7 7.7A7.7 7.7 0 0010 2.3z"/><path d="M13 11.65H9.02V5.67h1.3v4.68H13v1.3z"/></symbol></svg>        </div>
+
+        <div class="page-content">
+            <header class="page-header   dark ">
+                <div class="container">
+                    <div class="page-header__wrapper">
+            
+            
+                        <div class="page-header__row">
+                            <div class="page-header__nav-wrapper">
+                                <button class="page-header__burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <nav class="page-header__nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Разряды
+                                            </a>
+                                            <div class="page-header__nav-submenu">
+                                                <div class="page-header__nav-submenu-inner">
+            
+            
+                                                    <ul class="page-header__nav-submenu-list">
+                                                        <li class="page-header__nav-submenu-list-item">
+                                                            <a href="#" class="page-header__nav-submenu-link">
+                                                                Мужской разряд
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-header__nav-submenu-list-item">
+                                                            <a href="#" class="page-header__nav-submenu-link">
+                                                                Женский разряд
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-header__nav-submenu-list-item">
+                                                            <a href="#" class="page-header__nav-submenu-link">
+                                                                Общий SPA зал
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                апартаменты
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                spa
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <a href="#" class="page-header__logo">
+            
+                                <img src="img/zhar.svg" alt="" class="page-header__logo-image">
+                            </a>
+                            <div class="page-header__links">
+                                <a href="#complex-modal" class="page-header__book-link">
+                                    <span class="page-header__book-link-text">
+                                        Выбрать комплекс
+                                    </span>
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#location"></use>
+                                    </svg>
+                                </a>
+                                <a href="#" class="page-header__order-link">
+                                    <span class="page-header__order-link-text">
+                                        забронировать
+                                    </span>
+            
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#medium-arrow-right"></use>
+                                    </svg>
+            
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#complex"></use>
+                                    </svg>
+                                </a>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+                </div>
+            </header>            <div class="menu">
+                <div class="container">
+                    <div class="menu__inner">
+                        <div class="menu__top-row">
+                            <div class="menu__controls">
+                                <button class="menu__close">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-menu-close">
+                                        <use xlink:href="#menu-close"></use>
+                                    </svg>
+                                </button>
+                                <div class="menu__languages">
+                                    <a href="#" class="menu__languages-link active">
+                                        ru
+                                    </a>
+                                    <a href="#" class="menu__languages-link">
+                                        en
+                                    </a>
+                                </div>
+                                <a href="#" class="menu__account">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-person">
+                                        <use xlink:href="#person"></use>
+                                    </svg>
+                                    Георгий
+                                </a>
+                            </div>
+                            <a href="#" class="menu__logo">
+                                <img src="img/zhar.svg" alt="" class="menu__logo-image">
+            
+                            </a>
+                            <a href="#" class="menu__order-link">
+                                забронировать
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#medium-arrow-right"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="menu__content">
+                            <div class="menu__left-col">
+                                <nav class="menu__nav">
+                                    <ul class="menu__nav-list">
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                О нас
+                                            </a>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                Разряды
+                                            </a>
+                                            <ul class="menu__submenu-list">
+                                                <li class="menu__submenu-list-item">
+                                                    <a href="#" class="menu__submenu-link">
+                                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                        мужской
+                                                    </a>
+                                                </li>
+                                                <li class="menu__submenu-list-item">
+                                                    <a href="#" class="menu__submenu-link">
+                                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                        женский
+                                                    </a>
+                                                </li>
+                                                <li class="menu__submenu-list-item">
+                                                    <a href="#" class="menu__submenu-link">
+                                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                        общая зона
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                банные номера
+                                            </a>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                spa услуги
+                                            </a>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                кухня и бар
+                                            </a>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                товары
+                                            </a>
+                                        </li>
+                                        <li class="menu__nav-list-item">
+                                            <a href="#" class="menu__nav-link">
+                                                сертификаты
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="menu__right-col">
+                                <div class="menu__contacts">
+                                    <a href="tel:+79813342222" class="menu__phone">+79813342222</a>
+                                    <div class="menu__address">
+                                        Нижняя Масловка, 15<br>
+                                        Ежедневно 8:00-00:00
+                                    </div>
+                                    <ul class="menu__closest">
+                                        <li class="menu__closest-item">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                                <use xlink:href="#metro"></use>
+                                            </svg>
+                                            Динамо 10 мин
+                                        </li>
+                                        <li class="menu__closest-item">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                                <use xlink:href="#metro"></use>
+                                            </svg>
+                                            Савеловская 5 мин
+                                        </li>
+                                        <li class="menu__closest-item">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-location">
+                                                <use xlink:href="#location"></use>
+                                            </svg>
+                                            Рядом с ТТК
+                                        </li>
+                                        <li class="menu__closest-item">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-parking">
+                                                <use xlink:href="#parking"></use>
+                                            </svg>
+                                            Своя парковка
+                                        </li>
+                                    </ul>
+                                    <div class="menu__links">
+                                        <a href="#" class="menu__link">
+                                            посмотреть на карте
+                                        </a>
+                                        <a href="#" class="menu__link">
+                                            отзывы и предложения
+                                        </a>
+                                    </div>
+            
+                                    <ul class="menu__social-list">
+                                        <li class="menu__social-list-item">
+                                            <a href="#" class="menu__social-link">
+                                                <img src="img/social/facebook-dark.svg" alt="" class="menu__social-link-icon">
+                                            </a>
+                                        </li>
+                                        <li class="menu__social-list-item">
+                                            <a href="#" class="menu__social-link">
+                                                <img src="img/social/telegram-dark.svg" alt="" class="menu__social-link-icon">
+                                            </a>
+                                        </li>
+                                        <li class="menu__social-list-item">
+                                            <a href="#" class="menu__social-link">
+                                                <img src="img/social/vkontakte-dark.svg" alt="" class="menu__social-link-icon">
+                                            </a>
+                                        </li>
+                                        <li class="menu__social-list-item">
+                                            <a href="#" class="menu__social-link">
+                                                <img src="img/social/instagram-dark.svg" alt="" class="menu__social-link-icon">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="menu__mobile-order-link">
+                                        забронировать
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <ul class="menu__images-list">
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                        <div class="menu__images-card-inner-images">
+                                            <div class="menu__images-card-inner-image-wrapper">
+                                                <img src="img/inner-image.webp" alt="" class="menu__images-card-inner-image">
+                                            </div>
+                                            <div class="menu__images-card-inner-image-wrapper">
+                                                <img src="img/inner-image-2.webp" alt="" class="menu__images-card-inner-image">
+                                            </div>
+                                            <div class="menu__images-card-inner-image-wrapper">
+                                                <img src="img/inner-image.webp" alt="" class="menu__images-card-inner-image">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                    <li class="menu__images-list-item">
+                                        <div class="menu__images-card">
+                                            <img src="img/menu.jpg" alt="" class="menu__images-card-image">
+                                        </div>
+                                    </li>
+                                </ul>
+            
+                            </div>
+                            <div class="menu__rotating-text">
+                                <img src="img/menu-rotating-text.svg" alt="" class="menu__rotating-text-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            <main class="page-main">
+
+
+        <section class="booking">
+            <div class="container">
+                <div class="booking__content">
+                    <h1 class="booking__heading">
+                        Общественные бани
+                    </h1>
+                    <div class="booking__inner">
+
+                        <form action="/" method="POST" class="booking__form">
+                            <div class="booking__common-search">
+                                <div class="booking__common-search-field" id="date-container">
+                                    <div class="booking__common-search-field-label">
+                                        Дата
+                                    </div>
+                                    <input type="text"
+                                        class="booking__common-search-input booking__common-search-input--calendar js-datepicker"
+                                        value="29.08.2022" data-picker-container="#date-container" readonly="">
+                                </div>
+                                <div class="booking__common-search-field js-time-dropdown">
+                                    <div class="booking__common-search-field-label">
+                                        Слот
+                                    </div>
+                                    <input type="text"
+                                        class="booking__common-search-input booking__common-search-input--time"
+                                        value="8:00 - 11:00" readonly="">
+                                    <div class="booking__common-search-dropdown">
+                                        <div class="booking__common-search-dropdown-inner">
+                                            <div class="booking__common-search-dropdown-header">
+                                                <span class="booking__common-search-dropdown-header-title">
+                                                    Слоты
+                                                </span>
+                                                <span class="booking__common-search-dropdown-header-title">
+                                                    Доступно
+                                                </span>
+
+                                            </div>
+                                            <div class="booking__common-search-dropdown-scroll-wrapper">
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="08:00 - 11:00" disabled="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            08:00 - 11:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                0
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                0
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="11:00 - 13:00">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            11:00 - 13:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                10
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                66
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="13:00 - 16:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            13:00 - 16:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                23
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                15
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="16:00 - 19:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            16:00 - 19:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                17
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                12
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                                <label class="booking__common-search-dropdown-checkbox">
+                                                    <input type="radio"
+                                                        class="booking__common-search-dropdown-checkbox-input"
+                                                        name="time" value="19:00 - 22:00" checked="">
+                                                    <span class="booking__common-search-dropdown-checkbox-content">
+                                                        <span class="booking__common-search-dropdown-checkbox-text">
+                                                            19:00 - 22:00
+                                                        </span>
+                                                        <span class="booking__common-search-dropdown-checkbox-items">
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-female">
+                                                                        <use xlink:href="#female"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                5
+                                                            </div>
+                                                            <div class="booking__common-search-dropdown-checkbox-item">
+                                                                <div
+                                                                    class="booking__common-search-dropdown-checkbox-item-icon">
+                                                                    <svg width="14" height="14" aria-hidden="true"
+                                                                        class="icon-male">
+                                                                        <use xlink:href="#male"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                3
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="booking__tickets">
+                                <h3 class="booking__tickets-heading">
+                                    Выберите количество билетов
+                                </h3>
+                                <ul class="booking__tickets-list">
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/1.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Общая зона посадки
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    2 500 Руб<br>
+                                                    за гостя
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="0" max="4">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/2.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Общая зона посадки
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    2 500 Руб<br>
+                                                    за гостя
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/3.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Vip-комната № 1
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    10 500 Руб<br>
+                                                    за 6 человек
+
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="booking__tickets-list-item">
+                                        <div class="booking__tickets-card">
+                                            <div class="booking__tickets-card-left-col">
+
+
+                                                <div class="booking__tickets-card-image-container">
+                                                    <img src="img/tickets/3.jpg" alt=""
+                                                        class="booking__tickets-card-image">
+                                                </div>
+                                                <div class="booking__tickets-card-title-wrapper">
+                                                    <h4 class="booking__tickets-card-title">
+                                                        Женский разряд
+                                                    </h4>
+                                                    <div class="booking__tickets-card-title-text">
+                                                        Vip-комната № 2 и № 3
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking__tickets-card-right-col">
+
+                                                <div class="booking__tickets-card-price">
+                                                    12 500 Руб<br>
+                                                    за 6 человек
+
+
+
+                                                </div>
+                                                <a href="#booking-room-modal" class="booking__tickets-card-link">
+                                                    Подробнее
+                                                </a>
+                                                <div class="booking__tickets-card-amount js-ticket-amount">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-minus">
+                                                            <use xlink:href="#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="text" class="booking__tickets-card-amount-input"
+                                                        readonly="" value="1">
+                                                    <button class="booking__tickets-card-amount-btn" type="button">
+                                                        <svg width="14" height="14" aria-hidden="true"
+                                                            class="icon-plus">
+                                                            <use xlink:href="#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="booking__bottom-row">
+                                <a href="#" class="booking__back-btn">
+
+
+                                    <span class="booking__back-btn-text">
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                        Назад
+
+                                    </span>
+                                </a>
+                                <div class="booking__total">
+                                    Итого : 10 000 Руб
+                                </div>
+                                <button class="booking__submit-btn" type="submit">
+                                    <span class="booking__submit-btn-text">
+                                        Далее
+                                        <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                            <use xlink:href="#medium-arrow-right"></use>
+                                        </svg>
+                                    </span>
+
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscribe__content">
+                    <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+                    <h4 class="subscribe__heading">
+                        Подписаться на&nbsp;рассылку
+                    </h4>
+                    <div class="subscribe__heading-text">
+                        <p>
+                            Чтобы не пропустить классные акции и предложения
+                        </p>
+                    </div>
+                    <form action="/" method="POST" class="subscribe__form" data-need-validation=""
+                        id="subscribe-errors">
+                        <div class="subscribe__form-row">
+                            <input type="email" name="email" class="subscribe__form-input" required=""
+                                placeholder="Email" data-parsley-errors-container="#subscribe-errors">
+                            <button class="subscribe__form-submit" type="submit">
+                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+            </main>
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="page-footer__top-row">
+                        <nav class="page-footer__nav">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        О комплексе
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                О нас
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Цены
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Галерея
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Спецпредложения
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Документы
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Контакты
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Подарочные сертификаты
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Личный кабинет
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Вход
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Регистрация
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Программа лояльности
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Разряды
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Общая зона
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Мужской разряд
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Женский разряд
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Апартаменты
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Диско
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Азия
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Плес
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Скандинавия
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                СССР
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Шале
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Spa услуги
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Парения
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Отвары для пара
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Перины для полки
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Мыльный массаж
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Пилинг
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Обряды для стоп
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Горячие чаны
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Массаж
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Всё для бани
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Веники и запарки
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Принадлежности
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Уход за телом и волосами
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="page-footer__contacts">
+                            <div class="page-footer__contacts-wrapper">
+            
+            
+                                <h4 class="page-footer__contacts-title">
+                                    Контакты
+                                </h4>
+                                <div class="page-footer__contacts-content">
+                                    <div class="page-footer__contacts-content-inner">
+                                        <a href="tel:+79813342222" class="page-footer__contacts-phone">
+                                            +7 981 334 22 22
+                                        </a>
+                                        <a href="mailto:baths@gmail.com" class="page-footer__contacts-email">baths@gmail.com</a>
+                                        <p class="page-footer__contacts-address">
+                                            г. Москва,<br>
+                                            Нижняя Масловка, 15
+                                        </p>
+                                        <p class="page-footer__contacts-schedule">
+                                            Ежедневно 8:00-23:00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="page-footer__social-list">
+                                <li class="page-footer__social-list-item">
+                                    <a href="#" class="page-footer__social-link">
+                                        <img src="img/social/facebook.svg" alt="" class="page-footer__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="page-footer__social-list-item">
+                                    <a href="#" class="page-footer__social-link">
+                                        <img src="img/social/telegram.svg" alt="" class="page-footer__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="page-footer__social-list-item">
+                                    <a href="#" class="page-footer__social-link">
+                                        <img src="img/social/vkontakte.svg" alt="" class="page-footer__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="page-footer__social-list-item">
+                                    <a href="#" class="page-footer__social-link">
+                                        <img src="img/social/instagram.svg" alt="" class="page-footer__social-link-icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="page-footer__arrow-wrapper">
+                        <button class="page-footer__arrow-up js-scroll-to-top">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-arrow-up">
+                                <use xlink:href="#arrow-up"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="page-footer__bottom-row">
+                        <div class="page-footer__bottom-links">
+                            <a href="#" class="page-footer__bottom-link">
+                                Реквизиты
+                            </a>
+                            <a href="#" class="page-footer__bottom-link">
+                                Политика конфидициальности
+                            </a>
+                            <a href="#" class="page-footer__bottom-link">
+                                Способ оплаты
+                            </a>
+                        </div>
+                        <div class="page-footer__copyright">
+                            © 2022 ЖАР ПТИЦА Все права защищены.
+                        </div>
+                    </div>
+            
+                </div>
+            </footer>            <div class="newsletter js-newsletter">
+                <button class="newsletter__close js-newsletter-close" type="button">
+                    <svg width="14" height="14" aria-hidden="true" class="icon-newsletter-close">
+                        <use xlink:href="#newsletter-close"></use>
+                    </svg>
+                </button>
+                <div class="newsletter__slider js-newsletter-slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="newsletter__slider-card">
+                                    <h3 class="newsletter__slider-card-title">
+                                        Специальные цены осенью
+                                    </h3>
+                                    <div class="newsletter__slider-card-text">
+                                        Специальные цены на входные билеты до конца года
+                                    </div>
+                                    <a href="#" class="newsletter__slider-card-link">
+                                        <span class="newsletter__slider-card-link-text">
+                                            Подробнее
+                                            <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                                <use xlink:href="#medium-arrow-right"></use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="newsletter__slider-card">
+                                    <h3 class="newsletter__slider-card-title">
+                                        Будьте в курсе
+                                    </h3>
+                                    <div class="newsletter__slider-card-text">
+                                        Новых акций и классных предложений
+                                    </div>
+                                    <a href="#" class="newsletter__slider-card-link">
+                                        <span class="newsletter__slider-card-link-text">
+                                            Подробнее
+                                            <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                                <use xlink:href="#medium-arrow-right"></use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="newsletter__slider-card">
+                                    <h3 class="newsletter__slider-card-title">
+                                        Будьте в курсе
+                                    </h3>
+                                    <div class="newsletter__slider-card-text">
+                                        Новых акций и классных предложений
+                                    </div>
+                                    <form action="/" method="POST" class="newsletter__form" data-need-validation=""
+                                        id="newsletter-errors">
+                                        <div class="newsletter__form-row">
+                                            <input type="email" name="email" class="newsletter__form-input" required=""
+                                                placeholder="Email" data-parsley-errors-container="#newsletter-errors">
+                                            <button class="newsletter__form-submit" type="submit">
+                                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                                    <use xlink:href="#arrow-right"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+            
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter__slider-pagination">
+            
+                    </div>
+                </div>
+            </div>            <div class="booking-room-modal js-modal" id="booking-room-modal">
+                <div class="container">
+                    <div class="booking-room-modal__inner">
+                        <h3 class="booking-room-modal__heading">
+                            Общественные бани
+                        </h3>
+                        <div class="booking-room-modal__content js-booking-room-slider">
+                            <div class="booking-room-modal__top-row">
+                                <div class="booking-room-modal__arrows">
+                                    <button class="booking-room-modal__arrow booking-room-modal__arrow--prev">
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                            <use xlink:href="#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="booking-room-modal__arrow booking-room-modal__arrow--next">
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                            <use xlink:href="#arrow-right"></use>
+                                        </svg>
+                                    </button>
+            
+                                </div>
+                                <button class="booking-room-modal__close js-close-modal">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-cross">
+                                        <use xlink:href="#cross"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="booking-room-modal__slider">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/1.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/2.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/3.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/1.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/2.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="booking-room-modal__slider-card">
+                                                <img src="img/booking-room-modal/3.jpg" alt=""
+                                                    class="booking-room-modal__card-image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="booking-room-modal__row">
+                                <div class="booking-room-modal__left-col">
+                                    <div class="booking-room-modal__type">
+                                        Общественные бани
+                                    </div>
+                                    <h4 class="booking-room-modal__inner-heading">
+                                        Мужской разряд
+                                    </h4>
+                                    <div class="booking-room-modal__inner-text">
+                                        Наши бани начинаются с просторных раздевалок и комфортных душевых. Время между парениями
+                                        можно провести в зоне отдыха, рассчитанной на 150 человек. Из мужского отделения вы можете
+                                        свободно попасть в общую зону, которая располагается на втором этаже. Посещение общей зоны
+                                        включено в стоимость входного билета.
+                                    </div>
+                                    <div class="booking-room-modal__schedule">
+                                        <div class="booking-room-modal__schedule-item">
+                                            <div class="booking-room-modal__schedule-item-key">
+                                                Будние дни
+                                            </div>
+                                            <div class="booking-room-modal__schedule-item-value">
+                                                800 руб/час
+                                            </div>
+                                        </div>
+                                        <div class="booking-room-modal__schedule-item">
+                                            <div class="booking-room-modal__schedule-item-key">
+                                                Выходные и праздники
+                                            </div>
+                                            <div class="booking-room-modal__schedule-item-value">
+                                                1000 руб/час
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="booking-room-modal__back-btn js-close-modal">
+                                        Вернуться к бронированию
+                                    </a>
+                                </div>
+                                <div class="booking-room-modal__right-col">
+                                    <ul class="booking-room-modal__list">
+                                        <li class="booking-room-modal__list-item">
+                                            <div class="booking-room-modal__card">
+                                                <svg width="14" height="14" aria-hidden="true" class="icon-person">
+                                                    <use xlink:href="#person"></use>
+                                                </svg>
+                                                <h4 class="booking-room-modal__card-title">
+                                                    Вместимость
+                                                </h4>
+                                                <div class="booking-room-modal__card-text">
+                                                    150 гостей
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="booking-room-modal__list-item">
+                                            <div class="booking-room-modal__card">
+                                                <svg width="14" height="14" aria-hidden="true" class="icon-area">
+                                                    <use xlink:href="#area"></use>
+                                                </svg>
+                                                <h4 class="booking-room-modal__card-title">
+                                                    Общая площадь
+                                                </h4>
+                                                <div class="booking-room-modal__card-text">
+                                                    400 м2
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="booking-room-modal__list-item">
+                                            <div class="booking-room-modal__card">
+                                                <svg width="14" height="14" aria-hidden="true" class="icon-time">
+                                                    <use xlink:href="#time"></use>
+                                                </svg>
+                                                <h4 class="booking-room-modal__card-title">
+                                                    Время пребывания
+                                                </h4>
+                                                <div class="booking-room-modal__card-text">
+                                                    слот от 3 часов
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="complex-modal js-modal" id="complex-modal">
+                <div class="complex-modal__inner">
+                    <button class="complex-modal__close js-close-modal">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-cross">
+                            <use xlink:href="#cross"></use>
+                        </svg>
+                    </button>
+                    <ul class="complex-modal__list">
+                        <li class="complex-modal__list-item">
+                            <a href="#" class="complex-modal__card">
+                                <div class="complex-modal__card-image-container">
+                                    <img src="img/complex/1.webp" alt="" class="complex-modal__card-image">
+                                    <div class="complex-modal__card-location">
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-cross">
+                                            <use xlink:href="#location"></use>
+                                        </svg>
+                                        Новорижское шоссе
+                                    </div>
+                                </div>
+                                <div class="complex-modal__card-content">
+                                    <h3 class="complex-modal__card-title">
+                                        “ЖАР-ПТИЦА” НОВАЯ РИГА
+                                    </h3>
+                                    <div class="complex-modal__card-title-text">
+                                        Загородный банный клуб
+                                    </div>
+                                    <div class="complex-modal__card-btn">
+                                        <span class="complex-modal__card-btn-text">
+                                            Перейти
+                                            <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                                <use xlink:href="#medium-arrow-right"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="complex-modal__list-item">
+                            <a href="#" class="complex-modal__card complex-modal__card--disabled">
+                                <div class="complex-modal__card-image-container">
+                                    <img src="img/complex/2.webp" alt="" class="complex-modal__card-image">
+                                    <div class="complex-modal__card-location">
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-cross">
+                                            <use xlink:href="#location"></use>
+                                        </svg>
+                                        Нижняя Масловка, 15
+                                    </div>
+                                </div>
+                                <div class="complex-modal__card-content">
+                                    <h3 class="complex-modal__card-title">
+                                        “ЖАР-ПТИЦА” НИЖНЯЯ МАСЛОВКА
+                                    </h3>
+                                    <div class="complex-modal__card-title-text">
+                                        Банный комплекс
+                                    </div>
+                                    <div class="complex-modal__card-btn">
+                                        <span class="complex-modal__card-btn-text">
+                                            Вы уже тут
+                                            <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                                <use xlink:href="#medium-arrow-right"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>            <style>
+                .ie-placeholder {
+                    z-index: 4000;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #202020;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    
+                }
+                .ie-placeholder__message {
+                    font-size: 2rem;
+                    line-height: 1.2;
+                    font-weight: 500;
+                    margin: auto;
+                }
+                @supports (display: grid) {
+                    .ie-placeholder {
+                        display: none;
+                    }
+                }
+            </style>
+            <div class="ie-placeholder">
+                <div class="ie-placeholder__message">
+                    Извините, ваш браузер не поддерживается
+                </div>
+            </div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://api-maps.yandex.ru/2.1/?apikey=86fba1b3-37fa-493b-9df4-601bc6d4c97c
+&lang=ru_RU" type="text/javascript">
+</script>
+            <script src="js/app.js"></script>
+            <script src="assets/js/backend.js"></script>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,409 @@
+.contacts-page {
+    padding-top: 16rem;
+    padding-bottom: 11rem;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 7.5rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.contacts-page__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9rem;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    font-family: var(--zhar-ptitza);
+    text-align: center;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.8rem;
+        line-height: 120%;
+    }
+}
+
+.contacts-page__heading-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 50rem;
+    text-align: center;
+
+    p {
+        margin-bottom: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 170%;
+        margin-top: .8rem;
+        p {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.contacts-page__map {
+}
+
+.contacts-page__map-wrapper {
+}
+
+.contacts-page__info {
+    width: 33rem;
+    background: #ede8dd;
+    color: #000000;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    margin: 7rem 0;
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-self: flex-end;
+        z-index: 5;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: auto;
+        padding: 2.8rem 3rem;
+        text-align: center;
+        align-items: center;
+        padding-top: 4.5rem;
+        margin-top: -1rem;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.contacts-page__info-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 170%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 150%;
+        margin-top: 2rem;
+    }
+}
+
+.contacts-page__phone-link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 180%;
+    position: relative;
+    align-self: flex-start;
+
+    @include breakpoint(mobile) {
+        align-self: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 120%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        transition: transform 0.2s;
+        transform-origin: left center;
+        transform: scaleX(0);
+        margin-top: -0.6rem;
+
+        @include breakpoint(mobile) {
+            transform: scaleX(1);
+            margin: 0;
+        }
+    }
+
+    .no-touch &:hover {
+        &::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.contacts-page__closest {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5rem;
+    margin-top: 3.5rem;
+
+    @include breakpoint(mobile) {
+        align-items: center;
+        margin-top: 2rem;
+    }
+}
+
+.contacts-page__closest-item {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    gap: 0.9rem;
+    svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        fill: currentColor;
+    }
+}
+
+.contacts-page__social-list {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    row-gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 3.5rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 3.5rem;
+    }
+}
+
+.contacts-page__social-list-item {
+    flex-shrink: 0;
+}
+
+.contacts-page__social-link {
+    display: block;
+}
+
+.contacts-page__social-link-icon {
+    display: block;
+    height: 2rem;
+    width: auto;
+    max-width: none;
+}
+
+.contacts-page__map {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 4rem;
+    }
+
+    @include breakpoint(mobile) {
+        margin-top: 2rem;
+    }
+}
+
+.contacts-page__map-wrapper {
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.contacts-page__map-wrapper-inner {
+    width: calc(100vw - var(--sb-width, 0));
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        height: 38rem;
+    }
+}
+
+.contacts-page__map-element {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: lightgrey;
+}
+
+.contacts-page__offices {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 8rem;
+    max-width: 102.5rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        max-width: none;
+        margin-top: 2.5rem;
+    }
+}
+
+.contacts-page__offices-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 13rem;
+    grid-row-gap: 3.2rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 0;
+    }
+}
+
+.contacts-page__offices-list-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(150, 138, 113, 0.5);
+}
+
+.contacts-page__offices-card {
+    padding-bottom: 3rem;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        padding: 2.4rem 0;
+    }
+}
+
+.contacts-page__offices-card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 140%;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 1.2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+}
+
+.contacts-page__offices-card-contacts-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 0.7rem;
+}
+
+.contacts-page__offices-card-contacts-list-item {
+    display: grid;
+    grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        grid-template-columns: minmax(0, 6rem) minmax(0, 1fr);
+        font-size: 1.4rem;
+        line-height: 140%;
+    }
+}
+
+.contacts-page__offices-card-contacts-value {
+    justify-self: flex-start;
+    &[href] {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            height: 1px;
+            background-color: currentColor;
+            transition: transform 0.4s;
+            transform-origin: left center;
+            transform: scaleX(0);
+            margin-top: -0.2rem;
+        }
+
+        &:hover {
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        &[href^="tel:"] {
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+
+
+.contacts-page__plan {
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 500;
+   
+    font-size: 1.8rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    margin-top: 3rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 1px;
+        top: 100%;
+        width: 100%;
+        background-color: currentColor;
+        transition: transform .2s;
+        transform-origin: left center;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        margin-top: 2rem;
+        align-self: center;
+       
+    }
+    .no-touch &:hover,
+    .touch &:active {
+        text-decoration-color: transparent;
+        &::before {
+            transform: scaleX(0);
+        }
+    }
+}

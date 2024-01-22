@@ -1,0 +1,173 @@
+.my-checkout {
+
+    &__return {
+        margin-bottom: 4.6rem;
+        color: #968a71;
+    }
+
+    &__btn-back {
+        display: flex;
+        align-items: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        gap: 1.1rem;
+        line-height: 140%;
+        transition: all .2s;
+
+        svg {
+            fill: currentColor;
+            width: 1.5em;
+            height: auto;
+            margin-top: 0.2em;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 2.5rem;
+
+        &__left {
+
+        }
+
+    
+    }
+
+    &__code {
+        margin-left: auto;
+        padding-left: 2rem;
+
+        &__label {
+            font-size: 1.4rem;
+            font-weight: 450;
+            line-height: 1.4;
+        }
+
+        &__value {
+            margin-top: .5rem;
+            font-size: 4rem;
+            font-family: var(--zhar-ptitza);
+            color: #3A241F;
+        }
+    }
+
+    &__title {
+        margin-bottom: .7rem;
+        font-size: 4rem;
+        font-family: var(--zhar-ptitza);
+        line-height: 1.4;
+        color: #3A241F;
+    }
+
+    &__props {
+        display: flex;
+        gap: 2rem;
+        font-size: 2rem;
+        font-weight: 450;
+        line-height: 1.4;
+
+        dl {
+            display: inline-flex;
+            gap: 1rem;
+        }
+        
+        dd {
+            font-weight: 700;
+        }
+    }
+    
+    &__footer {
+        text-align: right;
+        font-weight: 700;
+    }
+
+    &__discount {
+        margin-top: 2.5rem;
+        font-size: 1.4rem;
+    }
+
+    &__total {
+        margin-top: 0.5rem;
+        font-size: 2rem;
+    }
+
+    &__status {
+        margin-top: 2.3rem;
+        font-size: 1.4rem;
+        color: #968A71;
+    }
+
+    
+}
+
+@media only screen and (max-width: 640px) {
+
+    .my-checkout {
+
+        &__return {
+            margin-bottom: 2.5rem;
+        }
+
+        &__btn-back {
+            font-size: 1.8rem;
+            line-height: 1.2;
+
+            svg {
+                width: 1em;
+            }
+        }
+
+        &__header {
+            display: block;
+        }
+
+        &__title {
+            margin-bottom: 2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        &__code {
+            margin-top: 3rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: right;
+            gap: 1.3rem;
+
+            &__label {
+                font-size: 2.2rem;
+            }
+
+            &__value {
+                margin-top: 0;
+                font-size: 3.2rem;
+                line-height: 1;
+            }
+        }
+
+        &__props {
+            font-size: 1.8rem;
+            display: block;
+            line-height: 1.2;
+
+            dl {
+                margin-top: 1.2rem;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+
+
+       
+        &__total {
+            font-size: 1.8rem;
+        }
+
+     
+    }
+}

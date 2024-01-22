@@ -1,0 +1,239 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="booking">
+    <div class="container">
+        <div class="booking__content booking__content--wide">
+            <h1 class="booking__heading">
+                Подтверждение заказа
+            </h1>
+            <div class="booking__heading-text">
+                Держим бронь 1:50
+            </div>
+            <div class="booking__inner booking__inner--checkout">
+                <div class="booking__checkout">
+                    <div class="booking__checkout-left-col">
+                        <div class="booking__checkout-info">
+                            <h2 class="booking__checkout-info-heading">
+                                Бронирование на 26.08.22
+                            </h2>
+                            <ul class="booking__checkout-info-list">
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/1.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                    Женский разряд
+                                                </h4>
+                                                <div class="booking__checkout-info-card-text">
+                                                    общая зона посадки
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-summary">
+                                                Слот 08:00 - 11:00 <br>
+                                                10 билетов
+                                            </div>
+                                            <div class="booking__checkout-info-card-price">
+                                                25 000 Руб
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/2.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                    Мужской разряд
+                                                </h4>
+                                                <div class="booking__checkout-info-card-text">
+                                                    vip-комната на 6 человек
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-summary">
+                                                Слот 08:00 - 11:00 <br>
+                                                1шт.
+                                            </div>
+                                            <div class="booking__checkout-info-card-price">
+                                                2 500 Руб
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="booking__checkout-actions">
+                                <a href="#" class="booking__checkout-back-link">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                    изменить бронирование
+
+                                </a>
+                                <div class="booking__checkout-total">
+                                    <div class="booking__checkout-total-discount">
+                                        <div class="booking__checkout-total-discount-title">
+                                            Скидка:
+                                        </div>
+                                        <div class="booking__checkout-total-discount-value">
+                                            - 5 000 Руб
+                                        </div>
+                                    </div>
+                                    <div class="booking__checkout-total-price">
+                                        <div class="booking__checkout-total-price-title">
+                                            Итого:
+                                        </div>
+                                        <div class="booking__checkout-total-price-value">
+                                            10 000 Руб
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="booking__checkout-conditions">
+                                <div class="booking__checkout-conditions-cards">
+                                    <h4 class="booking__checkout-conditions-cards-title">
+                                        Принимаем к оплате
+
+                                    </h4>
+                                    <ul class="booking__checkout-conditions-cards-list">
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/1.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/2.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/3.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/4.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="booking__checkout-conditions-rules-link">
+                                    Условия покупки билетов
+                                </a>
+                                <a href="#" class="booking__checkout-conditions-payment-info-link">
+                                    Об онлайн-оплате
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking__checkout-right-col">
+                        <form action="/" method="POST" class="booking__checkout-form" data-need-validation="">
+                            <h3 class="booking__checkout-form-heading">
+                                Ваши данные
+                            </h3>
+                            <div class="booking__checkout-form-fields">
+                                <div class="booking__checkout-form-field">
+                                    <input type="tel"
+                                        class="booking__checkout-form-input booking__checkout-form-input--phone js-phone-input"
+                                        placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="text"
+                                        class="booking__checkout-form-input booking__checkout-form-input--name"
+                                        placeholder="Имя" required="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="email"
+                                        class="booking__checkout-form-input booking__checkout-form-input--email"
+                                        placeholder="Email" required="">
+                                </div>
+                            </div>
+                            <div class="booking__checkout-form-promo">
+                                <input type="text" class="booking__checkout-form-promo-input"
+                                    placeholder="Активировать сертификат или промокод">
+                                <button class="booking__checkout-form-promo-btn" type="button">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#medium-arrow-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="booking__checkout-form-submit" type="submit">
+                                Оплатить
+                            </button>
+                            <div class="booking__checkout-form-policy">
+                                <label class="booking__checkout-form-policy-checkbox">
+                                    <input type="checkbox" class="booking__checkout-form-policy-checkbox-input"
+                                        required="" name="policy" value="1">
+                                    <span class="booking__checkout-form-policy-checkbox-content">
+                                        <span class="booking__checkout-form-policy-checkbox-mark">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="booking__checkout-form-policy-checkbox-text">
+                                            Нажимая на кнопку “Оплатить” вы соглашаетесь с условиями <a
+                                                href="#">Публичной
+                                                оферты </a>
+                                        </span>
+                                    </span>
+
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subscribe">
+    <div class="container">
+        <div class="subscribe__content">
+            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+            <h4 class="subscribe__heading">
+                Подписаться на&nbsp;рассылку
+            </h4>
+            <div class="subscribe__heading-text">
+                <p>
+                    Чтобы не пропустить классные акции и предложения
+                </p>
+            </div>
+            <form action="/" method="POST" class="subscribe__form" data-need-validation="" id="subscribe-errors">
+                <div class="subscribe__form-row">
+                    <input type="email" name="email" class="subscribe__form-input" required="" placeholder="Email"
+                        data-parsley-errors-container="#subscribe-errors">
+                    <button class="subscribe__form-submit" type="submit">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}

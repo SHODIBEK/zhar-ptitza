@@ -1,0 +1,256 @@
+.contacts {
+    padding-top: 1.5rem;
+    padding-bottom: 10rem;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
+    .news + & {
+        padding-top: 4rem;
+    }
+
+    .promo-detail + .news + & {
+        padding-top: 16rem;
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 6.4rem;
+        padding-bottom: 4.4rem;
+
+        .news + & {
+            padding-top: 1rem;
+        }
+
+        .gallery + & {
+            padding-top: 0;
+        }
+
+        .promo-detail + .news + & {
+            padding-top: 2rem;
+        }
+    }
+}
+.contacts__content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 114.6rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.contacts__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    @include breakpoint(mobile) {
+        display: contents;
+    }
+}
+
+.contacts__info {
+    width: 44.5rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        display: contents;
+    }
+}
+
+.contacts__map-wrapper {
+    position: relative;
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        order: -9;
+        margin-bottom: 3.2rem;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 65%;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 120%;
+        }
+    }
+}
+
+.contacts__map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ede8dd;
+}
+
+.contacts__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 140%;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 2.5rem;
+    margin-top: -1rem;
+
+    color: #332927;
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4.2rem;
+        line-height: 120%;
+        margin: 0;
+        margin-bottom: 1rem;
+        order: -10;
+    }
+}
+
+.contacts__closest {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5rem;
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.contacts__closest-item {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    gap: 0.9rem;
+    svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        fill: currentColor;
+    }
+}
+
+.contacts__phone-link {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 170%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 120%;
+        position: relative;
+        align-self: flex-start;
+        margin-bottom: 2rem;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 100%;
+            height: 1px;
+            background-color: currentColor;
+            width: 100%;
+        }
+    }
+}
+
+.contacts__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 170%;
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 150%;
+        margin-bottom: 2rem;
+    }
+}
+
+.contacts__location {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 170%;
+    margin-bottom: 2rem;
+}
+
+.contacts__plan {
+    align-self: flex-start;
+    font-style: normal;
+    font-weight: 500;
+
+    font-size: 2rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    margin-bottom: 4.5rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 1px;
+        top: 100%;
+        width: 100%;
+        background-color: currentColor;
+        transition: transform 0.2s;
+        transform-origin: left center;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        margin-bottom: 3rem;
+    }
+    .no-touch &:hover,
+    .touch &:active {
+        text-decoration-color: transparent;
+        &::before {
+            transform: scaleX(0);
+        }
+    }
+}
+
+.contacts__social-list {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    row-gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.contacts__social-link {
+    display: block;
+}
+
+.contacts__social-link-icon {
+    display: block;
+    height: 2rem;
+    width: auto;
+    max-width: none;
+}

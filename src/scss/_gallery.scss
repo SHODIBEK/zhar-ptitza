@@ -1,0 +1,129 @@
+.gallery {
+    padding-top: 8rem;
+    background: #332927;
+    color: white;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 3rem;
+    }
+
+    &:last-child {
+        padding-bottom: 6rem;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 3rem;
+        }
+    }
+
+    .programs + & {
+        background: transparent;
+        padding-top: 0;
+        padding-bottom: 12rem;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 5rem;
+        }
+    }
+
+    .about-intro + & {
+        background: transparent;
+        padding-top: 0;
+        padding-bottom: 12rem;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 4.5rem;
+        }
+    }
+
+    .spa + & {
+        background: white;
+        color: var(--text-color);
+        padding-top: 2.2rem;
+        padding-bottom: 16rem;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 9rem;
+            padding-top: 6rem;
+        }
+    }
+}
+
+.gallery__slider {
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: max-content;
+        margin: 0 3.6rem;
+
+        @include breakpoint(mobile) {
+            margin: 0 1.2rem;
+        }
+    }
+
+    // .swiper-wrapper {
+    //     transition-timing-function: linear !important;
+    // }
+}
+
+.gallery__slider-card {
+    position: relative;
+    overflow: hidden;
+
+    &--type-1 {
+        width: 32.8rem;
+
+        @include breakpoint(mobile) {
+            width: 18.9rem;
+        }
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    &--type-2 {
+        width: 28rem;
+        margin-top: 5.4rem;
+
+        @include breakpoint(mobile) {
+            width: 16.2rem;
+            margin-top: 3rem;
+        }
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 140%;
+        }
+    }
+
+    &--type-3 {
+        width: 40rem;
+        margin-top: 10rem;
+
+        @include breakpoint(mobile) {
+            width: 23.4rem;
+            margin-top: 6rem;
+        }
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 60%;
+        }
+    }
+}
+
+.gallery__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+}

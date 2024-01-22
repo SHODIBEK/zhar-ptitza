@@ -1,0 +1,88 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="form-page">
+    <div class="container">
+        <div class="form-page__content">
+            <h1 class="form-page__heading">
+                Если не терпится
+            </h1>
+            <div class="form-page__heading-text">
+                <p>
+                    Хотите получить специальное предложение и попасть на открытие грандиозного банного комплекса в числе
+                    первых? Заполните форму!
+                </p>
+            </div>
+            <form action="/" method="POST" class="form-page__form" data-need-validation="">
+                <div class="form-page__form-fields">
+                    <div class="form-page__form-field">
+                        <input type="text" class="form-page__form-input form-page__form-input--name" name="your-name"
+                            placeholder="Имя" required="">
+                    </div>
+                    <div class="form-page__form-field">
+                        <input type="tel" class="form-page__form-input form-page__form-input--phone js-phone-input"
+                            name="your-phone" placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="">
+                    </div>
+                    <div class="form-page__form-field form-page__form-field--fullwidth">
+                        <textarea name="your-comment" class="form-page__form-input" placeholder="Комментарий"></textarea>
+                    </div>
+                </div>
+                <div class="form-page__form-policy">
+                    <label class="form-page__form-policy-checkbox">
+                        <input type="checkbox" value="Y" class="form-page__form-policy-checkbox-input" name="policy" required="" checked="">
+                        <span class="form-page__form-policy-checkbox-mark">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                                <use xlink:href="#checkmark"></use>
+                            </svg>
+                        </span>
+
+                        <span class="form-page__form-policy-checkbox-text form-page__form-policy-checkbox-text--desktop">
+                            Я ознакомился и подтверждаю согласие с Политикой конфидициальности и условия использования
+                            cookies, и даю согласие на обработку моих персональных данных.
+                        </span>
+                        <span class="form-page__form-policy-checkbox-text form-page__form-policy-checkbox-text--mobile">
+                          Я ознакомился <a href="#">с условиями</a> посещения
+                        </span>
+                       
+                    </label>
+                </div>
+                <button class="form-page__form-submit" type="submit">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="subscribe">
+    <div class="container">
+        <div class="subscribe__content">
+            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+            <h4 class="subscribe__heading">
+                Подписаться на&nbsp;рассылку
+            </h4>
+            <div class="subscribe__heading-text">
+                <p>
+                    Чтобы не пропустить классные акции и предложения
+                </p>
+            </div>
+            <form action="/" method="POST" class="subscribe__form" data-need-validation="" id="subscribe-errors">
+                <div class="subscribe__form-row">
+                    <input type="email" name="email" class="subscribe__form-input" required="" placeholder="Email"
+                        data-parsley-errors-container="#subscribe-errors">
+                    <button class="subscribe__form-submit" type="submit">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}

@@ -1,0 +1,393 @@
+.intro {
+    position: relative;
+    // z-index: 50;
+    color: white;
+
+    .container {
+        pointer-events: none;
+    }
+}
+
+.intro__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // backface-visibility: hidden;
+    // transform: translateZ(0);
+    // z-index: -1;
+}
+
+.intro__parallax-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intro__bg-slider {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+
+    .swiper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    .swiper-wrapper {
+        flex-grow: 1;
+    }
+
+    .swiper-slide {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+    }
+}
+
+.intro__bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro__bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+    &.playing {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+}
+
+.intro__content {
+    padding: 10rem 0;
+    min-height: min(100vh, 108rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+        min-height: 100vh;
+
+        min-height: 50rem;
+        min-height: var(--client-height, 100vh);
+    }
+}
+
+.intro__content-slider {
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.intro__controls {
+    display: contents;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        z-index: 100;
+        // position: absolute;
+        // bottom: 1.8rem;
+        // width: auto;
+        // left: 50%;
+        // transform: translateX(-50%);
+        max-width: 100%;
+        padding-bottom: 7rem;
+    }
+}
+
+.intro__contacts {
+    pointer-events: all;
+    @include breakpointMF(small-tablet) {
+        position: fixed;
+        z-index: 120;
+        top: 50%;
+        transform: translateY(-50%) translateZ(0);
+        right: 1.5rem;
+
+        @supports (width: 100svw) {
+            left: 100svw;
+            right: auto;
+            margin-left: -3.5rem;
+            transform: translateY(-50%) translateX(-100%) translateZ(0);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: 1.8rem;
+    }
+}
+
+.intro__contacts-list {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        flex-direction: row;
+    }
+}
+
+.intro__contacts-list-item {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.intro__contacts-link {
+    width: 6rem;
+    height: 6rem;
+    border-top: 1px solid #bbae9b;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2d8c0;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    @include breakpoint(mobile) {
+        width: 5rem;
+        height: 5rem;
+        border: none;
+        border-right: 1px solid #bbae9b;
+    }
+
+    svg {
+        width: 3rem;
+        height: 3rem;
+
+        transition: fill 0.2s, stroke 0.2s;
+
+        stroke: #3a241f;
+        stroke-width: 1px;
+
+        @include breakpoint(mobile) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    .intro__contacts-list-item:first-child & {
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        padding-top: 0.5rem;
+
+        @include breakpointMF(small-tablet) {
+            border: none;
+        }
+
+        @include breakpoint(mobile) {
+            padding: 0;
+            border-radius: 0;
+            border-top-left-radius: 3rem;
+            border-bottom-left-radius: 3rem;
+        }
+    }
+    .intro__contacts-list-item:last-child & {
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+
+        padding-bottom: 0.5rem;
+
+        @include breakpoint(mobile) {
+            padding: 0;
+            border-radius: 0;
+            border-top-right-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            border: none;
+        }
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: #bbae9b;
+        border-color: #bbae9b;
+        // svg {
+        //     fill: #e2d8c0;
+        // }
+
+        svg {
+            stroke: white;
+        }
+    }
+}
+
+.intro__pagination {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%);
+    z-index: 40;
+    bottom: 3.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    gap: 1.8rem;
+    pointer-events: all;
+
+    @include breakpoint(mobile) {
+        position: static;
+        gap: 1.4rem;
+        transform: none;
+        order: -1;
+    }
+
+    .swiper-pagination-bullet {
+        margin: 0 !important;
+        width: 0.8rem;
+        height: 0.8rem;
+        opacity: 1 !important;
+        background: rgba(255, 255, 255, 0.36);
+        position: relative;
+
+        @include breakpoint(mobile) {
+            width: 0.6rem;
+            height: 0.6rem;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 1.9rem;
+            height: 1.9rem;
+            background-image: url('../img/diamond-shape.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.2s;
+
+            @include breakpoint(mobile) {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+        }
+
+        &.swiper-pagination-bullet-active {
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+}
+
+.intro__content-slider-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+.intro__content-slider-card-logo {
+    width: 12.3rem;
+    height: auto;
+    margin-bottom: 3.8rem;
+
+    @include breakpoint(mobile) {
+        width: 10rem;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.intro__content-slider-card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.4rem;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: var(--zhar-ptitza);
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-size: 2.4rem;
+        line-height: 120%;
+
+        font-size: 2.8rem;
+    }
+}
+
+.intro__content-slider-title-logo {
+    height: 6.2rem;
+    width: auto;
+    margin-bottom: 0.7rem;
+    margin-top: 0.7rem;
+
+    @include breakpoint(mobile) {
+        height: 2.8rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.intro__content-slider-card-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    max-width: 53rem;
+    margin-top: 0.6rem;
+
+    @include breakpointMF(small-tablet) {
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150.2%;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 120%;
+
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150.2%;
+    }
+}

@@ -1,0 +1,419 @@
+.room {
+    padding-top: 13rem;
+    padding-bottom: 16rem;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 5rem;
+        padding-bottom: 6.5rem;
+    }
+}
+
+.room__top-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.7rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.room__breadcrumbs {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+    color: rgba(150, 138, 113, 0.5);
+
+    a {
+        &:not(:last-child) {
+            &::after {
+                content: ' / ';
+            }
+        }
+    }
+}
+
+.room__slider-arrows {
+    gap: 2.2rem;
+    display: flex;
+    align-items: center;
+
+    justify-content: flex-end;
+    @include breakpoint(mobile) {
+        gap: 1.6rem;
+    }
+}
+
+.room__slider-arrow {
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+    svg {
+        width: 4rem;
+        height: 3rem;
+        display: block;
+        fill: #000000;
+
+        @include breakpoint(mobile) {
+            width: 2.8rem;
+            height: 2.1rem;
+        }
+    }
+}
+
+.room__slider {
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 61rem;
+        margin: 0 1.5rem;
+
+        @include breakpoint(mobile) {
+            width: 80%;
+            margin: 0;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.room__slider-card {
+    position: relative;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    overflow: hidden;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 65%;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 100%;
+        }
+    }
+}
+
+.room__slider-card-parallax {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.room__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room__content {
+    @include breakpointMF(small-tablet) {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 100rem;
+        display: flex;
+        gap: 5rem;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.room__left-col {
+    @include breakpointMF(small-tablet) {
+        width: 50%;
+        flex-grow: 1;
+    }
+
+    @include breakpoint(mobile) {
+        display: contents;
+    }
+}
+
+.room__right-col {
+    @include breakpointMF(small-tablet) {
+        flex-shrink: 0;
+        width: 16rem;
+        padding-top: 7rem;
+    }
+
+    @include breakpoint(mobile) {
+        display: contents;
+    }
+}
+
+.room__heading-block {
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(mobile) {
+        order: -10;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.room__heading-block-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 120%;
+    }
+}
+
+.room__heading-block-title {
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--zhar-ptitza);
+    margin-left: -0.02em;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-size: 3.8rem;
+        line-height: 120%;
+    }
+}
+
+.room__desc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 190%;
+    margin-left: 11rem;
+    max-width: 50rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        margin: 0;
+        padding-left: 4rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 140%;
+        margin-top: 4rem;
+    }
+}
+
+.room__schedule {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 7.2rem;
+    row-gap: 3rem;
+    margin-left: 11rem;
+    margin-top: 3rem;
+
+    @include breakpoint(mobile) {
+        gap: 2.5rem;
+        row-gap: 1.2rem;
+        margin: 0;
+        margin-top: 1.2rem;
+        order: -8;
+    }
+}
+
+.room__schedule-item-key {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 0.5rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 120%;
+        margin-bottom: 0;
+    }
+}
+
+.room__schedule-item-value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 170%;
+    }
+}
+
+.room__order-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 1.4rem 2.8rem;
+    width: 27rem;
+    background: #000000;
+    color: white;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 4rem;
+    @include breakpoint(mobile) {
+        padding: 1.1rem 0;
+        text-align: center;
+        margin-top: 1.5rem;
+        width: 100%;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        order: -7;
+        margin: 0;
+        margin-top: 1.5rem;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover {
+        .room__order-link-text {
+            transform: translateX(-1rem);
+
+            svg {
+                opacity: 1;
+                visibility: inherit;
+                transition: opacity 0.2s, visibility 0.2s;
+            }
+        }
+    }
+}
+
+.room__order-link-text {
+    position: relative;
+    transition: transform 0.2s;
+    display: block;
+    svg {
+        position: absolute;
+        left: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0s linear 0.2s;
+        fill: currentColor;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0.2rem;
+    }
+}
+
+.room__features-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 2.5rem;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        order: -9;
+    }
+}
+
+.room__features-card {
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    svg {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        fill: #b7a98a;
+        margin-bottom: 0.5rem;
+
+        @include breakpoint(mobile) {
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: 0;
+        }
+    }
+}
+
+.room__features-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    color: #b7a98a;
+    margin-bottom: 0.3rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.room__features-card-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 140%;
+        color: #b7a98a;
+    }
+}
+
+.room__desc-title {
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 140%;
+        margin-bottom: 0.4rem;
+    }
+}

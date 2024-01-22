@@ -1,0 +1,100 @@
+.my-menu {
+    background: #EDE8DD;
+    padding: 2.5rem 2rem;
+
+    &__header {
+        margin-bottom: 2.2rem;
+    }
+
+    &__title {
+        font-family: var(--zhar-ptitza);
+        font-size: 4rem;
+        line-height: 1.4;
+    }
+
+    &__name {
+        font-size: 2rem;
+        line-height: 1.4;
+        color: #3A241F;
+    }
+
+    &__links {
+        border-top: 1px solid rgba(206, 193, 163, 0.5);
+        color: #968A71;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        padding: 2rem 3.6rem;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.4;
+        border-bottom: 1px solid rgba(206, 193, 163, 0.5);
+
+        &.active,
+        &:hover {
+            color: #000;
+        }
+    }
+
+    &__icon-diamond {
+        width: .9em;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &__icon-right {
+        width: 1.35em;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    &__btn-quit {
+        margin-top: 3rem;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        transition: background-color .2s,color .2s,border-color .2s;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        text-align: center;
+        padding: 1.4rem 2.8rem;
+        color: #000;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .my-menu {
+        padding: 2.5rem var(--content-padding);
+
+
+        &__title {
+            font-size: 3.2rem;
+        }
+
+        &__name {
+            font-size: 1.8rem;
+        }
+
+        &__link {
+            font-size: 1.8rem;
+        }
+
+        &__quit {
+            font-size: 1.4rem;
+        }
+    }
+}

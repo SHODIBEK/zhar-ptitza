@@ -1,0 +1,135 @@
+.my-card {
+    display: flex;
+
+
+
+    &__plastic {
+        min-width: 42rem;
+        padding: 2.5rem;
+        border: 1px solid #CEC1A3;
+        border-radius: 28px;
+    }
+
+    &__title {
+        font-size: 4rem;
+        font-family: var(--zhar-ptitza);
+    }
+
+    &__props {
+        display: flex;
+        margin-top: .5rem;
+    }
+
+    &__prop {
+        flex: 0 0 auto;
+        padding-right: 2rem;
+        width: 50%;
+
+        &__label {
+            font-size: 1.6rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        &__value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: .2rem;
+        }
+    }
+
+    &__wallets {
+        display: flex;
+        margin: 1.5rem 0;
+    }
+
+    &__wallet {
+        flex: 0 0 auto;
+        width: 50%;
+        padding-right: 2rem;
+        
+        &__btn {
+            display: flex;
+            align-items: center;
+        }
+
+        &__img {
+            width: 4.7rem;
+        }
+
+        &__text {
+            padding-left: 1.16em;
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        &__name {
+            text-decoration: underline;
+        }
+    }
+
+
+
+    &__footer {
+        color: #968A71;
+    }
+
+    &__btn-help {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+}
+
+
+
+@media only screen and (max-width: 640px) {
+
+    .my-card {
+        justify-content: center;
+        margin: 3.5rem 0;
+
+        &__plastic {
+            min-width: auto;
+            padding: 1.2rem;
+            border-radius: 1.7rem;
+        }
+
+        &__title {
+            margin-bottom: 1rem;
+            font-size: 2.6rem;
+        }
+
+        &__prop {
+            padding-right: 1rem;
+
+            &__label {
+                font-size: 1.2rem;
+            }
+
+            &__value {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__wallet {
+            padding-right: 1rem;
+
+            &__text {
+                font-size: 1rem;
+            }
+        }
+
+        &__btn-help {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .my-card {
+        display: block;
+    }
+}

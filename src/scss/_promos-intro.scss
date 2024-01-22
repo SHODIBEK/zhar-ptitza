@@ -1,0 +1,313 @@
+.promos-intro {
+    background: #ede8dd;
+    padding-top: 14rem;
+    padding-bottom: 7rem;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 6.4rem;
+        padding-bottom: 1.7rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5.6rem;
+        width: 24rem;
+        height: 50rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-image: url('../img/promo-intro-left-pattern.svg');
+        z-index: -1;
+        pointer-events: none;
+
+        @include breakpoint(mobile) {
+            top: 1.1rem;
+            left: 0;
+            width: 9rem;
+            height: 17rem;
+            background-image: url('../img/promo-intro-left-pattern-mobile.svg');
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -13rem;
+        z-index: -1;
+        pointer-events: none;
+        width: 45rem;
+        height: 45rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-image: url('../img/promo-intro-right-pattern.svg');
+
+        @include breakpoint(mobile) {
+            right: 0;
+            width: 8rem;
+            height: 24.5rem;
+            bottom: 10rem;
+            background-image: url('../img/promo-intro-right-pattern-mobile.svg');
+        }
+    }
+}
+
+.promos-intro__slider {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+}
+
+.promos-intro__slider-wrapper {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.promos-intro__slider-arrow {
+    flex-shrink: 0;
+    width: 5rem;
+    height: 3.7rem;
+    transition: opacity 0.2s;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: #000000;
+        transition: fill 0.2s;
+    }
+
+    .no-touch &:not(.swiper-button-disabled):hover,
+    .touch &:not(.swiper-button-disabled):active {
+        svg {
+            fill: #968a71;
+        }
+    }
+}
+
+.promos-intro__slider-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    grid-gap: 4rem;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 2.6rem;
+    }
+}
+
+.promos-intro__slider-card-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.promos-intro__slider-card-label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 2.7rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 120%;
+        display: flex;
+        margin-bottom: 2rem;
+    }
+    &::before {
+        content: '';
+        width: 2.4rem;
+        height: 2.4rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../img/diamond-shape-black.svg');
+        display: block;
+        margin-bottom: 0.7rem;
+
+        @include breakpoint(mobile) {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-bottom: 0.2rem;
+            align-self: center;
+        }
+    }
+}
+
+.promos-intro__slider-card-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 120%;
+    color: #3a241f;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 2.7rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+.promos-intro__slider-card-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    max-width: 32rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 140%;
+        text-align: center;
+    }
+}
+
+.promos-intro__slider-card-image-wrapper {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 70%;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 60%;
+        }
+    }
+}
+
+.promos-intro__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promos-intro__slider-card-link {
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 120%;
+    gap: 1.5rem;
+    color: #968a71;
+    margin-top: 2rem;
+    align-self: flex-start;
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        gap: 0.8rem;
+        align-self: center;
+    }
+
+    svg {
+        flex-shrink: 0;
+        fill: currentColor;
+        width: 2.7rem;
+        height: 2.1rem;
+        transition: fill 0.2s, transform 0.3s;
+        margin-top: 0.15rem;
+
+        @include breakpoint(mobile) {
+            width: 2.5rem;
+            height: 1.8rem;
+            margin-top: 0.1rem;
+            width: 1.8rem;
+            height: 1.4rem;
+        }
+    }
+    &:link,
+    &:visited {
+        color: #968a71;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        svg {
+            transform: translateX(0.3rem);
+        }
+    }
+}
+
+.promos-intro__slider-pagination {
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    gap: 1.4rem;
+    transform: none;
+    pointer-events: all;
+    margin-top: 1.8rem;
+
+    .swiper-pagination-bullet {
+        margin: 0 !important;
+        width: 0.6rem;
+        height: 0.6rem;
+        opacity: 1 !important;
+        background: rgba(1, 1, 1, 0.2);
+        position: relative;
+
+        @include breakpoint(mobile) {
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 1.4rem;
+            height: 1.4rem;
+            background-image: url('../img/diamond-shape-black.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.2s;
+        }
+
+        &.swiper-pagination-bullet-active {
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+}

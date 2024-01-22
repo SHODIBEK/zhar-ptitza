@@ -1,0 +1,88 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="booking">
+    <div class="container">
+        <div class="booking__content">
+            <h1 class="booking__heading">
+                Бронирование бани
+            </h1>
+            <div class="booking__inner">
+                <h2 class="booking__inner-heading">
+                    Выберите бани
+                </h2>
+                <ul class="booking__variants-list">
+                    <li class="booking__variants-list-item">
+                        <a href="#" class="booking__card">
+                            <div class="booking__card-image-container">
+                                <img src="img/booking/1.jpg" alt="" class="booking__card-image">
+                            </div>
+                            <div class="booking__card-content">
+                                <h3 class="booking__card-title">
+                                    Общественные бани
+                                </h3>
+                                <div class="booking__card-text">
+                                    Мужское и женское отделение с выходом в общую зону
+                                </div>
+                                <div class="booking__card-price">
+                                    от 2000 Руб за гостя
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="booking__variants-list-item">
+                        <a href="#" class="booking__card">
+                            <div class="booking__card-image-container">
+                                <img src="img/booking/2.jpg" alt="" class="booking__card-image">
+                            </div>
+                            <div class="booking__card-content">
+                                <h3 class="booking__card-title">
+                                    Банные номера
+                                </h3>
+                                <div class="booking__card-text">
+                                    Отдельные бани с уникальным дизайном для компаний от 7 гостей
+                                </div>
+                                <div class="booking__card-price">
+                                    от 15000 Руб за 3 часа
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subscribe">
+    <div class="container">
+        <div class="subscribe__content">
+            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+            <h4 class="subscribe__heading">
+                Подписаться на&nbsp;рассылку
+            </h4>
+            <div class="subscribe__heading-text">
+                <p>
+                    Чтобы не пропустить классные акции и предложения
+                </p>
+            </div>
+            <form action="/" method="POST" class="subscribe__form" data-need-validation="" id="subscribe-errors">
+                <div class="subscribe__form-row">
+                    <input type="email" name="email" class="subscribe__form-input" required="" placeholder="Email"
+                        data-parsley-errors-container="#subscribe-errors">
+                    <button class="subscribe__form-submit" type="submit">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}

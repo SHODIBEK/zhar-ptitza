@@ -1,0 +1,130 @@
+.my-promo {
+
+
+    &__header {
+        margin-bottom: 2.5rem;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    &__arrows {
+        margin-left: auto;
+        display: flex;
+        gap: 2.5rem;
+    }
+
+
+    &__arrow {
+
+        &.swiper-button-disabled,
+        &:hover {
+            color: #968A71;
+        }
+
+        svg {
+            width: 3.3rem;
+            height: auto;
+        }
+        
+    }
+
+    &__slider {
+        overflow: hidden;
+
+        .swiper {
+            margin: 0 -1rem;
+        }
+      
+
+        .swiper-slide {
+            width: 33.33%;
+            padding: 0 1rem;
+        }
+    }
+
+    &__item {
+        border-top: .5rem solid #EDE8DD;
+        padding: 2rem 0;
+
+        &:hover {
+            .my-promo__link svg {
+                transform: translateX(0.3rem);
+            }
+        }
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        font-weight: 450;
+        line-height: 1.4;
+    }
+
+    &__desc {
+        margin: 1.5rem 0 3rem 0; 
+        font-size: 1.4rem;
+        font-weight: 450;
+        line-height: 1.4;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.8rem;
+        color: #968a71;
+        line-height: 120%;
+        gap: .8em;
+
+        svg {
+            width: 1.5em;
+            height: auto;
+            flex-shrink: 0;
+            fill: currentColor;
+            transition: transform .2s;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+    .my-promo {
+
+        &__arrows {
+            display: none;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        &__slider {
+            .swiper-slide {
+                width: 50%;
+            }
+        }
+
+        &__name {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        &__desc {
+            margin: 1.2rem 0;
+            font-size: 1.2rem;
+        }
+
+        &__link {
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -1,0 +1,178 @@
+.room-advantages {
+    padding-top: 0;
+    padding-bottom: 12rem;
+    position: relative;
+    background-color: #fff;
+    z-index: 2;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 5rem;
+       
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        pointer-events: none;
+
+        width: 30rem;
+        height: 60rem;
+        background-image: url('../img/ra-bottom-pattern.svg');
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+
+        pointer-events: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        top: -22rem;
+        right: 0;
+        width: 33rem;
+        height: 50rem;
+        background-image: url('../img/ra-top-pattern.svg');
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
+ 
+}
+
+.room-advantages__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-advantages__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 140%;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        color: #3A241F;
+        font-size: 3.2rem;
+        line-height: 100%;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.room-advantages__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 90rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    gap: 3rem;
+    row-gap: 2.5rem;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        margin: 0;
+        margin-bottom: 3.5rem;
+        gap: 1rem;
+    }
+}
+
+.room-advantages__list-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    gap: 0.8rem;
+
+    @include breakpoint(mobile) {
+        gap: 0.4rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    &::before {
+        content: '';
+        flex-shrink: 0;
+        width: 2rem;
+        height: 2rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../img/diamond-shape-black.svg');
+
+        @include breakpoint(mobile) {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+}
+
+.room-advantages__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+.room-advantages__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 140%;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
+        height: 1px;
+        background-color: currentColor;
+        transition: transform 0.2s;
+        width: 100%;
+        pointer-events: none;
+        transform-origin: left center;
+    }
+
+    .no-touch &:hover {
+        &::before {
+            transform: scaleX(0);
+        }
+    }
+}

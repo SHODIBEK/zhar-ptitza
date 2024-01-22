@@ -1,0 +1,160 @@
+.programs {
+    padding-bottom: 12rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 5rem;
+    }
+
+    &:first-child {
+        padding-top: 12rem;
+
+        @include breakpoint(mobile) {
+            padding-top: 8.5rem;
+        }
+    }
+}
+
+.programs__content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 114.9rem;
+}
+
+.programs__block-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9rem;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    font-family: var(--zhar-ptitza);
+    color: #3a241f;
+    margin-bottom: 7rem;
+    text-align: center;
+
+    @include breakpoint(mobile) {
+        font-weight: 400;
+        font-size: 3.8rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+}
+
+.programs__inner-blocks {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 6.5rem;
+
+    @include breakpoint(mobile) {
+        grid-gap: 3rem;
+    }
+}
+
+.programs__inner-block-list {
+    @include breakpointMF(small-tablet) {
+        column-count: 2;
+        column-gap: 12rem;
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 3.5rem;
+    }
+}
+
+.programs__inner-block-list-item {
+    @include breakpointMF(small-tablet) {
+        break-inside: avoid;
+        border-top: 1px solid rgba(226, 216, 192, 0.5);
+    }
+}
+
+.programs__inner-block-card {
+    padding: 2.2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8rem;
+
+    @include breakpoint(mobile) {
+        gap: 3rem;
+        padding: 0;
+    }
+}
+
+.programs__inner-block-card-content {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.programs__inner-block-card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 120%;
+        margin-bottom: 1rem;
+    }
+}
+
+.programs__inner-block-card-duration {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 140%;
+    }
+}
+
+.programs__inner-block-card-desc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 100%;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 140%;
+    }
+}
+
+.programs__inner-block-card-price {
+    flex-shrink: 0;
+    text-align: right;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 140%;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 120%;
+    }
+}
+
+.programs__inner-block-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}

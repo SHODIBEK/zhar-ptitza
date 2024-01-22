@@ -1,0 +1,243 @@
+.about-food {
+    padding-bottom: 14rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 8.5rem;
+    }
+}
+
+.about-food__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    z-index: 10;
+    margin-bottom: 6.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.about-food__image-parallax-wrapper {
+}
+
+.about-food__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-food__content {
+    width: 100%;
+    max-width: 114.6rem;
+    margin: 0 auto;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        max-width: none;
+    }
+}
+
+.about-food__row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        display: contents;
+    }
+}
+
+.about-food__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 120%;
+    font-family: var(--zhar-ptitza);
+    margin-top: -0.5rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        color: #3a241f;
+    }
+}
+
+.about-food__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 170%;
+        margin-bottom: 2rem;
+    }
+    p {
+        margin-bottom: 1.7rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.about-food__link {
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 120%;
+    color: #968a71;
+    gap: 1.1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+        gap: 1rem;
+    }
+
+    &:link,
+    &:visited {
+        color: #968a71;
+    }
+
+    svg {
+        flex-shrink: 0;
+        transition: transform 0.2s;
+        width: 2.4rem;
+        height: 1.8rem;
+        fill: currentColor;
+        margin-top: 0.15rem;
+
+        @include breakpoint(mobile) {
+            margin: 0;
+            width: 1.6rem;
+            height: 1.2rem;
+        }
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        svg {
+            transform: translateX(0.2rem);
+        }
+    }
+}
+
+.about-food__slider {
+    position: relative;
+    @include breakpoint(mobile) {
+        margin-top: 5rem;
+    }
+
+    .swiper-slide {
+        width: 33.33%;
+
+        @include breakpoint(mobile) {
+            width: 15rem;
+            margin: 0 1rem;
+        }
+    }
+}
+
+.about-food__slider-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 20;
+    right: 100%;
+    margin-right: 4.2rem;
+    width: 5rem;
+    height: 3.7rem;
+    transition: opacity 0.2s;
+
+  
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: fill 0.2s;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+    }
+
+    .no-touch &:not(.swiper-button-disabled):hover,
+    .touch &:not(.swiper-button-disabled):active {
+        svg {
+            fill: #968a71;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+.about-food__slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: opacity 0.2s;
+    left: 100%;
+    margin-left: 4.2rem;
+    width: 5rem;
+    height: 3.7rem;
+    z-index: 20;
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+    }
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: fill 0.2s;
+    }
+
+    .no-touch &:not(.swiper-button-disabled):hover,
+    .touch &:not(.swiper-button-disabled):active {
+        svg {
+            fill: #968a71;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.about-food__slider-card {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 60%;
+
+        @include breakpoint(mobile) {
+            padding-bottom: 65%;
+        }
+    }
+}
+
+.about-food__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

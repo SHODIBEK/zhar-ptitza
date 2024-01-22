@@ -1,0 +1,35 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+
+<section class="auth-panel">
+    <div class="container">
+        <form action="#" class="auth-panel__body">
+            <h3 class="auth-panel__title">
+                Войти
+                <br> в личный кабинет
+            </h3>
+
+            <div class="auth-panel__form">
+                <div class="auth-panel__phone">
+                    <input type="tel" class="booking__checkout-form-input booking__checkout-form-input--phone js-phone-input" placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="" inputmode="text">
+                </div>
+
+                <div class="auth-panel__btn-go">
+                    <button class="booking__checkout-form-submit m-0" type="submit">
+                        Продолжить
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-panel__tip">
+                Вводите Ваш номер, даже если вы не регистрировались. После подтверждения номера регистрация произойдет автоматически. 
+            </div>
+        </form>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}
