@@ -147,6 +147,12 @@
     }
 }
 
+.apartments__slider-card--novideo {
+    &::after {
+        display: none;
+    }
+}
+
 .apartments__slider-card-title {
     font-style: normal;
     font-weight: 400;
