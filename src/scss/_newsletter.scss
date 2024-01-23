@@ -39,11 +39,7 @@
     }
 
     &__success {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: calc(100% + 5px);
-        left: 0;
+        margin-top: 0.5rem;
         font-size: 1.2rem;
         transition: opacity 0.3s, visibility 0.3s;
 
@@ -218,7 +214,6 @@
     width: 100%;
     max-width: 45rem;
     margin: 0 auto;
-    margin-bottom: 2rem;
     position: relative;
     @include breakpoint(mobile) {
         max-width: none;
