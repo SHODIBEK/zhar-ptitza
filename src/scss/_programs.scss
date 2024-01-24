@@ -91,13 +91,20 @@
     font-weight: 700;
     font-size: 2rem;
     line-height: 140%;
-    margin-bottom: 1rem;
+    margin: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 
     @include breakpoint(mobile) {
         font-weight: 700;
         font-size: 1.6rem;
         line-height: 120%;
-        margin-bottom: 1rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 }
 
