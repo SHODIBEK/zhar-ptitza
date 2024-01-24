@@ -251,6 +251,9 @@
     font-size: 2rem;
     line-height: 140%;
     margin-bottom: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 
     @include breakpoint(mobile) {
         font-style: normal;

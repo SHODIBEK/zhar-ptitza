@@ -47,6 +47,7 @@ import promosSlider from './promosSlider';
 import promoDetailSlider from './promoDetailSlider';
 import newsletterSlider from './newsletterSlider';
 import newsletter from './newsLetter';
+import './tooltip';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -198,10 +198,10 @@
 }
 
 .complex-modal__card-title {
-    font-size: 1.6rem;
     font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 120%;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     text-align: center;
@@ -223,7 +223,7 @@
     line-height: 140%;
     text-align: center;
     margin-bottom: 1.7rem;
-    color: #a79b84;
+    color: #968a71;
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;

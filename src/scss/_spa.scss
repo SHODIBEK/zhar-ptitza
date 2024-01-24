@@ -1,6 +1,7 @@
 .spa {
     background-color: #fff;
     position: relative;
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -154,7 +155,7 @@
     gap: 0.6rem;
     flex-shrink: 0;
     white-space: nowrap;
-    transition: border-color .2s;
+    transition: border-color 0.2s;
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
@@ -177,8 +178,6 @@
     .no-touch &:hover,
     .touch &:active {
         border-color: var(--text-color);
-      
-
     }
 }
 

@@ -1,0 +1,28 @@
+.tippy-box {
+    color: inherit;
+    line-height: inherit;
+    border-radius: 0;
+    text-align: center;
+    background-color: var(--primary-color);
+}
+
+.tippy-content {
+    padding: 2rem;
+}
+
+.tippy-arrow {
+    color: var(--primary-color);
+}
+
+.tooltip-button {
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid;
+    display: inline-block;
+    line-height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    color: #b7a98a;
+    cursor: pointer;
+}
