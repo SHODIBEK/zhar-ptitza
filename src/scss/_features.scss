@@ -35,7 +35,7 @@
     margin: 0 auto;
     max-width: 102.5rem;
     display: grid;
-
+    align-items: center;
     grid-template-columns: minmax(0, 1.26fr) minmax(0, 1fr);
     grid-gap: 13.7rem;
 
@@ -49,7 +49,7 @@
 }
 
 .features__left-col {
-    padding-top: 5.4rem;
+    padding-top: 10rem;
     @include breakpoint(mobile) {
         padding-left: 4rem;
         padding-top: 0;
@@ -64,8 +64,24 @@
     }
 }
 
-.features__right-col {
+.features__left-about {
+    padding-top: 4rem;
     @include breakpoint(mobile) {
+        padding-top: 0;
+    }
+}
+
+.features__left-room {
+    padding-top: 7rem;
+    @include breakpoint(mobile) {
+        padding-top: 0;
+    }
+}
+
+.features__right-col {
+    padding-top: 5.4rem;
+    @include breakpoint(mobile) {
+        padding-top: 0;
         padding-right: 5rem;
 
         &--mobile-right-aligned {
@@ -140,7 +156,6 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     margin-bottom: 2.5rem;
-    margin-top: 5.4rem;
 
     &::before {
         content: '';
