@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: column;
 
-
     @include breakpoint(mobile) {
         .swiper {
             overflow: visible;
@@ -162,7 +161,7 @@
     line-height: 2rem;
     padding: 1.4rem 2.8rem;
     width: 25rem;
-    background: #000000;
+    background: var(--text-color);
     color: white;
     transition: background-color 0.2s, color 0.2s;
     margin-top: 9rem;

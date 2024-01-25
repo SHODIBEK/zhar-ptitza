@@ -62,7 +62,7 @@
         width: 4rem;
         height: 3rem;
         display: block;
-        fill: #000000;
+        fill: var(--text-color);
 
         @include breakpoint(mobile) {
             width: 2.8rem;
@@ -289,7 +289,7 @@
     line-height: 2rem;
     padding: 1.4rem 2.8rem;
     width: 27rem;
-    background: #000000;
+    background: var(--text-color);
     color: white;
     transition: background-color 0.2s, color 0.2s;
     margin-top: 4rem;

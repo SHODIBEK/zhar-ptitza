@@ -26,7 +26,7 @@
     line-height: 120%;
     letter-spacing: 0.05em;
     font-family: var(--zhar-ptitza);
-    color: #000;
+    color: var(--text-color);
     text-align: center;
     @include breakpointMF(small-tablet) {
         text-transform: uppercase;
@@ -327,7 +327,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     font-style: normal;
     font-weight: 500;
@@ -335,7 +335,7 @@
     line-height: 2rem;
     text-align: center;
     padding: 1.4rem 2.8rem;
-    color: #000000;
+    color: var(--text-color);
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -350,7 +350,7 @@
     }
 
     &--filled {
-        background-color: #000;
+        background-color: var(--text-color);
         color: #fff;
         font-weight: 700;
         &:link,

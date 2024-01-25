@@ -1,25 +1,24 @@
 .tippy-box[data-theme~='custom'] {
     background: #ede8dd;
-    border-radius: .5em;
+    border-radius: 0.5em;
     font-size: 1rem;
-    
 
-    &[data-placement^='bottom']{
-        transform: translateY(.5em);
+    &[data-placement^='bottom'] {
+        transform: translateY(0.5em);
     }
 
-    &[data-placement^='top']{
-        transform: translateY(-.5em);
+    &[data-placement^='top'] {
+        transform: translateY(-0.5em);
     }
 
     .tippy-content {
         max-width: 22em;
         padding: 1em;
         text-align: center;
-        color: #000;
+        color: var(--text-color);
     }
 
-    .tippy-arrow{
+    .tippy-arrow {
         color: #ede8dd;
     }
 }

@@ -53,8 +53,6 @@
     margin-bottom: 1.8rem;
     font-family: var(--zhar-ptitza);
     color: #3a241f;
-    
-    
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -119,7 +117,7 @@
     height: 3.7rem;
     width: 100%;
     font: inherit;
-    color: #000000;
+    color: var(--text-color);
     display: block;
     font-style: normal;
     font-weight: 500;
@@ -163,7 +161,7 @@
     }
 
     @include placeholder {
-        color: #000000;
+        color: var(--text-color);
     }
 }
 
@@ -281,7 +279,7 @@ textarea.form-page__form-input {
     text-align: center;
     align-self: center;
     padding: 1.4rem 2.8rem;
-    background-color: #000;
+    background-color: var(--text-color);
     color: white;
     width: 30rem;
     margin-top: 3rem;
@@ -304,10 +302,8 @@ textarea.form-page__form-input {
     align-items: center;
     gap: 2.8rem;
     row-gap: 1.4rem;
- 
 
     @include breakpoint(mobile) {
-        
         gap: 2.4rem;
         row-gap: 1.2rem;
     }
@@ -332,7 +328,7 @@ textarea.form-page__form-input {
     display: block;
     max-width: none;
     object-fit: contain;
-    transition: transform .4s;
+    transition: transform 0.4s;
 
     @include breakpoint(mobile) {
         height: 2.2rem;

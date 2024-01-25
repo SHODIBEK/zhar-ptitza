@@ -957,10 +957,10 @@
     }
 
     &:not([disabled]):hover {
-        border-color: #000000;
+        border-color: var(--text-color);
 
         svg {
-            fill: #000000;
+            fill: var(--text-color);
         }
     }
 }
@@ -1074,7 +1074,7 @@
     line-height: 140%;
     color: white;
     padding: 1.3rem 2.6rem;
-    background: #000000;
+    background: var(--text-color);
 
     &:link,
     &:visited {
@@ -1102,7 +1102,7 @@
         border: 1px solid black;
         text-align: center;
         padding: 1rem 1.5rem;
-        background-color: #000;
+        background-color: var(--text-color);
     }
 }
 
@@ -1508,7 +1508,7 @@
 
 .booking__checkout-form {
     background: #ede8dd;
-    color: #000000;
+    color: var(--text-color);
     padding: 2.6rem;
     padding-top: 3.6rem;
 
@@ -1640,7 +1640,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #000000;
+    background: var(--text-color);
     color: white;
     margin-top: 3rem;
     display: block;
@@ -1818,8 +1818,6 @@
         display: block;
         padding-bottom: 56.25%;
     }
-
-   
 }
 
 .booking__room-slider-card-image-overlay {
@@ -1998,7 +1996,7 @@
     text-align: center;
     width: 13.2rem;
     height: 3.4rem;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -2020,7 +2018,7 @@
     align-items: center;
     width: 13.2rem;
     height: 3.4rem;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     flex-shrink: 0;
     padding: 0 0.5rem;
 

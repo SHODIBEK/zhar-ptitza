@@ -1,5 +1,5 @@
 .my-menu {
-    background: #EDE8DD;
+    background: #ede8dd;
     padding: 2.5rem 2rem;
 
     &__header {
@@ -15,12 +15,12 @@
     &__name {
         font-size: 2rem;
         line-height: 1.4;
-        color: #3A241F;
+        color: #3a241f;
     }
 
     &__links {
         border-top: 1px solid rgba(206, 193, 163, 0.5);
-        color: #968A71;
+        color: #968a71;
     }
 
     &__link {
@@ -34,12 +34,12 @@
 
         &.active,
         &:hover {
-            color: #000;
+            color: var(--text-color);
         }
     }
 
     &__icon-diamond {
-        width: .9em;
+        width: 0.9em;
         position: absolute;
         top: 50%;
         left: 0;
@@ -59,18 +59,18 @@
         display: block;
         align-items: center;
         justify-content: center;
-        border: 1px solid #000;
-        transition: background-color .2s,color .2s,border-color .2s;
+        border: 1px solid var(--text-color);
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2rem;
         text-align: center;
         padding: 1.4rem 2.8rem;
-        color: #000;
+        color: var(--text-color);
 
         &:hover {
-            background: #000;
+            background: var(--text-color);
             color: #fff;
         }
     }
@@ -79,7 +79,6 @@
 @media only screen and (max-width: 640px) {
     .my-menu {
         padding: 2.5rem var(--content-padding);
-
 
         &__title {
             font-size: 3.2rem;

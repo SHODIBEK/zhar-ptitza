@@ -15,7 +15,7 @@
     font-weight: 700;
     font-size: 4rem;
     line-height: 1.4;
-    color: #000;
+    color: var(--text-color);
 
     @include breakpoint(mobile) {
         font-weight: 700;
@@ -62,7 +62,7 @@
     }
 
     &.active {
-        border-color: #000000;
+        border-color: var(--text-color);
     }
     &::before {
         content: '';

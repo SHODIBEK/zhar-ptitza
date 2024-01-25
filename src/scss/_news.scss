@@ -49,7 +49,7 @@
         font-size: 3.8rem;
         line-height: 1.1;
         margin-bottom: 3rem;
-        color: #000000;
+        color: var(--text-color);
         text-align: center;
         font-size: 3.8rem;
         line-height: 1;
@@ -215,7 +215,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     font-style: normal;
     font-weight: 500;
@@ -223,7 +223,7 @@
     line-height: 2rem;
     text-align: center;
     padding: 1.4rem 2.8rem;
-    color: #000000;
+    color: var(--text-color);
     margin-top: 3rem;
     align-self: center;
     width: 30rem;
@@ -245,7 +245,7 @@
     }
 
     &--filled {
-        background-color: #000;
+        background-color: var(--text-color);
         color: #fff;
         font-weight: 700;
         &:link,

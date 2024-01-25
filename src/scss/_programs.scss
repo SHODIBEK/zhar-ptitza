@@ -69,11 +69,23 @@
 }
 
 .programs__inner-block-details {
+    font-style: normal;
+    font-weight: 500;
     font-size: 2rem;
-    line-height: 1.4;
+    line-height: 120%;
+    color: #968a71;
+    font-family: var(--avenir);
+
+    &:not(:last-child) {
+        margin-bottom: 1.6rem;
+    }
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 
     p {
@@ -155,7 +167,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 100%;
+    line-height: 120%;
     margin: 0;
 
     &:not(:last-child) {
@@ -182,6 +194,14 @@
     }
 }
 
+.programs__inner-block__header {
+    margin-bottom: 1.6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1rem;
+    }
+}
+
 .programs__inner-block-heading {
     font-style: normal;
     font-weight: 700;
@@ -191,96 +211,72 @@
     font-family: var(--zhar-ptitza);
     margin: 0;
 
-    &:not(:last-child) {
-        margin-bottom: 1.6rem;
-    }
-
     @include breakpoint(mobile) {
         font-weight: 700;
         font-size: 2rem;
         line-height: 140%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-
-        &:not(:last-child) {
-            margin-bottom: 1rem;
-        }
     }
 }
 
 .programs__inner-block-subtitle {
+    margin-bottom: 1.6rem;
     font-style: normal;
     font-weight: 500;
     font-size: 2rem;
     line-height: 120%;
-    color: #000;
+    color: #968a71;
     font-family: var(--avenir);
 
-    &:not(:last-child) {
-        margin-bottom: 1.6rem;
-    }
-
     @include breakpoint(mobile) {
+        margin-bottom: 1rem;
         font-size: 1.4rem;
-
-        &:not(:last-child) {
-            margin-bottom: 1rem;
-        }
     }
 }
 
 .programs__cta {
     background: var(--primary-color);
-    padding: 3rem 10.625rem 2.125rem;
+    padding: 3rem 6rem;
     margin-top: 1rem;
     font-size: 2rem;
-    line-height: 1.4;
+    line-height: 140%;
+    text-align: center;
 
     &:not(:last-child) {
         margin-bottom: 3.875rem;
     }
 
     @include breakpoint(mobile) {
-        padding: 1rem;
+        padding: 2rem;
         margin-top: 2rem;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+        line-height: 120%;
 
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
     }
 
-    &-title {
-        margin: 0;
-        text-align: center;
-
+    p {
         &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-
-        @include breakpoint(mobile) {
-            margin: 2rem;
-        }
-    }
-
-    &-block {
-        text-align: center;
-
-        @include breakpoint(mobile) {
-            margin: 2rem;
+            margin-bottom: 1rem;
         }
     }
 
     &-subtitle {
-        margin: 0;
         font-weight: bold;
     }
 
     &-link {
-        margin-top: 15px;
+        margin: 2rem;
 
-        &:not(:last-child) {
-            margin-bottom: 15px;
+        .spa__link-text svg {
+            margin-top: 0;
+        }
+
+        @include breakpoint(mobile) {
+            width: calc(100% - 4rem);
         }
     }
 }

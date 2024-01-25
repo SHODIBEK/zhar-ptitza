@@ -298,8 +298,8 @@
     display: block;
     width: 100%;
     padding: 1.2rem 2.4rem;
-    color: #FFFFFF;
-    background: #000000;
+    color: #ffffff;
+    background: var(--text-color);
 
     @include breakpointMF(small-tablet) {
         display: none;

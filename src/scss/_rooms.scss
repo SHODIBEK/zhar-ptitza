@@ -4,7 +4,6 @@
     background-color: #fff;
     z-index: 2;
 
-
     padding-bottom: 30rem;
 
     &--short-padding {
@@ -94,7 +93,6 @@
     text-transform: uppercase;
     font-family: var(--zhar-ptitza);
 
-
     font-style: normal;
     font-weight: 700;
     font-size: 6rem;
@@ -102,7 +100,6 @@
     text-align: center;
     text-transform: uppercase;
     font-family: var(--zhar-ptitza);
-    
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -199,7 +196,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    border: 1px solid var(--text-color);
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     font-style: normal;
     font-weight: 500;
@@ -207,7 +204,7 @@
     line-height: 2rem;
     text-align: center;
     padding: 1.4rem 2.8rem;
-    color: #000000;
+    color: var(--text-color);
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -215,7 +212,6 @@
         font-size: 1.1rem;
         line-height: 140%;
         padding: 1rem 2rem;
-        
     }
     &:link,
     &:visited {
@@ -223,7 +219,7 @@
     }
 
     &--filled {
-        background-color: #000;
+        background-color: var(--text-color);
         color: #fff;
         font-weight: 700;
         &:link,
@@ -239,23 +235,22 @@
             svg {
                 opacity: 1;
                 visibility: inherit;
-                transition: opacity .2s, visibility .2s;
+                transition: opacity 0.2s, visibility 0.2s;
             }
         }
     }
 }
 
-
 .rooms__card-btn-text {
     position: relative;
-    transition: transform .2s;
+    transition: transform 0.2s;
     display: block;
     svg {
         position: absolute;
         left: 100%;
         opacity: 0;
         visibility: hidden;
-        transition: opacity .2s, visibility 0s linear .2s;
+        transition: opacity 0.2s, visibility 0s linear 0.2s;
         fill: currentColor;
         width: 2rem;
         height: 2rem;
