@@ -255,3 +255,7 @@ select:-webkit-autofill:focus {
         }
     }
 }
+
+.overflow-unset {
+    overflow: unset !important;
+}

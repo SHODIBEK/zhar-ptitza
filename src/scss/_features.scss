@@ -36,7 +36,7 @@
     max-width: 102.5rem;
     display: grid;
 
-    grid-template-columns: minmax(0, 1.26fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 13.7rem;
 
     @include breakpoint(mobile) {
@@ -49,28 +49,13 @@
 }
 
 .features__left-col {
-    padding-top: 5.4rem;
     @include breakpoint(mobile) {
-        padding-left: 4rem;
-        padding-top: 0;
-
         &--mobile-fullwidth {
             padding: 0;
         }
 
         &--mobile-last {
             order: 12;
-        }
-    }
-}
-
-.features__right-col {
-    @include breakpoint(mobile) {
-        padding-right: 5rem;
-
-        &--mobile-right-aligned {
-            padding-right: 0;
-            padding-left: 5rem;
         }
     }
 }
@@ -114,7 +99,7 @@
         height: 3rem;
         display: block;
         fill: #000000;
-        transition: fill .2s;
+        transition: fill 0.2s;
 
         @include breakpoint(mobile) {
             width: 2.8rem;

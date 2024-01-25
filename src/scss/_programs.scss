@@ -72,6 +72,10 @@
     font-size: 2rem;
     line-height: 1.4;
 
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+    }
+
     p {
         &:not(:last-child) {
             margin-bottom: 1.2rem;
@@ -88,6 +92,11 @@
 
     &:not(:last-child) {
         margin-bottom: 1rem;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 140%;
     }
 }
 
@@ -180,7 +189,11 @@
     line-height: 140%;
     text-transform: uppercase;
     font-family: var(--zhar-ptitza);
-    margin-bottom: 1.6rem;
+    margin: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 1.6rem;
+    }
 
     @include breakpoint(mobile) {
         font-weight: 700;
@@ -188,17 +201,32 @@
         line-height: 140%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 }
 
 .programs__inner-block-subtitle {
-    margin-bottom: 1.6rem;
     font-style: normal;
     font-weight: 500;
     font-size: 2rem;
     line-height: 120%;
-    color: #3a241f;
+    color: #000;
     font-family: var(--avenir);
+
+    &:not(:last-child) {
+        margin-bottom: 1.6rem;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .programs__cta {

@@ -287,7 +287,7 @@
     transition: opacity 0.4s, visibility 0s linear 0.4s;
     padding-top: 1.5rem;
     width: max-content;
-    max-width: 20rem;
+    max-width: 30rem;
 }
 
 .page-header__nav-submenu-inner {
@@ -315,6 +315,7 @@
     width: 100%;
     font-size: 1.6rem;
     line-height: 1.2;
+    word-break: break-word;
     position: relative;
 
     &::before {
@@ -323,6 +324,8 @@
         position: absolute;
         right: 100%;
         top: 0;
+        bottom: 0;
+        margin: auto;
         width: 1.2rem;
         height: 1.2rem;
         background-size: contain;
@@ -332,8 +335,6 @@
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.2s, visibility 0s linear 0.2s;
-
-        top: 0.3rem;
         margin-right: 0.4rem;
     }
 
@@ -359,6 +360,7 @@
     gap: 10px;
     color: #968a71;
     stroke: #968a71;
+    flex-shrink: 0;
 }
 
 .page-header__order-link {
