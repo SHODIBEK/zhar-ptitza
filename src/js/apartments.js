@@ -11,7 +11,6 @@ export default function apartments() {
 
         const swiper = new Swiper(container, {
             slidesPerView: 'auto',
-            slidesPerGroup: 1,
             spaceBetween: 0,
             speed: 1000,
             grabCursor: true,
@@ -26,8 +25,8 @@ export default function apartments() {
             breakpoints: {
                 641: {
                     slidesPerView: 2,
-                    slidesPerGroup: 1,
-                    spaceBetween: convertRemToPixels(14)
+                    spaceBetween: convertRemToPixels(14),
+                    touchEventsTarget: 'container'
                 }
             }
         });

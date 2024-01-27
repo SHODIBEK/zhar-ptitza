@@ -30,6 +30,17 @@
             padding-top: 8rem;
             margin-bottom: 3rem;
         }
+
+        &.spa__main-wrapper {
+            &::before,
+            &::after {
+                bottom: -25.7rem;
+
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+            }
+        }
     }
 
     &__title {

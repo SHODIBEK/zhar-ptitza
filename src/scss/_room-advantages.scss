@@ -7,7 +7,6 @@
 
     @include breakpoint(mobile) {
         padding-bottom: 5rem;
-       
     }
 
     &::before {
@@ -51,8 +50,6 @@
             display: none;
         }
     }
-
- 
 }
 
 .room-advantages__content {
@@ -71,7 +68,7 @@
 
     @include breakpoint(mobile) {
         font-style: normal;
-        color: #3A241F;
+        color: #3a241f;
         font-size: 3.2rem;
         line-height: 100%;
         margin-bottom: 2.5rem;
@@ -100,11 +97,11 @@
 .room-advantages__list-item {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
+    text-align: left;
     gap: 0.8rem;
 
     @include breakpoint(mobile) {
@@ -149,6 +146,7 @@
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 140%;
+    text-transform: uppercase;
     position: relative;
 
     @include breakpoint(mobile) {

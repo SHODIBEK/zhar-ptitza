@@ -52,8 +52,6 @@
     line-height: 140%;
     margin-bottom: 1.8rem;
     font-family: var(--zhar-ptitza);
-    color: #3a241f;
-
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 700;
@@ -236,12 +234,11 @@ textarea.form-page__form-input {
     font-weight: 500;
     font-size: 1rem;
     line-height: 140%;
-    color: #968a71;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         line-height: 170%;
     }
 

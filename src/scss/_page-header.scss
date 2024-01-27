@@ -137,6 +137,91 @@
     // }
 }
 
+.inner-page {
+    .page-header {
+        color: var(--text-color);
+        &::before {
+            opacity: 1;
+        }
+        .page-header__logo {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+        .page-header__nav > ul > li > a,
+        .page-header__burger > span {
+            color: var(--text-color);
+        }
+        @include breakpointMF(small-tablet) {
+            .page-header__order-link {
+                border-color: black;
+                color: black;
+
+                svg {
+                    fill: black;
+                }
+                &:hover {
+                    color: white;
+                    background-color: black;
+                    border-color: black;
+
+                    svg {
+                        fill: white;
+                    }
+                }
+            }
+            .page-header__book-link {
+                border-color: black;
+                color: black;
+
+                svg {
+                    fill: black;
+                }
+                &:hover {
+                    color: white;
+                    background-color: black;
+                    border-color: black;
+
+                    svg {
+                        fill: white;
+                    }
+                }
+            }
+        }
+
+        @include breakpoint(mobile) {
+            .page-header__book-link {
+                display: none;
+            }
+
+            .page-header__mobile-order-link {
+                display: block;
+                justify-self: flex-end;
+
+                svg {
+                    display: block;
+                    width: 2.5rem;
+                    height: 2.8rem;
+                    fill: #1c1c1c;
+                }
+            }
+
+            .page-header__book-link {
+                color: #1c1c1c;
+                svg {
+                    fill: #1c1c1c;
+                }
+            }
+
+            .page-header__order-link {
+                svg {
+                    fill: #1c1c1c;
+                }
+            }
+        }
+    }
+}
+
 .page-header__logo {
     font-size: 3rem;
     font-family: var(--zhar-ptitza);

@@ -269,6 +269,7 @@
     }
 
     &-link {
+        display: inline-flex;
         margin: 2rem;
 
         .spa__link-text svg {

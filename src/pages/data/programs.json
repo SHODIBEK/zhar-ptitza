@@ -1,4 +1,5 @@
 {
     "title": "Авторские парения",
-    "headerFixed": true
+    "headerFixed": false,
+    "innerPage": true
 }

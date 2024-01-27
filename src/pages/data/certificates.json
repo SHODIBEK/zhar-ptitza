@@ -1,4 +1,5 @@
 {
     "title": "Сертификаты",
-    "headerFixed": true
+    "headerFixed": false,
+    "innerPage": true
 }

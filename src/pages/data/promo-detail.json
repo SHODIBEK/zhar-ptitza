@@ -1,4 +1,5 @@
 {
     "title": "Страница Акции",
-    "headerFixed": true
+    "headerFixed": false,
+    "innerPage": true
 }
