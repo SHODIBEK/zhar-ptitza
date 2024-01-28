@@ -10,6 +10,7 @@ export default function spaSlider() {
         const container = element.querySelector('.swiper');
 
         new Swiper(container, {
+            touchEventsTarget: 'container',
             slidesPerView: 'auto',
             spaceBetween: 0,
             speed: 600,

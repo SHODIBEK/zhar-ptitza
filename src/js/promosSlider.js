@@ -9,6 +9,7 @@ export default function promosSlider() {
         const container = element.querySelector('.swiper');
 
         new Swiper(container, {
+            touchEventsTarget: 'container',
             speed: 500,
             spaceBetween: convertRemToPixels(3),
             navigation: {

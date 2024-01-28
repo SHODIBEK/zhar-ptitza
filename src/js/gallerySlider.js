@@ -13,6 +13,7 @@ export default function gallerySlider() {
         const container = element.querySelector('.swiper');
 
         new Swiper(container, {
+            touchEventsTarget: 'container',
             slidesPerView: 'auto',
             centeredSlides: true,
             loop: true,

@@ -14,6 +14,7 @@ export default function aboutFoodSlider() {
             loop: true,
             loopedSlides: 6,
             watchOverflow: true,
+            touchEventsTarget: 'container',
             grabCursor: true,
             navigation: {
                 nextEl: element.querySelector('.about-food__slider-next'),

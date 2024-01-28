@@ -266,6 +266,7 @@ textarea.form-page__form-input {
 }
 
 .form-page__form-submit {
+    position: relative;
     font-style: normal;
     font-weight: 450;
     font-size: 1.4rem;
@@ -281,6 +282,10 @@ textarea.form-page__form-input {
     width: 30rem;
     margin-top: 3rem;
 
+    & > span {
+        transition: 0.3s ease-in-out;
+    }
+
     @include breakpoint(mobile) {
         margin-top: 2.4rem;
         font-style: normal;
@@ -290,6 +295,12 @@ textarea.form-page__form-input {
         padding: 1.2rem 2.4rem;
         width: auto;
         align-self: stretch;
+    }
+
+    &:disabled {
+        cursor: auto;
+        pointer-events: none;
+        background-color: grey;
     }
 }
 
@@ -329,5 +340,63 @@ textarea.form-page__form-input {
 
     @include breakpoint(mobile) {
         height: 2.2rem;
+    }
+}
+
+.form-page__form-submit--loading {
+    & > span {
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    .form-page__loading {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+.form-page__loading {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease-in-out;
+
+    span {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        animation: bounce 1s infinite;
+
+        &:nth-child(1) {
+            animation-delay: -0.3s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.15s;
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
 }

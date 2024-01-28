@@ -10,6 +10,7 @@ export default function roomSlider() {
         const container = element.querySelector('.swiper');
 
         new Swiper(container, {
+            touchEventsTarget: 'container',
             slidesPerView: 'auto',
             centeredSlides: false,
             loopedSlides: 10,
