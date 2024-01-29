@@ -8,6 +8,14 @@
         padding-top: 9rem;
         padding-bottom: 8rem;
     }
+
+    &__link {
+        width: 30rem;
+
+        @include breakpoint(mobile) {
+            width: auto;
+        }
+    }
 }
 
 .form-page__content {
