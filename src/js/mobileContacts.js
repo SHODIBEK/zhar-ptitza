@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function mobileContacts() {
+    const introContacts = document.querySelector('.intro__contacts');
     ScrollTrigger.matchMedia({
         '(max-width: 640px)': function() {
             // ScrollTrigger.create({
@@ -21,12 +22,14 @@ export default function mobileContacts() {
                     end: 'bottom bottom',
                     toggleActions: 'play none none reverse'
                 }
-            })
+            });
 
-            tl.to('.intro__contacts', {
-                autoAlpha: 0,
-                duration: 0.4
-            })
+            if (introContacts) {
+                tl.to('.intro__contacts', {
+                    autoAlpha: 0,
+                    duration: 0.4
+                });
+            }
         }
     });
 }

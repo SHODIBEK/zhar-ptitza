@@ -194,6 +194,14 @@
     }
 }
 
+.features__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .features__slider-card-parallax {
     position: absolute;
     left: 0;

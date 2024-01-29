@@ -1,0 +1,20 @@
+{{#extend "layout"}}
+    {{#content "main"}}
+      <section class="not-found">
+        <div class="container">
+          <div class="not-found__wrapper">
+            <h1 class="not-found__title">Такой страницы нет</h1>
+            <p class="not-found__subtitle">Ссылка, по которой вы перешли, никуда не ведет. <br>
+            Возможно, в ней была опечатка, или эта страница была удалена.</p>
+            <a href="/" class="not-found__link zone__btn zone__btn--filled">
+              <span class="zone__btn-text">На главную
+                <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                    <use xlink:href="#medium-arrow-right"></use>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    {{/content}}
+{{/extend}}
