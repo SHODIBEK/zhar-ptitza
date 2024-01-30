@@ -16,6 +16,20 @@
             width: auto;
         }
     }
+
+    &__subtitle {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 120%;
+        text-align: center;
+        margin-bottom: 1.8rem;
+
+        @include breakpoint(mobile) {
+            font-size: 1.8rem;
+            margin-bottom: 1.7rem;
+        }
+    }
 }
 
 .form-page__content {
