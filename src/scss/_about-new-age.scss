@@ -19,6 +19,7 @@
     text-align: center;
     font-family: var(--zhar-ptitza);
     color: var(--text-color);
+    text-transform: uppercase;
     margin-bottom: 3rem;
 
     @include breakpoint(mobile) {

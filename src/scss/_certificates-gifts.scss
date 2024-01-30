@@ -120,6 +120,14 @@
         min-height: 18rem;
         padding: 1.5rem;
     }
+
+    &--white {
+        color: #fff !important;
+
+        .certificates-gifts__card-btn {
+            border-color: #fff;
+        }
+    }
 }
 
 .certificates-gifts__card-title {
