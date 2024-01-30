@@ -8,6 +8,10 @@
 
 .tippy-content {
     padding: 2rem;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .tippy-arrow {
@@ -25,4 +29,5 @@
     text-align: center;
     color: #b7a98a;
     cursor: pointer;
+    vertical-align: middle;
 }
