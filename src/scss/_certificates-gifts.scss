@@ -200,6 +200,11 @@
 }
 
 .certificates-gifts__tabs-items {
+    margin-top: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 2.5rem;
+    }
 }
 
 .certificates-gifts__tabs-item {

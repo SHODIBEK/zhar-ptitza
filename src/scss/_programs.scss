@@ -275,9 +275,5 @@
         .spa__link-text svg {
             margin-top: 0;
         }
-
-        @include breakpoint(mobile) {
-            width: calc(100% - 4rem);
-        }
     }
 }
