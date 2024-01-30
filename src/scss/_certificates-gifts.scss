@@ -136,12 +136,12 @@
     font-size: 4rem;
     line-height: 140%;
     font-family: var(--zhar-ptitza);
-    margin-bottom: 1rem;
 
     @include breakpoint(mobile) {
         font-size: 2.8rem;
         line-height: 100%;
         letter-spacing: 0.05em;
+        margin-bottom: 1rem;
     }
 }
 
@@ -220,4 +220,48 @@
         visibility: inherit;
         transition: opacity 0.4s, visibility 0.4s;
     }
+}
+
+.certificates-gifts__card-subtitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+    }
+}
+
+.certificates-gifts__card-link {
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 120%;
+    gap: 1rem;
+    color: #968a71;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+    }
+
+    svg {
+        flex-shrink: 0;
+        fill: currentColor;
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.certificates-gifts__card-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
