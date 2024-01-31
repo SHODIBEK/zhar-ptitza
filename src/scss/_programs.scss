@@ -254,6 +254,10 @@
     @include breakpoint(mobile) {
         max-width: 100%;
     }
+
+    .tooltip-button {
+        margin-bottom: 4px;
+    }
 }
 
 .programs__inner-block-heading {
@@ -287,6 +291,20 @@
     @include breakpoint(mobile) {
         margin-bottom: 1rem;
         font-size: 1.4rem;
+    }
+}
+
+.programs__inner-block-desc {
+    margin-bottom: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 120%;
+        margin-bottom: 1rem;
     }
 }
 
