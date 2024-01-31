@@ -27,7 +27,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     color: rgba(150, 138, 113, 0.5);
 
     a {
@@ -183,7 +183,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -222,7 +222,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-top: 4rem;
     }
 }
@@ -249,7 +249,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     display: inline-flex;
@@ -269,7 +269,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -384,7 +384,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #b7a98a;
     margin-bottom: 0.3rem;
 
@@ -397,13 +397,13 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         color: #b7a98a;
     }
 }
@@ -417,7 +417,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 2rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-bottom: 0.4rem;
     }
 }

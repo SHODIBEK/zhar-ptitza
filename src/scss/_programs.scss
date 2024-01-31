@@ -24,7 +24,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 9rem;
-    line-height: 100%;
+    line-height: 120%;
     letter-spacing: 0.05em;
     font-family: var(--zhar-ptitza);
     color: #3a241f;
@@ -90,7 +90,7 @@
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -134,7 +134,7 @@
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -159,7 +159,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin: 0;
 
     &:not(:last-child) {
@@ -181,11 +181,11 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -202,7 +202,7 @@
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 
     ul li {
@@ -235,7 +235,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-size: 1.6rem;
@@ -255,7 +255,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     text-transform: uppercase;
     font-family: var(--zhar-ptitza);
     margin: 0;
@@ -263,7 +263,7 @@
     @include breakpoint(mobile) {
         font-weight: 700;
         font-size: 2rem;
-        line-height: 140%;
+        line-height: 120%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
     }
@@ -289,7 +289,7 @@
     padding: 3rem 6rem;
     margin-top: 1rem;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
 
     &:not(:last-child) {

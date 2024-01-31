@@ -1,5 +1,4 @@
 .my-checkout {
-
     &__return {
         margin-bottom: 4.6rem;
         color: #968a71;
@@ -12,8 +11,8 @@
         font-weight: 500;
         font-size: 1.4rem;
         gap: 1.1rem;
-        line-height: 140%;
-        transition: all .2s;
+        line-height: 120%;
+        transition: all 0.2s;
 
         svg {
             fill: currentColor;
@@ -29,10 +28,7 @@
         margin-bottom: 2.5rem;
 
         &__left {
-
         }
-
-    
     }
 
     &__code {
@@ -46,19 +42,19 @@
         }
 
         &__value {
-            margin-top: .5rem;
+            margin-top: 0.5rem;
             font-size: 4rem;
             font-family: var(--zhar-ptitza);
-            color: #3A241F;
+            color: #3a241f;
         }
     }
 
     &__title {
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
         font-size: 4rem;
         font-family: var(--zhar-ptitza);
         line-height: 1.4;
-        color: #3A241F;
+        color: #3a241f;
     }
 
     &__props {
@@ -72,12 +68,12 @@
             display: inline-flex;
             gap: 1rem;
         }
-        
+
         dd {
             font-weight: 700;
         }
     }
-    
+
     &__footer {
         text-align: right;
         font-weight: 700;
@@ -96,16 +92,12 @@
     &__status {
         margin-top: 2.3rem;
         font-size: 1.4rem;
-        color: #968A71;
+        color: #968a71;
     }
-
-    
 }
 
 @media only screen and (max-width: 640px) {
-
     .my-checkout {
-
         &__return {
             margin-bottom: 2.5rem;
         }
@@ -161,13 +153,8 @@
             }
         }
 
-
-
-       
         &__total {
             font-size: 1.8rem;
         }
-
-     
     }
 }

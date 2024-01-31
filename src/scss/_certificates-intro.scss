@@ -83,7 +83,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2.8rem;
 
     @include breakpoint(mobile) {
@@ -134,13 +134,13 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     max-width: 37rem;
 
     @include breakpoint(mobile) {
         max-width: none;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         text-align: center;
     }
 }

@@ -15,7 +15,7 @@
     font-weight: 700;
     font-size: 4rem;
     font-family: var(--zhar-ptitza);
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 3rem;
     text-align: center;
     color: #3a241f;
@@ -24,7 +24,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 3.2rem;
-        line-height: 100%;
+        line-height: 120%;
         margin-bottom: 0.5rem;
     }
 }
@@ -69,7 +69,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     margin-bottom: 1rem;
 
@@ -154,7 +154,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 0.8rem;
 
     @include breakpoint(mobile) {
@@ -169,7 +169,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2rem;
 
     @include breakpoint(mobile) {
@@ -188,7 +188,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
 
     @include breakpoint(mobile) {
@@ -488,14 +488,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-bottom: 0;
     }
 }
@@ -584,7 +584,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
 
     @include breakpoint(mobile) {
@@ -655,7 +655,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     transition: color 0.2s;
 
@@ -725,7 +725,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     padding-bottom: 0.7rem;
     border-bottom: 1px solid rgba(226, 216, 192, 0.5);
@@ -734,7 +734,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         padding-bottom: 1rem;
     }
 }
@@ -884,7 +884,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     text-decoration: underline;
     text-decoration-color: #968a71;
@@ -895,7 +895,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         grid-area: link;
         margin-top: 1.2rem;
     }
@@ -972,7 +972,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: black;
 
     @include breakpoint(mobile) {
@@ -1004,7 +1004,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: white;
     padding: 1.3rem 2.6rem;
     background: #968a71;
@@ -1030,7 +1030,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.1rem;
-        line-height: 140%;
+        line-height: 120%;
         background: transparent;
         border: 1px solid black;
         color: black;
@@ -1071,7 +1071,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: white;
     padding: 1.3rem 2.6rem;
     background: var(--text-color);
@@ -1097,7 +1097,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.1rem;
-        line-height: 140%;
+        line-height: 120%;
         background: transparent;
         border: 1px solid black;
         text-align: center;
@@ -1131,7 +1131,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: black;
 
     @include breakpoint(mobile) {
@@ -1140,7 +1140,7 @@
         font-weight: 500;
         order: -5;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -1148,7 +1148,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2.5rem;
     text-align: center;
     margin-top: -2.5rem;
@@ -1198,14 +1198,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2.5rem;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-bottom: 2rem;
         text-align: center;
     }
@@ -1320,7 +1320,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         grid-area: price;
@@ -1373,7 +1373,7 @@
     font-weight: 500;
     font-size: 1.4rem;
     gap: 1.1rem;
-    line-height: 140%;
+    line-height: 120%;
     text-decoration: underline;
     transition: all 0.2s;
     color: #968a71;
@@ -1382,7 +1382,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         justify-content: center;
         order: 5;
     }
@@ -1412,7 +1412,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #b7a98a;
     margin-bottom: 0.4rem;
     justify-content: space-between;
@@ -1421,7 +1421,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -1432,7 +1432,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -1462,7 +1462,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.2rem;
-    line-height: 140%;
+    line-height: 120%;
 }
 
 .booking__checkout-conditions-cards-list {
@@ -1483,7 +1483,7 @@
     text-decoration: underline;
     text-decoration-color: black;
     font-size: 1.2rem;
-    line-height: 140%;
+    line-height: 120%;
     transition: all 0.2s;
     margin-right: 2.5rem;
     margin-left: auto;
@@ -1498,7 +1498,7 @@
     text-decoration: underline;
     text-decoration-color: black;
     font-size: 1.2rem;
-    line-height: 140%;
+    line-height: 120%;
     transition: all 0.2s;
 
     &:hover {
@@ -1538,7 +1538,7 @@
     font-weight: 700;
     font-size: 2.4rem;
     text-align: center;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 3rem;
 
     @include breakpoint(mobile) {
@@ -1608,7 +1608,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.2rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     @include breakpoint(mobile) {
         font-size: 1.17rem;
@@ -1635,7 +1635,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1705,7 +1705,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.2rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
 
     a {
@@ -1724,7 +1724,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #968a71;
     margin-bottom: 1rem;
 
@@ -1732,7 +1732,7 @@
         font-style: normal;
 
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -1885,7 +1885,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 0.5rem;
 
     @include breakpoint(mobile) {
@@ -1917,7 +1917,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     gap: 0.6rem;
 
     @include breakpoint(mobile) {
@@ -1948,7 +1948,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     text-transform: uppercase;
     color: #968a71;
     text-decoration-line: underline;
@@ -1957,7 +1957,7 @@
     white-space: nowrap;
     @include breakpoint(mobile) {
         font-size: 1.2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
     &:link,
     &:visited {
@@ -1992,7 +1992,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
     width: 13.2rem;
     height: 3.4rem;
@@ -2068,7 +2068,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
     color: black;
     pointer-events: none;

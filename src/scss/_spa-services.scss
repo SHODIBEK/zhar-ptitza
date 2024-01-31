@@ -52,7 +52,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 9rem;
-    line-height: 100%;
+    line-height: 120%;
     letter-spacing: 0.05em;
     color: var(--text-color);
     font-family: var(--zhar-ptitza);
@@ -69,14 +69,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
     margin-bottom: 3rem;
     max-width: 90rem;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-bottom: 2rem;
         p {
             margin-bottom: 1.5rem;

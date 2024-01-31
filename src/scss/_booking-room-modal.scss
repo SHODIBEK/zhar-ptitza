@@ -52,7 +52,7 @@
     font-weight: 400;
     font-size: 4rem;
     font-family: var(--zhar-ptitza);
-    line-height: 140%;
+    line-height: 120%;
     color: #3a241f;
     margin-bottom: 2rem;
 
@@ -60,7 +60,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 3.2rem;
-        line-height: 100%;
+        line-height: 120%;
         letter-spacing: 0.05em;
         margin-bottom: 2rem;
     }
@@ -250,7 +250,7 @@
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-bottom: 1rem;
     }
 }
@@ -259,7 +259,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 1.2rem;
 
@@ -267,7 +267,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 3rem;
-        line-height: 100%;
+        line-height: 120%;
         letter-spacing: 0.05em;
     }
 }
@@ -276,7 +276,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     max-width: 48rem;
     margin-bottom: 1.2rem;
 
@@ -308,12 +308,12 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 0.2rem;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         font-weight: 500;
     }
 }
@@ -322,11 +322,11 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -334,13 +334,13 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     text-decoration-line: underline;
     transition: all 0.2s;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         order: 10;
     }
 
@@ -392,7 +392,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     color: #b7a98a;
     margin-bottom: 0.2rem;
 
@@ -405,7 +405,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;

@@ -63,7 +63,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2.8rem;
 
     @include breakpoint(mobile) {
@@ -98,7 +98,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 9rem;
-    line-height: 100%;
+    line-height: 120%;
     margin-bottom: 3.5rem;
     font-family: var(--zhar-ptitza);
     text-align: center;
@@ -118,7 +118,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
 
     @include breakpoint(mobile) {

@@ -22,7 +22,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 9rem;
-    line-height: 100%;
+    line-height: 120%;
     letter-spacing: 0.05em;
     font-family: var(--zhar-ptitza);
     color: #3a241f;
@@ -159,7 +159,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     text-transform: uppercase;
 
     font-family: var(--zhar-ptitza);
@@ -169,7 +169,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 2rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -207,7 +207,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
@@ -269,7 +269,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.1rem;
-        line-height: 140%;
+        line-height: 120%;
         padding: 1rem 2rem;
 
         &:not(.apartments__slider-card-btn--filled) {

@@ -28,8 +28,6 @@
             bottom: 2.4rem;
             background-image: url('../img/visit-left-pattern-mobile.svg');
         }
-
-        
     }
 
     &::after {
@@ -70,7 +68,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 1rem;
 
@@ -78,9 +76,8 @@
         font-style: normal;
 
         font-size: 3.2rem;
-        line-height: 100%;
+        line-height: 120%;
         letter-spacing: 0.05em;
-
     }
 }
 
@@ -88,7 +85,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     max-width: 82rem;
     width: 100%;
     margin: 0 auto;

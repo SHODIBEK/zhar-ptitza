@@ -15,7 +15,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 9rem;
-    line-height: 100%;
+    line-height: 120%;
     letter-spacing: 0.05em;
     font-family: var(--zhar-ptitza);
     text-align: center;
@@ -32,7 +32,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     margin: 0 auto;
     margin-top: 2rem;
     max-width: 50rem;
@@ -292,14 +292,14 @@
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 1.2rem;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-size: 2rem;
-        line-height: 140%;
+        line-height: 120%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
     }
@@ -319,13 +319,13 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
         grid-template-columns: minmax(0, 6rem) minmax(0, 1fr);
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -369,7 +369,7 @@
     font-weight: 500;
 
     font-size: 1.8rem;
-    line-height: 140%;
+    line-height: 120%;
     text-transform: uppercase;
     transition: all 0.2s;
     margin-top: 3rem;

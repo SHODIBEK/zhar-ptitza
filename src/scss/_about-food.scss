@@ -68,7 +68,7 @@
     @include breakpoint(mobile) {
         margin: 0;
         font-size: 2rem;
-        line-height: 140%;
+        line-height: 120%;
         letter-spacing: 0.05em;
         margin-bottom: 1.5rem;
         color: #3a241f;
@@ -79,7 +79,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2.5rem;
 
     @include breakpoint(mobile) {

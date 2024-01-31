@@ -21,7 +21,7 @@
     font-weight: 400;
     font-size: 6rem;
     font-family: var(--zhar-ptitza);
-    line-height: 140%;
+    line-height: 120%;
     color: #332927;
     text-align: center;
 
@@ -29,7 +29,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 3.8rem;
-        line-height: 100%;
+        line-height: 120%;
         order: -3;
         text-align: center;
         margin-top: 2.5rem;
@@ -44,14 +44,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
 
     @include breakpoint(mobile) {
         font-style: normal;
         max-width: none;
         font-size: 1.4rem;
-        line-height: 140%;
+        line-height: 120%;
         margin-top: 2.5rem;
     }
 }
@@ -181,7 +181,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;

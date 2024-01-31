@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 2rem;
     color: #3a241f;
@@ -141,12 +141,12 @@
     font-style: normal;
     font-weight: 700;
     font-size: 4rem;
-    line-height: 140%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
 
     @include breakpoint(mobile) {
         font-size: 2.8rem;
-        line-height: 100%;
+        line-height: 120%;
         letter-spacing: 0.05em;
         margin-bottom: 1rem;
     }
@@ -156,7 +156,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 2rem;
 
     @include breakpoint(mobile) {
@@ -238,7 +238,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
 
     &:not(:last-child) {
         margin-bottom: 1rem;

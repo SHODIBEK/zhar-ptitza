@@ -91,7 +91,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 6rem;
-    line-height: 100%;
+    line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 2.5rem;
 
@@ -111,14 +111,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     margin-bottom: 3rem;
 
     @include breakpoint(mobile) {
         font-style: normal;
 
         font-size: 1.6rem;
-        line-height: 140%;
+        line-height: 120%;
     }
 }
 
@@ -255,7 +255,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
-    line-height: 140%;
+    line-height: 120%;
     padding-left: 2.5rem;
     position: relative;
 

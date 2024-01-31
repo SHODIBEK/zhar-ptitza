@@ -19,7 +19,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 6rem;
-    line-height: 140%;
+    line-height: 120%;
     text-align: center;
     text-transform: uppercase;
     font-family: var(--zhar-ptitza);
@@ -50,7 +50,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpointMF(small-tablet) {
         .rooms + .zone & {
@@ -139,7 +139,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 140%;
+    line-height: 120%;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -205,7 +205,7 @@
         font-style: normal;
         font-weight: 500;
         font-size: 1.1rem;
-        line-height: 140%;
+        line-height: 120%;
         padding: 1rem 2rem;
     }
     &:link,
