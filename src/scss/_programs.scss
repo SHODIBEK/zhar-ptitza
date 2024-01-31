@@ -178,6 +178,29 @@
         font-size: 1.2rem;
         line-height: 140%;
     }
+
+    ul li {
+        position: relative;
+        padding-left: 2rem;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 1.4rem;
+            height: 1.4rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../img/diamond-shape-black.svg);
+            flex-shrink: 0;
+        }
+    }
 }
 
 .programs__inner-block-card-price {

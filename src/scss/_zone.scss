@@ -85,11 +85,15 @@
     position: relative;
     left: 50%;
     width: 100vw;
+    max-height: 660px;
     transform: translateX(-50%) translateZ(0);
     overflow: hidden;
     backface-visibility: hidden;
-
     transform-origin: center top;
+
+    @include breakpoint(mobile) {
+        aspect-ratio: 1;
+    }
 }
 
 .zone__image-parallax-wrapper {
@@ -105,8 +109,11 @@
 }
 
 .zone__image {
+    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .zone__features-list {

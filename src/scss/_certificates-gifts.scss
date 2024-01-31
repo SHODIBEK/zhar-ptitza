@@ -122,10 +122,17 @@
     }
 
     &--white {
-        color: #fff !important;
+        color: #fff;
 
         .certificates-gifts__card-btn {
+            color: #fff;
             border-color: #fff;
+
+            .no-touch &:hover,
+            .touch &:active {
+                color: var(--text-color);
+                background-color: #fff;
+            }
         }
     }
 }
@@ -269,4 +276,5 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
 }

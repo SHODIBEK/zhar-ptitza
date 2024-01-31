@@ -244,6 +244,8 @@
 
 .spa__image-wrapper {
     position: relative;
+    width: 100%;
+    max-height: 660px;
     overflow: hidden;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -253,6 +255,10 @@
     //     display: block;
     //     padding-bottom: 35%;
     // }
+
+    @include breakpoint(mobile) {
+        aspect-ratio: 1;
+    }
 }
 
 .spa__parallax-wrapper {
