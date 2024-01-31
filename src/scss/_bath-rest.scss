@@ -96,10 +96,8 @@
     margin-bottom: 2.5rem;
 
     @include breakpoint(mobile) {
-        font-style: normal;
-
         font-size: 3.8rem;
-        line-height: 110%;
+        line-height: 120%;
         order: -1;
         margin-bottom: 1.5rem;
 

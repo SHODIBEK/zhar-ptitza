@@ -59,6 +59,7 @@
 
         @include breakpoint(mobile) {
             font-size: 3.8rem;
+            line-height: 120%;
         }
     }
 

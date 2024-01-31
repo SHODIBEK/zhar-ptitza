@@ -245,9 +245,11 @@
 
 .programs__inner-block__header {
     margin-bottom: 1.6rem;
+    max-width: 45%;
 
     @include breakpoint(mobile) {
         margin-bottom: 1rem;
+        max-width: 100%;
     }
 }
 
