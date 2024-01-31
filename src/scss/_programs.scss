@@ -88,6 +88,10 @@
     color: #968a71;
     font-family: var(--avenir);
 
+    &:not(:first-child) {
+        margin-top: 1.6rem;
+    }
+
     @include breakpoint(mobile) {
         font-size: 1.2rem;
         line-height: 120%;
