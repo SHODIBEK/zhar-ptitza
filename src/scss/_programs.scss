@@ -87,6 +87,7 @@
     line-height: 120%;
     color: #968a71;
     font-family: var(--avenir);
+    text-transform: uppercase;
 
     &:not(:first-child) {
         margin-top: 1.6rem;
@@ -281,6 +282,7 @@
     line-height: 120%;
     color: #968a71;
     font-family: var(--avenir);
+    text-transform: uppercase;
 
     @include breakpoint(mobile) {
         margin-bottom: 1rem;
