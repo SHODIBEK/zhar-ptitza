@@ -66,6 +66,32 @@
             grid-column: 1/3;
         }
     }
+
+    .programs__inner-block-list-item {
+        border-top: none;
+
+        @include breakpoint(mobile) {
+            &:not(:first-child) {
+                border-top: 1px solid rgba(226, 216, 192, 0.5);
+            }
+        }
+    }
+}
+
+.programs__inner-block-category {
+    grid-column: 1/3;
+    margin-bottom: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 120%;
+    color: #968a71;
+    font-family: var(--avenir);
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 140%;
+    }
 }
 
 .programs__inner-block-details {
