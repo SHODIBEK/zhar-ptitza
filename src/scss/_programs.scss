@@ -288,6 +288,10 @@
             position: relative;
             padding-left: 2rem;
 
+            @include breakpoint(mobile) {
+                padding-left: 1.5rem;
+            }
+
             &:not(:last-child) {
                 margin-bottom: 0.5rem;
             }
