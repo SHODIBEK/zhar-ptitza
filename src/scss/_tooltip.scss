@@ -6,10 +6,15 @@
     text-transform: none;
     border-radius: 0;
     background-color: var(--primary-color);
+
+    @include breakpoint(mobile) {
+        width: calc(100vw - 10px);
+    }
 }
 
 .tippy-content {
     padding: 2rem;
+    word-break: break-word;
 
     a {
         text-decoration: underline;

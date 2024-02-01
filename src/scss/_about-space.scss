@@ -38,7 +38,7 @@
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 2.5rem;
         line-height: 120%;
         margin-bottom: 2rem;
     }
@@ -263,14 +263,21 @@
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 150%;
-    margin-bottom: 2.5rem;
+    margin: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
         line-height: 170%;
-        margin-bottom: 1.7rem;
         position: relative;
         z-index: 5;
+
+        &:not(:last-child) {
+            margin-bottom: 1.7rem;
+        }
     }
 }
 

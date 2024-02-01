@@ -19,11 +19,12 @@
 
     .programs + & {
         background: transparent;
-        padding-top: 0;
-        padding-bottom: 12rem;
+        padding: 0;
+        margin: 6.5rem 0 8rem 0;
 
         @include breakpoint(mobile) {
-            padding-bottom: 5rem;
+            padding: 0;
+            margin: 3rem 0 4rem 0;
         }
     }
 
