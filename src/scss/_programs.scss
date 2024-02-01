@@ -1,3 +1,38 @@
+.programs-page {
+    position: relative;
+
+    @include breakpointMF(small-tablet) {
+        &::after {
+            content: '';
+            right: 0;
+            top: 15rem;
+            width: 26.6rem;
+            height: 47.5rem;
+            background-image: url('../img/spa-right-pattern.svg');
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: -1;
+        }
+
+        &::before {
+            content: '';
+            width: 29.2rem;
+            height: 61rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url('../img/spa-left-pattern.svg');
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+}
+
 .programs {
     padding-bottom: 12rem;
 
@@ -217,30 +252,36 @@
         line-height: 120%;
     }
 
-    ul li {
-        position: relative;
-        padding-left: 2rem;
-
-        &:not(:last-child) {
-            margin-bottom: 0.5rem;
+    ul {
+        margin: 0.4rem 0;
+        @include breakpoint(mobile) {
+            margin: 0.2rem 0;
         }
+        li {
+            position: relative;
+            padding-left: 2rem;
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 0;
-            width: 1.4rem;
-            height: 1.4rem;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-image: url(../img/diamond-shape-black.svg);
-            flex-shrink: 0;
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
 
-            @include breakpoint(mobile) {
-                width: 1rem;
-                height: 1rem;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 0;
+                width: 1.4rem;
+                height: 1.4rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(../img/diamond-shape-black.svg);
+                flex-shrink: 0;
+
+                @include breakpoint(mobile) {
+                    width: 1rem;
+                    height: 1rem;
+                }
             }
         }
     }
