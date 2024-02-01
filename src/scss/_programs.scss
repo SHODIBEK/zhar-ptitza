@@ -108,6 +108,10 @@
     @include breakpoint(mobile) {
         column-count: 1;
     }
+
+    & > div {
+        break-inside: avoid-column;
+    }
 }
 
 .programs__inner-block-list-item {
