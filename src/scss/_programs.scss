@@ -270,6 +270,15 @@
         line-height: 120%;
     }
 
+    b {
+        margin-bottom: 0.4rem;
+        display: inline-block;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 0.2rem;
+        }
+    }
+
     ul {
         margin: 0.4rem 0;
         @include breakpoint(mobile) {
