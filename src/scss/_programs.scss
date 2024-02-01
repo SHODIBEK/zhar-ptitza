@@ -92,6 +92,22 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: 12rem;
     }
+
+    & + .programs__inner-block__header {
+        margin-top: 4rem;
+
+        @include breakpoint(mobile) {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.programs__inner-block-card-twice {
+    column-count: 2;
+
+    @include breakpoint(mobile) {
+        column-count: 1;
+    }
 }
 
 .programs__inner-block-list-item {
