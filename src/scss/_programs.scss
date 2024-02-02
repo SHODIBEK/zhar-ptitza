@@ -94,16 +94,17 @@
     }
 
     & + .programs__inner-block__header {
-        margin-top: 4rem;
+        margin-top: 2rem;
 
         @include breakpoint(mobile) {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
     }
 }
 
 .programs__inner-block-card-twice {
     column-count: 2;
+    column-gap: 12rem;
 
     @include breakpoint(mobile) {
         column-count: 1;
@@ -206,6 +207,15 @@
         font-size: 1.2rem;
         line-height: 120%;
     }
+}
+
+.programs__inner-block-undercategory {
+    margin-bottom: 0.6rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 120%;
+    text-transform: uppercase;
 }
 
 .programs__inner-block-card {
@@ -380,6 +390,10 @@
     @include breakpoint(mobile) {
         margin-bottom: 0.4rem;
         font-size: 1.4rem;
+    }
+
+    & + .programs__inner-block-undercategory {
+        margin-bottom: 0;
     }
 }
 
