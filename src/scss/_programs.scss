@@ -113,6 +113,12 @@
     & > div {
         page-break-inside: avoid;
         break-inside: avoid-column;
+
+        @include breakpoint(mobile) {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 
@@ -279,18 +285,14 @@
     font-size: 1.6rem;
     line-height: 120%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
 
     &:not(:last-child) {
         margin-bottom: 1rem;
     }
 
     @include breakpoint(mobile) {
-        flex-direction: column;
         font-size: 1.2rem;
         line-height: 120%;
-        row-gap: 1rem;
     }
 
     b {
