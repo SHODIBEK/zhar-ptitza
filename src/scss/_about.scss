@@ -115,6 +115,10 @@
         font-size: 1.4rem;
         line-height: 120%;
         max-width: none;
+
+        &:not(:last-child) {
+            margin-bottom: 1.4rem;
+        }
     }
     &::before {
         content: '';

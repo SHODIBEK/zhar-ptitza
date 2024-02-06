@@ -116,7 +116,7 @@
 
         @include breakpoint(mobile) {
             &:not(:last-child) {
-                margin-bottom: 1rem;
+                margin-bottom: 1.6rem;
             }
         }
     }
