@@ -222,6 +222,11 @@
     font-size: 1.6rem;
     line-height: 120%;
     text-transform: uppercase;
+    text-decoration: underline;
+
+    & + .programs__inner-block-desc {
+        margin-top: -0.6rem;
+    }
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;
@@ -400,10 +405,6 @@
     @include breakpoint(mobile) {
         margin-bottom: 0.4rem;
         font-size: 1.4rem;
-    }
-
-    & + .programs__inner-block-undercategory {
-        margin-bottom: 0;
     }
 }
 
