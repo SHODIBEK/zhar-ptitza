@@ -325,6 +325,22 @@ textarea.form-page__form-input {
         pointer-events: none;
         background-color: grey;
     }
+
+    svg {
+        margin-top: 0;
+    }
+
+    .no-touch &:hover {
+        .spa__link-text {
+            transform: translateX(-1rem);
+        }
+
+        svg {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+    }
 }
 
 .form-page__social-list {
