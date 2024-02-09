@@ -397,3 +397,19 @@
         line-height: 150.2%;
     }
 }
+
+.intro__content-slider-card-btn {
+    margin-top: 2rem;
+    min-width: 27rem;
+    color: #fff !important;
+    border-color: #fff !important;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile) {
+        margin-top: 1rem;
+    }
+
+    svg {
+        margin-top: 0 !important;
+    }
+}

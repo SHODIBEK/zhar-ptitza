@@ -14,7 +14,7 @@
     }
 
     @include breakpoint(mobile) {
-        padding-top: 6.4rem;
+        padding-top: 6rem;
         padding-bottom: 4.4rem;
 
         .news + & {

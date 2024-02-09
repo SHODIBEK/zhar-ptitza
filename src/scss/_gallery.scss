@@ -45,9 +45,13 @@
         padding-bottom: 16rem;
 
         @include breakpoint(mobile) {
-            padding-bottom: 9rem;
+            padding-bottom: 6rem;
             padding-top: 6rem;
         }
+    }
+
+    & + .form {
+        margin-top: 0;
     }
 }
 
