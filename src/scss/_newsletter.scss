@@ -108,22 +108,20 @@
     line-height: 2rem;
     padding: 1.4rem 2.8rem;
     width: auto;
-
+    min-height: 46px;
     border: 1px solid #ede8dd;
     color: #ede8dd;
     transition: background-color 0.2s, color 0.2s;
-    align-self: stretch;
-    width: auto;
     align-self: stretch;
     margin: 0 1px;
 
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
-        font-size: 1.4rem;
-        line-height: 1.7rem;
-
-        padding: 1.3rem 2.6rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        min-height: 44px;
+        padding: 1rem 2rem;
     }
     &:link,
     &:visited {

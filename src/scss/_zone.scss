@@ -191,6 +191,7 @@
     line-height: 2rem;
     text-align: center;
     padding: 1.4rem 2.8rem;
+    min-height: 46px;
     color: var(--text-color);
 
     &:only-child {
@@ -204,9 +205,10 @@
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 120%;
         padding: 1rem 2rem;
+        min-height: 44px;
     }
     &:link,
     &:visited {

@@ -228,6 +228,7 @@
     align-self: center;
     width: 27rem;
     max-width: 100%;
+    min-height: 46px;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -237,6 +238,7 @@
         padding: 1rem 2rem;
         align-self: stretch;
         width: auto;
+        min-height: 44px;
         margin-top: 2rem;
     }
     &:link,

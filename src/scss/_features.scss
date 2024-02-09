@@ -358,11 +358,12 @@
 .features__mobile-order-link {
     font-style: normal;
     font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     text-align: center;
     display: block;
     width: 100%;
+    min-height: 44px;
     padding: 1.2rem 2.4rem;
     color: #ffffff;
     background: var(--text-color);

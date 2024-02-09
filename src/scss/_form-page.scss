@@ -291,7 +291,7 @@ textarea.form-page__form-input {
     font-style: normal;
     font-weight: 450;
     font-size: 1.4rem;
-    line-height: 120%;
+    line-height: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -301,6 +301,7 @@ textarea.form-page__form-input {
     background-color: var(--text-color);
     color: white;
     width: 27rem;
+    min-height: 46px;
     margin-top: 3rem;
 
     & > span {
@@ -311,10 +312,11 @@ textarea.form-page__form-input {
         margin-top: 2.4rem;
         font-style: normal;
         font-weight: 500;
-        font-size: 1.4rem;
-        line-height: 120%;
-        padding: 1.2rem 2.4rem;
+        font-size: 1.2rem;
+        line-height: 1;
+        padding: 1.1rem 2.4rem;
         width: auto;
+        min-height: 44px;
         align-self: stretch;
     }
 
