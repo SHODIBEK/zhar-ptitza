@@ -1,0 +1,128 @@
+.default-content {
+    padding-top: 13rem;
+    padding-bottom: 16rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 5rem;
+        padding-bottom: 6.5rem;
+    }
+}
+
+.default-section {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3 {
+        margin: 0;
+        font-family: var(--zhar-ptitza);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        color: var(--text-color);
+        word-break: break-word;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    h1,
+    .h1 {
+        font-size: 6rem;
+
+        @include breakpoint(mobile) {
+            font-size: 3rem;
+        }
+    }
+
+    h2,
+    .h2 {
+        font-size: 4rem;
+        @include breakpoint(mobile) {
+            font-size: 2.5rem;
+        }
+    }
+
+    h3,
+    .h3 {
+        font-size: 2rem;
+        @include breakpoint(mobile) {
+            font-size: 1.5rem;
+        }
+    }
+
+    p,
+    .p {
+        margin: 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 120%;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+            line-height: 150%;
+        }
+    }
+
+    ul {
+        margin: 2rem 0;
+
+        li {
+            position: relative;
+            padding-left: 2rem;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 120%;
+
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+
+            @include breakpoint(mobile) {
+                padding-left: 1.5rem;
+                font-size: 1.2rem;
+                line-height: 120%;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 0;
+                width: 1.4rem;
+                height: 1.4rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(../img/diamond-shape-black.svg);
+                flex-shrink: 0;
+
+                @include breakpoint(mobile) {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+    }
+
+    a,
+    .a {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 120%;
+        color: #968a71;
+
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+}
