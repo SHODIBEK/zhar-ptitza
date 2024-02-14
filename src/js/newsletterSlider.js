@@ -1,7 +1,3 @@
-import { Swiper, Navigation, EffectFade, Autoplay, Controller, Pagination } from 'swiper';
-
-Swiper.use([Navigation, EffectFade, Autoplay, Controller, Pagination]);
-
 export default function newsletterSlider() {
     const elements = Array.from(document.querySelectorAll('.js-newsletter-slider'));
 

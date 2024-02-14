@@ -1,9 +1,6 @@
-import { Swiper, Navigation, EffectFade, Autoplay } from 'swiper';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { convertRemToPixels } from './utils';
 
-Swiper.use([Navigation, EffectFade, Autoplay]);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function gallerySlider() {

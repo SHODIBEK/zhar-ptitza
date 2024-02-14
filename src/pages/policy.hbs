@@ -1,0 +1,136 @@
+{{#extend "layout"}}
+    {{#content "main"}}
+        
+        <section class="contacts">
+            <div class="container">
+                <div class="contacts__content">
+
+
+                    <div class="contacts__row">
+                        <div class="contacts__info">
+                            <h2 class="contacts__heading">
+                                Контакты
+                            </h2>
+                            <a href="tel:+79813342222" class="contacts__phone-link"> +7 981 334 22 22</a>
+                            <div class="contacts__text">
+                                <p>
+                                    Нижняя Масловка, 15<br>
+                                    Ежедневно 8:00-00:00<br>
+                                </p>
+                            </div>
+                            <ul class="contacts__closest">
+                                <li class="contacts__closest-item">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                        <use xlink:href="#metro"></use>
+                                    </svg>
+                                    Динамо 10 мин
+                                </li>
+                                <li class="contacts__closest-item">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-metro">
+                                        <use xlink:href="#metro"></use>
+                                    </svg>
+                                    Савеловская 5 мин
+                                </li>
+                                <li class="contacts__closest-item">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-location">
+                                        <use xlink:href="#location"></use>
+                                    </svg>
+                                    Рядом с ТТК
+                                </li>
+                                <li class="contacts__closest-item">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-parking">
+                                        <use xlink:href="#parking"></use>
+                                    </svg>
+                                    Своя парковка
+                                </li>
+                            </ul>
+
+                            <ul class="contacts-links">
+                                <li class="contacts-links__list">
+                                    <a href="#" class="contacts-links__link">
+                                        посмотреть на карте
+                                    </a>
+                                </li>
+                                <li class="contacts-links__list">
+                                    <a href="#" class="contacts-links__link">
+                                        отзывы и предложения
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="contacts__social-list">
+                                <li class="contacts__social-list-item">
+                                    <a href="#" class="contacts__social-link">
+                                        <img src="img/social/facebook-dark.svg" alt=""
+                                            class="contacts__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="contacts__social-list-item">
+                                    <a href="#" class="contacts__social-link">
+                                        <img src="img/social/telegram-dark.svg" alt=""
+                                            class="contacts__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="contacts__social-list-item">
+                                    <a href="#" class="contacts__social-link">
+                                        <img src="img/social/vkontakte-dark.svg" alt=""
+                                            class="contacts__social-link-icon">
+                                    </a>
+                                </li>
+                                <li class="contacts__social-list-item">
+                                    <a href="#" class="contacts__social-link">
+                                        <img src="img/social/instagram-dark.svg" alt=""
+                                            class="contacts__social-link-icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contacts__map-wrapper js-map" data-coords="55.791081, 37.574525"
+                            data-center="55.791081, 37.574525" data-zoom="14" data-pin="img/pin.svg">
+                            <div class="contacts__map js-map-element">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery__slider js-gallery-slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="gallery__slider-card gallery__slider-card--type-1">
+                                    <img src="img/gallery/1.jpg" alt="" class="gallery__slider-card-image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery__slider-card gallery__slider-card--type-2">
+                                    <img src="img/gallery/2.jpg" alt="" class="gallery__slider-card-image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery__slider-card gallery__slider-card--type-3">
+                                    <img src="img/gallery/3.jpg" alt="" class="gallery__slider-card-image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery__slider-card gallery__slider-card--type-1">
+                                    <img src="img/gallery/4.jpg" alt="" class="gallery__slider-card-image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery__slider-card gallery__slider-card--type-2">
+                                    <img src="img/gallery/5.jpg" alt="" class="gallery__slider-card-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{> subscribe }}
+
+    {{/content}}
+{{/extend}}
