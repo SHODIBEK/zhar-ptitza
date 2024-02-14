@@ -1,0 +1,7 @@
+{
+    "title": "Банные номера",
+    "headerFixed": false,
+    "innerPage": true,
+    "script": true,
+    "scriptUrl": "./assets/js/rooms/main.js"
+}

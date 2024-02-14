@@ -1,5 +1,7 @@
 {
     "title": "Страница Акции",
     "headerFixed": false,
-    "innerPage": true
+    "innerPage": true,
+    "script": true,
+    "scriptUrl": "./assets/js/promo/main.js"
 }

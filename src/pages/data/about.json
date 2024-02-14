@@ -1,5 +1,7 @@
 {
     "title": "О комплексе",
     "headerFixed": false,
-    "innerPage": true
+    "innerPage": true,
+    "script": true,
+    "scriptUrl": "./assets/js/about/main.js"
 }

@@ -1,3 +1,5 @@
 {
-    "title": "Главная страница"
+    "title": "Главная страница",
+    "script": true,
+    "scriptUrl": "./assets/js/index/main.js"
 }

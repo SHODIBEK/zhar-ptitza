@@ -1,8 +1,3 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function header() {
     const innerHeader = document.querySelector('.inner-page .page-header');
     const header = document.querySelector('.page-header');

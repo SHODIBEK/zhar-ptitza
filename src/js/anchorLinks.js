@@ -1,8 +1,3 @@
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-
-gsap.registerPlugin(ScrollToPlugin);
-
 export default function anchorLinks() {
     const pageHeader = document.querySelector('.page-header');
     const offset = pageHeader ? pageHeader.offsetHeight + 20 : 80;
