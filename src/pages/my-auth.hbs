@@ -5,7 +5,7 @@
 
 <section class="auth-panel">
     <div class="container">
-        <form action="#" class="auth-panel__body">
+        <form action="#" class="auth-panel__body" data-need-validation>
             <h3 class="auth-panel__title">
                 Войти
                 <br> в личный кабинет
@@ -24,7 +24,19 @@
             </div>
 
             <div class="auth-panel__tip">
-                Вводите Ваш номер, даже если вы не регистрировались. После подтверждения номера регистрация произойдет автоматически. 
+                <label class="form-page__form-policy-checkbox">
+                    <input type="checkbox" value="Y" class="form-page__form-policy-checkbox-input" name="policy" required="" checked="">
+                    <span class="form-page__form-policy-checkbox-mark">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+
+                    <span class="form-page__form-policy-checkbox-text">
+                        Я ознакомился и подтверждаю согласие с Политикой конфидициальности и условия использования
+                        cookies, и даю согласие на обработку моих персональных данных.
+                    </span> 
+                </label>
             </div>
         </form>
     </div>
