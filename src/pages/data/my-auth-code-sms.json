@@ -1,0 +1,8 @@
+{
+    "title": "Личный кабинет",
+    "headerFixed": false,
+    "headerDark": true,
+    "viewCode": true,
+    "otherScript": true,
+    "otherScriptTag": ["./assets/js/cabinet/pinlogin.pkgd.min.js", "./assets/js/cabinet/main.js"]
+}

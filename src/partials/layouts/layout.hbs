@@ -37,6 +37,17 @@
             {{> otherScript }}
             <script src="js/app.js"></script>
             {{> script }}
+            {{#if viewCode}} 
+                <script>
+                    var pinlogin = $(".js-otp-groups").pinlogin({
+                        fields: 4,
+                        complete : function(pin){
+                            alert ('Awesome! You entered: ' + pin);
+                            $('.js-submit').removeAttr('disabled')
+                        }
+                    });
+                </script>
+            {{/if}}
             <script src="assets/js/backend.js"></script>
         </div>
     </body>

@@ -22,6 +22,39 @@ function initMyPromo() {
     });
 }
 
+let int;
+
+function startTimer(duration, display) {
+    var timer = parseInt(duration),
+        display;
+    int = setInterval(function() {
+        if (timer > 0) {
+            timer--;
+            display.text(timer);
+        } else {
+            clearInterval(int);
+            $('.js-timer-restart').show();
+            $('.js-timer-text').hide();
+        }
+    }, 1000);
+}
+
+function restartTimer(duration, display) {
+    clearInterval(int);
+    startTimer(duration, display);
+    $('.js-timer-restart').hide();
+    $('.js-timer-text').show();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    const timer = $('.js-timer');
+    const minutes = timer.data('time');
+    startTimer(minutes, timer);
+
     initMyPromo();
+
+    $('.js-timer-restart').on('click', function(e) {
+        e.preventDefault();
+        restartTimer(minutes, timer);
+    });
 });

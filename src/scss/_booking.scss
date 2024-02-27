@@ -1662,6 +1662,13 @@
     &:visited {
         color: white;
     }
+
+    &:disabled {
+        background-color: rgba(19, 1, 1, 0.3);
+        color: #fff;
+        border-color: rgba(195, 195, 195, 0.3);
+        cursor: auto;
+    }
 }
 
 .booking__checkout-form-policy {

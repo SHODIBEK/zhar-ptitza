@@ -417,16 +417,16 @@
                 </div>
             </div>
 
-            <div class="auth-panel__tip">
-                Запросить код повторно можно через 36 секунд
+            <div class="auth-panel__tip text-center js-timer-text">
+                Запросить код повторно можно через <span class="js-timer" data-time="60">60</span> секунд
             </div>
 
             <div class="auth-panel__actions">
                 <div class="auth-panel__actions__item">
-                    <a href="#">Позвонить еще раз</a>
+                    <a href="#" class="auth-panel__actions__call js-timer-restart">Позвонить еще раз</a>
                 </div>
                 <div class="auth-panel__actions__item">
-                    <a href="#" class="js-tooltip" 
+                    <a href="#"
                         data-tippy-content="Проблемы могут быть со стороны сотового оператора. Обратитесь в службу поддержки"
                         data-tippy-placement="bottom">
                         Мне никто не звонит
@@ -1050,7 +1050,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
             <script src="js/app.js"></script>
-            <script src="assets/js/backend.js"></script>
+             <script src=./assets/js/cabinet/main.js></script>             <script src="assets/js/backend.js"></script>
         </div>
     </body>
 

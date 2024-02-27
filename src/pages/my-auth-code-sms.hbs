@@ -6,26 +6,25 @@
     <div class="container">
         <form action="#" class="auth-panel__body">
             <h3 class="auth-panel__title mb-0">
-                Введите код
+                Введите код из смс
             </h3>
 
             <div class="auth-panel__desc">
                 <p>
-                    В ближайшее время поступит звонок на номер +7 (999) 434-93-93
+                    Мы отправили его на номер <br>+7 (999) **-**-93
                 </p>
-                <p>
+                {{!-- <p>
                     Введите последние 4 цифры входящего звонка
-                </p>
+                </p> --}}
             </div>
 
             <div class="auth-panel__form">
-                <div class="auth-panel__code">
-                    <div class="auth-panel__code__label">+7 (ххх) ххх</div>
-                    <input type="text" class="auth-panel__code__input js-code-input" placeholder="xx xx">
+                <div class="auth-panel__code js-otp-groups">
+                    
                 </div>
 
                 <div class="auth-panel__btn-go">
-                    <button class="booking__checkout-form-submit" type="submit">
+                    <button class="booking__checkout-form-submit js-submit" type="submit" disabled >
                         Продолжить
                     </button>
                 </div>
