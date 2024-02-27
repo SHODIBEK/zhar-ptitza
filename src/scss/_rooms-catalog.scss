@@ -170,7 +170,6 @@
 .rooms-catalog__card-image-container {
     position: relative;
     margin-bottom: 2rem;
-    overflow: hidden;
     backface-visibility: hidden;
     transform: translateZ(0);
 
@@ -182,6 +181,15 @@
         display: block;
         padding-bottom: 56.25%;
     }
+}
+
+.rooms-catalog__card-image-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .rooms-catalog__card-image-parallax {
