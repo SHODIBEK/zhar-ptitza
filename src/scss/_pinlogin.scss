@@ -5,24 +5,19 @@
     gap: 1rem;
 
     &-field {
-        height: 2.5em;
-        width: 2.5em;
-        border: 2px solid #dad9df;
+        height: 2em;
+        width: 2em;
         outline: none;
         text-align: center;
         font-size: 1.5em;
         border-radius: 0.3em;
+        border: 1px solid #968a71;
         background-color: #ffffff;
         outline: none;
         -moz-appearance: textfield;
 
-        @include breakpointMF(small-tablet) {
-            height: 3em;
-            width: 3em;
-        }
-
         &:focus {
-            border: 3px solid #3a241f;
+            border: 2px solid #3a241f;
         }
 
         &.invalid {

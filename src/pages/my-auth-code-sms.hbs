@@ -11,7 +11,7 @@
 
             <div class="auth-panel__desc">
                 <p>
-                    Мы отправили его на номер <br>+7 (999) **-**-93
+                    Мы отправили его на номер <br>+7 (999) 99-99-93
                 </p>
                 {{!-- <p>
                     Введите последние 4 цифры входящего звонка
@@ -22,12 +22,19 @@
                 <div class="auth-panel__code js-otp-groups">
                     
                 </div>
-
-                <div class="auth-panel__btn-go">
-                    <button class="booking__checkout-form-submit js-submit" type="submit" disabled >
-                        Продолжить
+                    <button class="booking__checkout-form-submit spa__link js-submit" type="submit" disabled>
+                        <span class="spa__link-text">
+                            Продолжить
+                            <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                <use xlink:href="#medium-arrow-right"></use>
+                            </svg>
+                        </span>
+                        <div class="form-page__loading">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
-                </div>
             </div>
 
             <div class="auth-panel__tip text-center js-timer-text">
@@ -44,6 +51,9 @@
                         data-tippy-placement="bottom">
                         Мне никто не звонит
                     </a>
+                </div>
+                <div class="auth-panel__actions__item">
+                    <a href="#">Изменить номер</a>
                 </div>
             </div>
         </form>

@@ -263,3 +263,11 @@ select:-webkit-autofill:focus {
 .text-center {
     text-align: center !important;
 }
+
+.parsley-errors-list {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 120%;
+    margin-top: 0.5rem;
+}

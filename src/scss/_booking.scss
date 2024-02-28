@@ -8,6 +8,12 @@
         padding-top: 7rem;
         padding-bottom: 3rem;
     }
+
+    *::selection {
+        color: inherit;
+        background-color: #fff;
+        -webkit-text-fill-color: unset;
+    }
 }
 
 .booking__heading {
@@ -1182,6 +1188,12 @@
     width: 50%;
     flex-grow: 1;
 
+    *::selection {
+        color: var(--text-color);
+        background-color: var(--primary-color);
+        -webkit-text-fill-color: var(--text-color);
+    }
+
     @include breakpoint(mobile) {
         width: 100%;
         flex-grow: 0;
@@ -1664,10 +1676,9 @@
     }
 
     &:disabled {
-        background-color: rgba(19, 1, 1, 0.3);
-        color: #fff;
-        border-color: rgba(195, 195, 195, 0.3);
         cursor: auto;
+        pointer-events: none;
+        background-color: gray;
     }
 }
 
