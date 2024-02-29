@@ -1,0 +1,7 @@
+{
+    "title": "Главная страница",
+    "headerFixed": false,
+    "headerDark": true,
+    "script": true,
+    "scriptUrl": "./assets/js/checkout/main.js"
+}

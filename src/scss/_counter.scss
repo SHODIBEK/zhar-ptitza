@@ -1,0 +1,83 @@
+.counter {
+    display: flex;
+    align-items: center;
+
+    &__button {
+        position: relative;
+        display: block;
+        background: 0 0;
+        border: 1px solid var(--text-color);
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+        .no-touch &:hover,
+        .touch &:active {
+            border-color: var(--text-color);
+            background: var(--text-color);
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        &--plus,
+        &--minus {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 50%;
+                height: 1px;
+                margin: auto;
+                background-color: var(--text-color);
+            }
+
+            .no-touch &:hover,
+            .touch &:active {
+                &::after,
+                &::before {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &--plus {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 1px;
+                height: 50%;
+                margin: auto;
+                background-color: var(--text-color);
+            }
+        }
+    }
+
+    &__input,
+    &__button {
+        width: 4.5rem;
+        height: 4.5rem;
+        flex-shrink: 0;
+
+        @include breakpoint(mobile) {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    &__input {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        text-align: center;
+        border: 1px solid var(--text-color);
+        border-left: none;
+        border-right: none;
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+}

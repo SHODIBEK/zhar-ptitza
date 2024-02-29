@@ -1,0 +1,195 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="booking">
+    <div class="container">
+        <div class="booking__content booking__content--wide">
+            <h1 class="booking__heading">
+                Подтверждение заказа
+            </h1>
+            <div class="booking__inner booking__inner--checkout">
+                <div class="booking__checkout">
+                    <div class="booking__checkout-left-col">
+                        <div class="booking__checkout-info">
+                            <ul class="booking__checkout-info-list">
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/1.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                   Электронный подарочный сертификат
+                                                </h4>
+                                                <div class="booking__checkout-info-card-text">
+                                                    Номинал 15 000
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-summary">
+                                                <div class="counter">
+                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus"></button>
+                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="15000" readonly>
+                                                    <button type="button" class="counter__button counter__button--plus js-counter-plus"></button>
+                                                </div>
+                                                <a class="booking__checkout-info-card-delete" href="#">Удалить товар</a>
+                                            </div>
+                                            <div class="booking__checkout-info-card-price">
+                                                25 000 Руб
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/2.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                    Электронный подарочный сертификат
+                                                </h4>
+                                                <div class="booking__checkout-info-card-text">
+                                                    Номинал 25 000
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper">
+                                            <div class="booking__checkout-info-card-summary">
+                                                <div class="counter">
+                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus"></button>
+                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="25000" readonly>
+                                                    <button type="button" class="counter__button counter__button--plus js-counter-plus"></button>
+                                                </div>
+                                                <a class="booking__checkout-info-card-delete" href="#">Удалить товар</a>
+                                            </div>
+                                            <div class="booking__checkout-info-card-price">
+                                                2 500 Руб
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="booking__checkout-actions">
+                                <a href="#" class="booking__checkout-back-link">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                    изменить бронирование
+
+                                </a>
+                                <div class="booking__checkout-total">
+                                    <div class="booking__checkout-total-price">
+                                        <div class="booking__checkout-total-price-title">
+                                            Итого:
+                                        </div>
+                                        <div class="booking__checkout-total-price-value">
+                                            10 000 Руб
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="booking__checkout-conditions">
+                                <div class="booking__checkout-conditions-cards">
+                                    <h4 class="booking__checkout-conditions-cards-title">
+                                        Принимаем к оплате
+
+                                    </h4>
+                                    <ul class="booking__checkout-conditions-cards-list">
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/1.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="Union Pay"
+                                            >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/2.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/3.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/4.svg" alt=""
+                                                class="booking__checkout-conditions-cards-image">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="booking__checkout-conditions-rules-link">
+                                    Условия покупки билетов
+                                </a>
+                                <a href="#" class="booking__checkout-conditions-payment-info-link">
+                                    Об онлайн-оплате
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking__checkout-right-col">
+                        <form action="/" method="POST" class="booking__checkout-form" data-need-validation="">
+                            <h3 class="booking__checkout-form-heading">
+                                Ваши данные
+                            </h3>
+                            <div class="booking__checkout-form-fields">
+                                <div class="booking__checkout-form-field">
+                                    <input type="tel"
+                                        class="booking__checkout-form-input booking__checkout-form-input--phone js-phone-input"
+                                        placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="text"
+                                        class="booking__checkout-form-input booking__checkout-form-input--name"
+                                        placeholder="Имя" required="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="email"
+                                        class="booking__checkout-form-input booking__checkout-form-input--email"
+                                        placeholder="Email" required="">
+                                </div>
+                            </div>
+                            <button class="booking__checkout-form-submit" type="submit">
+                                Оплатить
+                            </button>
+                            <div class="booking__checkout-form-policy">
+                                <label class="booking__checkout-form-policy-checkbox">
+                                    <input type="checkbox" class="booking__checkout-form-policy-checkbox-input"
+                                        required="" name="policy" value="1">
+                                    <span class="booking__checkout-form-policy-checkbox-content">
+                                        <span class="booking__checkout-form-policy-checkbox-mark">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="booking__checkout-form-policy-checkbox-text">
+                                            Нажимая на кнопку “Оплатить” вы соглашаетесь с условиями <a
+                                                href="#">Публичной
+                                                оферты </a>
+                                        </span>
+                                    </span>
+
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{> subscribe }}
+
+
+{{/content}}
+{{/extend}}
