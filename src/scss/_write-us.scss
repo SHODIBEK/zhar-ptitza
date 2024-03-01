@@ -46,13 +46,6 @@
 .write-us__form {
     display: flex;
     flex-direction: column;
-
-    .parsley-errors-list.filled {
-        font-size: 1.2rem;
-        line-height: 1.2;
-        margin-top: 0.5rem;
-        font-weight: 500;
-    }
 }
 
 .write-us__form-fields {

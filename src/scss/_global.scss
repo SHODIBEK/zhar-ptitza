@@ -271,3 +271,36 @@ select:-webkit-autofill:focus {
     line-height: 120%;
     margin-top: 0.5rem;
 }
+
+.button-animation {
+    &__text {
+        position: relative;
+        transition: transform 0.2s;
+        display: block;
+        svg {
+            position: absolute;
+            left: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0s linear 0.2s;
+            fill: currentColor;
+            width: 2rem;
+            height: 2rem;
+            margin-left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .no-touch &:hover {
+        .button-animation__text {
+            transform: translateX(-1rem);
+
+            svg {
+                opacity: 1;
+                visibility: inherit;
+                transition: opacity 0.2s, visibility 0.2s;
+            }
+        }
+    }
+}

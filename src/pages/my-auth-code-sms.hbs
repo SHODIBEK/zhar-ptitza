@@ -11,7 +11,7 @@
 
             <div class="auth-panel__desc">
                 <p>
-                    Мы отправили его на номер <br>+7 (999) 99-99-93
+                    Мы отправили его на номер <br><b>+</b>7 (999) 99-99-93
                 </p>
                 {{!-- <p>
                     Введите последние 4 цифры входящего звонка
@@ -19,8 +19,10 @@
             </div>
 
             <div class="auth-panel__form">
-                <div class="auth-panel__code js-otp-groups">
-                    
+                <div class="auth-panel__code auth-panel__code-sms js-otp-groups">
+                    <div class="auth-panel__tip text-center js-code-error" style="display: block;">
+                        Неверный код. Попробуйте ещё раз
+                    </div>
                 </div>
                     <button class="booking__checkout-form-submit spa__link js-submit" type="submit" disabled>
                         <span class="spa__link-text">
@@ -38,23 +40,17 @@
             </div>
 
             <div class="auth-panel__tip text-center js-timer-text">
-                Запросить код повторно можно через <span class="js-timer" data-time="60">60</span> секунд
+                Получить новый код можно через <span class="js-timer" data-time="60">60</span> секунд
             </div>
 
             <div class="auth-panel__actions">
-                <div class="auth-panel__actions__item">
-                    <a href="#" class="auth-panel__actions__call js-timer-restart">Позвонить еще раз</a>
-                </div>
-                <div class="auth-panel__actions__item">
-                    <a href="#"
+                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle js-timer-restart" href="#">Позвонить еще раз</a>
+                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle" href="#"
                         data-tippy-content="Проблемы могут быть со стороны сотового оператора. Обратитесь в службу поддержки"
                         data-tippy-placement="bottom">
                         Мне никто не звонит
                     </a>
-                </div>
-                <div class="auth-panel__actions__item">
-                    <a href="#">Изменить номер</a>
-                </div>
+                <a class="auth-panel__actions-link" href="#">Изменить номер</a>
             </div>
         </form>
     </div>

@@ -1174,7 +1174,6 @@
 
 .booking__checkout {
     display: flex;
-    align-items: center;
     gap: 4.5rem;
 
     @include breakpoint(mobile) {
@@ -1237,7 +1236,6 @@
 
 .booking__checkout-info-card {
     display: grid;
-    align-items: center;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     grid-gap: 2rem;
     padding: 1.2rem 0;
@@ -1257,6 +1255,7 @@
 
     @include breakpoint(mobile) {
         grid-area: image;
+        height: max-content;
     }
     &::before {
         content: '';
@@ -1369,11 +1368,23 @@
     }
 }
 
+.booking__checkout-info-card-description {
+    grid-column: 1/3;
+    font-size: 1.4rem;
+    line-height: 120%;
+
+    @include breakpoint(mobile) {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
 .booking__checkout-actions {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     grid-gap: 2rem;
+    align-items: center;
 
     @include breakpoint(mobile) {
         margin-top: 1.5rem;
@@ -1520,7 +1531,7 @@
 
 .booking__checkout-form {
     background: #ede8dd;
-    color: var(--text-color);
+    color: #3a241f;
     padding: 2.6rem;
     padding-top: 3.6rem;
 
@@ -1531,17 +1542,6 @@
         padding-top: 2.2rem;
         padding-bottom: 3rem;
         margin-top: 4rem;
-    }
-
-    .parsley-errors-list.filled {
-        margin-top: 0.5rem;
-        font-size: 1.4rem;
-        line-height: 1.2;
-
-        @include breakpoint(mobile) {
-            font-size: 1rem;
-            margin-top: 0.3rem;
-        }
     }
 }
 
@@ -1729,6 +1729,10 @@
     line-height: 120%;
     color: #968a71;
 
+    @include breakpoint(mobile) {
+        font-size: 0.9rem;
+    }
+
     a {
         text-decoration: underline;
         transition: all 0.2s;
@@ -1743,7 +1747,7 @@
     font-style: normal;
     margin-top: 0.5rem;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 120%;
     text-decoration: underline;
     transition: all 0.2s;
@@ -1754,7 +1758,7 @@
     }
 
     @include breakpoint(mobile) {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 

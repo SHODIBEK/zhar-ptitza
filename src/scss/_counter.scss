@@ -16,6 +16,17 @@
             transition: background-color 0.2s, border-color 0.2s, color 0.2s;
         }
 
+        &:disabled {
+            cursor: auto;
+            pointer-events: none;
+            opacity: 0.5;
+
+            &::after,
+            &::before {
+                opacity: 0.5;
+            }
+        }
+
         &--plus,
         &--minus {
             &::after {
@@ -58,8 +69,8 @@
 
     &__input,
     &__button {
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
         flex-shrink: 0;
 
         @include breakpoint(mobile) {
@@ -69,6 +80,7 @@
     }
 
     &__input {
+        width: 4rem;
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
@@ -77,6 +89,7 @@
         border-left: none;
         border-right: none;
         @include breakpoint(mobile) {
+            width: 3.5rem;
             font-size: 1.2rem;
         }
     }

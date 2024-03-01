@@ -6,7 +6,8 @@ export default function header() {
 
     ScrollTrigger.create({
         trigger: changeColorBlock ? changeColorBlock : Array.from(document.querySelectorAll('section'))[0],
-        start: () => (changeColorBlock ? `bottom-=${header.offsetHeight} top` : `top+=40 top`),
+        start: () => header.offsetHeight,
+        // (changeColorBlock ? `bottom-=${header.offsetHeight} top` : `top+=40 top`)
         markers: false,
         onEnter: () => {
             header.classList.add('fixed');

@@ -33,7 +33,7 @@ function startTimer(duration, display) {
             display.text(timer);
         } else {
             clearInterval(int);
-            $('.js-timer-restart').show();
+            $('.js-timer-toggle').show();
             $('.js-timer-text').hide();
         }
     }, 1000);
@@ -42,7 +42,7 @@ function startTimer(duration, display) {
 function restartTimer(duration, display) {
     clearInterval(int);
     startTimer(duration, display);
-    $('.js-timer-restart').hide();
+    $('.js-timer-toggle').hide();
     $('.js-timer-text').show();
 }
 

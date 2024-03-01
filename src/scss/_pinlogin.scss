@@ -5,16 +5,23 @@
     gap: 1rem;
 
     &-field {
-        height: 2em;
-        width: 2em;
+        height: 5rem;
+        width: 5rem;
         outline: none;
         text-align: center;
-        font-size: 1.5em;
+        font-weight: 500;
+        font-size: 1.4em;
         border-radius: 0.3em;
-        border: 1px solid #968a71;
+        border: 1px solid var(--text-color);
         background-color: #ffffff;
         outline: none;
         -moz-appearance: textfield;
+
+        @include breakpoint(mobile) {
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+        }
 
         &:focus {
             border: 2px solid #3a241f;

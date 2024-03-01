@@ -35,16 +35,19 @@
 
                                             <div class="booking__checkout-info-card-summary">
                                                 <div class="counter">
-                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus"></button>
-                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="15000" readonly>
+                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus" disabled ></button>
+                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="100">
                                                     <button type="button" class="counter__button counter__button--plus js-counter-plus"></button>
                                                 </div>
-                                                <a class="booking__checkout-info-card-delete" href="#">Удалить товар</a>
+                                                <a class="booking__checkout-info-card-delete" href="#">Удалить сертификат</a>
                                             </div>
                                             <div class="booking__checkout-info-card-price">
                                                 25 000 Руб
 
                                             </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-description">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro quaerat a dolorem tempora. Sequi culpa laboriosam harum doloribus deleniti dolorum natus, tenetur officiis officia corrupti! Repudiandae, ipsa? Veritatis, maiores velit?
                                         </div>
                                     </div>
                                 </li>
@@ -67,27 +70,32 @@
                                         <div class="booking__checkout-info-card-right-wrapper">
                                             <div class="booking__checkout-info-card-summary">
                                                 <div class="counter">
-                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus"></button>
-                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="25000" readonly>
+                                                    <button type="button" class="counter__button counter__button--minus js-counter-minus" disabled ></button>
+                                                    <input type="number" name="count" class="counter__input js-counter-input" value="1" min="1" max="100">
                                                     <button type="button" class="counter__button counter__button--plus js-counter-plus"></button>
                                                 </div>
-                                                <a class="booking__checkout-info-card-delete" href="#">Удалить товар</a>
+                                                <a class="booking__checkout-info-card-delete" href="#">Удалить сертификат</a>
                                             </div>
                                             <div class="booking__checkout-info-card-price">
                                                 2 500 Руб
                                             </div>
                                         </div>
+                                        <div class="booking__checkout-info-card-description">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro quaerat a dolorem tempora. Sequi culpa laboriosam harum doloribus deleniti dolorum natus, tenetur officiis officia corrupti! Repudiandae, ipsa? Veritatis, maiores velit?
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
                             <div class="booking__checkout-actions">
-                                <a href="#" class="booking__checkout-back-link">
-                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
-                                        <use xlink:href="#arrow-left"></use>
-                                    </svg>
-                                    изменить бронирование
-
-                                </a>
+                                <div class="custom-select">
+                                    <select name="cert">
+                                        <option value="">Выбор сертификатов</option>
+                                        <option value="1">Сертификат 1</option>
+                                        <option value="2">Сертификат 2</option>
+                                        <option value="3">Сертификат 3</option>
+                                        <option value="4">Сертификат 4</option>
+                                    </select>
+                                </div>
                                 <div class="booking__checkout-total">
                                     <div class="booking__checkout-total-price">
                                         <div class="booking__checkout-total-price-title">
@@ -131,6 +139,12 @@
                                                 data-tippy-content="<h4>Tinkoff Pay</h4><p>Приложение Тинькофф</p>"
                                                 >
                                         </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/9.svg" alt="ЮMoney"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>ЮMoney</h4><p>Кошелёк или привязанная карта</p>"
+                                                >
+                                        </li>
                                     </ul>
                                 </div>
                                 <a href="#" class="booking__checkout-conditions-rules-link">
@@ -164,8 +178,13 @@
                                         placeholder="Email" required="">
                                 </div>
                             </div>
-                            <button class="booking__checkout-form-submit" type="submit">
-                                Оплатить
+                            <button class="booking__checkout-form-submit button-animation" type="submit">
+                                <span class="button-animation__text">
+                                    Оплатить
+                                    <svg width="14" height="14" aria-hidden="true" class="arrow-right">
+                                        <use xlink:href="#medium-arrow-right"></use>
+                                    </svg>
+                                </span>
                             </button>
                             <div class="booking__checkout-form-policy">
                                 <label class="booking__checkout-form-policy-checkbox">

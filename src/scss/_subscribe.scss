@@ -94,18 +94,6 @@
         border: none;
         gap: 0;
     }
-
-    .parsley-errors-list.filled {
-        color: #cec1a3;
-        font-size: 1.2rem;
-        line-height: 1.2;
-        margin-top: 0.5rem;
-        text-align: left;
-
-        @include breakpoint(mobile) {
-            text-align: center;
-        }
-    }
 }
 
 .subscribe__form-row {

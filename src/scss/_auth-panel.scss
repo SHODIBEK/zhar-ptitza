@@ -25,6 +25,10 @@
         p {
             margin-top: 0.8rem;
         }
+
+        b {
+            font-weight: 500;
+        }
     }
 
     &__form {
@@ -40,6 +44,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &-sms {
+            flex-direction: column-reverse;
+        }
 
         &__input {
             margin-left: 0.5em;
@@ -62,19 +70,36 @@
 
     &__tip {
         margin: 0 auto;
-        margin-top: 3rem;
+        margin-top: 1rem;
         max-width: 40rem;
-        font-size: 1rem;
-        line-height: 1.4;
+        font-size: 1.2rem;
+        line-height: 1.2;
         color: #968a71;
+
+        @include breakpoint(mobile) {
+            font-size: 1rem;
+        }
+
+        &.js-code-error {
+            display: none;
+        }
     }
 
     &__actions {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         font-size: 1rem;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
 
         &__item {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        &-link {
             display: inline-block;
             margin: 0 1rem;
         }
@@ -85,8 +110,13 @@
 
         a {
             padding: 0.5rem 0;
+            font-size: 1.2rem;
             text-decoration: underline;
             color: #968a71;
+
+            @include breakpoint(mobile) {
+                font-size: 1rem;
+            }
         }
     }
 }

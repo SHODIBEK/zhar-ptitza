@@ -12,6 +12,7 @@
     &__content {
         background: #ede8dd;
         padding: 6rem;
+        color: #3a241f;
 
         @include breakpoint(mobile) {
             padding: 2rem 0;
