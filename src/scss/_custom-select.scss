@@ -99,6 +99,8 @@
 
         &:first-child {
             padding-top: 2rem;
+            cursor: auto;
+            pointer-events: none;
         }
 
         &:last-child {
