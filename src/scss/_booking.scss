@@ -1672,9 +1672,9 @@
     }
 
     &:disabled {
-        cursor: auto;
-        pointer-events: none;
-        background-color: gray;
+        cursor: auto !important;
+        pointer-events: none !important;
+        background-color: gray !important;
     }
 }
 
