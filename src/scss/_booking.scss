@@ -1359,7 +1359,7 @@
 
 .booking__checkout-info-card-right-wrapper {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) 1fr;
     grid-gap: 2rem;
     align-items: flex-start;
 
