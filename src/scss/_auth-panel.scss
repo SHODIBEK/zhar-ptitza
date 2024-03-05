@@ -34,6 +34,7 @@
     &__form {
         max-width: 33rem;
         margin: 0 auto;
+        margin-bottom: 1rem;
     }
 
     &__phone {
@@ -122,6 +123,10 @@
                 font-size: 1rem;
             }
         }
+    }
+
+    .booking__checkout-form-submit {
+        background-color: var(--text-color);
     }
 }
 

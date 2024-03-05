@@ -26,6 +26,10 @@
         &::before {
             opacity: 1;
         }
+
+        .page-header__nav-submenu {
+            padding-top: 32px;
+        }
     }
 }
 
@@ -370,9 +374,10 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s, visibility 0s linear 0.4s;
-    padding-top: 30px;
+    padding-top: 16px;
     width: max-content;
     max-width: 30rem;
+    transition: 0.2s ease-in-out;
 }
 
 .page-header__nav-submenu-inner {

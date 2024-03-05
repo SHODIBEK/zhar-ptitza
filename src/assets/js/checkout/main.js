@@ -8,8 +8,7 @@ counters.forEach(counter => {
     const maxValue = valueInput.getAttribute('max') || 100;
 
     function enforceMinMax() {
-        console.log('unfocus');
-        if (parseInt(valueInput.value) <= parseInt(minValue)) {
+        if (parseInt(valueInput.value) <= parseInt(minValue) || valueInput.value == '') {
             valueInput.value = minValue;
 
             decrementButton.setAttribute('disabled', 'disabled');
@@ -47,6 +46,9 @@ counters.forEach(counter => {
     decrementButton.addEventListener('click', decrement);
 
     valueInput.addEventListener('focusout', enforceMinMax);
+    valueInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
 });
 
 customSelect('select');

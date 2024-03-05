@@ -46,6 +46,9 @@
                         complete : function(pin){
                             
                             $('.js-submit').removeAttr('disabled')
+                        },
+                        keydown : function(e, field, nr){
+                            if(field.value.length > 0) field.value = field.value.slice(0, 0)
                         }
                     });
                 </script>
