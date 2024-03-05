@@ -1236,8 +1236,8 @@
 
 .booking__checkout-info-card {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-gap: 1.5rem;
     padding: 1.2rem 0;
 
     @include breakpoint(mobile) {
