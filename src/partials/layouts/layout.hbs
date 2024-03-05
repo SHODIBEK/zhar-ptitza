@@ -39,16 +39,19 @@
             {{> script }}
             {{#if viewCode}} 
                 <script>
+                    const submit = $('.js-submit')
                     var pinlogin = $(".js-otp-groups").pinlogin({
                         fields: 4,
                         hideinput: false,
                         reset: false,
                         complete : function(pin){
-                            
-                            $('.js-submit').removeAttr('disabled')
+                            submit.removeAttr('disabled')
                         },
                         keydown : function(e, field, nr){
-                            if(field.value.length > 0) field.value = field.value.slice(0, 0)
+                            if(field.value.length > 0) field.value = field.value.slice(0, 0);
+                            if ((e.keyCode == 37 || e.keyCode == 8) && nr > 0) {
+                                submit.prop('disabled', true);
+                            }
                         }
                     });
                 </script>
