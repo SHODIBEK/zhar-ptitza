@@ -40,16 +40,11 @@
             </div>
 
             <div class="auth-panel__tip text-center js-timer-text">
-                Получить новый код можно через <span class="js-timer" data-time="60">60</span> секунд
+                Получить новый код можно через <span id="js-timer" data-minutes="1" data-seconds="0">01:00</span> секунд
             </div>
 
             <div class="auth-panel__actions">
-                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle js-timer-restart" href="#">Позвонить еще раз</a>
-                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle" href="#"
-                        data-tippy-content="Проблемы могут быть со стороны сотового оператора. Обратитесь в службу поддержки"
-                        data-tippy-placement="bottom">
-                        Мне никто не звонит
-                    </a>
+                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle js-timer-restart" href="#">Получить ещё код</a>
                 <a class="auth-panel__actions-link" href="#">Изменить номер</a>
             </div>
         </form>

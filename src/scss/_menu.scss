@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     background: #e2d8c0;
-    color: #3a241f;
+    color: var(--secondary-color);
     z-index: 600;
 
     .container {
@@ -126,7 +126,7 @@
         display: none;
     }
     // text {
-    //     fill: #3a241f;
+    //     fill: var(--secondary-color);
     //     font-family: var(--zhar-ptitza);
 
     //     font-weight: 700;
@@ -215,7 +215,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        fill: #3a241f;
+        fill: var(--secondary-color);
     }
 }
 
@@ -262,7 +262,7 @@
     }
 
     &.active {
-        color: #3a241f;
+        color: var(--secondary-color);
     }
 }
 
@@ -275,7 +275,7 @@
     line-height: 120%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #3a241f;
+    color: var(--secondary-color);
     gap: 1.4rem;
 
     @include breakpoint(mobile) {
@@ -304,7 +304,7 @@
     }
     &:link,
     &:visited {
-        color: #3a241f;
+        color: var(--secondary-color);
     }
 }
 

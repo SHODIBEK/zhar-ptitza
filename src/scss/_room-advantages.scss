@@ -68,7 +68,7 @@
 
     @include breakpoint(mobile) {
         font-style: normal;
-        color: #3a241f;
+        color: var(--secondary-color);
         font-size: 3.2rem;
         line-height: 120%;
         margin-bottom: 2.5rem;

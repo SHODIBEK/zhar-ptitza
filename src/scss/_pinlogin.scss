@@ -24,7 +24,7 @@
         }
 
         &:focus {
-            border: 2px solid #3a241f;
+            border: 2px solid var(--secondary-color);
         }
 
         &.invalid {

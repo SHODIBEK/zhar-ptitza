@@ -8,6 +8,7 @@ counters.forEach(counter => {
     const maxValue = valueInput.getAttribute('max') || 100;
 
     function enforceMinMax() {
+        console.log('unfocus');
         if (parseInt(valueInput.value) <= parseInt(minValue)) {
             valueInput.value = minValue;
 
@@ -45,7 +46,7 @@ counters.forEach(counter => {
     incrementButton.addEventListener('click', increment);
     decrementButton.addEventListener('click', decrement);
 
-    valueInput.addEventListener('keyup', enforceMinMax);
+    valueInput.addEventListener('focusout', enforceMinMax);
 });
 
 customSelect('select');

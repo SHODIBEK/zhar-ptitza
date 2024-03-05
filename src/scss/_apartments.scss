@@ -25,7 +25,7 @@
     line-height: 120%;
     letter-spacing: 0.05em;
     font-family: var(--zhar-ptitza);
-    color: #3a241f;
+    color: var(--secondary-color);
     margin-bottom: 3.8rem;
 
     @include breakpoint(mobile) {
@@ -80,7 +80,7 @@
     display: flex;
     flex-direction: column;
 
-    color: #3a241f;
+    color: var(--secondary-color);
 
     @include breakpoint(mobile) {
         flex-grow: 1;
@@ -255,7 +255,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #3a241f;
+    border: 1px solid var(--secondary-color);
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     font-style: normal;
     font-weight: 500;
@@ -264,7 +264,7 @@
     text-align: center;
     padding: 1.4rem 2.8rem;
     min-height: 46px;
-    color: #3a241f;
+    color: var(--secondary-color);
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -280,11 +280,11 @@
     }
     &:link,
     &:visited {
-        color: #3a241f;
+        color: var(--secondary-color);
     }
 
     &--filled {
-        background-color: #3a241f;
+        background-color: var(--secondary-color);
         color: #fff;
         font-weight: 700;
         &:link,
@@ -348,7 +348,7 @@
 
     svg {
         flex-shrink: 0;
-        fill: #3a241f;
+        fill: var(--secondary-color);
         transition: fill 0.2s, transform 0.2s;
         width: 2.7rem;
         height: 2rem;
@@ -363,7 +363,7 @@
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 2.2rem;
-    color: #3a241f;
+    color: var(--secondary-color);
 
     @include breakpoint(mobile) {
         display: none;

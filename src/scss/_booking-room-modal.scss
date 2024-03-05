@@ -53,7 +53,7 @@
     font-size: 4rem;
     font-family: var(--zhar-ptitza);
     line-height: 120%;
-    color: #3a241f;
+    color: var(--secondary-color);
     margin-bottom: 2rem;
 
     @include breakpoint(mobile) {

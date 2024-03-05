@@ -22,39 +22,48 @@ function initMyPromo() {
     });
 }
 
-let int;
+function countdown(elementName, minutes, seconds) {
+    var element, endTime, hours, mins, msLeft, time;
 
-function startTimer(duration, display) {
-    var timer = parseInt(duration),
-        display;
-    int = setInterval(function() {
-        if (timer > 0) {
-            timer--;
-            display.text(timer);
+    function twoDigits(n) {
+        return n <= 9 ? '0' + n : n;
+    }
+
+    function updateTimer() {
+        msLeft = endTime - +new Date();
+        if (msLeft < 1000) {
+            document.querySelector('.js-timer-toggle').style.display = 'block';
+            document.querySelector('.js-timer-text').style.display = 'none';
         } else {
-            clearInterval(int);
-            $('.js-timer-toggle').show();
-            $('.js-timer-text').hide();
+            time = new Date(msLeft);
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits(mins) : mins) + ':' + twoDigits(time.getUTCSeconds());
+            setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
         }
-    }, 1000);
+    }
+
+    element = document.getElementById(elementName);
+    endTime = +new Date() + 1000 * (60 * minutes + seconds) + 500;
+    updateTimer();
 }
 
-function restartTimer(duration, display) {
-    clearInterval(int);
-    startTimer(duration, display);
+function restartCountDown(minutes, seconds) {
+    countdown('js-timer', minutes, seconds);
     $('.js-timer-toggle').hide();
     $('.js-timer-text').show();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const timer = $('.js-timer');
-    const minutes = timer.data('time');
-    startTimer(minutes, timer);
+    const timer = $('#js-timer');
+    const minutes = timer.data('minutes');
+    const seconds = timer.data('seconds');
 
     initMyPromo();
+    countdown('js-timer', minutes, seconds);
 
     $('.js-timer-restart').on('click', function(e) {
         e.preventDefault();
-        restartTimer(minutes, timer);
+        restartCountDown(minutes, seconds);
     });
 });

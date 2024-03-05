@@ -12,7 +12,13 @@
     &__content {
         background: #ede8dd;
         padding: 6rem;
-        color: #3a241f;
+        color: var(--secondary-color);
+
+        & *::selection {
+            color: inherit;
+            background-color: #fff;
+            -webkit-text-fill-color: unset;
+        }
 
         @include breakpoint(mobile) {
             padding: 2rem 0;

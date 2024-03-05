@@ -14,7 +14,7 @@
         font-family: var(--zhar-ptitza);
         font-size: 4rem;
         text-align: center;
-        color: #3a241f;
+        color: var(--text-color);
     }
 
     &__desc {
@@ -44,6 +44,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include breakpoint(mobile) {
+            margin-top: 1.5rem;
+        }
 
         &-sms {
             flex-direction: column-reverse;
@@ -86,7 +90,7 @@
     }
 
     &__actions {
-        margin-top: 1rem;
+        // margin-top: 1rem;
         font-size: 1rem;
         text-align: center;
         display: flex;

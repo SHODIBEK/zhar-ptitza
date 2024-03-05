@@ -14,7 +14,7 @@
     line-height: 120%;
     font-family: var(--zhar-ptitza);
     margin-bottom: 2rem;
-    color: #3a241f;
+    color: var(--secondary-color);
 
     @include breakpoint(mobile) {
         font-weight: 700;

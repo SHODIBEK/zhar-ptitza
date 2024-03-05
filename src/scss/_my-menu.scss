@@ -1,5 +1,5 @@
 .my-menu {
-    color: #3a241f;
+    color: var(--secondary-color);
     background: #ede8dd;
     padding: 2.5rem 2rem;
 
@@ -16,7 +16,7 @@
     &__name {
         font-size: 2rem;
         line-height: 1.4;
-        color: #3a241f;
+        color: var(--secondary-color);
     }
 
     &__links {
@@ -35,7 +35,7 @@
 
         &.active,
         &:hover {
-            color: #3a241f;
+            color: var(--secondary-color);
         }
     }
 

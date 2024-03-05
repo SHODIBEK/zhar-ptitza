@@ -32,20 +32,17 @@
             </div>
 
             <div class="auth-panel__tip text-center js-timer-text">
-                Запросить код повторно можно через <span class="js-timer" data-time="60">60</span> секунд
+                Получить новый код можно через <span class="js-timer" data-time="60">60</span> секунд
             </div>
 
             <div class="auth-panel__actions">
-                <div class="auth-panel__actions__item">
-                    <a href="#" class="auth-panel__actions__call js-timer-restart">Позвонить еще раз</a>
-                </div>
-                <div class="auth-panel__actions__item">
-                    <a href="#"
+                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle js-timer-restart" href="#">Позвонить еще раз</a>
+                <a class="auth-panel__actions-link auth-panel__actions__call js-timer-toggle" href="#"
                         data-tippy-content="Проблемы могут быть со стороны сотового оператора. Обратитесь в службу поддержки"
                         data-tippy-placement="bottom">
                         Мне никто не звонит
                     </a>
-                </div>
+                <a class="auth-panel__actions-link" href="#">Изменить номер</a>
             </div>
         </form>
     </div>
