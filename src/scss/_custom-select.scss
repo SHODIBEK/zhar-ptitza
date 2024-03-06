@@ -98,13 +98,15 @@
         cursor: pointer;
 
         &:first-child {
-            padding-top: 2rem;
-            cursor: auto;
-            pointer-events: none;
+            display: none;
         }
 
         &:last-child {
             padding-bottom: 2rem;
+        }
+
+        &:nth-child(2) {
+            padding-top: 2rem;
         }
 
         .no-touch &:hover {

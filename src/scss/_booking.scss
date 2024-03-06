@@ -1255,7 +1255,6 @@
 
     @include breakpoint(mobile) {
         grid-area: image;
-        height: max-content;
     }
     &::before {
         content: '';
