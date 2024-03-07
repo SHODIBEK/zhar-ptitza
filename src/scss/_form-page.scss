@@ -219,8 +219,8 @@ textarea.form-page__form-input {
 
 .form-page__form-policy-checkbox {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    align-items: flex-start;
+    gap: 1rem;
     cursor: pointer;
     user-select: none;
 }

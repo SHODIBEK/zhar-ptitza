@@ -1400,7 +1400,7 @@
 .booking__checkout-actions {
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
     grid-gap: 2rem;
     align-items: center;
 
@@ -1489,7 +1489,7 @@
     align-items: center;
 
     @include breakpoint(mobile) {
-        margin-top: 2rem;
+        margin-top: 4rem;
         flex-wrap: wrap;
         gap: 1.4rem;
     }
@@ -1692,9 +1692,8 @@
     background: var(--secondary-color);
     color: white;
     margin-top: 3rem;
-    padding: 1.5rem 2.4rem;
+    padding: 1.87rem 2.4rem;
     width: 100%;
-    min-height: 46px;
 
     @include breakpoint(mobile) {
         margin-top: 1.5rem;

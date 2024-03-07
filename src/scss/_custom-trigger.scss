@@ -1,21 +1,22 @@
 .custom-trigger {
     position: relative;
     width: max-content;
-    min-width: 200px;
+    max-width: 200px;
     z-index: 10;
 
     @include breakpoint(mobile) {
         width: 100%;
+        min-width: 100px;
     }
 
     &__default {
-        padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+        padding: 1.5rem 4rem 1.5rem 1.5rem;
         position: relative;
         display: block;
         font-style: normal;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 1.2;
+        line-height: 1;
         color: var(--text-color);
         border: 1px solid var(--text-color);
         cursor: pointer;
@@ -30,9 +31,9 @@
             content: '';
             position: absolute;
             top: 0;
-            right: 15px;
+            right: 1em;
             bottom: 0;
-            width: 10px;
+            width: 1em;
             height: 5px;
             margin: auto;
             background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBVcGxvYWRlZCB0bzogU1ZHIFJlcG8sIHd3dy5zdmdyZXBvLmNvbSwgR2VuZXJhdG9yOiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4NCjxzdmcgZmlsbD0iIzAwMDAwMCIgaGVpZ2h0PSI4MDBweCIgd2lkdGg9IjgwMHB4IiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiANCgkgdmlld0JveD0iMCAwIDM4Ni4yNTcgMzg2LjI1NyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBwb2ludHM9IjAsOTYuODc5IDE5My4xMjksMjg5LjM3OSAzODYuMjU3LDk2Ljg3OSAiLz4NCjwvc3ZnPg==)
