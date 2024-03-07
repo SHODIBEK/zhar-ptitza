@@ -6,7 +6,7 @@
     @include breakpoint(mobile) {
         background: transparent;
         padding-top: 7rem;
-        padding-bottom: 3rem;
+        padding-bottom: 0;
     }
 
     *::selection {
@@ -1352,6 +1352,7 @@
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 120%;
+    text-align: right;
 
     @include breakpoint(mobile) {
         grid-area: price;
@@ -1360,6 +1361,7 @@
         font-size: 1.2rem;
         line-height: 170%;
         justify-self: flex-start;
+        text-align: left;
     }
 }
 
@@ -1375,7 +1377,7 @@
 
 .booking__checkout-info-card-right-wrapper {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: max-content auto;
     grid-gap: 1.5rem;
     align-items: flex-start;
 
@@ -1487,7 +1489,9 @@
     align-items: center;
 
     @include breakpoint(mobile) {
-        display: none;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        gap: 1.4rem;
     }
 }
 
@@ -1507,13 +1511,26 @@
 .booking__checkout-conditions-cards-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1.2rem;
+
+    @include breakpoint(mobile) {
+        gap: 1rem;
+    }
 }
 
 .booking__checkout-conditions-cards-image {
     display: block;
+    width: 3rem;
     height: 3rem;
-    width: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+
+    @include breakpoint(mobile) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 
 .booking__checkout-conditions-rules-link {
@@ -1528,6 +1545,10 @@
     margin-left: auto;
     &:hover {
         text-decoration-color: transparent;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
     }
 }
 
@@ -1770,7 +1791,7 @@
     color: #968a71 !important;
 
     &:hover {
-        text-decoration: none;
+        text-decoration-color: transparent;
     }
 
     @include breakpoint(mobile) {

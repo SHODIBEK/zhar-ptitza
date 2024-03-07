@@ -9,6 +9,12 @@
 
     box-shadow: 0 1.6rem 2.4rem rgba(115, 115, 115, 0.08), 0 0.2rem 0.8rem rgba(115, 115, 115, 0.06);
 
+    *::selection {
+        color: inherit !important;
+        background-color: #fff !important;
+        -webkit-text-fill-color: unset !important;
+    }
+
     @include breakpoint(mobile) {
         width: calc(100vw - 10px);
     }

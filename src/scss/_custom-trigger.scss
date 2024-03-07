@@ -64,7 +64,8 @@
         top: calc(100% + 10px);
         left: 0;
         width: 100%;
-        border: 1px solid;
+        padding: 1rem 0;
+        border: 1px solid var(--text-color);
         background: #fff;
         opacity: 0;
         visibility: hidden;
@@ -89,14 +90,6 @@
         color: var(--text-color);
         cursor: pointer;
 
-        &:first-child {
-            padding-top: 2rem;
-        }
-
-        &:last-child {
-            padding-bottom: 2rem;
-        }
-
         .no-touch &:hover {
             color: #968a71;
         }
@@ -109,16 +102,8 @@
         }
 
         @include breakpoint(mobile) {
-            padding: 0.5rem 1rem;
+            padding: 1rem;
             font-size: 1.2rem;
-
-            &:first-child {
-                padding-top: 1rem;
-            }
-
-            &:last-child {
-                padding-bottom: 1rem;
-            }
         }
     }
 }

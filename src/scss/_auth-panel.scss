@@ -116,8 +116,13 @@
         a {
             padding: 0.5rem 0;
             font-size: 1.2rem;
-            text-decoration: underline;
             color: #968a71;
+            text-decoration: underline;
+            transition: all 0.2s;
+
+            &:hover {
+                text-decoration-color: transparent;
+            }
 
             @include breakpoint(mobile) {
                 font-size: 1rem;

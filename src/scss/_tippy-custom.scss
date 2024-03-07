@@ -16,6 +16,12 @@
         padding: 1em;
         text-align: center;
         color: var(--text-color);
+
+        *::selection {
+            color: inherit !important;
+            background-color: #fff !important;
+            -webkit-text-fill-color: unset !important;
+        }
     }
 
     .tippy-arrow {
