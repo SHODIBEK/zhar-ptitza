@@ -3,7 +3,5 @@
     "headerFixed": false,
     "headerDark": true,
     "script": true,
-    "otherScript": true,
-    "otherScriptTag": ["https://cdn.jsdelivr.net/npm/custom-select@1.1.15/build/custom-select.min.js"],
     "scriptUrl": "./assets/js/checkout/main.js"
 }

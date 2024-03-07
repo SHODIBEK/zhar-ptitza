@@ -16,8 +16,10 @@
                                 <li class="booking__checkout-info-list-item">
                                     <div class="booking__checkout-info-card">
                                         <div class="booking__checkout-info-card-left-wrapper">
-
                                             <div class="booking__checkout-info-card-image-container">
+                                                <svg class="booking__checkout-info-placeholder booking__checkout-info-placeholder--white">
+                                                    <use xlink:href="#logo-bird"/>
+                                                </svg>
                                                 <img src="img/black-sert.svg" alt=""
                                                     class="booking__checkout-info-card-image">
                                             </div>
@@ -31,8 +33,6 @@
                                             </div>
                                         </div>
                                         <div class="booking__checkout-info-card-right-wrapper">
-
-
                                             <div class="booking__checkout-info-card-summary">
                                                 <div class="counter">
                                                     <button type="button" class="counter__button counter__button--minus js-counter-minus" disabled ></button>
@@ -52,6 +52,9 @@
                                     <div class="booking__checkout-info-card">
                                         <div class="booking__checkout-info-card-left-wrapper">
                                             <div class="booking__checkout-info-card-image-container">
+                                                <svg class="booking__checkout-info-placeholder">
+                                                    <use xlink:href="#logo-bird"/>
+                                                </svg>
                                                 <img src="img/black-sert.svg" alt=""
                                                     class="booking__checkout-info-card-image">
                                             </div>
@@ -84,14 +87,14 @@
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro quaerat a dolorem tempora. Sequi culpa laboriosam harum doloribus deleniti dolorum natus, tenetur officiis officia corrupti! Repudiandae, ipsa? Veritatis, maiores velit?
                             </div>
                             <div class="booking__checkout-actions">
-                                <div class="custom-select">
-                                    <select name="cert">
-                                        <option value="">Добавить сертификат</option>
-                                        <option value="1">Сертификат 1</option>
-                                        <option value="2">Сертификат 2</option>
-                                        <option value="3">Сертификат 3</option>
-                                        <option value="4">Сертификат 4</option>
-                                    </select>
+                                <div class="custom-trigger">
+                                    <div class="custom-trigger__default">Добавить сертификат</div>
+                                    <div class="custom-trigger__items">
+                                        <a href="#" class="custom-trigger__item">Сертификат 1</a>
+                                        <a href="#" class="custom-trigger__item">Сертификат 2</a>
+                                        <a href="#" class="custom-trigger__item">Сертификат 3</a>
+                                        <a href="#" class="custom-trigger__item">Сертификат 4</a>
+                                    </div>
                                 </div>
                                 <div class="booking__checkout-total">
                                     <div class="booking__checkout-total-price">

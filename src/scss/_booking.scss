@@ -1267,6 +1267,23 @@
     }
 }
 
+.booking__checkout-info-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+    fill: var(--text-color);
+    z-index: 2;
+    margin: auto;
+}
+
+.booking__checkout-info-placeholder--white {
+    fill: white;
+}
+
 .booking__checkout-info-card-image {
     position: absolute;
     left: 0;

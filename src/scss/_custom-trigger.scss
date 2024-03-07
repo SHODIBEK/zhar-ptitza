@@ -1,0 +1,128 @@
+.custom-trigger {
+    position: relative;
+    width: max-content;
+    min-width: 200px;
+    z-index: 10;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+
+    &__default {
+        padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+        position: relative;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        cursor: pointer;
+        transition: 0.2s;
+
+        @include breakpoint(mobile) {
+            padding: 1rem 2.5rem 1rem 1rem;
+            font-size: 1.2rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 15px;
+            bottom: 0;
+            width: 10px;
+            height: 5px;
+            margin: auto;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBVcGxvYWRlZCB0bzogU1ZHIFJlcG8sIHd3dy5zdmdyZXBvLmNvbSwgR2VuZXJhdG9yOiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4NCjxzdmcgZmlsbD0iIzAwMDAwMCIgaGVpZ2h0PSI4MDBweCIgd2lkdGg9IjgwMHB4IiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiANCgkgdmlld0JveD0iMCAwIDM4Ni4yNTcgMzg2LjI1NyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBwb2ludHM9IjAsOTYuODc5IDE5My4xMjksMjg5LjM3OSAzODYuMjU3LDk2Ljg3OSAiLz4NCjwvc3ZnPg==)
+                no-repeat center / 100%;
+            transition: 0.2s;
+        }
+
+        .no-touch &:hover {
+            color: #fff;
+            background-color: var(--text-color);
+            transition: 0.2s;
+
+            &::after {
+                background: url(data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyBmaWxsPSIjZmZmZmZmIiBoZWlnaHQ9IjgwMHB4IiB3aWR0aD0iODAwcHgiIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzODYuMjU3IDM4Ni4yNTciIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0cm9rZT0iI2ZmZmZmZiI+Cg08ZyBpZD0iU1ZHUmVwb19iZ0NhcnJpZXIiIHN0cm9rZS13aWR0aD0iMCIvPgoNPGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cg08ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxwb2x5Z29uIHBvaW50cz0iMCw5Ni44NzkgMTkzLjEyOSwyODkuMzc5IDM4Ni4yNTcsOTYuODc5ICIvPiA8L2c+Cg08L3N2Zz4=)
+                    no-repeat center / 100%;
+            }
+        }
+
+        .is-open & {
+            &::after {
+                transform: rotate(180deg);
+                transition: 0.2s;
+            }
+        }
+    }
+
+    &__items {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+        border: 1px solid;
+        background: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: 0.2s;
+
+        .is-open & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: 0.2s;
+        }
+    }
+
+    &__item {
+        padding: 1rem 2rem;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1;
+        color: var(--text-color);
+        cursor: pointer;
+
+        &:first-child {
+            display: none;
+        }
+
+        &:last-child {
+            padding-bottom: 2rem;
+        }
+
+        &:nth-child(2) {
+            padding-top: 2rem;
+        }
+
+        .no-touch &:hover {
+            color: #968a71;
+        }
+
+        &.is-selected {
+            font-weight: 600;
+            color: #968a71;
+            pointer-events: none;
+            cursor: auto;
+        }
+
+        @include breakpoint(mobile) {
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+
+            &:first-child {
+                padding-top: 1rem;
+            }
+
+            &:last-child {
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}
