@@ -56,12 +56,7 @@ function bookingRoomModalSlider() {
                 nextEl: element.querySelector('.booking-room-modal__arrow--next'),
                 prevEl: element.querySelector('.booking-room-modal__arrow--prev')
             },
-            grabCursor: true,
-            breakpoints: {
-                641: {
-                    centeredSlides: true
-                }
-            }
+            grabCursor: true
         });
     });
 }

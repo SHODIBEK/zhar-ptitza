@@ -20,7 +20,7 @@
 
     @include breakpoint(mobile) {
         background-color: #fff;
-        padding-top: 9rem;
+        padding-top: 4rem;
         padding-bottom: 3rem;
     }
 
@@ -85,10 +85,6 @@
     gap: 3rem;
     justify-content: space-between;
     min-height: 6rem;
-
-    @include breakpoint(mobile) {
-        display: contents;
-    }
 }
 
 .booking-room-modal__arrows {
@@ -96,10 +92,6 @@
     align-items: center;
     gap: 1.4rem;
     flex-shrink: 0;
-
-    @include breakpoint(mobile) {
-        display: none;
-    }
 }
 
 .booking-room-modal__arrow {
@@ -135,9 +127,6 @@
     flex-shrink: 0;
 
     @include breakpoint(mobile) {
-        position: absolute;
-        right: 0.25rem;
-        top: -3.5rem;
         width: 2.8rem;
         height: 2.8rem;
     }
@@ -164,6 +153,9 @@
     }
     .swiper {
         overflow: visible;
+        @include breakpoint(mobile) {
+            overflow: hidden;
+        }
     }
 
     .swiper-slide {
@@ -283,7 +275,6 @@
     @include breakpoint(mobile) {
         max-width: none;
         font-size: 1.2rem;
-        line-height: 170%;
         order: 9;
         margin-bottom: 3rem;
     }
@@ -314,7 +305,6 @@
     @include breakpoint(mobile) {
         font-size: 1.4rem;
         line-height: 120%;
-        font-weight: 500;
     }
 }
 
