@@ -24,7 +24,7 @@
     line-height: 120%;
     margin-bottom: 3rem;
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--text-color);
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -35,10 +35,43 @@
     }
 }
 
+.booking__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.2s;
+    }
+
+    svg {
+        animation: spin 2s linear infinite;
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
 .booking__content {
     margin: 0 auto;
     width: 100%;
-    max-width: 92rem;
+    max-width: 100rem;
 
     &--wide {
         max-width: 116.4rem;
@@ -58,6 +91,7 @@
     padding: 5rem 12rem;
     padding-bottom: 8rem;
     background-color: #fff;
+    position: relative;
 
     &--checkout {
         padding: 3.5rem;
@@ -244,13 +278,13 @@
     .datepicker.dropdown-menu {
         width: 100% !important;
         min-width: none;
-        box-shadow: none !important;
         border-radius: 0 !important;
         background: #ede8dd;
         padding: 0.6rem;
         padding-top: 1.7rem;
         padding-bottom: 3rem;
         border: none !important;
+        box-shadow: 0 1.6rem 2.4rem rgba(115, 115, 115, 0.08), 0 0.2rem 0.8rem rgba(115, 115, 115, 0.06);
     }
 
     .datepicker-dropdown:before,
@@ -337,7 +371,7 @@
     .day {
         border: 1px solid transparent;
         transition: color 0.2s, border-color 0.2s !important;
-        &:hover {
+        &:not(.disabled):hover {
             color: var(--secondary-color) !important;
             background: transparent !important;
         }
@@ -368,7 +402,7 @@
         }
 
         &:hover {
-            color: var(--secondary-color) !important;
+            color: var(--secondary-color);
             background: transparent !important;
         }
         &.focused {
@@ -385,6 +419,10 @@
             color: var(--secondary-color) !important;
             text-shadow: none !important;
             font-weight: 700;
+        }
+
+        &.disabled {
+            color: #968a71 !important;
         }
     }
 
@@ -451,6 +489,18 @@
         color: rgba(150, 138, 113, 0.3);
     }
 
+    .day.old,
+    .year.disabled {
+        cursor: auto;
+        color: rgba(150, 138, 113, 0.3) !important;
+    }
+
+    .year.old,
+    .year.disabled {
+        cursor: auto;
+        color: rgba(150, 138, 113, 0.3) !important;
+    }
+
     .datepicker .datepicker-switch:hover,
     .datepicker .next:hover,
     .datepicker .prev:hover,
@@ -492,6 +542,27 @@
             grid-row-gap: 2rem;
         }
     }
+
+    .decade,
+    .century {
+        transition: 0.2s;
+        &:hover {
+            color: var(--secondary-color);
+        }
+        &.active.disabled {
+            color: var(--secondary-color);
+            border-radius: 0;
+            border: 1px solid var(--secondary-color);
+            background: transparent !important;
+
+            &:hover {
+                color: var(--secondary-color);
+                border-radius: 0;
+                border: 1px solid var(--secondary-color);
+                background: transparent !important;
+            }
+        }
+    }
 }
 
 .booking__common-search-field-label {
@@ -531,6 +602,7 @@
         background-repeat: no-repeat;
         background-position: right center;
         background-image: url('../img/calendar.svg');
+        cursor: pointer;
 
         @include breakpoint(mobile) {
             background-size: 2.2rem 2.2rem;
@@ -2082,12 +2154,19 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 
     @include breakpoint(mobile) {
         width: 11.3rem;
         height: 2.8rem;
         font-size: 1.2rem;
         line-height: 170%;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: #000;
+        border-color: #000;
     }
 }
 

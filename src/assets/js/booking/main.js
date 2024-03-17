@@ -38,6 +38,34 @@ function bookingRoomSlider() {
     });
 }
 
+function bookingRoomModalSlider() {
+    const elements = Array.from(document.querySelectorAll('.js-booking-room-slider'));
+
+    elements.forEach(element => {
+        const container = element.querySelector('.swiper');
+
+        new Swiper(container, {
+            slidesPerView: 'auto',
+            centeredSlides: false,
+            loopedSlides: 10,
+            loopedSlidesLimit: false,
+            loopAdditionalSlides: 10,
+            loop: true,
+            speed: 500,
+            navigation: {
+                nextEl: element.querySelector('.booking-room-modal__arrow--next'),
+                prevEl: element.querySelector('.booking-room-modal__arrow--prev')
+            },
+            grabCursor: true,
+            breakpoints: {
+                641: {
+                    centeredSlides: true
+                }
+            }
+        });
+    });
+}
+
 function selectBookingRoom() {
     const radios = Array.from(document.querySelectorAll('.booking__room-slider-card-checkbox-input'));
     function setActiveCard() {
@@ -62,6 +90,8 @@ function selectBookingRoom() {
 
 function datepicker() {
     const elements = Array.from(document.querySelectorAll('.js-datepicker'));
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
 
     elements.forEach(element => {
         $(element)
@@ -97,6 +127,8 @@ function datepicker() {
             .on('changeDate', function(e) {
                 $(element).trigger('blur');
             });
+
+        $(element).datepicker('setDate', tomorrow);
     });
 }
 
@@ -304,6 +336,45 @@ function ticketsAmount() {
     });
 }
 
+function videoPlaying() {
+    const elements = Array.from(
+        document.querySelectorAll(
+            '.apartments__slider-card-image-container, .rooms-catalog__card-image-container, .booking__room-slider-card-image-container'
+        )
+    );
+
+    elements.forEach(element => {
+        const video = element.querySelector('video');
+
+        if (video != null) {
+            element.addEventListener('mouseenter', () => {
+                // video.pause();
+                video.currentTime = 0;
+                video.play();
+                element.classList.add('video-shown');
+            });
+
+            element.addEventListener('mouseleave', () => {
+                video.pause();
+                element.classList.remove('video-shown');
+            });
+
+            element.addEventListener('click', event => {
+                event.preventDefault();
+                if (video.playing) {
+                    video.pause();
+                    element.classList.remove('video-shown');
+                } else {
+                    // video.pause();
+                    video.currentTime = 0;
+                    video.play();
+                    element.classList.add('video-shown');
+                }
+            });
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     bookingRoomSlider();
     datepicker();
@@ -311,4 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
     roomsAmount();
     timeDropdown();
     ticketsAmount();
+    videoPlaying();
+    bookingRoomModalSlider();
 });
