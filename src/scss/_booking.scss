@@ -232,6 +232,10 @@
         grid-gap: 1rem;
         margin-bottom: 2.5rem;
     }
+
+    &--full {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 .booking__common-search-field {
@@ -2154,5 +2158,21 @@
     @include breakpoint(mobile) {
         font-size: 1.2rem;
         line-height: 170%;
+    }
+}
+
+.booking__form {
+    @include breakpoint(mobile) {
+        padding-bottom: 7rem;
+    }
+}
+
+.booking__room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 18px;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
     }
 }
