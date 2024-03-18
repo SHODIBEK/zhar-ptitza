@@ -104,13 +104,6 @@
         opacity: 0.5;
     }
 
-    .no-touch &:not(.swiper-button-disabled):hover,
-    .touch &:not(.swiper-button-disabled):active {
-        svg {
-            fill: #968a71;
-        }
-    }
-
     &:hover {
         svg {
             fill: var(--text-color);
