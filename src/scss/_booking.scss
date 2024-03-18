@@ -2305,3 +2305,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+.booking__room-slider-card--novideo {
+    &::after {
+        display: none;
+    }
+}
