@@ -1,0 +1,7 @@
+{
+    "title": "Страница Новости",
+    "headerFixed": false,
+    "innerPage": true,
+    "script": true,
+    "scriptUrl": "./assets/js/promo/main.js"
+}

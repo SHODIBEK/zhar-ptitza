@@ -3,14 +3,14 @@
     z-index: 150;
     bottom: 2rem;
     right: 10rem;
-    width: 33.5rem;
+    width: 34rem;
     background: var(--secondary-color);
     color: #ede8dd;
     background-image: url('../img/newsletter-bg.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 4rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0s linear 0.3s;

@@ -130,18 +130,112 @@
 }
 
 .promo-detail__text {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 1.9;
     margin-bottom: 3rem;
 
     @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 0;
+        font-style: normal;
+        font-weight: 700;
+        font-family: var(--zhar-ptitza);
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 6rem;
+        line-height: 110%;
+
+        @include breakpoint(mobile) {
+            font-size: 2.5rem;
+            line-height: 120%;
+        }
+    }
+
+    h3 {
+        font-size: 4rem;
+        line-height: 120%;
+
+        @include breakpoint(mobile) {
+            font-size: 2rem;
+            line-height: 120%;
+        }
+    }
+
+    p {
+        margin: 0;
         font-style: normal;
         font-weight: 500;
-        font-size: 1.4rem;
-        line-height: 120%;
-        margin-bottom: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.4;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+            line-height: 120%;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        li {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.4rem;
+            display: inline-flex;
+            align-items: flex-start;
+            line-height: 140%;
+            gap: 1rem;
+
+            &::before {
+                content: '';
+                width: 1.5rem;
+                height: 1.5rem;
+                flex-shrink: 0;
+                background-size: contain;
+                background-image: url(../img/diamond-shape-black.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: underline;
+        transition: 0.2s;
+
+        &:hover {
+            text-decoration: transparent;
+            transition: 0.2s;
+        }
+    }
+
+    blockquote {
+        padding-left: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        border-left: 3px solid #968a71;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+            line-height: 120%;
+        }
     }
 }
 
