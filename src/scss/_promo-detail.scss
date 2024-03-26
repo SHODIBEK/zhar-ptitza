@@ -144,7 +144,7 @@
         margin: 0;
         font-style: normal;
         font-weight: 700;
-        font-family: var(--zhar-ptitza);
+        font-family: var(--avenir);
 
         &:not(:last-child) {
             margin-bottom: 2rem;
@@ -152,18 +152,18 @@
     }
 
     h2 {
-        font-size: 6rem;
-        line-height: 110%;
+        font-size: 4.2rem;
+        line-height: 1.4;
 
         @include breakpoint(mobile) {
-            font-size: 2.5rem;
-            line-height: 120%;
+            font-size: 2.6rem;
+            line-height: 1;
         }
     }
 
     h3 {
-        font-size: 4rem;
-        line-height: 120%;
+        font-size: 3rem;
+        line-height: 140%;
 
         @include breakpoint(mobile) {
             font-size: 2rem;
@@ -215,6 +215,7 @@
 
     a {
         display: inline-block;
+        color: #968a71;
         text-decoration: underline;
         transition: 0.2s;
 
@@ -230,7 +231,7 @@
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 1.4;
-        border-left: 3px solid #968a71;
+        border-left: 2px solid #968a71;
 
         @include breakpoint(mobile) {
             font-size: 1.4rem;

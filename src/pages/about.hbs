@@ -140,8 +140,16 @@
                             </div>
                         </div>
                         <div class="about-space__rotating-text">
-                            <img src="img/about-space-rotating-text.svg" alt=""
-                                class="about-space__rotating-text-image">
+                            {{!-- <img src="img/about-space-rotating-text.svg" alt=""
+                                class="about-space__rotating-text-image"> --}}
+                            <svg class="about-space__rotating-text-image" viewBox="0 0 100 100">
+                                <path id="circle" d="M 0,50 a 50,50 0 1,1 0,1 z" />
+                                <text>
+                                    <textPath xlink:href="#circle">
+                                    Чудо пар бани для всех 
+                                    </textPath>
+                                </text>
+                            </svg>
                         </div>
                     </div>
                 </div>
