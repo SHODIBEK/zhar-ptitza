@@ -1,0 +1,42 @@
+.circle-date {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &__current {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 6rem;
+        line-height: 1;
+        color: var(--secondary-color);
+        font-family: var(--zhar-ptitza);
+    }
+
+    &__title {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 1;
+        color: var(--secondary-color);
+        font-family: var(--zhar-ptitza);
+    }
+
+    &__subtitle {
+        margin-top: 1rem;
+        display: block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: var(--text-color);
+    }
+}
