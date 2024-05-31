@@ -107,6 +107,22 @@
     z-index: 1;
 }
 
+.intro-v2 {
+    .intro__content {
+        padding: 7rem 0;
+        &-slider {
+            margin-bottom: 0;
+
+            &-card {
+                margin-top: auto;
+            }
+        }
+    }
+    .intro__bg-slider .swiper-slide::after {
+        display: none;
+    }
+}
+
 .intro__controls {
     display: contents;
 
@@ -313,6 +329,24 @@
     align-items: center;
     text-align: center;
     user-select: none;
+}
+
+.intro__content-slider-title {
+    margin-top: auto;
+    display: block;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #fff;
+
+    span {
+        display: inline-block;
+        margin: 0 1.25rem;
+        font-family: var(--zhar-ptitza);
+        font-size: 5.813rem;
+        line-height: 120%;
+    }
 }
 
 .intro__content-slider-card-logo {
