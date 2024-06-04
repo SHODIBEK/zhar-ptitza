@@ -105,6 +105,10 @@
     margin: auto 0;
     position: relative;
     z-index: 1;
+
+    .swiper-slide {
+        justify-content: center;
+    }
 }
 
 .intro__controls {

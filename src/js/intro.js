@@ -13,6 +13,7 @@ export default function intro() {
 
         const mainInstance = new Swiper(mainContainer, {
             effect: 'fade',
+            autoHeight: true,
             fadeEffect: {
                 crossFade: true
             },
@@ -41,6 +42,7 @@ export default function intro() {
 
         const bgSlider = new Swiper(bgContainer, {
             effect: 'fade',
+            autoHeight: true,
             fadeEffect: {
                 crossFade: false
             },
