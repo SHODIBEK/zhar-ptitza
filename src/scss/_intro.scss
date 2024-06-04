@@ -95,7 +95,7 @@
     @include breakpoint(mobile) {
         padding: 2rem 0;
         min-height: 100vh;
-
+        gap: 1.5rem;
         min-height: 50rem;
         min-height: var(--client-height, 100vh);
     }
@@ -319,37 +319,6 @@
     user-select: none;
 }
 
-.intro__content-slider-title {
-    margin-top: 100px;
-    position: relative;
-    display: block;
-    font-weight: 400;
-    font-family: var(--zhar-ptitza);
-    font-size: 5.813rem;
-    line-height: 120%;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.intro__content-slider-left,
-.intro__content-slider-right {
-    position: absolute;
-    bottom: 13px;
-    width: max-content;
-    font-family: var(--avenir);
-    font-size: 2rem;
-    line-height: 120%;
-}
-
-.intro__content-slider-left {
-    right: calc(100% + 15px);
-}
-
-.intro__content-slider-right {
-    left: calc(100% + 15px);
-    bottom: 15px;
-}
-
 .intro__content-slider-card-logo {
     width: 12.3rem;
     height: auto;
@@ -447,4 +416,29 @@
     svg {
         margin-top: 0 !important;
     }
+}
+
+.intro__content-slider-title {
+    margin-top: 100px;
+    position: relative;
+    display: block;
+}
+
+.intro__content-slider-left,
+.intro__content-slider-right {
+    position: absolute;
+    bottom: 13px;
+    max-width: unset;
+    width: max-content;
+    margin: 0;
+    font-family: var(--avenir);
+}
+
+.intro__content-slider-left {
+    right: calc(100% + 15px);
+}
+
+.intro__content-slider-right {
+    left: calc(100% + 15px);
+    bottom: 15px;
 }
