@@ -350,12 +350,6 @@
 
         font-size: 2.8rem;
     }
-
-    @include breakpoint(small-tablet) {
-        br {
-            display: none;
-        }
-    }
 }
 
 .intro__content-slider-title-logo {
@@ -468,10 +462,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .intro__content-slider-card-center {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
