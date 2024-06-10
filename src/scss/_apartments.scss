@@ -431,15 +431,25 @@
     justify-content: center;
     padding: 3rem;
     color: #fff;
-    font-weight: 600;
-    font-size: 30px;
-
-    @include breakpoint(mobile) {
-        font-size: 16px;
-    }
 
     &__title {
         font-family: var(--zhar-ptitza);
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 100%;
         text-transform: uppercase;
+        @include breakpoint(mobile) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 100%;
+
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
     }
 }

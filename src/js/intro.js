@@ -14,6 +14,11 @@ export default function intro() {
         const mainInstance = new Swiper(mainContainer, {
             effect: 'fade',
             autoHeight: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
             fadeEffect: {
                 crossFade: true
             },

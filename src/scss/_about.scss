@@ -148,6 +148,7 @@
     line-height: 120%;
     gap: 1.5rem;
     color: #968a71;
+    grid-column: 1 / -1;
 
     @include breakpoint(mobile) {
         font-style: normal;
