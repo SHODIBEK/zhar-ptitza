@@ -10,19 +10,6 @@ function intro() {
 
         const bgSlides = Array.from(element.querySelectorAll('.intro__bg-slider .swiper-slide'));
 
-        const mainInstance = new Swiper(mainContainer, {
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            grabCursor: true,
-            pagination: {
-                el: element.querySelector('.intro__pagination'),
-                type: 'bullets',
-                clickable: true
-            }
-        });
-
         const playVideo = index => {
             bgSlides.forEach(slide => {
                 const video = slide?.querySelector('video');
@@ -32,8 +19,8 @@ function intro() {
                 }
             });
             const video = bgSlides[index]?.querySelector('video');
-            if (!video) return;
 
+            if (!video) return;
             video.classList.add('playing');
             video.play();
         };
@@ -43,8 +30,14 @@ function intro() {
             fadeEffect: {
                 crossFade: false
             },
+            autoplay: {
+                disableOnInteraction: false
+            },
             grabCursor: true,
             init: false,
+            watchSlidesProgress: true,
+            allowTouchMove: true,
+            simulateTouch: false,
             on: {
                 init: swiper => {
                     playVideo(swiper.activeIndex);
@@ -57,8 +50,24 @@ function intro() {
 
         bgSlider.init();
 
-        mainInstance.controller.control = bgSlider;
-        bgSlider.controller.control = mainInstance;
+        const mainInstance = new Swiper(mainContainer, {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                disableOnInteraction: false
+            },
+            grabCursor: true,
+            pagination: {
+                el: element.querySelector('.intro__pagination'),
+                type: 'bullets',
+                clickable: true
+            },
+            thumbs: {
+                swiper: bgSlider
+            }
+        });
 
         const tl = gsap.timeline({
             scrollTrigger: {

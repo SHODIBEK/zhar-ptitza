@@ -16,8 +16,7 @@ export default function intro() {
             autoHeight: true,
             autoplay: {
                 delay: 2500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
+                disableOnInteraction: false
             },
             fadeEffect: {
                 crossFade: true
@@ -50,6 +49,10 @@ export default function intro() {
             autoHeight: true,
             fadeEffect: {
                 crossFade: false
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
             },
             grabCursor: true,
             init: false,
