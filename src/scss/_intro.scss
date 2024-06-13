@@ -471,3 +471,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.intro__content-slider-block {
+    position: relative;
+    display: inline-block;
+}
+
+.intro__content-slider-oldPrice {
+    display: block;
+    font-size: 4.4rem;
+    line-height: 120%;
+    text-decoration: line-through;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+    }
+}
