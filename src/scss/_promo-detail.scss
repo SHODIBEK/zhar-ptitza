@@ -241,6 +241,9 @@
     ul {
         display: flex;
         flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
         li {
             font-style: normal;
             font-weight: 500;
@@ -248,7 +251,11 @@
             display: inline-flex;
             align-items: flex-start;
             line-height: 140%;
-            gap: 1rem;
+            gap: 0.8rem;
+
+            @include breakpoint(mobile) {
+                gap: 0.6rem;
+            }
 
             &::before {
                 content: '';
@@ -263,7 +270,11 @@
             }
 
             &:not(:last-child) {
-                margin-bottom: 1rem;
+                margin-bottom: 0.8rem;
+
+                @include breakpoint(mobile) {
+                    margin-bottom: 0.4rem;
+                }
             }
         }
     }
@@ -300,22 +311,6 @@
 
         @include breakpoint(mobile) {
             margin-left: 1rem;
-        }
-
-        li {
-            gap: 0.8rem;
-
-            @include breakpoint(mobile) {
-                gap: 0.6rem;
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 0.8rem;
-
-                @include breakpoint(mobile) {
-                    margin-bottom: 0.4rem;
-                }
-            }
         }
     }
 }
