@@ -151,23 +151,55 @@
         }
     }
 
-    h2 {
-        font-size: 4.2rem;
-        line-height: 1.4;
+    h1 {
+        font-size: 6rem;
+        line-height: 110%;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
 
         @include breakpoint(mobile) {
-            font-size: 2.6rem;
+            font-size: 3rem;
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 3rem;
+        line-height: 120%;
+
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+
+        @include breakpoint(mobile) {
+            font-size: 2rem;
             line-height: 1;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
         }
     }
 
     h3 {
-        font-size: 3rem;
-        line-height: 140%;
+        font-size: 2rem;
+        line-height: 120%;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
 
         @include breakpoint(mobile) {
-            font-size: 2rem;
+            font-size: 1.6rem;
             line-height: 120%;
+
+            &:not(:last-child) {
+                margin-bottom: 0.8rem;
+            }
         }
     }
 
@@ -192,9 +224,17 @@
         font-size: 1.6rem;
         line-height: 1.4;
 
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+        }
+
         @include breakpoint(mobile) {
             font-size: 1.4rem;
             line-height: 120%;
+
+            &:not(:last-child) {
+                margin-bottom: 1.4rem;
+            }
         }
     }
 
@@ -249,13 +289,34 @@
         border-left: 2px solid #968a71;
 
         @include breakpoint(mobile) {
+            padding-left: 1.6rem;
             font-size: 1.4rem;
             line-height: 120%;
         }
     }
 
     .list-padding {
-        margin-left: 3rem;
+        margin-left: 2rem;
+
+        @include breakpoint(mobile) {
+            margin-left: 1rem;
+        }
+
+        li {
+            gap: 0.8rem;
+
+            @include breakpoint(mobile) {
+                gap: 0.6rem;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 0.8rem;
+
+                @include breakpoint(mobile) {
+                    margin-bottom: 0.4rem;
+                }
+            }
+        }
     }
 }
 
