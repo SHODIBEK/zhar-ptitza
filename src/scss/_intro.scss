@@ -479,11 +479,11 @@
 
 .intro__content-slider-oldPrice {
     display: block;
-    font-size: 4.4rem;
+    font-size: 3.2rem;
     line-height: 120%;
     text-decoration: line-through;
 
     @include breakpoint(mobile) {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 }
