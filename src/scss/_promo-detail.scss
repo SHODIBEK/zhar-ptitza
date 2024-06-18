@@ -52,6 +52,10 @@
     margin: 0 auto;
     margin-bottom: 2rem;
 
+    .promo-detail--no-slider & {
+        max-width: 92rem;
+    }
+
     @include breakpoint(mobile) {
         font-size: 1.2rem;
         line-height: 170%;
