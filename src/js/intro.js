@@ -1,3 +1,12 @@
+import { Swiper, Navigation, EffectFade, Autoplay, Controller, Pagination } from 'swiper';
+
+Swiper.use([Navigation, EffectFade, Autoplay, Controller, Pagination]);
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 function intro() {
     const elements = Array.from(document.querySelectorAll('.js-intro'));
     elements.forEach(element => {
@@ -26,14 +35,15 @@ function intro() {
             fadeEffect: {
                 crossFade: false
             },
-            autoplay: {
-                disableOnInteraction: false
-            },
+            autoplay: true,
             grabCursor: true,
             init: false,
             watchSlidesProgress: true,
             allowTouchMove: true,
             simulateTouch: false,
+            thumbs: {
+                swiper: mainInstance
+            },
             on: {
                 init: swiper => {
                     playVideo(swiper.activeIndex);
@@ -51,9 +61,7 @@ function intro() {
             fadeEffect: {
                 crossFade: true
             },
-            autoplay: {
-                disableOnInteraction: false
-            },
+            autoplay: true,
             grabCursor: true,
             pagination: {
                 el: element.querySelector('.intro__pagination'),
