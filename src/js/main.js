@@ -1,28 +1,51 @@
-import './lazyload'; // global
-import detectTouch from './detectTouch'; // global
-import setScrollbarWidth from './setScrollbarWidth'; // global
-import masks from './masks'; // global
-import validation from './validation'; // global
-import anchorLinks from './anchorLinks'; // global
-import accordions from './accordions'; // global
-import modals from './modals'; // global
-import tabs from './tabs'; // ?
-import menu from './menu'; // global
-import maps from './maps'; // global
-import header from './header'; // global
-import scrollToTop from './scrollToTop'; // global
-import menuImages from './menuImages'; // global
-import footerNav from './footerNav'; // global
-import parallaxImages from './parallaxImages'; // global
-import headingAnimation from './headingAnimation'; // global
-import mobileContacts from './mobileContacts'; // global
-import imagesLoaded from 'imagesloaded'; // global
-import clientHeight from './clientHeight'; // global
+import './lazyload';
+import detectTouch from './detectTouch';
+import setScrollbarWidth from './setScrollbarWidth';
+import masks from './masks';
+import validation from './validation';
+import anchorLinks from './anchorLinks';
+import accordions from './accordions';
+import modals from './modals';
+import tabs from './tabs';
+import menu from './menu';
 import gallerySlider from './gallerySlider';
-import initTooltips from './initTooltips'; // global
-import newsletterSlider from './newsletterSlider'; // global
-import newsletter from './newsLetter'; // global
-import './tooltip'; // global
+import intro from './intro';
+import news from './news';
+import apartments from './apartments';
+import maps from './maps';
+import header from './header';
+import scrollToTop from './scrollToTop';
+import menuImages from './menuImages';
+import footerNav from './footerNav';
+import parallaxImages from './parallaxImages';
+import headingAnimation from './headingAnimation';
+import apartmentsVideo from './apartmentsVideo';
+import mobileContacts from './mobileContacts';
+import rooms from './rooms';
+import imagesLoaded from 'imagesloaded';
+import clientHeight from './clientHeight';
+import bathsSlider from './bathsSlider';
+import restTogetherSlider from './restTogetherSlider';
+import featuresSlider from './featuresSlider';
+import bathRestSlider from './bathRestSlider';
+import roomSlider from './roomSlider';
+import spaSlider from './spaSlider';
+import datepicker from './datepicker';
+import timeDropdown from './timeDropdown';
+import ticketsAmount from './ticketsAmount';
+import bookingRoomModalSlider from './bookingRoomModalSlider';
+import aboutSpaceSlider from './aboutSpaceSlider';
+import aboutFoodSlider from './aboutFoodSlider';
+import initTooltips from './initTooltips';
+import initMyPromo from './initMyPromo';
+import bookingRoomSlider from './bookingRoomSlider';
+import roomsAmount from './roomsAmount';
+import selectBookingRoom from './selectBookingRoom';
+import promosSlider from './promosSlider';
+import promoDetailSlider from './promoDetailSlider';
+import newsletterSlider from './newsletterSlider';
+import newsletter from './newsLetter';
+import './tooltip';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,31 +60,51 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    detectTouch();
-    setScrollbarWidth();
-    clientHeight();
-    masks();
-    validation();
-    anchorLinks();
-    footerNav();
-    accordions();
     modals();
     tabs();
     menu();
+    gallerySlider();
+    intro();
+    news();
+    apartments();
     maps();
     header();
     scrollToTop();
     menuImages();
     parallaxImages();
     headingAnimation();
+    apartmentsVideo();
     mobileContacts();
-    gallerySlider();
+    rooms();
+    bathsSlider();
+    restTogetherSlider();
+    featuresSlider();
+    bathRestSlider();
+    roomSlider();
+    spaSlider();
+    datepicker();
+    timeDropdown();
+    ticketsAmount();
+    bookingRoomModalSlider();
+    aboutSpaceSlider();
+    aboutFoodSlider();
     initTooltips();
+    initMyPromo();
+    bookingRoomSlider();
+    roomsAmount();
+    selectBookingRoom();
+    promosSlider();
+    promoDetailSlider();
     newsletter();
-
-    setTimeout(() => {
-        newsletterSlider();
-    }, 100);
+    detectTouch();
+    setScrollbarWidth();
+    masks();
+    validation();
+    anchorLinks();
+    accordions();
+    footerNav();
+    clientHeight();
+    newsletterSlider();
 });
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));

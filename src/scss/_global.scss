@@ -311,3 +311,27 @@ select:-webkit-autofill:focus {
 .uppercase {
     text-transform: uppercase !important;
 }
+
+.mt-sm {
+    margin-top: 0.6rem !important;
+
+    @include breakpoint(mobile) {
+        margin-top: 0.4rem !important;
+    }
+}
+
+.mb-sm {
+    margin-bottom: 0.6rem !important;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 0.4rem !important;
+    }
+}
+
+.text-xl {
+    font-size: 1.4rem !important;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem !important;
+    }
+}

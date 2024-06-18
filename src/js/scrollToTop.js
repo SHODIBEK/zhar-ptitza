@@ -1,3 +1,9 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 export default function scrollToTop() {
     const elements = Array.from(document.querySelectorAll('.js-scroll-to-top'));
 

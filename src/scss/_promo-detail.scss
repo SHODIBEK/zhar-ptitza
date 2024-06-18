@@ -42,6 +42,23 @@
     }
 }
 
+.promo-detail__published {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    color: rgba(150, 138, 113, 0.5);
+    max-width: 68rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 170%;
+        margin-bottom: 1rem;
+    }
+}
+
 .promo-detail__slider {
     margin-bottom: 3.5rem;
 

@@ -17,7 +17,8 @@ export default function gallerySlider() {
             loopedSlides: 15,
             watchOverflow: true,
             speed: 700,
-            grabCursor: true
+            grabCursor: true,
+            initialSlide: 4
             // speed: 3500,
             // allowTouchMove: false,
             // autoplay: {
