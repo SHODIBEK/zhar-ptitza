@@ -30,7 +30,7 @@ function intro() {
             video.play();
         };
 
-        const bgSlider = new Swiper(bgContainer, {
+        var bgSlider = new Swiper(bgContainer, {
             effect: 'fade',
             fadeEffect: {
                 crossFade: false
@@ -56,7 +56,7 @@ function intro() {
 
         bgSlider.init();
 
-        const mainInstance = new Swiper(mainContainer, {
+        var mainInstance = new Swiper(mainContainer, {
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
