@@ -17,8 +17,15 @@ npm install
 ```bash
 npm run dev
 ```
+
 В продакшен режиме:
 
 ```bash
 npm run build
+```
+
+В режиме развертывание:
+
+```bash
+npm run deploy
 ```
