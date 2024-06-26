@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="format-detection" content="telephone=no">
+        <title>
+            Вам подарок!
+        </title>
+        <style>
+          @font-face {
+              font-family: 'Amagro';
+              src: url('./assets/fonts/Amagro/Amagro-bold.eot');
+              src: url('./assets/fonts/Amagro/Amagro-bold.eot?#iefix') format('embedded-opentype'),
+                  url('./assets/fonts/Amagro/Amagro-bold.woff2') format('woff2'),
+                  url('./assets/fonts/Amagro/Amagro-bold.woff') format('woff'),
+                  url('./assets/fonts/Amagro/Amagro-bold.ttf') format('truetype'),
+                  url('./assets/fonts/Amagro/Amagro-bold.svg#Amagro-bold') format('svg');
+              font-weight: bold;
+              font-style: normal;
+              font-display: swap;
+          }
+
+          @font-face {
+              font-family: 'Avenir Next Cyr';
+              src: url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.eot');
+              src: url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.eot?#iefix') format('embedded-opentype'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.woff2') format('woff2'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.woff') format('woff'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.ttf') format('truetype'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Demi.svg#AvenirNextCyr-Demi') format('svg');
+              font-weight: bold;
+              font-style: normal;
+              font-display: swap;
+          }
+
+          @font-face {
+              font-family: 'Avenir Next Cyr';
+              src: url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot');
+              src: url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff2') format('woff2'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.woff') format('woff'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.ttf') format('truetype'),
+                  url('./assets/fonts/AvenirNextCyr/AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular') format('svg');
+              font-weight: normal;
+              font-style: normal;
+              font-display: swap;
+          }
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: DejaVu Sans;
+            background-color: #0C503A;
+          }
+          .page-content {
+            display: block;
+            background: url('./img/certificate/a4.jpg') no-repeat top center / 100% 100%;
+          }
+          .page-main {
+            display: block;
+            max-width: 2480px;
+            margin: 0 auto;
+          }
+          .section {
+            padding: 176px 160px;
+          }
+          .float-left {
+            float: left;
+          }
+          .float-right {
+            float: right;
+          }
+          .clear::after {
+            content: "";
+            clear: both;
+            display: table;
+          }
+          .first-block {
+            border-bottom: 4px dashed #24624E;
+          }
+          .first-block__title {
+            margin: 0 0 89px;
+            font-family: 'Amagro', sans-serif;
+            font-weight: bold;
+            font-size: 182px;
+            line-height: 107%;
+            color: #fff;
+          }
+          .first-block__subtitle {
+            margin: 0 0 89px;
+            font-family: 'Avenir Next Cyr', sans-serif;
+            font-weight: normal;
+            font-size: 57px;
+            line-height: 126%;
+            color: #fff;
+          }
+          .first-block__subtitle b {
+            font-weight: bold;
+          }
+          .first-block__desc {
+            margin: 0;
+            font-family: 'Amagro', sans-serif;
+            font-weight: bold;
+            font-size: 57px;
+            color: #fff;
+          }
+          .first-block__price {
+            margin-left: 40px;
+            color: #E2D2A4;
+          }
+          .first-block__left {
+            float: left;
+            margin-right: 40px;
+            max-width: 1471px;
+          }
+          .first-block__right {
+            float: left;
+            max-width: 649px;
+            display: block;
+          }
+          .first-block__date {
+            margin-top: 110px;
+            font-family: 'Avenir Next Cyr', sans-serif;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 1.2;
+            color: #E2D2A4;
+          }
+          .first-block__date date {
+            display: block;
+            font-weight: bold;
+            font-size: 44px;
+            color: #fff;
+          }
+          .second-block {
+            border-bottom: 4px solid #24624e;
+          }
+          .second-block__title {
+            margin: 0 0 68px;
+            font-family: 'Amagro', sans-serif;
+            font-weight: bold;
+            font-size: 125px;
+            color: #fff;
+          }
+          .second-block__row {
+            margin: 0 -27px;
+          }
+          .second-block__row > * {
+            padding-left: 27px;
+            padding-right: 27px;
+          }
+          .second-block__col {
+            max-width: 33.3%;
+            min-height: 458px;
+            display: table;
+          }
+          .second-block__item {
+            position: relative;
+            padding-top: 70px;
+            height: 100%;
+            display: table-cell;
+          }
+          .second-block__number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            font-family: 'Amagro', sans-serif;
+            font-weight: bold;
+            font-size: 74px;
+            line-height: 120px;
+            text-align: center;
+            color: #063425;
+            border-radius: 20px;
+            border: 3px solid #c6ba9a;
+            background-color: #e2d2a4;
+            box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.15);
+          }
+          .second-block__content {
+            padding: 60px 60px 68px;
+            border-radius: 20px;
+            height: 100%;
+            min-height: 388px;
+            background-color: #24624E;
+          }
+          .second-block__text {
+            margin: 0;
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 120%;
+            color: #fff;
+          }
+          .second-block__desc {
+            margin-top: 68px;
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 120%;
+            color: #5ea190;
+          }
+          .second-block__desc a {
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 130%;
+            color: #5ea190;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+          }
+          .footer__logo {
+            margin-right: 72px;
+            display: inline-block;
+            width: 549px;
+            height: auto;
+          }
+          .footer__title {
+            margin: 0;
+            font-family: "Amagro", sans-serif;
+            font-weight: 700;
+            font-size: 125px;
+            color: #fff;
+          }
+          .footer__subtitle {
+            margin: 0 0 64px;
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 57px;
+            line-height: 120%;
+            letter-spacing: 0.01em;
+            color: #fff;
+          }
+          .footer__content {
+            max-width: 1539px;
+            display: block;
+          }
+          .footer__lists {
+            padding-left: 40px;
+            border-left: 1px solid #c6ba9a;
+          }
+          .footer__link {
+            display: block;
+            margin-bottom: 14px;
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: #fff;
+          }
+          .footer__gap {
+            margin-bottom: 46px;
+          }
+          .footer__gap-2 {
+            margin-bottom: 33px;
+          }
+          .footer__icon {
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .footer__text {
+            font-family: "Avenir Next Cyr", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 160%;
+            color: #fff;
+            text-decoration: none;
+          }
+          .footer__right {
+            max-width: 661px;
+          }
+        </style>
+    </head>
+
+    <body>
+        <div class="page-content">
+            <main class="page-main">
+              <div class="first-block section clear">
+                <div class="first-block__left">
+                  <h1 class="first-block__title">Вам подарок!</h1>
+                  <p class="first-block__subtitle">Поздравляем — вам подарили сертификат на посещение загородного банного курорта ЖАР-ПТИЦА. <b>Желаем Вам приятного отдыха!</b></p>
+                  <span class="first-block__desc">Номинал: <span class="first-block__price">10 000 ₽</span></span>
+                </div>
+                <div class="first-block__right">
+                  <img src="./img/certificate/QR.png" alt="QR">
+                  <div class="first-block__date clear">
+                    <p class="float-left">
+                      Действителен до:
+                      <date>17.02.2025</date>
+                    </p>
+                    <p class="float-right">
+                      Номер сертификата: 
+                      <date>703115</date>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="second-block section clear">
+                <h2 class="second-block__title">Как пользоваться?</h2>
+                <div class="second-block__row clear">
+                  <div class="second-block__col float-left">
+                    <div class="second-block__item">
+                      <div class="second-block__content">
+                        <div class="second-block__number">1</div>
+                        <p class="second-block__text">Распечатайте или сохраните PDF в телефоне перед посещением загородного банного курорта.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="second-block__col float-left">
+                    <div class="second-block__item">
+                      <div class="second-block__content">
+                        <div class="second-block__number">2</div>
+                        <p class="second-block__text">После посещения загородного банного курорта на кассе предъявите подарочный сертификат для 
+    сканирования QR-кода.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="second-block__col float-left">
+                    <div class="second-block__item">
+                      <div class="second-block__content">
+                        <div class="second-block__number">3</div>
+                        <p class="second-block__text">Менеджер спишет средства 
+    с сертификата на желаемую вами сумму. Сертификатом можно воспользоваться несколько раз.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="second-block__desc">
+                  Пожалуйста, ознакомьтесь с условиями использования подарочных <br/>сертификатов на странице <a href="https://newriga.jarpticabani.ru/certificates/" target="_blank" rel="nofollow">https://newriga.jarpticabani.ru/certificates/</a>
+                </div>
+              </div>
+              <div class="footer section clear">
+                <img class="footer__logo float-left" src="./img/certificate/logo.png" alt="logo">
+                <div class="footer__content float-left">
+                  <h3 class="footer__title">ЖАР-ПТИЦА</h3>
+                  <p class="footer__subtitle">7 банных домов двух типов — срубы и современные экологичные дома — расположены на 4га живописного лесного массива, каждый выполнен в своей уникальной концепции.</p>
+                  <div class="footer__left float-left">
+                    <div class="footer__lists">
+                      <div class="footer__list footer__gap">
+                        <a class="footer__link" href="mailto:newriga@jarpticabani.ru" target="_blank" rel="nofollow">newriga@jarpticabani.ru</a>
+                        <a class="footer__link" href="newriga.jarpticabani.ru" target="_blank" rel="nofollow">newriga.jarpticabani.ru</a>
+                      </div>
+                      <div class="footer__list">
+                        <a class="footer__link" href="https://t.me/jarptica_bani" target="_blank" rel="nofollow">
+                          <img class="footer__icon" src="./img/certificate/telegram.png" alt="telegram" width="37" height="30">
+                          @jarptica_bani
+                        </a>
+                        <a class="footer__link" href="https://vk.com/jar.ptica.bani" target="_blank" rel="nofollow">
+                          <img class="footer__icon" src="./img/certificate/vk.png" alt="vk" width="37" height="21">
+                          @jar.ptica.bani
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer__right float-right">
+                    <div class="footer__lists">
+                      <div class="footer__list footer__gap-2">
+                        <a class="footer__link" href="https://yandex.uz/maps/org/zhar_ptitsa/118240434106/?ll=36.954177%2C55.785471&source=morda&utm_source=share&z=12" target="_blank" rel="nofollow">Московская область, городской округ Истра, квартал 82Д, 40</a>
+                      </div>
+                      <div class="footer__list">
+                        <p class="footer__text">
+                          Круглосуточно <br/>
+                          +7 (495) 187-07-77
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+        </div>
+    </body>
+</html>
