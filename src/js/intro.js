@@ -1,19 +1,12 @@
-import { Swiper, Navigation, EffectFade, Autoplay, Controller, Pagination } from 'swiper';
-
-Swiper.use([Navigation, EffectFade, Autoplay, Controller, Pagination]);
-
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 gsap.registerPlugin(ScrollTrigger);
 
 function intro() {
-    const elements = Array.from(document.querySelectorAll('.js-intro'));
+    const elements = document.querySelectorAll('.js-intro');
     elements.forEach(element => {
         const mainContainer = element.querySelector('.intro__content-slider .swiper');
         const bgContainer = element.querySelector('.intro__bg-slider .swiper');
 
-        const bgSlides = Array.from(element.querySelectorAll('.intro__bg-slider .swiper-slide'));
+        const bgSlides = element.querySelectorAll('.intro__bg-slider .swiper-slide');
 
         const playVideo = index => {
             bgSlides.forEach(slide => {
@@ -41,9 +34,6 @@ function intro() {
             watchSlidesProgress: true,
             allowTouchMove: true,
             simulateTouch: false,
-            thumbs: {
-                swiper: mainInstance
-            },
             on: {
                 init: swiper => {
                     playVideo(swiper.activeIndex);
