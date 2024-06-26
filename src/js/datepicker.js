@@ -7,7 +7,7 @@ export default function datepicker() {
     elements.forEach(element => {
         $(element)
             .datepicker({
-                startDate: '+1d',
+                startDate: '0d',
                 format: 'dd.mm.yyyy',
                 container: element.hasAttribute('data-picker-container') ? element.getAttribute('data-picker-container') : '#picker-container',
                 language: 'ru',

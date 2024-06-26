@@ -2,12 +2,12 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: '2024-06-07T15:00:00',
-        end: '2024-06-08T14:00:00'
+        start: '2024-06-28T15:00:00',
+        end: '2024-06-29T14:00:00'
     },
     {
-        start: '2024-06-10T10:00:00',
-        end: '2024-06-10T14:00:00'
+        start: '2024-06-30T10:00:00',
+        end: '2024-06-30T14:00:00'
     }
 ];
 let isFirstInterval = true;
@@ -102,8 +102,11 @@ function handleCellClick(cell) {
     } else if (!selectEndCell) {
         if (new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
             new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0)) {
+            selectStartCell.classList.remove('selected');
+            selectStartCell.classList.remove('hover');
             selectEndCell = selectStartCell;
             selectStartCell = cell;
+            selectStartCell.classList.add('selected');
         } else {
             selectEndCell = cell;
         }
@@ -156,9 +159,19 @@ function handleCellMouseOver(cell) {
             end = selectStartCell;
         }
         const cells = getCellsInRange(start, end);
-        cells.forEach(cell => cell.classList.add('hover'));
+        let foundBookedCell = false;
+
+        cells.forEach(cell => {
+            if (cell.classList.contains('booked')) {
+                foundBookedCell = true;
+            }
+            if (!foundBookedCell) {
+                cell.classList.add('hover');
+            }
+        });
     }
 }
+
 
 function clearSelection() {
     selectStartCell = null;
@@ -274,6 +287,10 @@ function checkMinDate() {
 }
 
 function showTooltip(cell, message) {
+    const tooltips = document.getElementsByClassName('tooltip');
+    for (let i = 0; i < tooltips.length; i++) {
+        document.body.removeChild(tooltips[i]);
+    }
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
     tooltip.innerText = message;

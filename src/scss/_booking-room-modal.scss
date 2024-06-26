@@ -563,6 +563,7 @@
       &.empty {
         pointer-events: none;
         position: relative;
+        background: #F7F5F2 !important;
 
         &:after {
           position: absolute;
