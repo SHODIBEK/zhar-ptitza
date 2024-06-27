@@ -560,6 +560,11 @@
         background-color: #6D554D;
       }
 
+      &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
       &.empty {
         pointer-events: none;
         position: relative;

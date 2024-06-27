@@ -100,13 +100,17 @@ function handleCellClick(cell) {
         selectStartCell = cell;
         cell.classList.add('selected');
     } else if (!selectEndCell) {
-        if (new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
-            new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0)) {
-            selectStartCell.classList.remove('selected');
-            selectStartCell.classList.remove('hover');
+        const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
+        const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
+        if (start > end) {
+            const cells = getCellsInRange(cell, selectStartCell);
+            if (cells.length < minHours) {
+                selectEndCell = null;
+                showTooltip(cell, `Миним. ${minHours}ч.`);
+                return;
+            }
             selectEndCell = selectStartCell;
             selectStartCell = cell;
-            selectStartCell.classList.add('selected');
         } else {
             selectEndCell = cell;
         }
@@ -151,6 +155,7 @@ function handleCellClick(cell) {
 function handleCellMouseOver(cell) {
     if (selectStartCell && !selectEndCell) {
         document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
+        document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
         let start = selectStartCell;
         let end = cell;
         if (new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
@@ -167,6 +172,8 @@ function handleCellMouseOver(cell) {
             }
             if (!foundBookedCell) {
                 cell.classList.add('hover');
+            } else {
+                cell.classList.add('disabled');
             }
         });
     }

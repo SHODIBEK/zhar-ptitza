@@ -139,6 +139,7 @@ function datepicker() {
 
 $(document).ready(function () {
     datepicker();
+
 });
 
 function roomsAmount() {
@@ -385,6 +386,7 @@ function videoPlaying() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    datepicker();
     bookingRoomSlider();
     selectBookingRoom();
     roomsAmount();
