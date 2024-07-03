@@ -544,9 +544,15 @@
       width: 34px;
       min-width: 34px;
 
+      &.disabled {
+        cursor: not-allowed;
+        background: transparent !important;
+      }
+
       &:hover {
         background-color: #E5DECF;
       }
+
       &.hover {
         background-color: #E5DECF;
       }
@@ -557,8 +563,9 @@
 
       &.booked {
         pointer-events: none;
-        background-color: #6D554D;
+        background-color: #6D554D !important;
       }
+
 
       &.empty {
         pointer-events: none;
