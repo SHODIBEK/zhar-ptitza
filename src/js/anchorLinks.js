@@ -3,6 +3,11 @@ export default function anchorLinks() {
     const offset = pageHeader ? pageHeader.offsetHeight + 20 : 80;
     const DURATION = 1.4;
     const scrollByHash = hash => {
+        // Убираем все, что идет после символа /
+        if (hash.includes('/')) {
+            hash = hash.split('/')[0];
+        }
+
         const elementToScroll = document.querySelector(hash);
         if (elementToScroll && !elementToScroll.matches('.js-modal')) {
             if (window.menuOpen && typeof window.closeMenu === 'function') {
@@ -27,7 +32,7 @@ export default function anchorLinks() {
     document.addEventListener('click', event => {
         if (event.target.matches('a') || event.target.closest('a')) {
             const link = event.target.matches('a') ? event.target : event.target.closest('a');
-            const hash = link.hash;
+            let hash = link.hash;
 
             const url = new URL(link.href);
             const pageUrl = new URL(window.location);
