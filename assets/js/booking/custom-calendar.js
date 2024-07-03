@@ -2,12 +2,12 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: '2024-06-28T15:00:00',
-        end: '2024-06-29T14:00:00'
+        start: '2024-06-29T15:00:00',
+        end: '2024-06-30T14:00:00'
     },
     {
-        start: '2024-06-30T10:00:00',
-        end: '2024-06-30T14:00:00'
+        start: '2024-07-01T10:00:00',
+        end: '2024-07-01T14:00:00'
     }
 ];
 let isFirstInterval = true;
@@ -99,14 +99,19 @@ function handleCellClick(cell) {
     if (!selectStartCell) {
         selectStartCell = cell;
         cell.classList.add('selected');
+        disableCellsBeyondFirstBooked(selectStartCell);
     } else if (!selectEndCell) {
-        if (new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
-            new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0)) {
-            selectStartCell.classList.remove('selected');
-            selectStartCell.classList.remove('hover');
+        const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
+        const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
+        if (start > end) {
+            const cells = getCellsInRange(cell, selectStartCell);
+            if (cells.length < minHours) {
+                selectEndCell = null;
+                showTooltip(cell, `Миним. ${minHours}ч.`);
+                return;
+            }
             selectEndCell = selectStartCell;
             selectStartCell = cell;
-            selectStartCell.classList.add('selected');
         } else {
             selectEndCell = cell;
         }
@@ -142,6 +147,9 @@ function handleCellClick(cell) {
         } else {
             cells.forEach(cell => cell.classList.add('selected'));
         }
+        if (selectStartCell && selectEndCell) {
+            document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
+        }
     } else {
         clearSelection();
         handleCellClick(cell);
@@ -153,14 +161,18 @@ function handleCellMouseOver(cell) {
         document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
         let start = selectStartCell;
         let end = cell;
-        if (new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
-            new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0)) {
+        const isBack = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0) >
+            new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0)
+        if (isBack) {
             start = cell;
             end = selectStartCell;
         }
-        const cells = getCellsInRange(start, end);
+        let cells = getCellsInRange(start, end);
         let foundBookedCell = false;
 
+        if (isBack) {
+            cells = cells.reverse()
+        }
         cells.forEach(cell => {
             if (cell.classList.contains('booked')) {
                 foundBookedCell = true;
@@ -176,6 +188,7 @@ function handleCellMouseOver(cell) {
 function clearSelection() {
     selectStartCell = null;
     selectEndCell = null;
+    document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
     document.querySelector('.selected-info').innerHTML = '';
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
@@ -303,3 +316,45 @@ function showTooltip(cell, message) {
         document.body.removeChild(tooltip);
     }, 2000);
 }
+
+// Новая функция для установки класса disabled
+function disableCellsBeyondFirstBooked(startCell) {
+    const allCells = Array.from(document.querySelectorAll('.time-slot'));
+    const startDate = new Date(startCell.dataset.date);
+    const startTime = startCell.dataset.time;
+    const startDateTime = new Date(startDate).setHours(startTime.split(':')[0], 0, 0);
+    const index = allCells.indexOf(startCell);
+    let foundBookedForward = false;
+    let foundBookedBackward = false;
+
+    // Forward iteration
+    for (let i = index + 1; i < allCells.length; i++) {
+        const cellDate = new Date(allCells[i].dataset.date);
+        const cellTime = allCells[i].dataset.time;
+        const cellDateTime = new Date(cellDate).setHours(cellTime.split(':')[0], 0, 0);
+        if (cellDateTime >= startDateTime) {
+            if (foundBookedForward || allCells[i].classList.contains('booked')) {
+                foundBookedForward = true;
+                allCells[i].classList.add('disabled');
+            } else {
+                allCells[i].classList.remove('disabled');
+            }
+        }
+    }
+
+    // Backward iteration
+    for (let i = index - 1; i >= 0; i--) {
+        const cellDate = new Date(allCells[i].dataset.date);
+        const cellTime = allCells[i].dataset.time;
+        const cellDateTime = new Date(cellDate).setHours(cellTime.split(':')[0], 0, 0);
+        if (cellDateTime <= startDateTime) {
+            if (foundBookedBackward || allCells[i].classList.contains('booked')) {
+                foundBookedBackward = true;
+                allCells[i].classList.add('disabled');
+            } else {
+                allCells[i].classList.remove('disabled');
+            }
+        }
+    }
+}
+
