@@ -2,12 +2,12 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: '2024-07-05T15:00:00',
-        end: '2024-07-06T14:00:00'
+        start: '2024-06-29T15:00:00',
+        end: '2024-06-30T14:00:00'
     },
     {
-        start: '2024-07-07T10:00:00',
-        end: '2024-07-07T14:00:00'
+        start: '2024-07-01T10:00:00',
+        end: '2024-07-01T14:00:00'
     }
 ];
 let isFirstInterval = true;
