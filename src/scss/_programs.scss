@@ -356,6 +356,7 @@
     font-size: 2rem;
     line-height: 120%;
     display: flex;
+    align-items: center;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
@@ -365,19 +366,15 @@
 
 .programs__inner-block-card-sales {
     font-size: 1.2rem;
-    line-height: 35px;
-    width: 35px;
-    height: 35px;
-    padding: 4px;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-left: 1rem;
+    padding: 2px 4px;
     color: #fff;
-    top: -15px;
-    background: #000;
-    border-radius: 50%;
-    position: relative;
+    background-color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 .programs__inner-block__header {
