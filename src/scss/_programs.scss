@@ -355,11 +355,29 @@
     font-weight: 700;
     font-size: 2rem;
     line-height: 120%;
+    display: flex;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
         line-height: 120%;
     }
+}
+
+.programs__inner-block-card-sales {
+    font-size: 1.2rem;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+    color: #fff;
+    top: -15px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .programs__inner-block__header {
