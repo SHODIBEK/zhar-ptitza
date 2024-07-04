@@ -348,33 +348,42 @@
     }
 }
 
-.programs__inner-block-card-price {
+.programs__inner-block-card-prices {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.programs__inner-block-price {
     text-align: right;
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    line-height: 140%;
-    display: flex;
-    align-items: center;
+    line-height: 100%;
 
     @include breakpoint(mobile) {
         font-size: 1.4rem;
-        line-height: 120%;
     }
 }
 
 .programs__inner-block-card-sales {
     font-size: 1.4rem;
-    line-height: 1.6;
+    line-height: 94%;
     font-weight: 700;
     margin-left: 0.6rem;
-    padding: 2px 4px;
+    padding: 6px 4px;
     color: #fff;
-    background-color: #000;
+    background-color: #b60000;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(mobile) {
+        padding: 6px 4px 5px 4px;
+        margin-left: 0.4rem;
+        font-size: 1rem;
+        height: 24px;
+    }
 }
 
 .programs__inner-block__header {

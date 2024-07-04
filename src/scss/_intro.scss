@@ -440,10 +440,10 @@
 }
 
 .intro__content-slider-left {
-    right: calc(100% + 15px);
+    right: calc(100% + 20px);
 
     @include breakpoint(mobile) {
-        right: calc(100% + 10px);
+        right: calc(100% + 15px);
         bottom: 3px;
     }
 }
