@@ -2,12 +2,12 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: '2024-06-29T15:00:00',
-        end: '2024-06-30T14:00:00'
+        start: new Date(new Date(new Date().setHours(15)).setDate(new Date().getDate() + 1)).toISOString(),
+        end: new Date(new Date(new Date().setHours(13)).setDate(new Date().getDate() + 2)).toISOString()
     },
     {
-        start: '2024-07-01T10:00:00',
-        end: '2024-07-01T14:00:00'
+        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate() + 3)).toISOString(),
+        end: new Date((new Date(new Date().setHours(16)).setDate(new Date().getDate() + 3))).toISOString()
     }
 ];
 let isFirstInterval = true;
@@ -101,6 +101,10 @@ function handleCellClick(cell) {
         cell.classList.add('selected');
         disableCellsBeyondFirstBooked(selectStartCell);
     } else if (!selectEndCell) {
+        if (cell.classList.contains('disabled')) {
+            showTooltip(cell, `Выбранный диапазон содержит занятые ячейки. Выбор сброшен.`);
+            return;
+        }
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
         if (start > end) {
@@ -120,6 +124,9 @@ function handleCellClick(cell) {
             selectEndCell = null;
             showTooltip(cell, `Миним. ${minHours}ч.`);
             return;
+        }
+        if (!cells.some(cell => cell.classList.contains('booked'))) {
+            cells.forEach(cell => cell.classList.add('selected'));
         }
         const selectedInfo = document.querySelector('.selected-info');
         const format = function (startDate, endDate) {
@@ -141,12 +148,7 @@ function handleCellClick(cell) {
             return `с ${startFormatted} по ${endFormatted}`;
         };
         selectedInfo.innerHTML = `Выбрано: ${cells.length} ч — ${format(selectStartCell, selectEndCell)}`;
-        if (cells.some(cell => cell.classList.contains('booked'))) {
-            showTooltip(cell, `Выбранный диапазон содержит занятые ячейки. Выбор сброшен.`);
-            clearSelection();
-        } else {
-            cells.forEach(cell => cell.classList.add('selected'));
-        }
+
         if (selectStartCell && selectEndCell) {
             document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
         }
@@ -247,12 +249,13 @@ upBtn.addEventListener('click', () => {
     startIntervalDate.setDate(startIntervalDate.getDate() - 9);
     const minDate = new Date().getDate();
     const minMonth = new Date().getMonth();
-    if (startIntervalDate.getDate() < minDate && startIntervalDate.getMonth() <= minMonth) {
+    if (startIntervalDate.getDate() < minDate || startIntervalDate.getMonth() < minMonth) {
         startIntervalDate = new Date();
     }
     if (!isFirstInterval) {
         tableRender();
     }
+    checkMinDate();
 });
 
 // Обработчик для кнопки "Вниз"
@@ -264,12 +267,14 @@ document.getElementById('down-button').addEventListener('click', () => {
 // Функция для проверки, находится ли время в интервале
 function isInInterval(date, time, bookingDates) {
     const [hours, minutes] = time.split(':').map(Number);
-    date.setHours(hours, minutes, 0, 0);
+    date.setHours(hours, 0, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
-        const start = new Date(bookingDates[i].start);
-        const end = new Date(bookingDates[i].end);
-        if (date >= start && date <= end) {
+        let start = new Date(bookingDates[i].start)
+        let end = new Date(bookingDates[i].end)
+        start = start.setHours(start.getUTCHours(), 0, 0, 0);
+        end = end.setHours(end.getUTCHours(), 0, 0, 0);
+        if (date.getTime() >= start && date.getTime() <= end) {
             return true;
         }
     }
@@ -284,8 +289,15 @@ function isEdgeInterval(date, time, bookingDates) {
     for (let i = 0; i < bookingDates.length; i++) {
         const start = new Date(bookingDates[i].start);
         const end = new Date(bookingDates[i].end);
-        if (date.getTime() === start.setHours(start.getHours() - 1, start.getMinutes(), 0, 0) ||
-            date.getTime() === end.setHours(end.getHours() + 1, end.getMinutes(), 0, 0)) {
+
+        // Calculate the exact times for the conditions
+        const oneHourBeforeStart = new Date(start);
+        oneHourBeforeStart.setHours(oneHourBeforeStart.getUTCHours() - 1, 0, 0, 0);
+
+        const oneHourAfterEnd = new Date(end);
+        oneHourAfterEnd.setHours(oneHourAfterEnd.getUTCHours() + 1, 0, 0, 0);
+
+        if (date.getTime() === oneHourBeforeStart.getTime() || date.getTime() === oneHourAfterEnd.getTime()) {
             return true;
         }
     }
