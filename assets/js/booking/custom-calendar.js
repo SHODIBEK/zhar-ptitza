@@ -267,12 +267,14 @@ document.getElementById('down-button').addEventListener('click', () => {
 // Функция для проверки, находится ли время в интервале
 function isInInterval(date, time, bookingDates) {
     const [hours, minutes] = time.split(':').map(Number);
-    date.setHours(hours, minutes, 0, 0);
+    date.setHours(hours, 0, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
-        const start = new Date(bookingDates[i].start);
-        const end = new Date(bookingDates[i].end);
-        if (date >= start && date <= end) {
+        let start = new Date(bookingDates[i].start)
+        let end = new Date(bookingDates[i].end)
+        start = start.setHours(start.getUTCHours(), 0, 0, 0);
+        end = end.setHours(end.getUTCHours(), 0, 0, 0);
+        if (date.getTime() >= start && date.getTime() <= end) {
             return true;
         }
     }
@@ -287,8 +289,15 @@ function isEdgeInterval(date, time, bookingDates) {
     for (let i = 0; i < bookingDates.length; i++) {
         const start = new Date(bookingDates[i].start);
         const end = new Date(bookingDates[i].end);
-        if (date.getTime() === start.setHours(start.getHours() - 1, start.getMinutes(), 0, 0) ||
-            date.getTime() === end.setHours(end.getHours() + 1, end.getMinutes(), 0, 0)) {
+
+        // Calculate the exact times for the conditions
+        const oneHourBeforeStart = new Date(start);
+        oneHourBeforeStart.setHours(oneHourBeforeStart.getUTCHours() - 1, 0, 0, 0);
+
+        const oneHourAfterEnd = new Date(end);
+        oneHourAfterEnd.setHours(oneHourAfterEnd.getUTCHours() + 1, 0, 0, 0);
+
+        if (date.getTime() === oneHourBeforeStart.getTime() || date.getTime() === oneHourAfterEnd.getTime()) {
             return true;
         }
     }
