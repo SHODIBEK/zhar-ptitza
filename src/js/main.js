@@ -45,7 +45,10 @@ import promosSlider from './promosSlider';
 import promoDetailSlider from './promoDetailSlider';
 import newsletterSlider from './newsletterSlider';
 import newsletter from './newsLetter';
+import customSelects from './customSelects';
 import './tooltip';
+import counterInit from './counter';
+import customTriggerInit from './customTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,6 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
     footerNav();
     clientHeight();
     newsletterSlider();
+    customSelects();
+    counterInit();
+    customTriggerInit();
 });
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));
@@ -123,3 +129,6 @@ window.addEventListener('load', function() {
     ScrollTrigger.refresh();
     setTimeout(() => document.body.classList.add('animatable'), 300);
 });
+
+
+
