@@ -49,7 +49,7 @@
 .booking-room-modal__heading {
   text-align: center;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 4rem;
   font-family: var(--zhar-ptitza);
   line-height: 120%;
@@ -58,7 +58,7 @@
 
   @include breakpoint(mobile) {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3.2rem;
     line-height: 120%;
     letter-spacing: 0.05em;
@@ -250,7 +250,7 @@
 
 .booking-room-modal__inner-heading {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 4rem;
   line-height: 120%;
   font-family: var(--zhar-ptitza);
@@ -258,7 +258,7 @@
 
   @include breakpoint(mobile) {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3rem;
     line-height: 120%;
     letter-spacing: 0.05em;
@@ -408,6 +408,7 @@
 }
 
 #booking-room-calendar-modal {
+
   .booking-room-modal__inner {
     max-width: 102rem;
   }
@@ -417,6 +418,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
   }
 
   .booking-room-modal__top-row {
@@ -429,7 +431,7 @@
     font-family: var(--avenir);
     font-size: 20px;
     line-height: 28px;
-    font-weight: 450;
+    font-weight: 500;
     color: #060301;
     display: flex;
     flex-direction: column;
@@ -457,7 +459,7 @@
         font-family: var(--avenir);
         font-size: 16px;
         line-height: 22px;
-        font-weight: 450;
+        font-weight: 500;
         color: #968A71;
       }
     }
@@ -483,24 +485,26 @@
       position: absolute;
       content: '';
       height: 100%;
-      left: 40px;
+      left: 4.8rem;
       top: 0;
       border-right: 1px solid #3A241F;
     }
   }
 
   .calendar {
-    font-size: 11px;
+    font-size: 1.2rem;
 
     .time-header {
       .time-cell {
         position: relative;
         height: 20px;
+        font-weight: 500;
 
         > span {
           position: relative;
           right: -60%;
           color: #3A241F;
+          line-height: 16px;
         }
 
       }
@@ -517,8 +521,8 @@
     }
 
     .date-cell {
-      width: 40px;
-      min-width: 40px;
+      width: 4.3rem;
+      min-width: 4.3rem;
 
       div {
         display: flex;
@@ -527,7 +531,7 @@
         width: 100%;
         height: 20px;
         color: #CEBE9D;
-
+        font-weight: 500;
       }
 
       &.active {
@@ -541,34 +545,43 @@
       border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
-      width: 34px;
-      min-width: 34px;
+      width: 3.4rem;
+      min-width: 3.4rem;
 
       &.disabled {
-        cursor: not-allowed;
+        cursor: not-allowed !important;
         background: transparent !important;
       }
 
       &:hover {
-        background-color: #E5DECF;
+        background-color: #dfceab !important;
       }
 
       &.hover {
         background-color: #E5DECF;
+
       }
 
       &.selected {
         background-color: #DFCEAB;
+
+        &:hover {
+          background-color: #E5DECF !important;
+        }
       }
 
       &.booked {
-        pointer-events: none;
+        //pointer-events: none;
         background-color: #6D554D !important;
+      }
+
+      &.pastDate {
+        cursor: not-allowed !important;
+        background: transparent !important;
       }
 
 
       &.empty {
-        pointer-events: none;
         position: relative;
         background: #F7F5F2 !important;
 
@@ -589,8 +602,8 @@
   }
 
   .booking__bottom-row {
-    margin-top: 10px;
-    padding: 0 18px 0 40px;
+    margin-top: 1.2rem;
+    padding: 0 2rem 0 4.3rem;
 
     .booking__back-btn {
       background: #fff0;
@@ -602,12 +615,12 @@
 
 .tooltip {
   position: absolute;
-  box-shadow: 0 2px 2px 0 #00000059;
+  box-shadow: 0 0.3rem 0.3rem 0 #00000059;
   border: 1px solid #EDE8DD;
   background-color: #F7F5F2;
   color: #B60000;
-  padding: 2px 12px;
-  font-size: 12px;
+  padding: 0.3rem 1.4rem;
+  font-size: 1.4rem;
   pointer-events: none;
   z-index: 1000;
 }

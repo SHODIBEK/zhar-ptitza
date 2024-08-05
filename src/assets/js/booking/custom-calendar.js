@@ -34,7 +34,7 @@ function tableRender() {
         "                                    <div>{{formatDate this}}</div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\" data-date=\"{{../this}}\" data-time=\"{{this}}\"></td>\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\" data-date=\"{{../this}}\" data-time=\"{{this}}\"></td>\n" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
@@ -62,6 +62,14 @@ function tableRender() {
         return dateToCheck === selectedDate ? 'active' : '';
     });
 
+    Handlebars.registerHelper('isPastDateTime', function (date, time) {
+        const [hours, minutes] = time.split(':').map(Number);
+        const cellDateTime = new Date(date);
+        cellDateTime.setHours(hours, minutes, 0, 0);
+        return cellDateTime < new Date();
+    });
+
+
     const template = Handlebars.compile(source);
     const context = {
         times: [
@@ -88,7 +96,7 @@ function tableRender() {
 }
 
 function addCellClickHandlers() {
-    const cells = document.querySelectorAll('.time-slot:not(.booked)');
+    const cells = document.querySelectorAll('.time-slot');
     cells.forEach(cell => {
         cell.addEventListener('click', () => handleCellClick(cell));
         cell.addEventListener('mouseover', () => handleCellMouseOver(cell));
@@ -96,6 +104,9 @@ function addCellClickHandlers() {
 }
 
 function handleCellClick(cell) {
+    if (cell.classList.contains('pastDate')) {
+        return;
+    }
     if (!selectStartCell) {
         selectStartCell = cell;
         cell.classList.add('selected');
@@ -176,7 +187,7 @@ function handleCellMouseOver(cell) {
             cells = cells.reverse()
         }
         cells.forEach(cell => {
-            if (cell.classList.contains('booked')) {
+            if (cell.classList.contains('booked') || cell.classList.contains('disabled')) {
                 foundBookedCell = true;
             }
             if (!foundBookedCell) {
@@ -246,7 +257,7 @@ function getDateInterval(startIntervalDate) {
 // Обработчик для кнопки "Вверх"
 const upBtn = document.getElementById('up-button');
 upBtn.addEventListener('click', () => {
-    startIntervalDate.setDate(startIntervalDate.getDate() - 9);
+    startIntervalDate.setDate(startIntervalDate.getDate() - 3);
     const minDate = new Date().getDate();
     const minMonth = new Date().getMonth();
     if (startIntervalDate.getDate() < minDate || startIntervalDate.getMonth() < minMonth) {
@@ -254,15 +265,26 @@ upBtn.addEventListener('click', () => {
     }
     if (!isFirstInterval) {
         tableRender();
+        loader();
     }
     checkMinDate();
 });
 
 // Обработчик для кнопки "Вниз"
 document.getElementById('down-button').addEventListener('click', () => {
-    startIntervalDate.setDate(startIntervalDate.getDate() + 9);
+    startIntervalDate.setDate(startIntervalDate.getDate() + 3);
     tableRender();
+    loader();
 });
+
+function loader() {
+    const modal = document.getElementById('booking-room-calendar-modal');
+    const loader = modal.querySelector('.booking__loader');
+    loader.classList.add('booking__loader--active');
+    setTimeout(() => {
+        loader.classList.remove('booking__loader--active');
+    }, 500);
+}
 
 // Функция для проверки, находится ли время в интервале
 function isInInterval(date, time, bookingDates) {
@@ -370,3 +392,34 @@ function disableCellsBeyondFirstBooked(startCell) {
     }
 }
 
+function modalListener() {
+    const modalTrigger = document.querySelector('a[href="#booking-room-calendar-modal"]');
+    const modal = document.getElementById('booking-room-calendar-modal');
+
+    modalTrigger.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const loader = modal.querySelector('.booking__loader');
+        loader.classList.add('booking__loader--active');
+        setTimeout(() => {
+            loader.classList.remove('booking__loader--active');
+        }, 500);
+    });
+
+    // Optionally, add an event listener to close the modal
+    const closeModalButtons = modal.querySelectorAll('.js-close-modal');
+    closeModalButtons.forEach(closeModalButton => {
+        closeModalButton.addEventListener('click', function() {
+            modal.classList.remove('is-active');
+            firstSelectedBookingDate = new Date();
+            startIntervalDate = new Date();
+            isFirstInterval = true;
+            selectStartCell = null;
+            selectEndCell = null;
+            tableRender();
+        });
+    })
+}
+document.addEventListener('DOMContentLoaded', function () {
+    modalListener();
+});
