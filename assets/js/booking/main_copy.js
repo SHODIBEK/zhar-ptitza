@@ -1,3 +1,5 @@
+let loaderElem = null;
+
 function convertRemToPixels(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
@@ -61,32 +63,11 @@ function bookingRoomModalSlider() {
     });
 }
 
-function selectBookingRoom() {
-    const radios = Array.from(document.querySelectorAll('.booking__room-slider-card-checkbox-input'));
-
-    function setActiveCard() {
-        radios.forEach(radio => {
-            const card = radio.closest('.booking__room-slider-card');
-            if (radio.checked) {
-                card?.classList.add('selected');
-            } else {
-                card?.classList.remove('selected');
-            }
-        });
-    }
-
-    setActiveCard();
-
-    radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            setActiveCard();
-        });
-    });
-}
 
 function datepicker() {
     const elements = Array.from(document.querySelectorAll('.js-datepicker'));
     const today = new Date();
+    const formattedToday = ('0' + today.getDate()).slice(-2) + '.' + ('0' + (today.getMonth() + 1)).slice(-2) + '.' + today.getFullYear();
 
     elements.forEach(element => {
         $(element)
@@ -96,6 +77,7 @@ function datepicker() {
                 container: element.hasAttribute('data-picker-container') ? element.getAttribute('data-picker-container') : '#picker-container',
                 language: 'ru',
                 autoclose: true,
+                defaultViewDate: {year: today.getFullYear(), month: today.getMonth(), day: today.getDate()},
                 templates: {
                     leftArrow: `
                                 <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,6 +105,8 @@ function datepicker() {
                 element.classList.remove('datepicker-shown');
             })
             .on('changeDate', function (e) {
+                toggleLoader(true);
+
                 setTimeout(() => {
                     if (e.date) {
                         startIntervalDate = e.date;
@@ -131,16 +115,26 @@ function datepicker() {
                     tableRender();
                 }, 0);
                 $(element).trigger('blur');
+                setTimeout(() => {
+                    toggleLoader(false);
+                }, 500);
             });
 
-        $(element).datepicker('setDate', today);
+        $(element).datepicker('update', formattedToday);
     });
 }
 
 $(document).ready(function () {
     datepicker();
-
 });
+
+function toggleLoader(show) {
+    if (show) {
+        loaderElem.classList.add('booking__loader--active');
+    } else {
+        loaderElem.classList.remove('booking__loader--active');
+    }
+}
 
 function roomsAmount() {
     const elements = Array.from(document.querySelectorAll('.js-room-amount'));
@@ -385,10 +379,12 @@ function videoPlaying() {
     });
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
+    loaderElem = document.querySelector('.booking__loader');
     datepicker();
     bookingRoomSlider();
-    selectBookingRoom();
     roomsAmount();
     timeDropdown();
     ticketsAmount();
