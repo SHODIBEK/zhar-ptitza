@@ -30,6 +30,14 @@
             margin-bottom: 1.7rem;
         }
     }
+
+    &__button {
+        margin-top: 4rem;
+
+        @include breakpoint(mobile) {
+            margin-top: 3rem;
+        }
+    }
 }
 
 .form-page__content {
