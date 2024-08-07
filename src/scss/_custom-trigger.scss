@@ -64,7 +64,7 @@
         position: absolute;
         top: calc(100% + 10px);
         left: 0;
-        width: 100%;
+        width: max-content;
         padding: 1rem 0;
         border: 1px solid var(--text-color);
         background: #fff;
