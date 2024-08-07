@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+
 export default function anchorLinks() {
     const pageHeader = document.querySelector('.page-header');
     const offset = pageHeader ? pageHeader.offsetHeight + 20 : 80;

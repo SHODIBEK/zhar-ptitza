@@ -267,10 +267,6 @@
 }
 
 .promos-intro__slider-pagination {
-    @include breakpointMF(small-tablet) {
-        display: none;
-    }
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,6 +276,10 @@
     pointer-events: all;
     margin-top: 1.8rem;
 
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
+
     .swiper-pagination-bullet {
         margin: 0 !important;
         width: 0.6rem;
@@ -288,8 +288,6 @@
         background: rgba(1, 1, 1, 0.2);
         position: relative;
 
-        @include breakpoint(mobile) {
-        }
         &::before {
             content: '';
             position: absolute;

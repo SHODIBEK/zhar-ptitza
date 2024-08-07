@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { IS_MOBILE } from './utils';
 import SplitText from './vendor/SplitText';

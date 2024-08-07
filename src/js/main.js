@@ -49,6 +49,8 @@ import customSelects from './customSelects';
 import './tooltip';
 import counterInit from './counter';
 import customTriggerInit from './customTrigger';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,6 +131,3 @@ window.addEventListener('load', function() {
     ScrollTrigger.refresh();
     setTimeout(() => document.body.classList.add('animatable'), 300);
 });
-
-
-

@@ -1,3 +1,8 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function accordions() {
     const SPEED = 0.3;
 
