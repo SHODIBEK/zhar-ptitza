@@ -104,7 +104,7 @@ function addCellClickHandlers() {
 }
 
 function handleCellClick(cell) {
-    if (cell.classList.contains('pastDate')) {
+    if (['empty', 'pastDate', 'booked', 'disabled'].some(key => cell.classList.contains(key))) {
         return;
     }
     if (!selectStartCell) {
