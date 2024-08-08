@@ -53,6 +53,9 @@ function tableRender() {
     });
     Handlebars.registerHelper('formatTime', function (time) {
         const tmp = time.split(':');
+        if (tmp[0] == 24) {
+            tmp[0] = '00'
+        }
         return `${tmp[0]}<sup>:${tmp[1]}</sup>`;
     });
 
@@ -73,10 +76,10 @@ function tableRender() {
     const template = Handlebars.compile(source);
     const context = {
         times: [
-            "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00",
+            "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00",
             "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00",
             "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00",
-            "22:00", "23:00"
+            "22:00", "23:00", "24:00"
         ],
         dates: getDateInterval(startIntervalDate),
         bookingDates: bookingDates
@@ -144,7 +147,7 @@ function handleCellClick(cell) {
             const options = {day: '2-digit', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
-            start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
+            start.setHours(+startDate.dataset.time.split(':')[0] - 1, 0, 0, 0);
             end.setHours(+endDate.dataset.time.split(':')[0], 0, 0, 0);
 
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
@@ -288,8 +291,13 @@ function loader() {
 
 // Функция для проверки, находится ли время в интервале
 function isInInterval(date, time, bookingDates) {
-    const [hours, minutes] = time.split(':').map(Number);
-    date.setHours(hours, 0, 0, 0);
+    let [hours, minutes] = time.split(':').map(Number);
+    if (time === '00:00') {
+        // hours = hours - 1
+        // minutes = 59;
+        debugger;
+    }
+    date.setHours(hours, minutes, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
         let start = new Date(bookingDates[i].start)
