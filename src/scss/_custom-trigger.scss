@@ -125,7 +125,7 @@
 	position: relative;
     min-width: 200px;
     max-width: 100%;
-    z-index: 1023;
+    z-index: 250;
 
     @include breakpoint(mobile) {
         width: 100%!important;
