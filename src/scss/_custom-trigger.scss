@@ -56,7 +56,6 @@
 
     &__items {
         position: absolute;
-        top: 10px;
         left: 0;
         width: max-content;
         padding: 1rem 0;
@@ -72,6 +71,16 @@
             visibility: visible;
             transform: translateY(0);
             transition: 0.2s;
+        }
+
+        &.select2-dropdown {
+            &--below {
+                top: 10px;
+            }
+
+            &--above {
+                top: -10px;
+            }
         }
     }
 }
@@ -117,7 +126,11 @@
     min-width: 200px;
     max-width: 100%;
     z-index: 1023;
-    
+
+    @include breakpoint(mobile) {
+        width: 100%!important;
+    }
+     
 	.select2-selection__rendered {
         display: block;
         overflow: hidden;
