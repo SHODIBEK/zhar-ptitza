@@ -409,7 +409,7 @@
 #booking-room-calendar-modal {
 
   .booking-room-modal__inner {
-    max-width: 100rem;
+    max-width: 102rem;
   }
 
   .booking-room-modal__content {
@@ -448,7 +448,7 @@
 
   .calendar-container {
     position: relative;
-    padding: 18px 0 0;
+    padding: 20px 0 0;
 
     .selected-date__info {
       display: flex;
@@ -477,6 +477,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       &:disabled {
         pointer-events: none;
         opacity: 0.5;
@@ -497,6 +498,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       svg {
         width: 4.5rem;
         height: 3rem;
@@ -515,6 +517,8 @@
 
   .calendar {
     font-size: 1.2rem;
+    margin-right: 18px;
+    width: unset;
 
     .time-header {
       .time-cell {
@@ -549,8 +553,8 @@
     }
 
     .date-cell {
-      width: 4.1rem;
-      min-width: 4.1rem;
+      width: 4.4rem;
+      min-width: 4.4rem;
 
       div {
         display: flex;
@@ -560,6 +564,7 @@
         height: 20px;
         color: #CEBE9D;
         font-weight: 500;
+        padding-right: 7px;
       }
 
       &.active {
@@ -573,13 +578,9 @@
       border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
-      width: 3.4rem;
-      min-width: 3.4rem;
+      width: 34px;
+      min-width: 34px;
 
-      &.disabled {
-        cursor: not-allowed !important;
-        background: transparent !important;
-      }
 
       &:hover {
         background-color: #dfceab !important;
@@ -592,19 +593,31 @@
 
       &.selected {
         background-color: #DFCEAB;
-        border-right-color: #DFCEAB;
+
+        &:not(:last-child) {
+          border-right-color: #DFCEAB;
+        }
 
 
         &:hover {
           background-color: #E5DECF !important;
+          border-right-color: #E5DECF !important;
         }
+      }
+
+      &.disabled {
+        cursor: not-allowed !important;
+        background: transparent !important;
       }
 
       &.booked {
         //pointer-events: none;
         cursor: not-allowed !important;
         background-color: #6D554D !important;
-        border-right-color: #6D554D !important;
+
+        &:not(:last-child) {
+          border-right-color: #6D554D !important;
+        }
       }
 
       &.pastDate {
@@ -637,7 +650,7 @@
 
   .booking__bottom-row {
     margin-top: 0;
-    padding: 0 2rem 0 4.5rem;
+    padding: 0 0 0 4.5rem;
 
     .booking__back-btn {
       background: #fff0;
