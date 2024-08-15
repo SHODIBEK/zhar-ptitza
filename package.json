@@ -33,6 +33,7 @@
         "lodash": "^4.17.21",
         "parsleyjs": "^2.9.2",
         "plyr": "^3.6.8",
+        "select2": "^4.1.0-rc.0",
         "splitting": "^1.0.6",
         "swiper": "^8.1.4",
         "tippy.js": "^6.3.7"

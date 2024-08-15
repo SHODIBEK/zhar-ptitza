@@ -1,13 +1,7 @@
 .custom-trigger {
     position: relative;
-    width: max-content;
-    max-width: 200px;
+    width: 100%;
     z-index: 10;
-
-    @include breakpoint(mobile) {
-        width: 100%;
-        min-width: 100px;
-    }
 
     &__default {
         padding: 1.5rem 4rem 1.5rem 1.5rem;
@@ -62,7 +56,7 @@
 
     &__items {
         position: absolute;
-        top: calc(100% + 10px);
+        top: 10px;
         left: 0;
         width: max-content;
         padding: 1rem 0;
@@ -73,38 +67,80 @@
         transform: translateY(10px);
         transition: 0.2s;
 
-        .is-open & {
+        .select2-container--open & {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
             transition: 0.2s;
         }
     }
+}
 
-    &__item {
-        padding: 1rem 2rem;
-        display: block;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.4rem;
-        line-height: 1;
-        color: var(--text-color);
-        cursor: pointer;
+.select2-results__option {
+    padding: 1rem 2rem;
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text-color);
+    cursor: pointer;
+    user-select: none;
+	-webkit-user-select: none;
 
-        .no-touch &:hover {
-            color: #968a71;
-        }
-
-        &.is-selected {
-            font-weight: 600;
-            color: #968a71;
-            pointer-events: none;
-            cursor: auto;
-        }
-
-        @include breakpoint(mobile) {
-            padding: 1rem;
-            font-size: 1.2rem;
-        }
+    .no-touch &:hover {
+        color: #968a71;
     }
+
+    &.is-selected {
+        font-weight: 600;
+        color: #968a71;
+        pointer-events: none;
+        cursor: auto;
+    }
+
+    &--disabled {
+        display: none;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+.select2-container {
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	position: relative;
+    min-width: 200px;
+    max-width: 100%;
+    z-index: 1023;
+    
+	.select2-selection__rendered {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.select2-search--dropdown.select2-search--hide,
+.select2-selection__clear {
+	display: none;
+}
+
+
+.select2-hidden-accessible {
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }

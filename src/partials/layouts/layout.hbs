@@ -61,6 +61,27 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/plugin/pluralGetSet.min.js" integrity="sha512-7pR4ECKRMtWMJTaHHMUNe6xEYDcOZ7GHjiYFfWjUdk+jcvoAuqhNQHsVJiUnJRrCgfNbDt/ddFIuDtoGhTLK+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script src="./assets/js/circle/circle.js"></script>
             {{/if}}
+            {{#if select}}
+                <script src="./assets/js/checkout/select2.min.js"></script>
+                <script>
+                    const cselect = $('.js-select');
+
+                    cselect.select2({
+                        placeholder: 'Добавить сертификат',
+                        selectionCssClass: 'custom-trigger__default',
+                        dropdownCssClass: "custom-trigger__items",
+                        minimumResultsForSearch: Infinity,
+                        width: 'element',
+                        allowClear: true
+                    });
+
+                    cselect.on('select2:select', function(e) {
+                        const selectedValue = e.params.data.id;
+                        cselect.val(null).trigger('change');
+                        console.log(selectedValue)
+                    });
+                </script>
+            {{/if}}
             <script src="assets/js/backend.js"></script>
         </div>
     </body>
