@@ -49,7 +49,7 @@
 .booking-room-modal__heading {
   text-align: center;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 4rem;
   font-family: var(--zhar-ptitza);
   line-height: 120%;
@@ -58,7 +58,7 @@
 
   @include breakpoint(mobile) {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3.2rem;
     line-height: 120%;
     letter-spacing: 0.05em;
@@ -122,9 +122,8 @@
 
 .booking-room-modal__close {
   flex-shrink: 0;
-  width: 3.2rem;
-  height: 3.2rem;
-  flex-shrink: 0;
+  width: 3.35rem;
+  height: 3.35rem;
 
   @include breakpoint(mobile) {
     width: 2.8rem;
@@ -250,7 +249,7 @@
 
 .booking-room-modal__inner-heading {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 4rem;
   line-height: 120%;
   font-family: var(--zhar-ptitza);
@@ -258,7 +257,7 @@
 
   @include breakpoint(mobile) {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 3rem;
     line-height: 120%;
     letter-spacing: 0.05em;
@@ -408,15 +407,17 @@
 }
 
 #booking-room-calendar-modal {
+
   .booking-room-modal__inner {
     max-width: 102rem;
   }
 
   .booking-room-modal__content {
-    padding: 30px;
+    padding: 30px 30px 40px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    position: relative;
   }
 
   .booking-room-modal__top-row {
@@ -426,24 +427,28 @@
   }
 
   .booking-room-modal__data {
-    font-family: var(--avenir);
+    font-family: var(--avenir), sans-serif;
     font-size: 20px;
     line-height: 28px;
-    font-weight: 450;
+    font-weight: 500;
     color: #060301;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 1.3rem;
 
     .room-name {
       font-size: 32px;
       line-height: 32px;
+
+      + p {
+        line-height: 14px;
+      }
     }
   }
 
   .calendar-container {
     position: relative;
-    padding: 15px 0 0;
+    padding: 20px 0 0;
 
     .selected-date__info {
       display: flex;
@@ -457,7 +462,7 @@
         font-family: var(--avenir);
         font-size: 16px;
         line-height: 22px;
-        font-weight: 450;
+        font-weight: 500;
         color: #968A71;
       }
     }
@@ -467,40 +472,71 @@
       left: 0;
       top: 0;
       z-index: 1;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:disabled {
         pointer-events: none;
         opacity: 0.5;
+      }
+
+      svg {
+        width: 4.5rem;
+        height: 3rem;
       }
     }
 
     .news__arrows-btn--down {
       position: relative;
       transform: rotate(180deg);
+
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 4.5rem;
+        height: 3rem;
+      }
     }
 
     &:after {
       position: absolute;
       content: '';
       height: 100%;
-      left: 40px;
+      left: 4.3rem;
       top: 0;
       border-right: 1px solid #3A241F;
     }
   }
 
   .calendar {
-    font-size: 11px;
+    font-size: 1.2rem;
+    margin-right: 18px;
+    width: unset;
 
     .time-header {
       .time-cell {
         position: relative;
         height: 20px;
+        font-weight: 500;
 
         > span {
           position: relative;
-          right: -60%;
+          right: -2.65rem;
+          top: 0px;
           color: #3A241F;
+          font-size: 11px;
+          line-height: 16px;
+
+          sup {
+            font-size: 7px;
+          }
         }
 
       }
@@ -517,8 +553,8 @@
     }
 
     .date-cell {
-      width: 40px;
-      min-width: 40px;
+      width: 4.4rem;
+      min-width: 4.4rem;
 
       div {
         display: flex;
@@ -527,7 +563,8 @@
         width: 100%;
         height: 20px;
         color: #CEBE9D;
-
+        font-weight: 500;
+        padding-right: 7px;
       }
 
       &.active {
@@ -544,43 +581,66 @@
       width: 34px;
       min-width: 34px;
 
-      &.disabled {
-        cursor: not-allowed;
-        background: transparent !important;
-      }
 
       &:hover {
-        background-color: #E5DECF;
+        background-color: #dfceab !important;
       }
 
       &.hover {
         background-color: #E5DECF;
+
       }
 
       &.selected {
         background-color: #DFCEAB;
+
+        &:not(:last-child) {
+          border-right-color: #DFCEAB;
+        }
+
+
+        &:hover {
+          background-color: #E5DECF !important;
+          border-right-color: #E5DECF !important;
+        }
+      }
+
+      &.disabled {
+        cursor: not-allowed !important;
+        background: transparent !important;
       }
 
       &.booked {
-        pointer-events: none;
+        //pointer-events: none;
+        cursor: not-allowed !important;
         background-color: #6D554D !important;
+
+        &:not(:last-child) {
+          border-right-color: #6D554D !important;
+        }
+      }
+
+      &.pastDate {
+        cursor: not-allowed !important;
+        background: transparent !important;
       }
 
 
       &.empty {
-        pointer-events: none;
         position: relative;
         background: #F7F5F2 !important;
+        cursor: not-allowed !important;
 
         &:after {
           position: absolute;
-          content: '✕';
+          content: '';
           width: 100%;
           height: 100%;
           text-align: center;
           display: flex;
           justify-content: center;
           align-items: center;
+          background: url(../img/close.png) no-repeat center;
         }
       }
 
@@ -589,8 +649,8 @@
   }
 
   .booking__bottom-row {
-    margin-top: 10px;
-    padding: 0 18px 0 40px;
+    margin-top: 0;
+    padding: 0 0 0 4.5rem;
 
     .booking__back-btn {
       background: #fff0;
@@ -602,12 +662,12 @@
 
 .tooltip {
   position: absolute;
-  box-shadow: 0 2px 2px 0 #00000059;
+  box-shadow: 0 0.3rem 0.3rem 0 #00000059;
   border: 1px solid #EDE8DD;
   background-color: #F7F5F2;
   color: #B60000;
-  padding: 2px 12px;
-  font-size: 12px;
+  padding: 0.3rem 1.4rem;
+  font-size: 1.4rem;
   pointer-events: none;
   z-index: 1000;
 }
