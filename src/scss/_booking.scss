@@ -31,11 +31,11 @@
     font-weight: 700;
     font-size: 4rem;
     font-family: var(--zhar-ptitza);
-    line-height: 140%;
+    line-height: 120%;
     color: var(--text-color);
 
     @include breakpoint(mobile) {
-        font-size: 3.2rem;
+        font-size: 3rem;
         line-height: 120%;
     }
 }
@@ -61,7 +61,6 @@
     top: 0;
     visibility: hidden;
     opacity: 0;
-
 
     &::before {
         content: '';
