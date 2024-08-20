@@ -95,7 +95,8 @@
     color: var(--text-color);
     cursor: pointer;
     user-select: none;
-	-webkit-user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
 
     .no-touch &:hover {
         color: #968a71;
@@ -119,19 +120,19 @@
 }
 
 .select2-container {
-	box-sizing: border-box;
-	display: block;
-	margin: 0;
-	position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    position: relative;
     min-width: 200px;
     max-width: 100%;
     z-index: 250;
 
     @include breakpoint(mobile) {
-        width: 100%!important;
+        width: 100% !important;
     }
-     
-	.select2-selection__rendered {
+
+    .select2-selection__rendered {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -141,19 +142,18 @@
 
 .select2-search--dropdown.select2-search--hide,
 .select2-selection__clear {
-	display: none;
+    display: none;
 }
 
-
 .select2-hidden-accessible {
-	border: 0 !important;
-	clip: rect(0 0 0 0) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
 }
