@@ -150,7 +150,7 @@ function handleCellClick(cell) {
             const cells = getCellsInRange(cell, selectStartCell);
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Миним. ${minHours}ч.`);
+                showTooltip(cell, `Мин. ${minHours}ч.`);
                 return;
             }
             selectEndCell = selectStartCell;
@@ -161,7 +161,7 @@ function handleCellClick(cell) {
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Миним. ${minHours}ч.`);
+            showTooltip(cell, `Мин. ${minHours}ч.`);
             return;
         }
         if (!cells.some(cell => cell.classList.contains('booked'))) {
@@ -172,8 +172,8 @@ function handleCellClick(cell) {
             const options = {day: '2-digit', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
-            start.setHours(+startDate.dataset.time.split(':')[0] - 1, 0, 0, 0);
-            end.setHours(+endDate.dataset.time.split(':')[0], 0, 0, 0);
+            start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
+            end.setHours(+endDate.dataset.time.split(':')[0] + 1, 0, 0, 0);
 
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
                 hour: '2-digit',
