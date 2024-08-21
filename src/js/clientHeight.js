@@ -1,4 +1,8 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { debounce } from 'lodash';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function clientHeight() {
     let width = 0;

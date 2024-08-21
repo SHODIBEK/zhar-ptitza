@@ -31,11 +31,11 @@
     font-weight: 700;
     font-size: 4rem;
     font-family: var(--zhar-ptitza);
-    line-height: 140%;
+    line-height: 120%;
     color: var(--text-color);
 
     @include breakpoint(mobile) {
-        font-size: 3.2rem;
+        font-size: 3rem;
         line-height: 120%;
     }
 }
@@ -61,7 +61,6 @@
     top: 0;
     visibility: hidden;
     opacity: 0;
-
 
     &::before {
         content: '';
@@ -1599,6 +1598,8 @@
     margin-top: 6rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 
     @include breakpoint(mobile) {
         margin-top: 4rem;
@@ -1645,6 +1646,12 @@
     }
 }
 
+.booking__checkout-conditions-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
 .booking__checkout-conditions-rules-link {
     font-style: normal;
     font-weight: 500;
@@ -1653,8 +1660,7 @@
     font-size: 1.2rem;
     line-height: 120%;
     transition: all 0.2s;
-    margin-right: 2.5rem;
-    margin-left: auto;
+
     &:hover {
         text-decoration-color: transparent;
     }

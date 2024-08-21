@@ -90,14 +90,15 @@
                             </div>
                             <div class="booking__checkout-actions">
                                 <div class="custom-trigger">
-                                    <div class="custom-trigger__default">Добавить сертификат</div>
-                                    <div class="custom-trigger__items">
-                                        <div class="custom-trigger__item">Сертификат 1</div>
-                                        <div class="custom-trigger__item">Сертификат 2</div>
-                                        <div class="custom-trigger__item">Сертификат 3</div>
-                                        <div class="custom-trigger__item">Сертификат 4</div>
-                                    </div>
+                                    <select name="sert" class="js-select">
+                                        <option value=""></option>
+                                        <option value="0">Сертификат 1 </option>
+                                        <option value="1">Сертификат 2</option>
+                                        <option value="2">Сертификат 3</option>
+                                        <option value="3">Спа-программа "Сказка на Ночь"</option>
+                                    </select>
                                 </div>
+                                
                                 <div class="booking__checkout-total">
                                     <div class="booking__checkout-total-price">
                                         <div class="booking__checkout-total-price-title">
@@ -149,12 +150,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a href="#" class="booking__checkout-conditions-rules-link">
-                                    Условия покупки билетов
-                                </a>
-                                <a href="#" class="booking__checkout-conditions-payment-info-link">
-                                    Об онлайн-оплате
-                                </a>
+                                <div class="booking__checkout-conditions-links">
+                                    <a href="#" class="booking__checkout-conditions-rules-link">
+                                        Условия покупки билетов
+                                    </a>
+                                    <a href="#" class="booking__checkout-conditions-payment-info-link">
+                                        Об онлайн-оплате
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
