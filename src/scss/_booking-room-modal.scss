@@ -409,7 +409,7 @@
 #booking-room-calendar-modal {
 
   .booking-room-modal__inner {
-    max-width: 102rem;
+    max-width: 104rem;
   }
 
   .booking-room-modal__content {
@@ -428,8 +428,7 @@
 
   .booking-room-modal__data {
     font-family: var(--avenir), sans-serif;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 2.22rem;
     font-weight: 500;
     color: #060301;
     display: flex;
@@ -437,11 +436,11 @@
     gap: 1.3rem;
 
     .room-name {
-      font-size: 32px;
-      line-height: 32px;
+      font-size: 3.557rem;
+      line-height: 3.557rem;
 
       + p {
-        line-height: 14px;
+        line-height: 1.556rem;
       }
     }
   }
@@ -460,8 +459,9 @@
         display: flex;
         align-items: center;
         font-family: var(--avenir);
-        font-size: 16px;
-        line-height: 22px;
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 2.445rem;
         font-weight: 500;
         color: #968A71;
       }
@@ -472,8 +472,8 @@
       left: 0;
       top: 0;
       z-index: 1;
-      width: 40px;
-      height: 40px;
+      width: 4.44rem;
+      height: 4.44rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -484,24 +484,25 @@
       }
 
       svg {
-        width: 4.5rem;
+        width: 4.2rem;
         height: 3rem;
+        pointer-events: none;
       }
     }
 
     .news__arrows-btn--down {
       position: relative;
       transform: rotate(180deg);
-
-      width: 40px;
-      height: 40px;
+      width: 4.44rem;
+      height: 4.44rem;
       display: flex;
       align-items: center;
       justify-content: center;
 
       svg {
-        width: 4.5rem;
+        width: 4.3rem;
         height: 3rem;
+        pointer-events: none;
       }
     }
 
@@ -509,7 +510,7 @@
       position: absolute;
       content: '';
       height: 100%;
-      left: 4.3rem;
+      left: 4.4rem;
       top: 0;
       border-right: 1px solid #3A241F;
     }
@@ -528,11 +529,11 @@
 
         > span {
           position: relative;
-          right: -26px;
+          right: -2.6rem;
           top: 0px;
           color: #3A241F;
-          font-size: 11px;
-          line-height: 16px;
+          font-size: 1.2rem;
+          line-height: 1.7rem;
 
           sup {
             font-size: 7px;
@@ -561,10 +562,10 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 20px;
-        color: #CEBE9D;
+        margin: 4px 0 0;
+        color: #cebe9d;
         font-weight: 500;
-        padding-right: 7px;
+        padding-right: 4px;
       }
 
       &.active {
@@ -578,8 +579,8 @@
       border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
-      width: 34px;
-      min-width: 34px;
+      width: 3.779rem;
+      min-width: 3.779rem;
 
 
       &:hover {
@@ -610,16 +611,16 @@
         background: transparent !important;
       }
 
+      &.pastDate {
+        cursor: not-allowed !important;
+        background: transparent !important;
+      }
+
       &.booked {
         //pointer-events: none;
         cursor: not-allowed !important;
         background-color: #6D554D !important;
         border-right-color: #6D554D;
-      }
-
-      &.pastDate {
-        cursor: not-allowed !important;
-        background: transparent !important;
       }
 
 
@@ -631,13 +632,14 @@
 
         &:after {
           position: absolute;
-          content: '✕';
+          content: '';
           width: 100%;
           height: 100%;
           text-align: center;
           display: flex;
           justify-content: center;
           align-items: center;
+          background: url(../img/close.svg) no-repeat center;
         }
       }
 

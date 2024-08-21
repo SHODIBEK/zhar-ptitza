@@ -40,7 +40,7 @@ function tableRender() {
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
-        "                    </tbody>";
+        "                    </tbody>"; 
 
     Handlebars.registerHelper('isInInterval', function (date, time, bookingDates) {
         return isInInterval(new Date(date), time, bookingDates);
@@ -325,8 +325,8 @@ function isInInterval(date, time, bookingDates) {
     for (let i = 0; i < bookingDates.length; i++) {
         let start = new Date(bookingDates[i].start);
         let end = new Date(bookingDates[i].end);
-        start.setHours(start.getUTCHours(), 0, 0, 0);
-        end.setHours(end.getUTCHours() - 1, 0, 0, 0);
+        start.setHours(start.getHours(), 0, 0, 0);
+        end.setHours(end.getHours() - 1, 0, 0, 0);
         if (date.getTime() >= start.getTime() && date.getTime() <= end.getTime()) {
             return true;
         }
@@ -338,7 +338,7 @@ function isInInterval(date, time, bookingDates) {
 function isEdgeInterval(date, time, bookingDates) {
     const adjustedTime = adjustTimeByOneHour(time);
     const [hours, minutes] = adjustedTime.split(':').map(Number);
-    date.setUTCHours(hours, minutes, 0, 0);
+    date.setHours(hours, minutes, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
         const start = new Date(new Date(bookingDates[i].start).setMinutes(0, 0, 0)).getTime();
