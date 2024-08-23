@@ -79,8 +79,6 @@ function tableRender() {
     });
 
 
-
-
     const template = Handlebars.compile(source);
     const context = {
         times: [
@@ -113,6 +111,7 @@ function addCellClickHandlers() {
     cells.forEach(cell => {
         cell.addEventListener('click', () => handleCellClick(cell));
         cell.addEventListener('mouseover', () => handleCellMouseOver(cell));
+        cell.addEventListener('touchstart', () => handleCellMouseOver(cell));
     });
 }
 
@@ -138,6 +137,7 @@ function handleCellClick(cell) {
     if (!selectStartCell) {
         selectStartCell = cell;
         cell.classList.add('selected');
+        cell.classList.add('start');
         disableCellsBeyondFirstBooked(selectStartCell);
     } else if (!selectEndCell) {
         if (cell.classList.contains('disabled')) {
@@ -167,8 +167,8 @@ function handleCellClick(cell) {
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
-        const selectedInfo = document.querySelector('.selected-info-' + (isMobile ? 2 : 1));
-        debugger;
+        const className = '.selected-info-' + (isMobile() ? 2 : 1);
+        const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
             const options = {day: '2-digit', month: 'long'};
             const start = new Date(startDate.dataset.date);
@@ -190,8 +190,10 @@ function handleCellClick(cell) {
         selectedInfo.innerHTML = `Выбрано: ${cells.length} ч — ${format(selectStartCell, selectEndCell)}`;
 
         if (selectStartCell && selectEndCell) {
+            document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
             document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
-            const lastElem = cells.at(-1);
+            document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
+            const lastElem = cells[cells.length - 1];
             lastElem.style.setProperty('border-right-color', '#ede8dd');
         }
     } else {
@@ -222,7 +224,7 @@ function handleCellMouseOver(cell) {
             cells = cells.reverse()
         }
         cells.forEach(cell => {
-            if (cell.classList.contains('booked') || cell.classList.contains('disabled')) {
+            if (cell.classList.contains('booked') || cell.classList.contains('disabled') || cell.classList.contains('pastDate')) {
                 foundBookedCell = true;
             }
             if (!foundBookedCell) {
@@ -237,8 +239,9 @@ function clearSelection() {
     selectStartCell = null;
     selectEndCell = null;
     document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
-    document.querySelector('.selected-info-' + (isMobile ? 2 : 1)).innerHTML = '';
+    document.querySelector('.selected-info-' + (isMobile() ? 2 : 1)).innerHTML = '';
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
+    document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
 }
 
@@ -267,9 +270,6 @@ function getCellsInRange(startCell, endCell) {
     return cells;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    tableRender();
-});
 
 // Функция для форматирования даты
 function formatDate(date) {
@@ -429,7 +429,7 @@ function modalListener() {
     const modalTrigger = document.querySelector('a[href="#booking-room-calendar-modal"]');
     const modal = document.getElementById('booking-room-calendar-modal');
 
-    modalTrigger.addEventListener('click', function(event) {
+    modalTrigger.addEventListener('click', function (event) {
         event.preventDefault();
 
         const loader = modal.querySelector('.booking__loader');
@@ -442,7 +442,7 @@ function modalListener() {
     // Optionally, add an event listener to close the modal
     const closeModalButtons = modal.querySelectorAll('.js-close-modal');
     closeModalButtons.forEach(closeModalButton => {
-        closeModalButton.addEventListener('click', function() {
+        closeModalButton.addEventListener('click', function () {
             modal.classList.remove('is-active');
             firstSelectedBookingDate = new Date();
             startIntervalDate = new Date();
@@ -462,6 +462,20 @@ function adjustTimeByOneHour(time) {
     }
     return `${newHours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 }
-document.addEventListener('DOMContentLoaded', function () {
+
+function scrollToCurrentHours() {
+    const pastDate = Array.from(document.querySelectorAll('.pastDate'));
+    const table = document.querySelector('.calendar');
+    const element = pastDate[pastDate.length - 1];
+    if (isMobile()) {
+        const tmp = element.getBoundingClientRect()
+        table.scrollTo(tmp.width * pastDate.length, tmp.top);
+    }
+    console.log(pastDate)
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    tableRender();
     modalListener();
+    scrollToCurrentHours();
 });
