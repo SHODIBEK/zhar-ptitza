@@ -31,16 +31,16 @@ function tableRender() {
         "                        {{#each dates}}\n" +
         "                            <tr class=\"date-row\">\n" +
         "                                <td class=\"date-cell {{isActiveDate this}}\">\n" +
-        "                                    <div>{{formatDate this}}</div>\n" +
+        "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
         "                                <td class=\"time-slot {{#if (isPastDateTime ../this this)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
-                        "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
-                        "                </td>" +
+        "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
+        "                </td>" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
-        "                    </tbody>"; 
+        "                    </tbody>";
 
     Handlebars.registerHelper('isInInterval', function (date, time, bookingDates) {
         return isInInterval(new Date(date), time, bookingDates);
@@ -167,7 +167,8 @@ function handleCellClick(cell) {
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
-        const selectedInfo = document.querySelector('.selected-info');
+        const selectedInfo = document.querySelector('.selected-info-' + (isMobile ? 2 : 1));
+        debugger;
         const format = function (startDate, endDate) {
             const options = {day: '2-digit', month: 'long'};
             const start = new Date(startDate.dataset.date);
@@ -197,6 +198,10 @@ function handleCellClick(cell) {
         clearSelection();
         handleCellClick(cell);
     }
+}
+
+function isMobile() {
+    return window.innerWidth <= 640;
 }
 
 function handleCellMouseOver(cell) {
@@ -232,7 +237,7 @@ function clearSelection() {
     selectStartCell = null;
     selectEndCell = null;
     document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
-    document.querySelector('.selected-info').innerHTML = '';
+    document.querySelector('.selected-info-' + (isMobile ? 2 : 1)).innerHTML = '';
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
 }
