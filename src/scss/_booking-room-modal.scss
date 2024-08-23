@@ -715,6 +715,10 @@
           justify-content: center;
           align-items: center;
           background: url(../img/close.svg) no-repeat center;
+
+          @include breakpoint(mobile) {
+            background-size: 40px;
+          }
         }
       }
 
