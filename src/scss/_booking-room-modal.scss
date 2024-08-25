@@ -20,7 +20,7 @@
 
   @include breakpoint(mobile) {
     background-color: #fff;
-    padding-top: 4rem;
+    padding-top: 5.1rem;
     padding-bottom: 3rem;
   }
 
@@ -33,6 +33,10 @@
   .container {
     margin-top: auto;
     margin-bottom: auto;
+
+    @include breakpoint(mobile) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -126,8 +130,7 @@
   height: 3.35rem;
 
   @include breakpoint(mobile) {
-    width: 2.8rem;
-    height: 2.8rem;
+    display: none;
   }
 
   svg {
@@ -409,15 +412,22 @@
 #booking-room-calendar-modal {
 
   .booking-room-modal__inner {
-    max-width: 102rem;
+    max-width: 104rem;
   }
 
   .booking-room-modal__content {
     padding: 30px 30px 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2.2rem;
     position: relative;
+
+    @include breakpoint(mobile) {
+      padding: 1.2rem 0;
+      gap: 1.2rem;
+
+
+    }
   }
 
   .booking-room-modal__top-row {
@@ -428,80 +438,105 @@
 
   .booking-room-modal__data {
     font-family: var(--avenir), sans-serif;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 2.22rem;
     font-weight: 500;
     color: #060301;
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
 
-    .room-name {
-      font-size: 32px;
-      line-height: 32px;
 
+    .room-name {
+      font-size: 3.557rem;
+      line-height: 3.557rem;
+      font-family:  var(--zhar-ptitza);
       + p {
-        line-height: 14px;
+        line-height: 1.556rem;
       }
+    }
+
+    @include breakpoint(mobile) {
+      gap: 0.9rem;
+      font-size: 1.4rem;
+
     }
   }
 
   .calendar-container {
     position: relative;
-    padding: 20px 0 0;
+    padding: 2.23rem 0 0;
 
     .selected-date__info {
       display: flex;
       width: 100%;
 
-      .selected-info {
+      .selected-info-1 {
         height: 40px;
         padding: 0 18px;
         display: flex;
         align-items: center;
         font-family: var(--avenir);
-        font-size: 16px;
-        line-height: 22px;
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 2.445rem;
         font-weight: 500;
         color: #968A71;
       }
+
+      @include breakpoint(mobile) {
+        width: 100%;
+        .selected-info-1 {
+          display: none;
+          font-size: 14px;
+          padding: 0;
+        }
+      }
     }
+
+
 
     .news__arrows-btn--up {
       position: absolute;
       left: 0;
-      top: 0;
+      top: -2px;
       z-index: 1;
-      width: 40px;
-      height: 40px;
+      width: 4.44rem;
+      height: 4.44rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #fff;
 
       &:disabled {
         pointer-events: none;
-        opacity: 0.5;
+
+        svg {
+          opacity: 0.5;
+        }
       }
 
       svg {
-        width: 4.5rem;
+        width: 4.2rem;
         height: 3rem;
+        pointer-events: none;
       }
     }
 
     .news__arrows-btn--down {
       position: relative;
       transform: rotate(180deg);
-
-      width: 40px;
-      height: 40px;
+      width: 4.44rem;
+      height: 4.44rem;
       display: flex;
       align-items: center;
+      background: #fff;
       justify-content: center;
 
+
       svg {
-        width: 4.5rem;
+        width: 4.3rem;
         height: 3rem;
+        pointer-events: none;
       }
     }
 
@@ -509,15 +544,30 @@
       position: absolute;
       content: '';
       height: 100%;
-      left: 4.3rem;
+      left: 4.4rem;
       top: 0;
       border-right: 1px solid #3A241F;
     }
   }
 
+  .selected-info-2 {
+    display: none;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 500;
+    color: #968A71;
+    align-items: center;
+    font-family: var(--avenir);
+
+    @include breakpoint(mobile) {
+      display: flex;
+    }
+  }
   .calendar {
     font-size: 1.2rem;
-    margin-right: 18px;
+    overflow: auto;
+    max-width: 100%;
+    display: block;
     width: unset;
 
     .time-header {
@@ -528,14 +578,23 @@
 
         > span {
           position: relative;
-          right: -2.65rem;
+          right: -2.6rem;
           top: 0px;
           color: #3A241F;
-          font-size: 11px;
-          line-height: 16px;
+          font-size: 1.2rem;
+          line-height: 1.7rem;
+
+          @include breakpoint(mobile) {
+            right: -2.8rem;
+          }
+
 
           sup {
             font-size: 7px;
+
+            @include breakpoint(mobile) {
+              font-size: 0.8rem;
+            }
           }
         }
 
@@ -549,22 +608,34 @@
     }
 
     .date-row {
-      height: 20px;
+      height: 2.23rem;
+
+      @include breakpoint(mobile) {
+        height: 4.4rem;
+      }
     }
 
     .date-cell {
       width: 4.4rem;
       min-width: 4.4rem;
+      background: #fff;
+      position: sticky;
+      left: 0;
+      z-index: 9;
 
       div {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 20px;
-        color: #CEBE9D;
+        margin: 4px 0 0;
+        color: #cebe9d;
         font-weight: 500;
-        padding-right: 7px;
+        padding-right: 4px;
+
+        @include breakpoint(mobile) {
+          margin: 1.5rem 0 0;
+        }
       }
 
       &.active {
@@ -578,8 +649,13 @@
       border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
-      width: 34px;
-      min-width: 34px;
+      width: 3.779rem;
+      min-width: 3.779rem;
+
+      @include breakpoint(mobile) {
+        width: 4.4rem;
+        min-width: 4.4rem;
+      }
 
 
       &:hover {
@@ -599,13 +675,18 @@
         }
 
 
-        &:hover {
-          background-color: #E5DECF !important;
-          border-right-color: #E5DECF !important;
-        }
+        //&:hover {
+        //  background-color: #E5DECF !important;
+        //  border-right-color: #E5DECF !important;
+        //}
       }
 
       &.disabled {
+        cursor: not-allowed !important;
+        background: transparent !important;
+      }
+
+      &.pastDate {
         cursor: not-allowed !important;
         background: transparent !important;
       }
@@ -614,15 +695,7 @@
         //pointer-events: none;
         cursor: not-allowed !important;
         background-color: #6D554D !important;
-
-        &:not(:last-child) {
-          border-right-color: #6D554D !important;
-        }
-      }
-
-      &.pastDate {
-        cursor: not-allowed !important;
-        background: transparent !important;
+        border-right-color: #6D554D;
       }
 
 
@@ -630,6 +703,7 @@
         position: relative;
         background: #F7F5F2 !important;
         cursor: not-allowed !important;
+        border-left: #F7F5F2 !important;
 
         &:after {
           position: absolute;
@@ -640,7 +714,11 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background: url(../img/close.png) no-repeat center;
+          background: url(../img/close.svg) no-repeat center;
+
+          @include breakpoint(mobile) {
+            background-size: 40px;
+          }
         }
       }
 
@@ -657,8 +735,20 @@
       border: 1px solid #060301;
       color: #060301;
     }
+
+    @include breakpoint(mobile) {
+      padding: 0;
+
+      .booking__total {
+        font-size: 16px;
+        font-weight: 800;
+        display: flex;
+      }
+    }
   }
 }
+
+
 
 .tooltip {
   position: absolute;

@@ -31,10 +31,12 @@ function tableRender() {
         "                        {{#each dates}}\n" +
         "                            <tr class=\"date-row\">\n" +
         "                                <td class=\"date-cell {{isActiveDate this}}\">\n" +
-        "                                    <div>{{formatDate this}}</div>\n" +
+        "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\" data-date=\"{{../this}}\" data-time=\"{{this}}\"></td>\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
+        "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
+        "                </td>" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
@@ -72,6 +74,12 @@ function tableRender() {
         return cellDateTime < new Date();
     });
 
+    Handlebars.registerHelper('subtractOneHour', function (time) {
+        return adjustTimeByOneHour(time);
+    });
+
+
+
 
     const template = Handlebars.compile(source);
     const context = {
@@ -96,6 +104,8 @@ function tableRender() {
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         cells.forEach(cell => cell.classList.add('selected'));
     }
+
+    findBookedBeforeEmpty();
 }
 
 function addCellClickHandlers() {
@@ -103,6 +113,21 @@ function addCellClickHandlers() {
     cells.forEach(cell => {
         cell.addEventListener('click', () => handleCellClick(cell));
         cell.addEventListener('mouseover', () => handleCellMouseOver(cell));
+    });
+}
+
+function findBookedBeforeEmpty() {
+    const rows = document.querySelectorAll('tr');
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        for (let i = 0; i < cells.length - 1; i++) {
+            const currentCell = cells[i];
+            const nextCell = cells[i + 1];
+            if (currentCell.classList.contains('booked') && nextCell.classList.contains('empty')) {
+                currentCell.style.borderRightColor = '#ede8dd';
+                break;
+            }
+        }
     });
 }
 
@@ -125,7 +150,7 @@ function handleCellClick(cell) {
             const cells = getCellsInRange(cell, selectStartCell);
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Миним. ${minHours}ч.`);
+                showTooltip(cell, `Мин. ${minHours}ч.`);
                 return;
             }
             selectEndCell = selectStartCell;
@@ -136,19 +161,20 @@ function handleCellClick(cell) {
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Миним. ${minHours}ч.`);
+            showTooltip(cell, `Мин. ${minHours}ч.`);
             return;
         }
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
-        const selectedInfo = document.querySelector('.selected-info');
+        const selectedInfo = document.querySelector('.selected-info-' + (isMobile ? 2 : 1));
+        debugger;
         const format = function (startDate, endDate) {
             const options = {day: '2-digit', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
-            start.setHours(+startDate.dataset.time.split(':')[0] - 1, 0, 0, 0);
-            end.setHours(+endDate.dataset.time.split(':')[0], 0, 0, 0);
+            start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
+            end.setHours(+endDate.dataset.time.split(':')[0] + 1, 0, 0, 0);
 
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
                 hour: '2-digit',
@@ -165,11 +191,17 @@ function handleCellClick(cell) {
 
         if (selectStartCell && selectEndCell) {
             document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
+            const lastElem = cells.at(-1);
+            lastElem.style.setProperty('border-right-color', '#ede8dd');
         }
     } else {
         clearSelection();
         handleCellClick(cell);
     }
+}
+
+function isMobile() {
+    return window.innerWidth <= 640;
 }
 
 function handleCellMouseOver(cell) {
@@ -205,7 +237,7 @@ function clearSelection() {
     selectStartCell = null;
     selectEndCell = null;
     document.querySelectorAll('.time-slot.disabled').forEach(cell => cell.classList.remove('disabled'));
-    document.querySelector('.selected-info').innerHTML = '';
+    document.querySelector('.selected-info-' + (isMobile ? 2 : 1)).innerHTML = '';
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
 }
@@ -291,20 +323,16 @@ function loader() {
 
 // Функция для проверки, находится ли время в интервале
 function isInInterval(date, time, bookingDates) {
-    let [hours, minutes] = time.split(':').map(Number);
-    if (time === '00:00') {
-        // hours = hours - 1
-        // minutes = 59;
-        debugger;
-    }
+    const adjustedTime = adjustTimeByOneHour(time);
+    const [hours, minutes] = adjustedTime.split(':').map(Number);
     date.setHours(hours, minutes, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
-        let start = new Date(bookingDates[i].start)
-        let end = new Date(bookingDates[i].end)
-        start = start.setHours(start.getUTCHours(), 0, 0, 0);
-        end = end.setHours(end.getUTCHours(), 0, 0, 0);
-        if (date.getTime() >= start && date.getTime() <= end) {
+        let start = new Date(bookingDates[i].start);
+        let end = new Date(bookingDates[i].end);
+        start.setHours(start.getHours(), 0, 0, 0);
+        end.setHours(end.getHours() - 1, 0, 0, 0);
+        if (date.getTime() >= start.getTime() && date.getTime() <= end.getTime()) {
             return true;
         }
     }
@@ -313,21 +341,18 @@ function isInInterval(date, time, bookingDates) {
 
 // Функция для проверки, является ли время началом или концом интервала
 function isEdgeInterval(date, time, bookingDates) {
-    const [hours, minutes] = time.split(':').map(Number);
+    const adjustedTime = adjustTimeByOneHour(time);
+    const [hours, minutes] = adjustedTime.split(':').map(Number);
     date.setHours(hours, minutes, 0, 0);
 
     for (let i = 0; i < bookingDates.length; i++) {
-        const start = new Date(bookingDates[i].start);
-        const end = new Date(bookingDates[i].end);
+        const start = new Date(new Date(bookingDates[i].start).setMinutes(0, 0, 0)).getTime();
+        const end = new Date(new Date(bookingDates[i].end).setMinutes(0, 0, 0)).getTime();
 
-        // Calculate the exact times for the conditions
-        const oneHourBeforeStart = new Date(start);
-        oneHourBeforeStart.setHours(oneHourBeforeStart.getUTCHours() - 1, 0, 0, 0);
+        const oneHourBeforeStart = start - 3600000;
+        const oneHourAfterEnd = end;
 
-        const oneHourAfterEnd = new Date(end);
-        oneHourAfterEnd.setHours(oneHourAfterEnd.getUTCHours() + 1, 0, 0, 0);
-
-        if (date.getTime() === oneHourBeforeStart.getTime() || date.getTime() === oneHourAfterEnd.getTime()) {
+        if (date.getTime() === oneHourBeforeStart || date.getTime() === oneHourAfterEnd) {
             return true;
         }
     }
@@ -427,6 +452,15 @@ function modalListener() {
             tableRender();
         });
     })
+}
+
+function adjustTimeByOneHour(time) {
+    const [hours, minutes] = time.split(':').map(Number);
+    let newHours = hours - 1;
+    if (newHours < 0) {
+        newHours = 23; // Wrap around to 23 if it's less than 0
+    }
+    return `${newHours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 }
 document.addEventListener('DOMContentLoaded', function () {
     modalListener();
