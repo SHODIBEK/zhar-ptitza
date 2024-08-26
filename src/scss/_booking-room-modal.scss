@@ -124,7 +124,7 @@
   }
 }
 
-.booking-room-modal__close {
+#booking-room-calendar-modal .booking-room-modal__close {
   flex-shrink: 0;
   width: 3.35rem;
   height: 3.35rem;
@@ -498,10 +498,10 @@
     .news__arrows-btn--up {
       position: absolute;
       left: 0;
-      top: -2px;
+      top:5px;
       z-index: 1;
-      width: 4.44rem;
-      height: 4.44rem;
+      width: 3.6rem;
+      height: 3.6rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -526,8 +526,8 @@
     .news__arrows-btn--down {
       position: relative;
       transform: rotate(180deg);
-      width: 4.44rem;
-      height: 4.44rem;
+      width: 3.6rem;
+      height: 3.6rem;
       display: flex;
       align-items: center;
       background: #fff;
@@ -545,12 +545,13 @@
       position: absolute;
       content: '';
       height: 100%;
-      left: 4.4rem;
+      left: 3.6rem;
       top: 0;
       border-right: 1px solid #3A241F;
+      z-index: 9;
       @include breakpoint(mobile) {
         height: calc(100% - 8.8rem);
-        top: 4.4rem;
+        top: 3.6rem;
       }
     }
   }
@@ -571,7 +572,7 @@
 
   .calendar {
     font-size: 1.2rem;
-    overflow: auto;
+    overflow: auto hidden;
     max-width: 100%;
     display: block;
     width: unset;
@@ -615,19 +616,42 @@
 
     .date-row {
       height: 2.23rem;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        content: "";
+        width: 100%;
+        z-index: 3;
+        height: 1px;
+        background: #ede8dd;
+      }
 
       @include breakpoint(mobile) {
-        height: 4.4rem;
+        height: 3.6rem;
       }
     }
 
     .date-cell {
-      width: 4.4rem;
-      min-width: 4.4rem;
+      width: 3.6rem;
+      min-width: 3.6rem;
       background: #fff;
       position: sticky;
       left: 0;
       z-index: 9;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        height: 100%;
+        width: 100%;
+        z-index: 4;
+        background: #fff;
+      }
 
       div {
         display: flex;
@@ -638,9 +662,11 @@
         color: #cebe9d;
         font-weight: 500;
         padding-right: 4px;
+        position: relative;
+        z-index: 5;
 
         @include breakpoint(mobile) {
-          margin: 1.5rem 0 0;
+          margin: 1.2rem 0 0;
         }
       }
 
@@ -652,15 +678,14 @@
     }
 
     .time-slot {
-      border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
       width: 3.779rem;
       min-width: 3.779rem;
 
       @include breakpoint(mobile) {
-        width: 4.4rem;
-        min-width: 4.4rem;
+        width: 3.6rem;
+        min-width: 3.6rem;
       }
 
 
@@ -679,7 +704,6 @@
         background-color: #DFCEAB;
         border-right-color: #DFCEAB;
       }
-
 
 
       &.disabled {
@@ -718,7 +742,7 @@
           background: url(../img/close.svg) no-repeat center;
 
           @include breakpoint(mobile) {
-            background-size: 40px;
+            background-size: 20px;
           }
         }
       }
@@ -760,4 +784,28 @@
   font-size: 1.4rem;
   pointer-events: none;
   z-index: 1000;
+}
+
+body:not(.is-mobile) {
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  ::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.37);
+    border-radius: 24px;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.54);
+    border-radius: 24px;
+  }
 }
