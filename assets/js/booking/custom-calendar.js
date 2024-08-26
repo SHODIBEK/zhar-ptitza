@@ -2,8 +2,8 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: new Date(new Date(new Date().setHours(15)).setDate(new Date().getDate() + 1)).toISOString(),
-        end: new Date(new Date(new Date().setHours(13)).setDate(new Date().getDate() + 2)).toISOString()
+        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate())).toISOString(),
+        end: new Date(new Date(new Date().setHours(13)).setDate(new Date().getDate() + 1)).toISOString()
     },
     {
         start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate() + 3)).toISOString(),
@@ -34,7 +34,7 @@ function tableRender() {
         "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
         "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
         "                </td>" +
         "                            {{/each}}\n" +
@@ -67,11 +67,25 @@ function tableRender() {
         return dateToCheck === selectedDate ? 'active' : '';
     });
 
-    Handlebars.registerHelper('isPastDateTime', function (date, time) {
+    Handlebars.registerHelper('isPastDateTime', function (date, time, bookingDates) {
         const [hours, minutes] = time.split(':').map(Number);
         const cellDateTime = new Date(date);
         cellDateTime.setHours(hours, minutes, 0, 0);
-        return cellDateTime < new Date();
+
+        const isPast = cellDateTime < new Date();
+        const inInterval = isInInterval(new Date(date), time, bookingDates);
+        const edgeInterval = isEdgeInterval(new Date(date), time, bookingDates);
+
+        if (isPast) {
+            // Проверяем, если это забронированная дата или краевой интервал, возвращаем isPastDate
+            if (inInterval || edgeInterval) {
+                return false;
+            }
+
+            // В противном случае проверяем, является ли это прошедшим временем
+            return isPast;
+        }
+        return false;
     });
 
     Handlebars.registerHelper('subtractOneHour', function (time) {
