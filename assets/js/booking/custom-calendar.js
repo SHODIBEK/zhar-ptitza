@@ -185,7 +185,7 @@ function handleCellClick(cell) {
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = {day: '2-digit', month: 'long'};
+            const options = {day: 'numeric', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
