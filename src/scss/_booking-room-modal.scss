@@ -449,7 +449,8 @@
     .room-name {
       font-size: 3.557rem;
       line-height: 3.557rem;
-      font-family:  var(--zhar-ptitza);
+      font-family: var(--zhar-ptitza);
+
       + p {
         line-height: 1.556rem;
       }
@@ -494,7 +495,6 @@
     }
 
 
-
     .news__arrows-btn--up {
       position: absolute;
       left: 0;
@@ -509,6 +509,7 @@
 
       &:disabled {
         pointer-events: none;
+        cursor: not-allowed;
 
         svg {
           opacity: 0.5;
@@ -547,6 +548,10 @@
       left: 4.4rem;
       top: 0;
       border-right: 1px solid #3A241F;
+      @include breakpoint(mobile) {
+        height: calc(100% - 8.8rem);
+        top: 4.4rem;
+      }
     }
   }
 
@@ -563,6 +568,7 @@
       display: flex;
     }
   }
+
   .calendar {
     font-size: 1.2rem;
     overflow: auto;
@@ -658,28 +664,23 @@
       }
 
 
-      &:hover {
-        background-color: #dfceab !important;
+      &:not(.booked):not(.disabled):not(.empty):not(.pastDate):not(.start):hover {
+        background-color: #E5DECF !important;
       }
 
-      &.hover {
-        background-color: #E5DECF;
 
+      &.hover {
+        &:not(.selected) {
+          background-color: #E5DECF;
+        }
       }
 
       &.selected {
         background-color: #DFCEAB;
-
-        &:not(:last-child) {
-          border-right-color: #DFCEAB;
-        }
-
-
-        //&:hover {
-        //  background-color: #E5DECF !important;
-        //  border-right-color: #E5DECF !important;
-        //}
+        border-right-color: #DFCEAB;
       }
+
+
 
       &.disabled {
         cursor: not-allowed !important;
@@ -747,7 +748,6 @@
     }
   }
 }
-
 
 
 .tooltip {
