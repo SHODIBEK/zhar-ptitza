@@ -210,6 +210,8 @@ function handleCellClick(cell) {
             document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
             const lastElem = cells[cells.length - 1];
             lastElem.style.setProperty('border-right-color', '#ede8dd');
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.removeAttribute('disabled');
         }
     } else {
         clearSelection();
@@ -258,6 +260,8 @@ function clearSelection() {
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
     document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('disabled', true);
 }
 
 function getCellsInRange(startCell, endCell) {
@@ -443,6 +447,7 @@ function disableCellsBeyondFirstBooked(startCell) {
 function modalListener() {
     const modalTrigger = document.querySelector('a[href="#booking-room-calendar-modal"]');
     const modal = document.getElementById('booking-room-calendar-modal');
+    const submitBtn = document.getElementById('submitBtn');
 
     modalTrigger.addEventListener('click', function (event) {
         event.preventDefault();
@@ -466,6 +471,11 @@ function modalListener() {
             selectEndCell = null;
             tableRender();
         });
+    })
+
+    submitBtn.addEventListener('click', function (event) {
+        submitBtn.classList.add('loading-active');
+        submitBtn.setAttribute('disabled', true);
     })
 }
 
