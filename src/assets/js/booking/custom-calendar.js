@@ -71,14 +71,20 @@ function tableRender() {
         const [hours, minutes] = time.split(':').map(Number);
         const cellDateTime = new Date(date);
         cellDateTime.setHours(hours, minutes, 0, 0);
+
+        // Получаем текущее время в Москве
         const nowInMoscow = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" });
         const moscowDate = new Date(nowInMoscow);
+
+        // Добавляем один час к текущему времени в Москве
+        moscowDate.setHours(moscowDate.getHours() + 1);
+
         const isPast = cellDateTime < moscowDate;
         const inInterval = isInInterval(new Date(date), time, bookingDates);
         const edgeInterval = isEdgeInterval(new Date(date), time, bookingDates);
 
         if (isPast) {
-            // Проверяем, если это забронированная дата или краевой интервал, возвращаем isPastDate
+            // Проверяем, если это забронированная дата или краевой интервал, возвращаем false
             if (inInterval || edgeInterval) {
                 return false;
             }
