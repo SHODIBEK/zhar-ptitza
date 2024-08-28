@@ -749,6 +749,27 @@
   }
 }
 
+.booking__submit-btn {
+  & > span {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
+
+  .form-page__loading {
+    opacity: 0;
+    visibility: visible;
+    transition: 0.3s ease-in-out;
+  }
+  &.loading-active {
+    & > span {
+      opacity: 0;
+    }
+
+    .form-page__loading {
+      opacity: 1;
+    }
+  }
+}
 
 .tooltip {
   position: absolute;
