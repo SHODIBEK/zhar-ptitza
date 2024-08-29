@@ -2,12 +2,32 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate())).toISOString(),
-        end: new Date(new Date(new Date().setHours(13)).setDate(new Date().getDate() + 1)).toISOString()
+        "start": "2024-08-29 12:00:00",
+        "end": "2024-08-29 16:00:00"
     },
     {
-        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate() + 3)).toISOString(),
-        end: new Date((new Date(new Date().setHours(16)).setDate(new Date().getDate() + 3))).toISOString()
+        "start": "2024-08-29 19:00:00",
+        "end": "2024-08-30 01:00:00"
+    },
+    {
+        "start": "2024-08-30 12:00:00",
+        "end": "2024-08-30 16:00:00"
+    },
+    {
+        "start": "2024-08-30 17:00:00",
+        "end": "2024-08-31 00:00:00"
+    },
+    {
+        "start": "2024-08-31 16:00:00",
+        "end": "2024-08-31 22:00:00"
+    },
+    {
+        "start": "2024-09-05 20:00:00",
+        "end": "2024-09-06 01:00:00"
+    },
+    {
+        "start": "2024-09-07 15:00:00",
+        "end": "2024-09-07 19:00:00"
     }
 ];
 let isFirstInterval = true;
@@ -142,10 +162,9 @@ function findBookedBeforeEmpty() {
         const cells = row.querySelectorAll('td');
         for (let i = 0; i < cells.length - 1; i++) {
             const currentCell = cells[i];
-            const nextCell = cells[i + 1];
-            if (currentCell.classList.contains('booked') && nextCell.classList.contains('empty')) {
-                currentCell.style.borderRightColor = '#ede8dd';
-                break;
+            const prevCell = cells[i - 1];
+            if (currentCell.classList.contains('empty')) {
+                prevCell.style.borderRightColor = '#ede8dd';
             }
         }
     });
