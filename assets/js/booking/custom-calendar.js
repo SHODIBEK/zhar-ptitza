@@ -2,12 +2,32 @@ let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let bookingDates = [
     {
-        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate())).toISOString(),
-        end: new Date(new Date(new Date().setHours(13)).setDate(new Date().getDate() + 1)).toISOString()
+        "start": "2024-08-29 12:00:00",
+        "end": "2024-08-29 16:00:00"
     },
     {
-        start: new Date(new Date(new Date().setHours(11)).setDate(new Date().getDate() + 3)).toISOString(),
-        end: new Date((new Date(new Date().setHours(16)).setDate(new Date().getDate() + 3))).toISOString()
+        "start": "2024-08-29 19:00:00",
+        "end": "2024-08-30 01:00:00"
+    },
+    {
+        "start": "2024-08-30 12:00:00",
+        "end": "2024-08-30 16:00:00"
+    },
+    {
+        "start": "2024-08-30 17:00:00",
+        "end": "2024-08-31 00:00:00"
+    },
+    {
+        "start": "2024-08-31 16:00:00",
+        "end": "2024-08-31 22:00:00"
+    },
+    {
+        "start": "2024-09-05 20:00:00",
+        "end": "2024-09-06 01:00:00"
+    },
+    {
+        "start": "2024-09-07 15:00:00",
+        "end": "2024-09-07 19:00:00"
     }
 ];
 let isFirstInterval = true;
@@ -71,14 +91,20 @@ function tableRender() {
         const [hours, minutes] = time.split(':').map(Number);
         const cellDateTime = new Date(date);
         cellDateTime.setHours(hours, minutes, 0, 0);
+
+        // Получаем текущее время в Москве
         const nowInMoscow = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" });
         const moscowDate = new Date(nowInMoscow);
+
+        // Добавляем один час к текущему времени в Москве
+        moscowDate.setHours(moscowDate.getHours() + 1);
+
         const isPast = cellDateTime < moscowDate;
         const inInterval = isInInterval(new Date(date), time, bookingDates);
         const edgeInterval = isEdgeInterval(new Date(date), time, bookingDates);
 
         if (isPast) {
-            // Проверяем, если это забронированная дата или краевой интервал, возвращаем isPastDate
+            // Проверяем, если это забронированная дата или краевой интервал, возвращаем false
             if (inInterval || edgeInterval) {
                 return false;
             }
@@ -136,10 +162,9 @@ function findBookedBeforeEmpty() {
         const cells = row.querySelectorAll('td');
         for (let i = 0; i < cells.length - 1; i++) {
             const currentCell = cells[i];
-            const nextCell = cells[i + 1];
-            if (currentCell.classList.contains('booked') && nextCell.classList.contains('empty')) {
-                currentCell.style.borderRightColor = '#ede8dd';
-                break;
+            const prevCell = cells[i - 1];
+            if (currentCell.classList.contains('empty')) {
+                prevCell.style.borderRightColor = '#ede8dd';
             }
         }
     });
@@ -210,6 +235,8 @@ function handleCellClick(cell) {
             document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
             const lastElem = cells[cells.length - 1];
             lastElem.style.setProperty('border-right-color', '#ede8dd');
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.removeAttribute('disabled');
         }
     } else {
         clearSelection();
@@ -258,6 +285,8 @@ function clearSelection() {
     document.querySelectorAll('.time-slot.selected').forEach(cell => cell.classList.remove('selected'));
     document.querySelectorAll('.time-slot.start').forEach(cell => cell.classList.remove('start'));
     document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('disabled', true);
 }
 
 function getCellsInRange(startCell, endCell) {
@@ -443,6 +472,7 @@ function disableCellsBeyondFirstBooked(startCell) {
 function modalListener() {
     const modalTrigger = document.querySelector('a[href="#booking-room-calendar-modal"]');
     const modal = document.getElementById('booking-room-calendar-modal');
+    const submitBtn = document.getElementById('submitBtn');
 
     modalTrigger.addEventListener('click', function (event) {
         event.preventDefault();
@@ -466,6 +496,11 @@ function modalListener() {
             selectEndCell = null;
             tableRender();
         });
+    })
+
+    submitBtn.addEventListener('click', function (event) {
+        submitBtn.classList.add('loading-active');
+        submitBtn.setAttribute('disabled', true);
     })
 }
 
