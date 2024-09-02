@@ -548,9 +548,10 @@
       left: 4.4rem;
       top: 0;
       border-right: 1px solid #3A241F;
+      z-index: 9;
       @include breakpoint(mobile) {
-        height: calc(100% - 8.8rem);
-        top: 4.4rem;
+        height: calc(4.4rem * 9);
+        top: 4.23rem;
       }
     }
   }
@@ -579,8 +580,14 @@
     .time-header {
       .time-cell {
         position: relative;
-        height: 20px;
+        height: 2.28rem;
         font-weight: 500;
+
+        @include breakpoint(mobile) {
+          height: 2rem;
+        }
+
+
 
         > span {
           position: relative;
@@ -749,6 +756,27 @@
   }
 }
 
+.booking__submit-btn {
+  & > span {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
+
+  .form-page__loading {
+    opacity: 0;
+    visibility: visible;
+    transition: 0.3s ease-in-out;
+  }
+  &.loading-active {
+    & > span {
+      opacity: 0;
+    }
+
+    .form-page__loading {
+      opacity: 1;
+    }
+  }
+}
 
 .tooltip {
   position: absolute;

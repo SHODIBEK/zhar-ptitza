@@ -1201,6 +1201,12 @@
         color: white;
     }
 
+    &:disabled {
+        cursor: auto !important;
+        pointer-events: none !important;
+        background-color: gray !important;
+    }
+
     .no-touch &:hover {
         .booking__submit-btn-text {
             transform: translateX(-1rem);
