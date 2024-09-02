@@ -82,6 +82,7 @@
     margin-bottom: 0.8rem;
 
     @include breakpoint(mobile) {
+        padding-right: 2rem;
         font-size: 1.6rem;
         line-height: 1.4;
         margin-bottom: 0.5rem;

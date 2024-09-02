@@ -1,791 +1,771 @@
 .booking-room-modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
 
-  display: flex;
-  flex-direction: column;
-  z-index: 200;
-  background: #ede8dd;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s, visibility 0s linear 0.4s;
-  padding: var(--content-padding) 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    background: #ede8dd;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+    margin: var(--content-padding) 0;
 
-  overscroll-behavior-y: contain;
-  overflow-y: auto;
-
-  @include breakpoint(mobile) {
-    background-color: #fff;
-    padding-top: 5.1rem;
-    padding-bottom: 3rem;
-  }
-
-  &.active {
-    opacity: 1;
-    visibility: inherit;
-    transition: opacity 0.4s, visibility 0.4s;
-  }
-
-  .container {
-    margin-top: auto;
-    margin-bottom: auto;
+    overscroll-behavior-y: contain;
+    overflow-y: auto;
 
     @include breakpoint(mobile) {
-      margin-top: 0;
+        background-color: #fff;
+        margin-top: 62px;
+        padding: 3rem 0;
+        height: calc(100vh - 62px);
     }
-  }
+
+    &.active {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.4s, visibility 0.4s;
+    }
+
+    .container {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @include breakpoint(mobile) {
+            margin-top: 0;
+        }
+    }
 }
 
 .booking-room-modal__inner {
-  width: 100%;
-  max-width: 92rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  right: calc(var(--sb-width, 0) / 2);
+    width: 100%;
+    max-width: 92rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: calc(var(--sb-width, 0) / 2);
 }
 
 .booking-room-modal__heading {
-  text-align: center;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 4rem;
-  font-family: var(--zhar-ptitza);
-  line-height: 120%;
-  color: var(--secondary-color);
-  margin-bottom: 2rem;
-
-  @include breakpoint(mobile) {
+    text-align: center;
     font-style: normal;
     font-weight: 500;
-    font-size: 3.2rem;
+    font-size: 4rem;
+    font-family: var(--zhar-ptitza);
     line-height: 120%;
-    letter-spacing: 0.05em;
+    color: var(--secondary-color);
     margin-bottom: 2rem;
-  }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3.2rem;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        margin-bottom: 2rem;
+    }
 }
 
 .booking-room-modal__content {
-  background: #ffffff;
-  color: black;
-  padding: 4rem;
-  padding-top: 0;
-  padding-bottom: 3rem;
-  overflow: hidden;
+    background: #ffffff;
+    color: black;
+    padding: 4rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
+    overflow: hidden;
 
-  @include breakpoint(mobile) {
-    display: contents;
-  }
+    @include breakpoint(mobile) {
+        display: contents;
+    }
 }
 
 .booking-room-modal__top-row {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  justify-content: space-between;
-  min-height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+    min-height: 6rem;
 }
 
-
 .booking-room-modal__arrows {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    flex-shrink: 0;
 }
 
 .booking-room-modal__arrow {
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 1.9rem;
-  transition: opacity 0.2s;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 1.9rem;
+    transition: opacity 0.2s;
 
-  &.swiper-button-disabled {
-    opacity: 0.5;
-  }
-
-  &:hover {
-    svg {
-      fill: var(--text-color);
+    &.swiper-button-disabled {
+        opacity: 0.5;
     }
-  }
 
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: #968a71;
-    transition: fill 0.2s, transform 0.2s;
-  }
+    &:hover {
+        svg {
+            fill: var(--text-color);
+        }
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: #968a71;
+        transition: fill 0.2s, transform 0.2s;
+    }
 }
 
 #booking-room-calendar-modal .booking-room-modal__close {
-  flex-shrink: 0;
-  width: 3.35rem;
-  height: 3.35rem;
+    flex-shrink: 0;
+    width: 3.35rem;
+    height: 3.35rem;
 
-  @include breakpoint(mobile) {
-    display: none;
-  }
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: #968a71;
-    transition: fill 0.2s;
-  }
-
-  &:hover,
-  &:active {
-    svg {
-      fill: black;
+    @include breakpoint(mobile) {
+        display: none;
     }
-  }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: #968a71;
+        transition: fill 0.2s;
+    }
+
+    &:hover,
+    &:active {
+        svg {
+            fill: black;
+        }
+    }
 }
 
 .booking-room-modal__slider {
-  @include breakpoint(mobile) {
-    margin: 0 calc(-1 * var(--content-padding));
-  }
-
-  .swiper {
-    overflow: visible;
     @include breakpoint(mobile) {
-      overflow: hidden;
+        margin: 0 calc(-1 * var(--content-padding));
     }
-  }
 
-  .swiper-slide {
-    width: 30rem;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0.8rem;
-
-    @include breakpoint(mobile) {
-      width: 100%;
-      margin: 0;
+    .swiper {
+        overflow: visible;
+        @include breakpoint(mobile) {
+            overflow: hidden;
+        }
     }
-  }
+
+    .swiper-slide {
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0.8rem;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin: 0;
+        }
+    }
 }
 
 .booking-room-modal__slider-card {
-  position: relative;
+    position: relative;
 
-  &::before {
-    content: '';
-    display: block;
-    padding-bottom: 65%;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 65%;
 
-    @include breakpoint(mobile) {
-      padding-bottom: 70%;
+        @include breakpoint(mobile) {
+            padding-bottom: 70%;
+        }
     }
-  }
 }
 
 .booking-room-modal__card-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .booking-room-modal__row {
-  margin-top: 4rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 4rem;
-
-  @include breakpoint(mobile) {
+    margin-top: 4rem;
     display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    gap: 0;
-  }
+    align-items: flex-start;
+    gap: 4rem;
+
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        gap: 0;
+    }
 }
 
 .booking-room-modal__left-col {
-  width: 50%;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 
-  @include breakpoint(mobile) {
-    width: 100%;
-    flex-grow: 0;
-    display: contents;
-  }
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        display: contents;
+    }
 }
 
 .booking-room-modal__right-col {
-  width: 26rem;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
+    width: 26rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 
-  @include breakpoint(mobile) {
-    width: 100%;
-    flex-shrink: 1;
-    display: contents;
-  }
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        display: contents;
+    }
 }
 
 .booking-room-modal__type {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 150%;
-
-  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
     font-size: 1.4rem;
-    line-height: 120%;
-    margin-bottom: 1rem;
-  }
+    line-height: 150%;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+        margin-bottom: 1rem;
+    }
 }
 
 .booking-room-modal__inner-heading {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 4rem;
-  line-height: 120%;
-  font-family: var(--zhar-ptitza);
-  margin-bottom: 1.2rem;
-
-  @include breakpoint(mobile) {
     font-style: normal;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 120%;
-    letter-spacing: 0.05em;
-  }
+    font-family: var(--zhar-ptitza);
+    margin-bottom: 1.2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+    }
 }
 
 .booking-room-modal__inner-text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 120%;
-  max-width: 48rem;
-  margin-bottom: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    max-width: 48rem;
+    margin-bottom: 1.2rem;
 
-  @include breakpoint(mobile) {
-    max-width: none;
-    font-size: 1.2rem;
-    order: 9;
-    margin-bottom: 3rem;
-  }
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-size: 1.2rem;
+        order: 9;
+        margin-bottom: 3rem;
+    }
 }
 
 .booking-room-modal__schedule {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8rem;
-  row-gap: 4rem;
-  align-items: flex-start;
-  margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8rem;
+    row-gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
 
-  @include breakpoint(mobile) {
-    gap: 2rem;
-    row-gap: 1rem;
-    margin-bottom: 1.8rem;
-  }
+    @include breakpoint(mobile) {
+        gap: 2rem;
+        row-gap: 1rem;
+        margin-bottom: 1.8rem;
+    }
 }
 
 .booking-room-modal__schedule-item-key {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 120%;
-  margin-bottom: 0.2rem;
-
-  @include breakpoint(mobile) {
-    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
     line-height: 120%;
-  }
+    margin-bottom: 0.2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+    }
 }
 
 .booking-room-modal__schedule-item-value {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 120%;
-
-  @include breakpoint(mobile) {
-    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
     line-height: 120%;
-  }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+    }
 }
 
 .booking-room-modal__back-btn {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 120%;
-  text-decoration-line: underline;
-  transition: all 0.2s;
-
-  @include breakpoint(mobile) {
+    font-style: normal;
+    font-weight: 500;
     font-size: 1.4rem;
     line-height: 120%;
-    order: 10;
-  }
+    text-decoration-line: underline;
+    transition: all 0.2s;
 
-  &:hover {
-    text-decoration-color: transparent;
-  }
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 120%;
+        order: 10;
+    }
+
+    &:hover {
+        text-decoration-color: transparent;
+    }
 }
 
 .booking-room-modal__list {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-gap: 3.2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 3.2rem;
 
-  @include breakpoint(mobile) {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
 }
 
 .booking-room-modal__card {
-  display: flex;
-  flex-direction: column;
-
-  @include breakpoint(mobile) {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  svg {
-    width: 2rem;
-    height: 2rem;
-    flex-shrink: 0;
-    fill: #b7a98a;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 
     @include breakpoint(mobile) {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
     }
-  }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        fill: #b7a98a;
+        margin-bottom: 1rem;
+
+        @include breakpoint(mobile) {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0;
+        }
+    }
 }
 
 .booking-room-modal__card-title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 120%;
-  color: #b7a98a;
-  margin-bottom: 0.2rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    color: #b7a98a;
+    margin-bottom: 0.2rem;
 
-  @include breakpoint(mobile) {
-    display: none;
-  }
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .booking-room-modal__card-text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 120%;
-
-  @include breakpoint(mobile) {
     font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
 
-    font-size: 1.2rem;
-    color: #b7a98a;
-    line-height: 170%;
-  }
+    @include breakpoint(mobile) {
+        font-style: normal;
+
+        font-size: 1.2rem;
+        color: #b7a98a;
+        line-height: 170%;
+    }
 }
 
 #booking-room-calendar-modal {
-
-  .booking-room-modal__inner {
-    max-width: 104rem;
-  }
-
-  .booking-room-modal__content {
-    padding: 30px 30px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 2.2rem;
-    position: relative;
-
-    @include breakpoint(mobile) {
-      padding: 1.2rem 0;
-      gap: 1.2rem;
-
-
-    }
-  }
-
-  .booking-room-modal__top-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .booking-room-modal__data {
-    font-family: var(--avenir), sans-serif;
-    font-size: 2.22rem;
-    font-weight: 500;
-    color: #060301;
-    display: flex;
-    flex-direction: column;
-    gap: 1.3rem;
-
-
-    .room-name {
-      font-size: 3.557rem;
-      line-height: 3.557rem;
-      font-family: var(--zhar-ptitza);
-
-      + p {
-        line-height: 1.556rem;
-      }
+    .booking-room-modal__inner {
+        max-width: 104rem;
     }
 
-    @include breakpoint(mobile) {
-      gap: 0.9rem;
-      font-size: 1.4rem;
-
-    }
-  }
-
-  .calendar-container {
-    position: relative;
-    padding: 2.23rem 0 0;
-
-    .selected-date__info {
-      display: flex;
-      width: 100%;
-
-      .selected-info-1 {
-        height: 40px;
-        padding: 0 18px;
+    .booking-room-modal__content {
+        padding: 30px 30px 40px;
         display: flex;
-        align-items: center;
-        font-family: var(--avenir);
-        width: 100%;
-        font-size: 1.8rem;
-        line-height: 2.445rem;
-        font-weight: 500;
-        color: #968A71;
-      }
-
-      @include breakpoint(mobile) {
-        width: 100%;
-        .selected-info-1 {
-          display: none;
-          font-size: 14px;
-          padding: 0;
-        }
-      }
-    }
-
-
-    .news__arrows-btn--up {
-      position: absolute;
-      left: 0;
-      top: -2px;
-      z-index: 1;
-      width: 4.44rem;
-      height: 4.44rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-
-      &:disabled {
-        pointer-events: none;
-        cursor: not-allowed;
-
-        svg {
-          opacity: 0.5;
-        }
-      }
-
-      svg {
-        width: 4.2rem;
-        height: 3rem;
-        pointer-events: none;
-      }
-    }
-
-    .news__arrows-btn--down {
-      position: relative;
-      transform: rotate(180deg);
-      width: 4.44rem;
-      height: 4.44rem;
-      display: flex;
-      align-items: center;
-      background: #fff;
-      justify-content: center;
-
-
-      svg {
-        width: 4.3rem;
-        height: 3rem;
-        pointer-events: none;
-      }
-    }
-
-    &:after {
-      position: absolute;
-      content: '';
-      height: 100%;
-      left: 4.4rem;
-      top: 0;
-      border-right: 1px solid #3A241F;
-      z-index: 9;
-      @include breakpoint(mobile) {
-        height: calc(4.4rem * 9);
-        top: 4.23rem;
-      }
-    }
-  }
-
-  .selected-info-2 {
-    display: none;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    font-weight: 500;
-    color: #968A71;
-    align-items: center;
-    font-family: var(--avenir);
-
-    @include breakpoint(mobile) {
-      display: flex;
-    }
-  }
-
-  .calendar {
-    font-size: 1.2rem;
-    overflow: auto;
-    max-width: 100%;
-    display: block;
-    width: unset;
-
-    .time-header {
-      .time-cell {
+        flex-direction: column;
+        gap: 2.2rem;
         position: relative;
-        height: 2.28rem;
-        font-weight: 500;
 
         @include breakpoint(mobile) {
-          height: 2rem;
+            padding: 1.2rem 0;
+            gap: 1.2rem;
+        }
+    }
+
+    .booking-room-modal__top-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .booking-room-modal__data {
+        font-family: var(--avenir), sans-serif;
+        font-size: 2.22rem;
+        font-weight: 500;
+        color: #060301;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+
+        .room-name {
+            font-size: 3.557rem;
+            line-height: 3.557rem;
+            font-family: var(--zhar-ptitza);
+
+            + p {
+                line-height: 1.556rem;
+            }
         }
 
+        @include breakpoint(mobile) {
+            gap: 0.9rem;
+            font-size: 1.4rem;
+        }
+    }
 
+    .calendar-container {
+        position: relative;
+        padding: 2.23rem 0 0;
 
-        > span {
-          position: relative;
-          right: -2.6rem;
-          top: 0px;
-          color: #3A241F;
-          font-size: 1.2rem;
-          line-height: 1.7rem;
+        .selected-date__info {
+            display: flex;
+            width: 100%;
 
-          @include breakpoint(mobile) {
-            right: -2.8rem;
-          }
-
-
-          sup {
-            font-size: 7px;
+            .selected-info-1 {
+                height: 40px;
+                padding: 0 18px;
+                display: flex;
+                align-items: center;
+                font-family: var(--avenir);
+                width: 100%;
+                font-size: 1.8rem;
+                line-height: 2.445rem;
+                font-weight: 500;
+                color: #968a71;
+            }
 
             @include breakpoint(mobile) {
-              font-size: 0.8rem;
+                width: 100%;
+                .selected-info-1 {
+                    display: none;
+                    font-size: 14px;
+                    padding: 0;
+                }
             }
-          }
         }
 
-      }
-    }
+        .news__arrows-btn--up {
+            position: absolute;
+            left: 0;
+            top: -2px;
+            z-index: 1;
+            width: 4.44rem;
+            height: 4.44rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
 
+            &:disabled {
+                pointer-events: none;
+                cursor: not-allowed;
 
-    .date-rows {
-      position: relative;
+                svg {
+                    opacity: 0.5;
+                }
+            }
 
-    }
-
-    .date-row {
-      height: 2.23rem;
-
-      @include breakpoint(mobile) {
-        height: 4.4rem;
-      }
-    }
-
-    .date-cell {
-      width: 4.4rem;
-      min-width: 4.4rem;
-      background: #fff;
-      position: sticky;
-      left: 0;
-      z-index: 9;
-
-      div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 4px 0 0;
-        color: #cebe9d;
-        font-weight: 500;
-        padding-right: 4px;
-
-        @include breakpoint(mobile) {
-          margin: 1.5rem 0 0;
+            svg {
+                width: 4.2rem;
+                height: 3rem;
+                pointer-events: none;
+            }
         }
-      }
 
-      &.active {
-        div {
-          color: #3A241F;
+        .news__arrows-btn--down {
+            position: relative;
+            transform: rotate(180deg);
+            width: 4.44rem;
+            height: 4.44rem;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            justify-content: center;
+
+            svg {
+                width: 4.3rem;
+                height: 3rem;
+                pointer-events: none;
+            }
         }
-      }
-    }
-
-    .time-slot {
-      border-bottom: 1px solid #EDE8DD;
-      border-right: 1px solid #EDE8DD;
-      cursor: pointer;
-      width: 3.779rem;
-      min-width: 3.779rem;
-
-      @include breakpoint(mobile) {
-        width: 4.4rem;
-        min-width: 4.4rem;
-      }
-
-
-      &:not(.booked):not(.disabled):not(.empty):not(.pastDate):not(.start):hover {
-        background-color: #E5DECF !important;
-      }
-
-
-      &.hover {
-        &:not(.selected) {
-          background-color: #E5DECF;
-        }
-      }
-
-      &.selected {
-        background-color: #DFCEAB;
-        border-right-color: #DFCEAB;
-      }
-
-
-
-      &.disabled {
-        cursor: not-allowed !important;
-        background: transparent !important;
-      }
-
-      &.pastDate {
-        cursor: not-allowed !important;
-        background: transparent !important;
-      }
-
-      &.booked {
-        //pointer-events: none;
-        cursor: not-allowed !important;
-        background-color: #6D554D !important;
-        border-right-color: #6D554D;
-      }
-
-
-      &.empty {
-        position: relative;
-        background: #F7F5F2 !important;
-        cursor: not-allowed !important;
-        border-left: #F7F5F2 !important;
 
         &:after {
-          position: absolute;
-          content: '';
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: url(../img/close.svg) no-repeat center;
-
-          @include breakpoint(mobile) {
-            background-size: 40px;
-          }
+            position: absolute;
+            content: '';
+            height: 100%;
+            left: 4.4rem;
+            top: 0;
+            border-right: 1px solid #3a241f;
+            z-index: 9;
+            @include breakpoint(mobile) {
+                height: calc(4.4rem * 9);
+                top: 4.23rem;
+            }
         }
-      }
-
-
-    }
-  }
-
-  .booking__bottom-row {
-    margin-top: 0;
-    padding: 0 0 0 4.5rem;
-
-    .booking__back-btn {
-      background: #fff0;
-      border: 1px solid #060301;
-      color: #060301;
     }
 
-    @include breakpoint(mobile) {
-      padding: 0;
+    .selected-info-2 {
+        display: none;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        font-weight: 500;
+        color: #968a71;
+        align-items: center;
+        font-family: var(--avenir);
 
-      .booking__total {
-        font-size: 16px;
-        font-weight: 800;
-        display: flex;
-      }
+        @include breakpoint(mobile) {
+            display: flex;
+        }
     }
-  }
+
+    .calendar {
+        font-size: 1.2rem;
+        overflow: auto;
+        max-width: 100%;
+        display: block;
+        width: unset;
+
+        .time-header {
+            .time-cell {
+                position: relative;
+                height: 2.28rem;
+                font-weight: 500;
+
+                @include breakpoint(mobile) {
+                    height: 2rem;
+                }
+
+                > span {
+                    position: relative;
+                    right: -2.6rem;
+                    top: 0px;
+                    color: #3a241f;
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+
+                    @include breakpoint(mobile) {
+                        right: -2.8rem;
+                    }
+
+                    sup {
+                        font-size: 7px;
+
+                        @include breakpoint(mobile) {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .date-rows {
+            position: relative;
+        }
+
+        .date-row {
+            height: 2.23rem;
+
+            @include breakpoint(mobile) {
+                height: 4.4rem;
+            }
+        }
+
+        .date-cell {
+            width: 4.4rem;
+            min-width: 4.4rem;
+            background: #fff;
+            position: sticky;
+            left: 0;
+            z-index: 9;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin: 4px 0 0;
+                color: #cebe9d;
+                font-weight: 500;
+                padding-right: 4px;
+
+                @include breakpoint(mobile) {
+                    margin: 1.5rem 0 0;
+                }
+            }
+
+            &.active {
+                div {
+                    color: #3a241f;
+                }
+            }
+        }
+
+        .time-slot {
+            border-bottom: 1px solid #ede8dd;
+            border-right: 1px solid #ede8dd;
+            cursor: pointer;
+            width: 3.779rem;
+            min-width: 3.779rem;
+
+            @include breakpoint(mobile) {
+                width: 4.4rem;
+                min-width: 4.4rem;
+            }
+
+            &:not(.booked):not(.disabled):not(.empty):not(.pastDate):not(.start):hover {
+                background-color: #e5decf !important;
+            }
+
+            &.hover {
+                &:not(.selected) {
+                    background-color: #e5decf;
+                }
+            }
+
+            &.selected {
+                background-color: #dfceab;
+                border-right-color: #dfceab;
+            }
+
+            &.disabled {
+                cursor: not-allowed !important;
+                background: transparent !important;
+            }
+
+            &.pastDate {
+                cursor: not-allowed !important;
+                background: transparent !important;
+            }
+
+            &.booked {
+                //pointer-events: none;
+                cursor: not-allowed !important;
+                background-color: #6d554d !important;
+                border-right-color: #6d554d;
+            }
+
+            &.empty {
+                position: relative;
+                background: #f7f5f2 !important;
+                cursor: not-allowed !important;
+                border-left: #f7f5f2 !important;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: url(../img/close.svg) no-repeat center;
+
+                    @include breakpoint(mobile) {
+                        background-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .booking__bottom-row {
+        margin-top: 0;
+        padding: 0 0 0 4.5rem;
+
+        .booking__back-btn {
+            background: #fff0;
+            border: 1px solid #060301;
+            color: #060301;
+        }
+
+        @include breakpoint(mobile) {
+            padding: 0;
+
+            .booking__total {
+                font-size: 16px;
+                font-weight: 800;
+                display: flex;
+            }
+        }
+    }
 }
 
 .booking__submit-btn {
-  & > span {
-    opacity: 1;
-    transition: 0.3s ease-in-out;
-  }
-
-  .form-page__loading {
-    opacity: 0;
-    visibility: visible;
-    transition: 0.3s ease-in-out;
-  }
-  &.loading-active {
     & > span {
-      opacity: 0;
+        opacity: 1;
+        transition: 0.3s ease-in-out;
     }
 
     .form-page__loading {
-      opacity: 1;
+        opacity: 0;
+        visibility: visible;
+        transition: 0.3s ease-in-out;
     }
-  }
+    &.loading-active {
+        & > span {
+            opacity: 0;
+        }
+
+        .form-page__loading {
+            opacity: 1;
+        }
+    }
 }
 
 .tooltip {
-  position: absolute;
-  box-shadow: 0 0.3rem 0.3rem 0 #00000059;
-  border: 1px solid #EDE8DD;
-  background-color: #F7F5F2;
-  color: #B60000;
-  padding: 0.3rem 1.4rem;
-  font-size: 1.4rem;
-  pointer-events: none;
-  z-index: 1000;
+    position: absolute;
+    box-shadow: 0 0.3rem 0.3rem 0 #00000059;
+    border: 1px solid #ede8dd;
+    background-color: #f7f5f2;
+    color: #b60000;
+    padding: 0.3rem 1.4rem;
+    font-size: 1.4rem;
+    pointer-events: none;
+    z-index: 1000;
 }
