@@ -93,7 +93,7 @@ function tableRender() {
         cellDateTime.setHours(hours, minutes, 0, 0);
 
         // Получаем текущее время в Москве
-        const nowInMoscow = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" });
+        const nowInMoscow = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"});
         const moscowDate = new Date(nowInMoscow);
 
         // Добавляем один час к текущему времени в Москве
@@ -194,6 +194,7 @@ function handleCellClick(cell) {
         }
 
 
+        minHours = getMinHours(cell.dataset.date);
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
         if (start > end) {
@@ -209,6 +210,7 @@ function handleCellClick(cell) {
             selectEndCell = cell;
         }
 
+        minHours = getMinHours(selectStartCell.dataset.date);
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
@@ -222,7 +224,7 @@ function handleCellClick(cell) {
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = { day: 'numeric', month: 'long' };
+            const options = {day: 'numeric', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
@@ -535,10 +537,10 @@ function scrollToCurrentHours() {
     }
 }
 
-function setMinHours() {
-    const day = new Date().getDay();
+function getMinHours(date) {
+    const day = new Date(date).getDay();
     const isWeekend = day === 0 || day === 6; // 0 - воскресенье, 6 - суббота
-    minHours = isWeekend ? 4 : 3;
+    return isWeekend ? 4 : 3;
 }
 
 function zoomEvent() {
@@ -546,9 +548,9 @@ function zoomEvent() {
     let initialDistance = 0;
     let initialZoom = 1;
 
-    calendar.addEventListener('touchstart', handleTouchStart, { passive: true });
-    calendar.addEventListener('touchmove', handleTouchMove, { passive: false });
-    calendar.addEventListener('touchend', handleTouchEnd, { passive: true });
+    calendar.addEventListener('touchstart', handleTouchStart, {passive: true});
+    calendar.addEventListener('touchmove', handleTouchMove, {passive: false});
+    calendar.addEventListener('touchend', handleTouchEnd, {passive: true});
 
     function handleTouchStart(e) {
         if (e.touches.length === 2) {
@@ -582,7 +584,6 @@ function zoomEvent() {
 
 document.addEventListener('DOMContentLoaded', () => {
     zoomEvent();
-    setMinHours();
     tableRender();
     modalListener();
     scrollToCurrentHours();
