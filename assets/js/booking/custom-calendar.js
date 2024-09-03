@@ -546,13 +546,10 @@ function getMinHours(date) {
 }
 
 function zoomEvent() {
-    // Инициализация PinchZoom
     const calendarContainer = document.querySelector('.calendar-container');
-    const pinchZoom = new PinchZoom.default(calendarContainer, {
-        maxZoom: 2,
-        minZoom: 0.5,
-        tapZoomFactor: 2,
-        doubleTapDelay: 300
+    const panzoom = Panzoom(calendarContainer, {
+        maxScale: 2,
+        minScale: 0.5,
     });
 }
 
