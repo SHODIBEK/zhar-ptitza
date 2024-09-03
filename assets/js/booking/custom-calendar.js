@@ -564,12 +564,16 @@ function enablePinchZoom() {
             let currentDistance = getDistance(e.touches[0], e.touches[1]);
             let scale = currentDistance / initialDistance;
 
-            element.style.width = `${initialWidth * scale}px`;
-            element.style.height = `${initialHeight * scale}px`;
+            // Применяем масштаб только если он больше 1 (увеличение) или меньше 1 (уменьшение)
+            let newWidth = initialWidth * scale;
+            let newHeight = initialHeight * scale;
 
-            // Опционально: Можно использовать CSS transform для плавного зума
-            // element.style.transform = `scale(${scale})`;
-            // element.style.transformOrigin = 'center center';
+            // Проверяем минимальные размеры, чтобы не уменьшать элемент ниже исходных
+            if (newWidth < initialWidth) newWidth = initialWidth;
+            if (newHeight < initialHeight) newHeight = initialHeight;
+
+            element.style.width = `${newWidth}px`;
+            element.style.height = `${newHeight}px`;
         }
     });
 
