@@ -547,7 +547,6 @@ function getMinHours(date) {
 
 function zoomEvent() {
     const calendar = document.querySelector('.calendar-container');
-    const calendar = document.querySelector('.calendar');
     let initialScale = 1;
     let currentScale = 1;
     let startDistance = 0;
