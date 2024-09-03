@@ -1,5 +1,6 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
+let holidays = []
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -540,7 +541,8 @@ function scrollToCurrentHours() {
 function getMinHours(date) {
     const day = new Date(date).getDay();
     const isWeekend = day === 0 || day === 6; // 0 - воскресенье, 6 - суббота
-    return isWeekend ? 4 : 3;
+    const isHoliday = holidays.some(day => day === dayjs(date).format('YYYY-MM-DD'));
+    return isWeekend || isHoliday ? 4 : 3;
 }
 
 function zoomEvent() {
