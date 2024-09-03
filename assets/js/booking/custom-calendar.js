@@ -551,7 +551,7 @@ function zoomEvent() {
     let currentScale = 1;
     let startDistance = 0;
 
-    calendarContainer.style.overflow = 'hidden'; // Обеспечиваем, что контент не будет выходить за пределы контейнера
+    calendar.style.overflow = 'hidden'; // Обеспечиваем, что контент не будет выходить за пределы контейнера
 
     calendar.addEventListener('touchstart', handleTouchStart, { passive: true });
     calendar.addEventListener('touchmove', handleTouchMove, { passive: false });
