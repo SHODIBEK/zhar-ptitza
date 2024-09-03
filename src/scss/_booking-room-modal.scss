@@ -550,8 +550,8 @@
       border-right: 1px solid #3A241F;
       z-index: 9;
       @include breakpoint(mobile) {
-        height: calc(4.4rem * 9);
-        top: 4.23rem;
+        height: calc(4.4rem * 8.9997);
+        top: 4.24rem;
       }
     }
   }
@@ -576,6 +576,7 @@
     max-width: 100%;
     display: block;
     width: unset;
+    padding-right: 15px;
 
     .time-header {
       .time-cell {
@@ -788,4 +789,6 @@
   font-size: 1.4rem;
   pointer-events: none;
   z-index: 1000;
+  width: 160px;
+  text-wrap: wrap;
 }

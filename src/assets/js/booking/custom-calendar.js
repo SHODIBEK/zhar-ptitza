@@ -171,7 +171,7 @@ function findBookedBeforeEmpty() {
 }
 
 function handleCellClick(cell) {
-    if (['empty', 'pastDate', 'booked', 'disabled'].some(key => cell.classList.contains(key))) {
+    if (['empty', 'pastDate', 'booked'].some(key => cell.classList.contains(key))) {
         return;
     }
     if (!selectStartCell) {
@@ -180,17 +180,27 @@ function handleCellClick(cell) {
         cell.classList.add('start');
         disableCellsBeyondFirstBooked(selectStartCell);
     } else if (!selectEndCell) {
-        if (cell.classList.contains('disabled')) {
-            showTooltip(cell, `Выбранный диапазон содержит занятые ячейки. Выбор сброшен.`);
+        if (selectStartCell === cell) {
+            clearSelection();
             return;
         }
+        const cellsInRange = getCellsInRange(cell, selectStartCell);
+
+        // Проверяем, есть ли забронированные ячейки в выбранном интервале
+        const hasBookedCell = cellsInRange.some(cell => cell.classList.contains('booked'));
+        if (hasBookedCell) {
+            showTooltip(cell, 'Выбранный интервал уже занят.');
+            return;
+        }
+
+
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
         if (start > end) {
             const cells = getCellsInRange(cell, selectStartCell);
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Мин. ${minHours}ч.`);
+                showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
                 return;
             }
             selectEndCell = selectStartCell;
@@ -198,19 +208,21 @@ function handleCellClick(cell) {
         } else {
             selectEndCell = cell;
         }
+
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Мин. ${minHours}ч.`);
+            showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
             return;
         }
+
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = {day: 'numeric', month: 'long'};
+            const options = { day: 'numeric', month: 'long' };
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
@@ -521,10 +533,56 @@ function scrollToCurrentHours() {
         const tmp = element.getBoundingClientRect()
         table.scrollTo(tmp.width * pastDate.length, tmp.top);
     }
-    console.log(pastDate)
+}
+
+function setMinHours() {
+    const day = new Date().getDay();
+    const isWeekend = day === 0 || day === 6; // 0 - воскресенье, 6 - суббота
+    minHours = isWeekend ? 4 : 3;
+}
+
+function zoomEvent() {
+    const calendar = document.querySelector('.calendar-container');
+    let initialDistance = 0;
+    let initialZoom = 1;
+
+    calendar.addEventListener('touchstart', handleTouchStart, { passive: true });
+    calendar.addEventListener('touchmove', handleTouchMove, { passive: false });
+    calendar.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    function handleTouchStart(e) {
+        if (e.touches.length === 2) {
+            initialDistance = getDistance(e.touches[0], e.touches[1]);
+            initialZoom = parseFloat(calendar.style.zoom) || 1;
+        }
+    }
+
+    function handleTouchMove(e) {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const currentDistance = getDistance(e.touches[0], e.touches[1]);
+            const zoomChange = currentDistance / initialDistance;
+            const newZoom = Math.max(0.5, Math.min(initialZoom * zoomChange, 2));
+            calendar.style.zoom = newZoom;
+        }
+    }
+
+    function handleTouchEnd(e) {
+        if (e.touches.length < 2) {
+            initialDistance = 0;
+        }
+    }
+
+    function getDistance(touch1, touch2) {
+        const dx = touch2.clientX - touch1.clientX;
+        const dy = touch2.clientY - touch1.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    zoomEvent();
+    setMinHours();
     tableRender();
     modalListener();
     scrollToCurrentHours();
