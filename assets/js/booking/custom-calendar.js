@@ -545,16 +545,55 @@ function getMinHours(date) {
     return isWeekend || isHoliday ? 4 : 3;
 }
 
-function zoomEvent() {
-    const calendarContainer = document.querySelector('.calendar-container');
-    const panzoom = Panzoom(calendarContainer, {
-        maxScale: 2,
-        minScale: 0.5,
-    });
+function setZoom(container, scale) {
+    // Применяем масштабирование к содержимому контейнера
+    const content = container.querySelector('.zoom-content');
+    content.style.transform = `scale(${scale})`;
+    content.style.transformOrigin = 'top left'; // Масштабирование относительно левого верхнего угла
+
+    // Для избежания обрезки можно настроить размеры контейнера
+    content.style.width = `${100 / scale}%`;
+    content.style.height = `${100 / scale}%`;
+}
+
+function applyZoomOnTouchDevices() {
+    const container = document.querySelector('.calendar-container');
+    const content = container.querySelector('.zoom-content');
+    let initialDistance = 0;
+    let currentScale = 1;
+
+    if ('maxTouchPoints' in navigator && navigator.maxTouchPoints > 0) {
+        container.addEventListener('touchstart', function(event) {
+            if (event.touches.length === 2) {
+                initialDistance = getDistance(event.touches[0], event.touches[1]);
+            }
+        });
+
+        container.addEventListener('touchmove', function(event) {
+            if (event.touches.length === 2) {
+                event.preventDefault();
+                const currentDistance = getDistance(event.touches[0], event.touches[1]);
+                currentScale = currentDistance / initialDistance;
+                setZoom(container, currentScale);
+            }
+        });
+
+        container.addEventListener('touchend', function(event) {
+            if (event.touches.length < 2) {
+                initialDistance = 0;
+            }
+        });
+    }
+}
+
+function getDistance(touch1, touch2) {
+    const dx = touch2.clientX - touch1.clientX;
+    const dy = touch2.clientY - touch1.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    zoomEvent();
+    applyZoomOnTouchDevices();
     tableRender();
     modalListener();
     scrollToCurrentHours();
