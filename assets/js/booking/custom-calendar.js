@@ -547,17 +547,21 @@ function getMinHours(date) {
 
 function zoomEvent() {
     const calendar = document.querySelector('.calendar-container');
-    let initialDistance = 0;
-    let initialZoom = 1;
+    const calendar = document.querySelector('.calendar');
+    let initialScale = 1;
+    let currentScale = 1;
+    let startDistance = 0;
 
-    calendar.addEventListener('touchstart', handleTouchStart, {passive: true});
-    calendar.addEventListener('touchmove', handleTouchMove, {passive: false});
-    calendar.addEventListener('touchend', handleTouchEnd, {passive: true});
+    calendarContainer.style.overflow = 'hidden'; // Обеспечиваем, что контент не будет выходить за пределы контейнера
+
+    calendar.addEventListener('touchstart', handleTouchStart, { passive: true });
+    calendar.addEventListener('touchmove', handleTouchMove, { passive: false });
+    calendar.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     function handleTouchStart(e) {
         if (e.touches.length === 2) {
-            initialDistance = getDistance(e.touches[0], e.touches[1]);
-            initialZoom = parseFloat(calendar.style.zoom) || 1;
+            startDistance = getDistance(e.touches[0], e.touches[1]);
+            initialScale = currentScale;
         }
     }
 
@@ -565,15 +569,20 @@ function zoomEvent() {
         if (e.touches.length === 2) {
             e.preventDefault();
             const currentDistance = getDistance(e.touches[0], e.touches[1]);
-            const zoomChange = currentDistance / initialDistance;
-            const newZoom = Math.max(0.5, Math.min(initialZoom * zoomChange, 2));
-            calendar.style.zoom = newZoom;
+            const scaleChange = currentDistance / startDistance;
+            currentScale = Math.max(0.5, Math.min(initialScale * scaleChange, 2)); // Ограничиваем зум от 0.5 до 2
+
+            // Изменяем размер контейнера и масштабируем содержимое
+            calendar.style.transform = `scale(${currentScale})`;
+            calendar.style.width = `${100 / currentScale}%`;
+            calendar.style.height = `${100 / currentScale}%`;
+            calendar.style.transformOrigin = 'center center'; // Масштабируем относительно центра
         }
     }
 
     function handleTouchEnd(e) {
         if (e.touches.length < 2) {
-            initialDistance = 0;
+            startDistance = 0;
         }
     }
 
