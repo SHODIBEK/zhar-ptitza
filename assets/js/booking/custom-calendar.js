@@ -189,7 +189,7 @@ function handleCellClick(cell) {
         // Проверяем, есть ли забронированные ячейки в выбранном интервале
         const hasBookedCell = cellsInRange.some(cell => cell.classList.contains('booked'));
         if (hasBookedCell) {
-            showTooltip(cell, 'Выбранный интервал уже занят.');
+            showTooltip(cell, 'Выбранный интервал уже занят');
             return;
         }
 
