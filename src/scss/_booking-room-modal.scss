@@ -124,14 +124,13 @@
     }
 }
 
-#booking-room-calendar-modal .booking-room-modal__close {
+.booking-room-modal__close {
     flex-shrink: 0;
     width: 3.35rem;
     height: 3.35rem;
-
-    @include breakpoint(mobile) {
-        display: none;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     svg {
         display: block;
@@ -146,6 +145,12 @@
         svg {
             fill: black;
         }
+    }
+}
+
+#booking-room-calendar-modal .booking-room-modal__close {
+    @include breakpoint(mobile) {
+        display: none;
     }
 }
 
