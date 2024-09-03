@@ -544,28 +544,22 @@ function getMinHours(date) {
     const isHoliday = holidays.some(day => day === dayjs(date).format('YYYY-MM-DD'));
     return isWeekend || isHoliday ? 4 : 3;
 }
-
 function setZoom(container, scale) {
-    // Применяем масштабирование к содержимому контейнера
     const content = container.querySelector('.zoom-content');
     content.style.transform = `scale(${scale})`;
-    content.style.transformOrigin = 'top left'; // Масштабирование относительно левого верхнего угла
-
-    // Для избежания обрезки можно настроить размеры контейнера
-    content.style.width = `${100 / scale}%`;
-    content.style.height = `${100 / scale}%`;
 }
 
 function applyZoomOnTouchDevices() {
     const container = document.querySelector('.calendar-container');
-    const content = container.querySelector('.zoom-content');
     let initialDistance = 0;
+    let baseScale = 1;  // Базовый масштаб для правильного вычисления
     let currentScale = 1;
 
     if ('maxTouchPoints' in navigator && navigator.maxTouchPoints > 0) {
         container.addEventListener('touchstart', function(event) {
             if (event.touches.length === 2) {
                 initialDistance = getDistance(event.touches[0], event.touches[1]);
+                baseScale = currentScale;  // Сохранение текущего масштаба как базового
             }
         });
 
@@ -573,7 +567,7 @@ function applyZoomOnTouchDevices() {
             if (event.touches.length === 2) {
                 event.preventDefault();
                 const currentDistance = getDistance(event.touches[0], event.touches[1]);
-                currentScale = currentDistance / initialDistance;
+                currentScale = baseScale * (currentDistance / initialDistance); // Масштабируем относительно базового значения
                 setZoom(container, currentScale);
             }
         });
@@ -598,3 +592,4 @@ document.addEventListener('DOMContentLoaded', () => {
     modalListener();
     scrollToCurrentHours();
 });
+
