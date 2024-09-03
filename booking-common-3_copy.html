@@ -1347,25 +1347,23 @@
                                 </button>
                             </div>
                             <div class="calendar-container">
-                                <div class="zoom-content">
-                                    <button id="up-button" class="news__arrows-btn news__arrows-btn--up">
-                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-up">
+                                <button id="up-button" class="news__arrows-btn news__arrows-btn--up">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-up">
+                                        <use xlink:href="#arrow-up"></use>
+                                    </svg>
+                                </button>
+                                <table class="calendar"></table>
+            
+                                <div class="selected-date__info">
+                                    <button id="down-button" class="news__arrows-btn news__arrows-btn--down">
+                                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-down">
                                             <use xlink:href="#arrow-up"></use>
                                         </svg>
                                     </button>
-                                    <table class="calendar"></table>
             
-                                    <div class="selected-date__info">
-                                        <button id="down-button" class="news__arrows-btn news__arrows-btn--down">
-                                            <svg width="14" height="14" aria-hidden="true" class="icon-arrow-down">
-                                                <use xlink:href="#arrow-up"></use>
-                                            </svg>
-                                        </button>
-            
-                                        <div class="selected-info-1"></div>
-                                    </div>
-            
+                                    <div class="selected-info-1"></div>
                                 </div>
+            
                             </div>
                             <div class="selected-info-2"></div>
             
@@ -1444,7 +1442,6 @@
             </div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://api-maps.yandex.ru/2.1/?apikey=86fba1b3-37fa-493b-9df4-601bc6d4c97c&lang=ru_RU" type="text/javascript"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-                <script src=https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js></script>
                 <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js></script>
                 <script src=https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js></script>
                 <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js></script>

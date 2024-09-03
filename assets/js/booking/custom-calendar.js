@@ -544,52 +544,54 @@ function getMinHours(date) {
     const isHoliday = holidays.some(day => day === dayjs(date).format('YYYY-MM-DD'));
     return isWeekend || isHoliday ? 4 : 3;
 }
-function setZoom(container, scale) {
-    const content = container.querySelector('.zoom-content');
-    content.style.transform = `scale(${scale})`;
-}
 
-function applyZoomOnTouchDevices() {
-    const container = document.querySelector('.calendar-container');
-    let initialDistance = 0;
-    let baseScale = 1;  // Базовый масштаб для правильного вычисления
-    let currentScale = 1;
 
-    if ('maxTouchPoints' in navigator && navigator.maxTouchPoints > 0) {
-        container.addEventListener('touchstart', function(event) {
-            if (event.touches.length === 2) {
-                initialDistance = getDistance(event.touches[0], event.touches[1]);
-                baseScale = currentScale;  // Сохранение текущего масштаба как базового
-            }
-        });
+function enablePinchZoom() {
+    const element = document.querySelector('.calendar-container');
 
-        container.addEventListener('touchmove', function(event) {
-            if (event.touches.length === 2) {
-                event.preventDefault();
-                const currentDistance = getDistance(event.touches[0], event.touches[1]);
-                currentScale = baseScale * (currentDistance / initialDistance); // Масштабируем относительно базового значения
-                setZoom(container, currentScale);
-            }
-        });
+    let initialDistance = null;
+    let initialWidth = element.offsetWidth;
+    let initialHeight = element.offsetHeight;
 
-        container.addEventListener('touchend', function(event) {
-            if (event.touches.length < 2) {
-                initialDistance = 0;
-            }
-        });
+    element.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            initialDistance = getDistance(e.touches[0], e.touches[1]);
+        }
+    });
+
+    element.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2 && initialDistance) {
+            let currentDistance = getDistance(e.touches[0], e.touches[1]);
+            let scale = currentDistance / initialDistance;
+
+            element.style.width = `${initialWidth * scale}px`;
+            element.style.height = `${initialHeight * scale}px`;
+
+            // Опционально: Можно использовать CSS transform для плавного зума
+            // element.style.transform = `scale(${scale})`;
+            // element.style.transformOrigin = 'center center';
+        }
+    });
+
+    element.addEventListener('touchend', (e) => {
+        if (e.touches.length < 2) {
+            initialDistance = null;
+        }
+    });
+
+    function getDistance(touch1, touch2) {
+        return Math.sqrt(
+            Math.pow(touch2.clientX - touch1.clientX, 2) +
+            Math.pow(touch2.clientY - touch1.clientY, 2)
+        );
     }
 }
 
-function getDistance(touch1, touch2) {
-    const dx = touch2.clientX - touch1.clientX;
-    const dy = touch2.clientY - touch1.clientY;
-    return Math.sqrt(dx * dx + dy * dy);
-}
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    applyZoomOnTouchDevices();
+    enablePinchZoom();
     tableRender();
     modalListener();
     scrollToCurrentHours();
 });
-
