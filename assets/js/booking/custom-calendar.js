@@ -543,41 +543,40 @@ function setMinHours() {
 
 function zoomEvent() {
     const calendar = document.querySelector('.calendar-container');
-    let initialScale = 1;
-    let currentScale = 1;
-    let startDistance = 0;
+    let initialDistance = 0;
+    let initialZoom = 1;
 
     calendar.addEventListener('touchstart', handleTouchStart, { passive: true });
     calendar.addEventListener('touchmove', handleTouchMove, { passive: false });
     calendar.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     function handleTouchStart(e) {
-        if (e.touches.length === 2) { // Проверяем, что используется два пальца
-            startDistance = getDistance(e.touches[0], e.touches[1]);
-            initialScale = currentScale;
+        if (e.touches.length === 2) {
+            initialDistance = getDistance(e.touches[0], e.touches[1]);
+            initialZoom = parseFloat(calendar.style.zoom) || 1;
         }
     }
 
     function handleTouchMove(e) {
         if (e.touches.length === 2) {
-            e.preventDefault(); // Предотвращаем стандартное поведение (прокрутка)
+            e.preventDefault();
             const currentDistance = getDistance(e.touches[0], e.touches[1]);
-            const scaleChange = currentDistance / startDistance;
-            currentScale = Math.max(0.5, Math.min(initialScale * scaleChange, 2)); // Ограничиваем зум от 0.5 до 2
-            calendar.style.transform = `scale(${currentScale})`;
+            const zoomChange = currentDistance / initialDistance;
+            const newZoom = Math.max(0.5, Math.min(initialZoom * zoomChange, 2));
+            calendar.style.zoom = newZoom;
         }
     }
 
     function handleTouchEnd(e) {
         if (e.touches.length < 2) {
-            startDistance = 0;
+            initialDistance = 0;
         }
     }
 
     function getDistance(touch1, touch2) {
         const dx = touch2.clientX - touch1.clientX;
         const dy = touch2.clientY - touch1.clientY;
-        return Math.sqrt(dx * dy);
+        return Math.sqrt(dx * dx + dy * dy);
     }
 }
 
