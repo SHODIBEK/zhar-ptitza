@@ -575,7 +575,7 @@ function initCustomZoom() {
             e.preventDefault();
             const currentPinchDistance = getPinchDistance(e.touches);
             const pinchScale = currentPinchDistance / initialPinchDistance; // Вычисляем изменение масштаба
-            scale = Math.min(1.5, Math.max(0.5, lastScale * pinchScale)); // Ограничиваем масштаб
+            scale = Math.min(1, Math.max(0.5, lastScale * pinchScale)); // Ограничиваем масштаб
             updateZoom();
         }
     });
