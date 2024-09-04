@@ -545,57 +545,30 @@ function getMinHours(date) {
     return isWeekend || isHoliday ? 4 : 3;
 }
 
-
-function enablePinchZoom() {
+function panzoomInit() {
     const element = document.querySelector('.calendar-container');
 
-    let initialDistance = null;
-    let initialWidth = element.offsetWidth;
-    let initialHeight = element.offsetHeight;
-
-    element.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 2) {
-            initialDistance = getDistance(e.touches[0], e.touches[1]);
-        }
+    const panZoomInstance = panzoom(element, {
+        maxZoom: 2,  // Максимальный зум
+        minZoom: 1,  // Минимальный зум, равный оригинальному размеру
+        initialZoom: 0.5,  // Начальный масштаб: 120% от оригинала
+        beforeMouseDown: function(e) {
+            return true;  // Возвращаем true, чтобы игнорировать событие и отключить панорамирование
+        },
+        bounds: true,  // Ограничение панорамирования в рамках элемента
+        boundsPadding: 0.1  // Отступы от границ элемента при панорамировании
     });
 
-    element.addEventListener('touchmove', (e) => {
-        if (e.touches.length === 2 && initialDistance) {
-            let currentDistance = getDistance(e.touches[0], e.touches[1]);
-            let scale = currentDistance / initialDistance;
-
-            // Применяем масштаб только если он больше 1 (увеличение) или меньше 1 (уменьшение)
-            let newWidth = initialWidth * scale;
-            let newHeight = initialHeight * scale;
-
-            // Проверяем минимальные размеры, чтобы не уменьшать элемент ниже исходных
-            if (newWidth < initialWidth) newWidth = initialWidth;
-            if (newHeight < initialHeight) newHeight = initialHeight;
-
-            element.style.width = `${newWidth}px`;
-            element.style.height = `${newHeight}px`;
-        }
-    });
-
-    element.addEventListener('touchend', (e) => {
-        if (e.touches.length < 2) {
-            initialDistance = null;
-        }
-    });
-
-    function getDistance(touch1, touch2) {
-        return Math.sqrt(
-            Math.pow(touch2.clientX - touch1.clientX, 2) +
-            Math.pow(touch2.clientY - touch1.clientY, 2)
-        );
-    }
+    panZoomInstance.zoomAbs(0, 0, 1.5); // Установка начального масштаба
 }
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    enablePinchZoom();
+    panzoomInit();
     tableRender();
     modalListener();
     scrollToCurrentHours();
 });
+
+
+
+
