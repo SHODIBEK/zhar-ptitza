@@ -545,29 +545,76 @@ function getMinHours(date) {
     return isWeekend || isHoliday ? 4 : 3;
 }
 
-function panzoomInit() {
+function initCustomZoom() {
     const element = document.querySelector('.calendar-container');
+    let scale = 1;
+    let originalWidth = 0;
+    let originalHeight = 0;
+    let initialPinchDistance = 0; // Для отслеживания начального расстояния между пальцами
+    let lastScale = scale; // Для отслеживания последнего состояния масштаба
 
-    const panZoomInstance = panzoom(element, {
-        maxZoom: 2,  // Максимальный зум
-        minZoom: 1,  // Минимальный зум, равный оригинальному размеру
-        initialZoom: 0.5,  // Начальный масштаб: 120% от оригинала
-        beforeMouseDown: function(e) {
-            return true;  // Возвращаем true, чтобы игнорировать событие и отключить панорамирование
-        },
-        bounds: true,  // Ограничение панорамирования в рамках элемента
-        boundsPadding: 0.1  // Отступы от границ элемента при панорамировании
+    setTimeout(() => {
+        originalWidth = JSON.parse(JSON.stringify(element.offsetWidth));
+        originalHeight = JSON.parse(JSON.stringify(element.offsetHeight));
+    }, 100);
+
+    // Устанавливаем начальный зум
+    element.style.transformOrigin = '0 0';
+    element.style.transform = `scale(${scale})`;
+
+    // Обработчик для колесика мыши (масштабирование)
+    // element.addEventListener('wheel', (e) => {
+    //     e.preventDefault(); // Отключаем стандартное поведение скролла
+    //     const zoomFactor = 0.1; // Размер шага при масштабировании
+    //     const delta = e.deltaY < 0 ? zoomFactor : -zoomFactor; // Проверка направления колесика
+    //     // Изменение масштаба в зависимости от направления прокрутки
+    //     scale = Math.min(1, Math.max(0.5, scale + delta)); // Ограничиваем масштаб в диапазоне 0.5 - 1.5
+    //     updateZoom();
+    // });
+
+    // Обработчики для тач-событий (пинч-зум)
+    element.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            initialPinchDistance = getPinchDistance(e.touches);
+            lastScale = scale; // Запоминаем текущее состояние масштаба
+        }
     });
 
-    panZoomInstance.zoomAbs(0, 0, 1.5); // Установка начального масштаба
+    element.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const currentPinchDistance = getPinchDistance(e.touches);
+            const pinchScale = currentPinchDistance / initialPinchDistance; // Вычисляем изменение масштаба
+            scale = Math.min(1, Math.max(0.5, scale + delta)); // Ограничиваем масштаб в диапазоне 0.5 - 1.5
+            updateZoom();
+        }
+    });
+
+    // Функция для обновления масштаба
+    function updateZoom() {
+        element.style.width = `${originalWidth / scale}px`;
+        element.style.height = `${originalHeight}px`;
+        element.style.transform = `scale(${scale})`;
+    }
+
+    // Функция для вычисления расстояния между двумя точками касания
+    function getPinchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    panzoomInit();
+    initCustomZoom();
     tableRender();
     modalListener();
     scrollToCurrentHours();
 });
+
+
+
+
 
 
 
