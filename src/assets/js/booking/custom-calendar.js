@@ -1,7 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let holidays = []
-let disabledDays = [];
+let disabledDays = ['2024-09-10'];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -200,7 +200,7 @@ function handleCellClick(cell) {
 
             // Проверка на наличие бронированных ячеек
             if (cells.some(cell => cell.classList.contains('booked'))) {
-                showTooltip(cell, 'В выбранном интервале есть бронированные ячейки');
+                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
                 return;
             }
 

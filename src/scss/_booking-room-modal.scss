@@ -557,8 +557,8 @@
       border-right: 1px solid #3A241F;
       z-index: 9;
       @include breakpoint(mobile) {
-        height: calc(4.4rem * 8.9997);
-        top: 4.4rem;
+        height: calc(4.4rem * 8.999);
+        top: 4.3rem;
       }
     }
   }
@@ -606,7 +606,7 @@
           line-height: 1.7rem;
 
           @include breakpoint(mobile) {
-            right: -2.8rem;
+            right: -3.3rem;
           }
 
 
