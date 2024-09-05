@@ -239,11 +239,16 @@ function handleCellClick(cell) {
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = {day: 'numeric', month: 'long'};
+            const options = { day: 'numeric', month: 'long' };
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
             end.setHours(+endDate.dataset.time.split(':')[0] + 1, 0, 0, 0);
+
+            const diffTime = end.getTime() - start.getTime();
+            const diffHours = Math.floor(diffTime / (1000 * 60 * 60)); // разница в часах
+            const diffDays = Math.floor(diffHours / 24); // разница в днях
+            const remainingHours = diffHours % 24; // остаток часов
 
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
                 hour: '2-digit',
@@ -254,9 +259,21 @@ function handleCellClick(cell) {
                 minute: '2-digit'
             });
 
-            return `с ${startFormatted} по ${endFormatted}`;
+            let duration = '';
+            if (diffDays > 0) {
+                duration += `${diffDays} дн.`;
+                if (remainingHours > 0) {
+                    duration += ` и ${remainingHours} ч.`;
+                }
+            } else {
+                duration += `${diffHours} ч.`;
+            }
+            let result = `${duration} - с ${startFormatted} по ${endFormatted}`;
+
+            return result;
         };
-        selectedInfo.innerHTML = `Выбрано: ${cells.length} ч — ${format(selectStartCell, selectEndCell)}`;
+
+        selectedInfo.innerHTML = `Выбрано: ${format(selectStartCell, selectEndCell)}`;
 
         if (selectStartCell && selectEndCell) {
             document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));

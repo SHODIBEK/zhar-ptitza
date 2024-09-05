@@ -746,11 +746,14 @@
             color: #060301;
         }
 
+            .booking__total {
+                font-size: 2rem;
+            }
         @include breakpoint(mobile) {
             padding: 0;
 
             .booking__total {
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 800;
                 display: flex;
             }
