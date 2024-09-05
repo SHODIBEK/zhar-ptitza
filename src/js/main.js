@@ -51,6 +51,7 @@ import counterInit from './counter';
 import customTriggerInit from './customTrigger';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import handleModalScroll from './modalScroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customSelects();
     counterInit();
     customTriggerInit();
+    handleModalScroll('.booking-room-modal', '.page-header');
 });
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));

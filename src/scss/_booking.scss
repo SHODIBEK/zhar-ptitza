@@ -2324,6 +2324,12 @@
             z-index: 11;
         }
     }
+
+    *::selection {
+        color: var(--text-color);
+        background-color: var(--primary-color);
+        -webkit-text-fill-color: var(--text-color);
+    }
 }
 
 .booking__room-grid {
