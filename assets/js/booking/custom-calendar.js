@@ -185,14 +185,7 @@ function handleCellClick(cell) {
             clearSelection();
             return;
         }
-        const cellsInRange = getCellsInRange(cell, selectStartCell);
 
-        // Проверяем, есть ли забронированные ячейки в выбранном интервале
-        const hasBookedCell = cellsInRange.some(cell => cell.classList.contains('booked'));
-        if (hasBookedCell) {
-            showTooltip(cell, 'Выбранный интервал уже занят');
-            return;
-        }
 
 
         minHours = getMinHours(cell.dataset.date);
@@ -216,6 +209,12 @@ function handleCellClick(cell) {
         if (cells.length < minHours) {
             selectEndCell = null;
             showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+            return;
+        }
+
+        const hasBookedCell = cells.some(cell => cell.classList.contains('booked'));
+        if (hasBookedCell) {
+            showTooltip(cell, 'Выбранный интервал уже занят');
             return;
         }
 
