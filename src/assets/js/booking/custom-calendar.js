@@ -1,6 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let holidays = []
+let disabledDays = [];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -55,13 +56,18 @@ function tableRender() {
         "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{else if (isDisabledDay ../this)}}notWorkingDay{{/if}}\"\n" +
         "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
         "                </td>" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
         "                    </tbody>";
+
+    Handlebars.registerHelper('isDisabledDay', function(date) {
+        const formattedDate = new Date(date).toISOString().split('T')[0]; // Форматируем дату в YYYY-MM-DD
+        return disabledDays.includes(formattedDate); // Проверяем, есть ли эта дата в массиве disabledDays
+    });
 
     Handlebars.registerHelper('isInInterval', function (date, time, bookingDates) {
         return isInInterval(new Date(date), time, bookingDates);
@@ -185,14 +191,7 @@ function handleCellClick(cell) {
             clearSelection();
             return;
         }
-        const cellsInRange = getCellsInRange(cell, selectStartCell);
 
-        // Проверяем, есть ли забронированные ячейки в выбранном интервале
-        const hasBookedCell = cellsInRange.some(cell => cell.classList.contains('booked'));
-        if (hasBookedCell) {
-            showTooltip(cell, 'Выбранный интервал уже занят');
-            return;
-        }
 
 
         minHours = getMinHours(cell.dataset.date);
@@ -216,6 +215,13 @@ function handleCellClick(cell) {
         if (cells.length < minHours) {
             selectEndCell = null;
             showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+            return;
+        }
+
+        const hasBookedCell = cells.some(cell => cell.classList.contains('booked'));
+        if (hasBookedCell) {
+            selectEndCell = null;
+            showTooltip(cell, 'Выбранный интервал уже занят');
             return;
         }
 
@@ -545,47 +551,58 @@ function getMinHours(date) {
     return isWeekend || isHoliday ? 4 : 3;
 }
 
-function zoomEvent() {
-    const calendar = document.querySelector('.calendar-container');
-    let initialDistance = 0;
-    let initialZoom = 1;
+function initCustomZoom() {
+    const element = document.querySelector('.calendar-container');
+    let scale = 1;
+    let originalWidth = 0;
+    let originalHeight = 0;
+    let initialPinchDistance = 0; // Для отслеживания начального расстояния между пальцами
+    let lastScale = scale; // Для отслеживания последнего состояния масштаба
 
-    calendar.addEventListener('touchstart', handleTouchStart, {passive: true});
-    calendar.addEventListener('touchmove', handleTouchMove, {passive: false});
-    calendar.addEventListener('touchend', handleTouchEnd, {passive: true});
+    setTimeout(() => {
+        originalWidth = JSON.parse(JSON.stringify(element.offsetWidth));
+        originalHeight = JSON.parse(JSON.stringify(element.offsetHeight));
+    }, 100);
 
-    function handleTouchStart(e) {
+    // Устанавливаем начальный зум
+    element.style.transformOrigin = '0 0';
+    element.style.transform = `scale(${scale})`;
+
+    // Обработчики для тач-событий (пинч-зум)
+    element.addEventListener('touchstart', (e) => {
         if (e.touches.length === 2) {
-            initialDistance = getDistance(e.touches[0], e.touches[1]);
-            initialZoom = parseFloat(calendar.style.zoom) || 1;
+            initialPinchDistance = getPinchDistance(e.touches);
+            lastScale = scale; // Запоминаем текущее состояние масштаба
         }
-    }
+    });
 
-    function handleTouchMove(e) {
+    element.addEventListener('touchmove', (e) => {
         if (e.touches.length === 2) {
             e.preventDefault();
-            const currentDistance = getDistance(e.touches[0], e.touches[1]);
-            const zoomChange = currentDistance / initialDistance;
-            const newZoom = Math.max(0.5, Math.min(initialZoom * zoomChange, 2));
-            calendar.style.zoom = newZoom;
+            const currentPinchDistance = getPinchDistance(e.touches);
+            const pinchScale = currentPinchDistance / initialPinchDistance; // Вычисляем изменение масштаба
+            scale = Math.min(1, Math.max(0.5, lastScale * pinchScale)); // Ограничиваем масштаб
+            updateZoom();
         }
+    });
+
+    // Функция для обновления масштаба
+    function updateZoom() {
+        element.style.width = `${originalWidth / scale}px`;
+        element.style.height = `${originalHeight}px`;
+        element.style.transform = `scale(${scale})`;
     }
 
-    function handleTouchEnd(e) {
-        if (e.touches.length < 2) {
-            initialDistance = 0;
-        }
-    }
-
-    function getDistance(touch1, touch2) {
-        const dx = touch2.clientX - touch1.clientX;
-        const dy = touch2.clientY - touch1.clientY;
+    // Функция для вычисления расстояния между двумя точками касания
+    function getPinchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    zoomEvent();
+    initCustomZoom();
     tableRender();
     modalListener();
     scrollToCurrentHours();

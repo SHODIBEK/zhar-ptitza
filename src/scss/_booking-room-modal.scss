@@ -463,9 +463,16 @@
     }
   }
 
+  .zoom-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   .calendar-container {
     position: relative;
     padding: 2.23rem 0 0;
+    transform-origin: 0px 0px;
 
     .selected-date__info {
       display: flex;
@@ -551,7 +558,7 @@
       z-index: 9;
       @include breakpoint(mobile) {
         height: calc(4.4rem * 8.9997);
-        top: 4.24rem;
+        top: 4.4rem;
       }
     }
   }
@@ -708,6 +715,12 @@
       }
 
 
+      &.notWorkingDay {
+        background: #F7F5F2 !important;
+        cursor: not-allowed !important;
+        border-left: #F7F5F2 !important;
+        pointer-events: none;
+      }
       &.empty {
         position: relative;
         background: #F7F5F2 !important;
