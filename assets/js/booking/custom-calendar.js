@@ -564,9 +564,20 @@ function initCustomZoom() {
         originalHeight = JSON.parse(JSON.stringify(element.offsetHeight));
     }, 100);
 
+
     // Устанавливаем начальный зум
     element.style.transformOrigin = '0 0';
     element.style.transform = `scale(${scale})`;
+
+    // Обработчик для колесика мыши (масштабирование)
+    element.addEventListener('wheel', (e) => {
+        e.preventDefault(); // Отключаем стандартное поведение скролла
+        const zoomFactor = 0.1; // Размер шага при масштабировании
+        const delta = e.deltaY < 0 ? zoomFactor : -zoomFactor; // Проверка направления колесика
+        // Изменение масштаба в зависимости от направления прокрутки
+        scale = Math.min(1.5, Math.max(0.5, scale + delta)); // Ограничиваем масштаб в диапазоне 0.5 - 1.5
+        updateZoom();
+    });
 
     // Обработчики для тач-событий (пинч-зум)
     element.addEventListener('touchstart', (e) => {
