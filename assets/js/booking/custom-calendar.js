@@ -1,6 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let holidays = []
+let disabledDays = [];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -55,13 +56,18 @@ function tableRender() {
         "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{else if (isDisabledDay ../this)}}notWorkingDay{{/if}}\"\n" +
         "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
         "                </td>" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
         "                    </tbody>";
+
+    Handlebars.registerHelper('isDisabledDay', function(date) {
+        const formattedDate = new Date(date).toISOString().split('T')[0]; // Форматируем дату в YYYY-MM-DD
+        return disabledDays.includes(formattedDate); // Проверяем, есть ли эта дата в массиве disabledDays
+    });
 
     Handlebars.registerHelper('isInInterval', function (date, time, bookingDates) {
         return isInInterval(new Date(date), time, bookingDates);
@@ -214,6 +220,7 @@ function handleCellClick(cell) {
 
         const hasBookedCell = cells.some(cell => cell.classList.contains('booked'));
         if (hasBookedCell) {
+            selectEndCell = null;
             showTooltip(cell, 'Выбранный интервал уже занят');
             return;
         }
