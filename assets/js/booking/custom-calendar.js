@@ -195,11 +195,12 @@ function handleCellClick(cell) {
         minHours = getMinHours(cell.dataset.date);
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
+        let cells = getCellsInRange(selectStartCell, cell);
         if (start > end) {
-            const cells = getCellsInRange(cell, selectStartCell);
+            cells = getCellsInRange(cell, selectStartCell);
 
             // Проверка на наличие бронированных ячеек
-            if (cells.some(cell => cell.classList.contains('booked'))) {
+            if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
                 showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
                 return;
             }
@@ -215,8 +216,8 @@ function handleCellClick(cell) {
             const cells = getCellsInRange(selectStartCell, cell);
 
             // Проверка на наличие бронированных ячеек
-            if (cells.some(cell => cell.classList.contains('booked'))) {
-                showTooltip(cell, 'Выбранный интервал уже занят');
+            if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
+                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
                 return;
             }
 
@@ -224,7 +225,7 @@ function handleCellClick(cell) {
         }
 
         minHours = getMinHours(selectStartCell.dataset.date);
-        const cells = getCellsInRange(selectStartCell, selectEndCell);
+        cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
             showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
@@ -269,6 +270,14 @@ function handleCellClick(cell) {
     } else {
         clearSelection();
         handleCellClick(cell);
+    }
+}
+
+function checkDateAndTime(cells, cell) {
+    // Проверка на наличие бронированных ячеек
+    if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
+        showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+        return;
     }
 }
 
