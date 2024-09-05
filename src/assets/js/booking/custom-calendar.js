@@ -64,7 +64,7 @@ function tableRender() {
         "                        {{/each}}\n" +
         "                    </tbody>";
 
-    Handlebars.registerHelper('isDisabledDay', function(date) {
+    Handlebars.registerHelper('isDisabledDay', function (date) {
         const formattedDate = new Date(date).toISOString().split('T')[0]; // Форматируем дату в YYYY-MM-DD
         return disabledDays.includes(formattedDate); // Проверяем, есть ли эта дата в массиве disabledDays
     });
@@ -192,13 +192,18 @@ function handleCellClick(cell) {
             return;
         }
 
-
-
         minHours = getMinHours(cell.dataset.date);
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
         if (start > end) {
             const cells = getCellsInRange(cell, selectStartCell);
+
+            // Проверка на наличие бронированных ячеек
+            if (cells.some(cell => cell.classList.contains('booked'))) {
+                showTooltip(cell, 'В выбранном интервале есть бронированные ячейки');
+                return;
+            }
+
             if (cells.length < minHours) {
                 selectEndCell = null;
                 showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
@@ -207,6 +212,14 @@ function handleCellClick(cell) {
             selectEndCell = selectStartCell;
             selectStartCell = cell;
         } else {
+            const cells = getCellsInRange(selectStartCell, cell);
+
+            // Проверка на наличие бронированных ячеек
+            if (cells.some(cell => cell.classList.contains('booked'))) {
+                showTooltip(cell, 'Выбранный интервал уже занят');
+                return;
+            }
+
             selectEndCell = cell;
         }
 
@@ -218,16 +231,10 @@ function handleCellClick(cell) {
             return;
         }
 
-        const hasBookedCell = cells.some(cell => cell.classList.contains('booked'));
-        if (hasBookedCell) {
-            selectEndCell = null;
-            showTooltip(cell, 'Выбранный интервал уже занят');
-            return;
-        }
-
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
+
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
@@ -553,6 +560,7 @@ function getMinHours(date) {
 
 function initCustomZoom() {
     const element = document.querySelector('.calendar-container');
+    const zoomContainer = document.querySelector('.zoom-container');
     let scale = 1;
     let originalWidth = 0;
     let originalHeight = 0;
@@ -564,9 +572,20 @@ function initCustomZoom() {
         originalHeight = JSON.parse(JSON.stringify(element.offsetHeight));
     }, 100);
 
+
     // Устанавливаем начальный зум
     element.style.transformOrigin = '0 0';
     element.style.transform = `scale(${scale})`;
+
+    // Обработчик для колесика мыши (масштабирование)
+    element.addEventListener('wheel', (e) => {
+        e.preventDefault(); // Отключаем стандартное поведение скролла
+        const zoomFactor = 0.1; // Размер шага при масштабировании
+        const delta = e.deltaY < 0 ? zoomFactor : -zoomFactor; // Проверка направления колесика
+        // Изменение масштаба в зависимости от направления прокрутки
+        scale = Math.min(1, Math.max(0.5, scale + delta)); // Ограничиваем масштаб в диапазоне 0.5 - 1.5
+        updateZoom();
+    });
 
     // Обработчики для тач-событий (пинч-зум)
     element.addEventListener('touchstart', (e) => {
@@ -589,8 +608,11 @@ function initCustomZoom() {
     // Функция для обновления масштаба
     function updateZoom() {
         element.style.width = `${originalWidth / scale}px`;
-        element.style.height = `${originalHeight}px`;
         element.style.transform = `scale(${scale})`;
+        setTimeout(() => {
+            const clientRect = element.getBoundingClientRect();
+            zoomContainer.style.height = `${clientRect.height}px`;
+        })
     }
 
     // Функция для вычисления расстояния между двумя точками касания

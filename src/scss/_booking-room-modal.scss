@@ -667,6 +667,7 @@
     }
 
     .time-slot {
+      position: relative;
       border-bottom: 1px solid #EDE8DD;
       border-right: 1px solid #EDE8DD;
       cursor: pointer;
@@ -692,7 +693,7 @@
 
       &.selected {
         background-color: #DFCEAB;
-        border-right-color: #DFCEAB;
+
       }
 
 
@@ -711,7 +712,6 @@
         //pointer-events: none;
         cursor: not-allowed !important;
         background-color: #6D554D !important;
-        border-right-color: #6D554D;
       }
 
 
