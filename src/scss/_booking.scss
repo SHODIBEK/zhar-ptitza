@@ -1503,6 +1503,18 @@
     }
 }
 
+.booking__checkout-info-card-right-wrapper--1fr {
+    grid-template-columns: 1fr;
+}
+.booking__checkout-info-card-right-wrapper--1fr .booking__checkout-info-card-summary {
+    text-align: right;
+
+    @include breakpoint(mobile) {
+        grid-row: 2;
+        text-align: left;
+    }
+}
+
 .booking__checkout-info-card-description {
     grid-column: 1/3;
     padding: 1.2rem 0;

@@ -1,0 +1,193 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="booking">
+    <div class="container">
+        <div class="booking__content booking__content--wide">
+            <div class="booking__heading">
+                <h1 class="booking__title">
+                    Подтверждение заказа
+                </h1>
+                <div class="booking__subtitle">
+                    Держим бронь 1:50
+                </div>
+            </div>
+            <div class="booking__inner booking__inner--checkout">
+                <div class="booking__checkout">
+                    <div class="booking__checkout-left-col">
+                        <div class="booking__checkout-info">
+                            <h2 class="booking__checkout-info-heading">
+                                Бронирование на 26.08.22
+                            </h2>
+                            <ul class="booking__checkout-info-list">
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/1.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                    Аренда
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper booking__checkout-info-card-right-wrapper--1fr">
+
+
+                                            <div class="booking__checkout-info-card-summary">
+                                                Слот 08:00 - 11:00 <br>
+                                                3 часа (внизу)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="booking__checkout-actions">
+                                <a href="#" class="booking__checkout-back-link">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                    изменить бронирование
+
+                                </a>
+                                <div class="booking__checkout-total">
+                                    <div class="booking__checkout-total-discount">
+                                        <div class="booking__checkout-total-discount-title">
+                                            Скидка:
+                                        </div>
+                                        <div class="booking__checkout-total-discount-value">
+                                            - 5 000 Руб
+                                        </div>
+                                    </div>
+                                    <div class="booking__checkout-total-price">
+                                        <div class="booking__checkout-total-price-title">
+                                            Итого:
+                                        </div>
+                                        <div class="booking__checkout-total-price-value">
+                                            10 000 Руб
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="booking__checkout-conditions">
+                                <div class="booking__checkout-conditions-cards">
+                                    <h4 class="booking__checkout-conditions-cards-title">
+                                        Принимаем к оплате
+
+                                    </h4>
+                                    <ul class="booking__checkout-conditions-cards-list">
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/5.svg" alt="Банковская карта"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>Банковская карта</h4><p>МИР<span>, </span>Mastercard<span>, </span>Maestro<span>, </span>Visa<span>, </span>UnionPay<span>, </span>American Express<span>, </span>Dinners Club<span>, </span>Корти Милли<span>, </span>АрКа<span>, </span>ЭЛКАРТ</p>"
+                                            >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/6.svg" alt="СБП"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>СБП</h4><p>Приложение вашего банка</p>"
+                                            >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/7.svg" alt="SberPay"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>SberPay</h4><p>Приложение СберБанк Онлайн</p>"
+                                                >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/8.svg" alt="Tinkoff Pay"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>Tinkoff Pay</h4><p>Приложение Тинькофф</p>"
+                                                >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/9.svg" alt="ЮMoney"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>ЮMoney</h4><p>Кошелёк или привязанная карта</p>"
+                                                >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="booking__checkout-conditions-links">
+                                    <a href="#" class="booking__checkout-conditions-rules-link">
+                                        Условия покупки билетов
+                                    </a>
+                                    <a href="#" class="booking__checkout-conditions-payment-info-link">
+                                        Об онлайн-оплате
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking__checkout-right-col">
+                        <form action="/" method="POST" class="booking__checkout-form" data-need-validation="">
+                            <h3 class="booking__checkout-form-heading">
+                                Ваши данные
+                            </h3>
+                            <div class="booking__checkout-form-fields">
+                                <div class="booking__checkout-form-field">
+                                    <input type="tel"
+                                        class="booking__checkout-form-input booking__checkout-form-input--phone js-phone-input"
+                                        placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="text"
+                                        class="booking__checkout-form-input booking__checkout-form-input--name"
+                                        placeholder="Имя" required="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="email"
+                                        class="booking__checkout-form-input booking__checkout-form-input--email"
+                                        placeholder="Email" required="">
+                                </div>
+                            </div>
+                            <div class="booking__checkout-form-promo">
+                                <input type="text" class="booking__checkout-form-promo-input"
+                                    placeholder="Активировать сертификат или промокод">
+                                <button class="booking__checkout-form-promo-btn" type="button">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#medium-arrow-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="booking__checkout-form-submit" type="submit">
+                                Оплатить
+                            </button>
+                            <div class="booking__checkout-form-policy">
+                                <label class="booking__checkout-form-policy-checkbox">
+                                    <input type="checkbox" class="booking__checkout-form-policy-checkbox-input"
+                                        required="" name="policy" value="1">
+                                    <span class="booking__checkout-form-policy-checkbox-content">
+                                        <span class="booking__checkout-form-policy-checkbox-mark">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="booking__checkout-form-policy-checkbox-text">
+                                            Нажимая на кнопку “Оплатить” вы соглашаетесь с условиями <a
+                                                href="#">Публичной
+                                                оферты </a>
+                                        </span>
+                                    </span>
+
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{> subscribe }}
+
+
+{{/content}}
+{{/extend}}
