@@ -253,6 +253,15 @@ function handleCellClick(cell) {
             const diffDays = Math.floor(diffHours / 24); // разница в днях
             const remainingHours = diffHours % 24; // остаток часов
 
+            // Функция для склонения слов "день" и "час"
+            const getWord = (num, one, few, many) => {
+                if (num % 10 === 1 && num % 100 !== 11) return one;
+                if (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)) return few;
+                return many;
+            };
+            const getDayWord = (days) => getWord(days, 'день', 'дня', 'дней');
+            const getHourWord = (hours) => getWord(hours, 'час', 'часа', 'часов');
+
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
                 hour: '2-digit',
                 minute: '2-digit'
@@ -264,19 +273,25 @@ function handleCellClick(cell) {
 
             let duration = '';
             if (diffDays > 0) {
-                duration += `${diffDays} дн.`;
-                if (remainingHours > 0) {
-                    duration += ` и ${remainingHours} ч.`;
+                if (diffDays === 1 && remainingHours === 0) {
+                    duration = `24 часа`;
+                } else {
+                    duration += `${diffDays} ${getDayWord(diffDays)}`;
+                    if (remainingHours > 0) {
+                        duration += ` и ${remainingHours} ${getHourWord(remainingHours)}`;
+                    }
                 }
             } else {
-                duration += `${diffHours} ч.`;
+                duration = `${diffHours} ${getHourWord(diffHours)}`;
             }
-            let result = `${duration} — с ${startFormatted} по ${endFormatted}`;
+
+            let result = `Выбрано: ${duration} — с ${startFormatted} по ${endFormatted}`;
 
             return result;
         };
 
-        selectedInfo.innerHTML = `Выбрано: ${format(selectStartCell, selectEndCell)}`;
+// Пример использования
+        selectedInfo.innerHTML = format(selectStartCell, selectEndCell);
 
         if (selectStartCell && selectEndCell) {
             document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
@@ -468,22 +483,47 @@ function checkMinDate() {
 }
 
 function showTooltip(cell, message) {
+    // Удаление старых тултипов
     const tooltips = document.getElementsByClassName('tooltip');
     for (let i = 0; i < tooltips.length; i++) {
         document.body.removeChild(tooltips[i]);
     }
+
+    // Создание нового тултипа
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
     tooltip.innerText = message;
     document.body.appendChild(tooltip);
-    const rect = cell.getBoundingClientRect();
-    tooltip.style.left = `${rect.left + window.pageXOffset + 10}px`;
-    tooltip.style.top = `${rect.top + window.pageYOffset + 30}px`;
 
+    const rect = cell.getBoundingClientRect();
+    let left = rect.left + window.pageXOffset + 10;
+    let top = rect.top + window.pageYOffset + 30;
+
+    // Проверка, выходит ли тултип за пределы экрана
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    // Если тултип выходит за правый край экрана
+    if (left + tooltipRect.width > window.innerWidth) {
+        left = window.innerWidth - tooltipRect.width - 10; // Смещаем влево
+    }
+
+    // Если тултип выходит за нижний край экрана
+    if (top + tooltipRect.height > window.innerHeight) {
+        top = rect.top + window.pageYOffset - tooltipRect.height - 10; // Смещаем вверх
+    }
+
+    // Применение скорректированных значений
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+
+    // Удаление тултипа через 2 секунды
     setTimeout(() => {
-        document.body.removeChild(tooltip);
+        if (tooltip && tooltip.parentNode) {
+            document.body.removeChild(tooltip);
+        }
     }, 2000);
 }
+
 
 // Новая функция для установки класса disabled
 function disableCellsBeyondFirstBooked(startCell) {
@@ -576,7 +616,7 @@ function scrollToCurrentHours() {
     const element = pastDate[pastDate.length - 1];
     if (isMobile()) {
         const tmp = element.getBoundingClientRect()
-        table.scrollTo(tmp.width * pastDate.length, tmp.top);
+        table.scrollTo((tmp.width * pastDate.length) - 15, tmp.top);
     }
 }
 
