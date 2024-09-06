@@ -178,10 +178,13 @@ function findBookedBeforeEmpty() {
 }
 
 function handleCellClick(cell) {
-    if (['empty', 'pastDate', 'booked'].some(key => cell.classList.contains(key))) {
-        return;
-    }
+
     if (!selectStartCell) {
+        if (['empty', 'pastDate', 'booked', 'notWorkingDay'].some(key => cell.classList.contains(key))) {
+            showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+            return;
+        }
+
         selectStartCell = cell;
         cell.classList.add('selected');
         cell.classList.add('start');
@@ -268,7 +271,7 @@ function handleCellClick(cell) {
             } else {
                 duration += `${diffHours} ч.`;
             }
-            let result = `${duration} - с ${startFormatted} по ${endFormatted}`;
+            let result = `${duration} — с ${startFormatted} по ${endFormatted}`;
 
             return result;
         };
@@ -320,7 +323,7 @@ function handleCellMouseOver(cell) {
             cells = cells.reverse()
         }
         cells.forEach(cell => {
-            if (cell.classList.contains('booked') || cell.classList.contains('disabled') || cell.classList.contains('pastDate')) {
+            if (cell.classList.contains('booked') || cell.classList.contains('notWorkingDay') || cell.classList.contains('disabled') || cell.classList.contains('pastDate')) {
                 foundBookedCell = true;
             }
             if (!foundBookedCell) {
@@ -498,7 +501,7 @@ function disableCellsBeyondFirstBooked(startCell) {
         const cellTime = allCells[i].dataset.time;
         const cellDateTime = new Date(cellDate).setHours(cellTime.split(':')[0], 0, 0);
         if (cellDateTime >= startDateTime) {
-            if (foundBookedForward || allCells[i].classList.contains('booked')) {
+            if (foundBookedForward || allCells[i].classList.contains('booked') || allCells[i].classList.contains('notWorkingDay')) {
                 foundBookedForward = true;
                 allCells[i].classList.add('disabled');
             } else {
@@ -513,7 +516,7 @@ function disableCellsBeyondFirstBooked(startCell) {
         const cellTime = allCells[i].dataset.time;
         const cellDateTime = new Date(cellDate).setHours(cellTime.split(':')[0], 0, 0);
         if (cellDateTime <= startDateTime) {
-            if (foundBookedBackward || allCells[i].classList.contains('booked')) {
+            if (foundBookedBackward || allCells[i].classList.contains('booked') || allCells[i].classList.contains('notWorkingDay')) {
                 foundBookedBackward = true;
                 allCells[i].classList.add('disabled');
             } else {
