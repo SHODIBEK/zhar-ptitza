@@ -616,7 +616,7 @@ function scrollToCurrentHours() {
     const element = pastDate[pastDate.length - 1];
     if (isMobile()) {
         const tmp = element.getBoundingClientRect()
-        table.scrollTo((tmp.width * pastDate.length) - 15, tmp.top);
+        table.scrollTo((tmp.width * pastDate.length) + 20, tmp.top);
     }
 }
 
