@@ -5,6 +5,7 @@
     "script": true,
     "otherScript": true,
     "otherScriptTag": [
+        "https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js",
         "https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js",

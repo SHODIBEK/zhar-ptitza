@@ -463,21 +463,28 @@
         }
     }
 
-    .calendar-container {
+    .zoom-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .calendar-container {
         position: relative;
         padding: 2.23rem 0 0;
+    transform-origin: 0px 0px;
 
         .selected-date__info {
             display: flex;
             width: 100%;
 
             .selected-info-1 {
-                height: 40px;
-                padding: 0 18px;
-                display: flex;
-                align-items: center;
-                font-family: var(--avenir);
                 width: 100%;
+        height: 4.44rem;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        font-family: var(--avenir);
                 font-size: 1.8rem;
                 line-height: 2.445rem;
                 font-weight: 500;
@@ -548,8 +555,8 @@
             border-right: 1px solid #3a241f;
             z-index: 9;
             @include breakpoint(mobile) {
-                height: calc(4.4rem * 9);
-                top: 4.23rem;
+                height: calc(4.4rem * 8.999);
+                top: 4.3rem;
             }
         }
     }
@@ -574,6 +581,7 @@
         max-width: 100%;
         display: block;
         width: unset;
+    padding-right: 15px;
 
         .time-header {
             .time-cell {
@@ -594,7 +602,7 @@
                     line-height: 1.7rem;
 
                     @include breakpoint(mobile) {
-                        right: -2.8rem;
+                        right: -3.3rem;
                     }
 
                     sup {
@@ -651,7 +659,8 @@
         }
 
         .time-slot {
-            border-bottom: 1px solid #ede8dd;
+            position: relative;
+      border-bottom: 1px solid #ede8dd;
             border-right: 1px solid #ede8dd;
             cursor: pointer;
             width: 3.779rem;
@@ -672,10 +681,12 @@
                 }
             }
 
-            &.selected {
-                background-color: #dfceab;
-                border-right-color: #dfceab;
-            }
+      &.selected {
+        background-color: #DFCEAB;
+
+      }
+
+
 
             &.disabled {
                 cursor: not-allowed !important;
@@ -687,14 +698,20 @@
                 background: transparent !important;
             }
 
-            &.booked {
-                //pointer-events: none;
-                cursor: not-allowed !important;
-                background-color: #6d554d !important;
-                border-right-color: #6d554d;
-            }
+      &.booked {
+        //pointer-events: none;
+        cursor: not-allowed !important;
+        background-color: #6D554D !important;
+      }
 
-            &.empty {
+
+            &.notWorkingDay {
+        background: #F7F5F2 !important;
+        cursor: not-allowed !important;
+        border-left: #F7F5F2 !important;
+        pointer-events: none;
+      }
+      &.empty {
                 position: relative;
                 background: #f7f5f2 !important;
                 cursor: not-allowed !important;
@@ -729,11 +746,14 @@
             color: #060301;
         }
 
+            .booking__total {
+                font-size: 2rem;
+            }
         @include breakpoint(mobile) {
             padding: 0;
 
             .booking__total {
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 800;
                 display: flex;
             }
@@ -773,4 +793,6 @@
     font-size: 1.4rem;
     pointer-events: none;
     z-index: 1000;
+  width: 160px;
+  text-wrap: wrap;
 }

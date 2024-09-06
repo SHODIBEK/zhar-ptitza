@@ -1,5 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
+let holidays = []
+let disabledDays = ['2024-09-10'];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -54,13 +56,18 @@ function tableRender() {
         "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
-        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{/if}}\"\n" +
+        "                                <td class=\"time-slot {{#if (isPastDateTime ../this this @root.bookingDates)}}pastDate{{else if (isInInterval ../this this @root.bookingDates)}}booked{{else if (isEdgeInterval ../this this @root.bookingDates)}}empty{{else if (isDisabledDay ../this)}}notWorkingDay{{/if}}\"\n" +
         "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
         "                </td>" +
         "                            {{/each}}\n" +
         "                            </tr>\n" +
         "                        {{/each}}\n" +
         "                    </tbody>";
+
+    Handlebars.registerHelper('isDisabledDay', function (date) {
+        const formattedDate = new Date(date).toISOString().split('T')[0]; // Форматируем дату в YYYY-MM-DD
+        return disabledDays.includes(formattedDate); // Проверяем, есть ли эта дата в массиве disabledDays
+    });
 
     Handlebars.registerHelper('isInInterval', function (date, time, bookingDates) {
         return isInInterval(new Date(date), time, bookingDates);
@@ -93,7 +100,7 @@ function tableRender() {
         cellDateTime.setHours(hours, minutes, 0, 0);
 
         // Получаем текущее время в Москве
-        const nowInMoscow = new Date().toLocaleString("en-US", { timeZone: "Europe/Moscow" });
+        const nowInMoscow = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"});
         const moscowDate = new Date(nowInMoscow);
 
         // Добавляем один час к текущему времени в Москве
@@ -171,7 +178,7 @@ function findBookedBeforeEmpty() {
 }
 
 function handleCellClick(cell) {
-    if (['empty', 'pastDate', 'booked', 'disabled'].some(key => cell.classList.contains(key))) {
+    if (['empty', 'pastDate', 'booked'].some(key => cell.classList.contains(key))) {
         return;
     }
     if (!selectStartCell) {
@@ -180,41 +187,68 @@ function handleCellClick(cell) {
         cell.classList.add('start');
         disableCellsBeyondFirstBooked(selectStartCell);
     } else if (!selectEndCell) {
-        if (cell.classList.contains('disabled')) {
-            showTooltip(cell, `Выбранный диапазон содержит занятые ячейки. Выбор сброшен.`);
+        if (selectStartCell === cell) {
+            clearSelection();
             return;
         }
+
+        minHours = getMinHours(cell.dataset.date);
         const start = new Date(selectStartCell.dataset.date).setHours(selectStartCell.dataset.time.split(':')[0], 0, 0);
         const end = new Date(cell.dataset.date).setHours(cell.dataset.time.split(':')[0], 0, 0);
+        let cells = getCellsInRange(selectStartCell, cell);
         if (start > end) {
-            const cells = getCellsInRange(cell, selectStartCell);
+            cells = getCellsInRange(cell, selectStartCell);
+
+            // Проверка на наличие бронированных ячеек
+            if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
+                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                return;
+            }
+
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Мин. ${minHours}ч.`);
+                showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
                 return;
             }
             selectEndCell = selectStartCell;
             selectStartCell = cell;
         } else {
+            const cells = getCellsInRange(selectStartCell, cell);
+
+            // Проверка на наличие бронированных ячеек
+            if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
+                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                return;
+            }
+
             selectEndCell = cell;
         }
-        const cells = getCellsInRange(selectStartCell, selectEndCell);
+
+        minHours = getMinHours(selectStartCell.dataset.date);
+        cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Мин. ${minHours}ч.`);
+            showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
             return;
         }
+
         if (!cells.some(cell => cell.classList.contains('booked'))) {
             cells.forEach(cell => cell.classList.add('selected'));
         }
+
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = {day: 'numeric', month: 'long'};
+            const options = { day: 'numeric', month: 'long' };
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
             end.setHours(+endDate.dataset.time.split(':')[0] + 1, 0, 0, 0);
+
+            const diffTime = end.getTime() - start.getTime();
+            const diffHours = Math.floor(diffTime / (1000 * 60 * 60)); // разница в часах
+            const diffDays = Math.floor(diffHours / 24); // разница в днях
+            const remainingHours = diffHours % 24; // остаток часов
 
             const startFormatted = start.toLocaleDateString('ru-RU', options) + ", " + start.toLocaleTimeString('ru-RU', {
                 hour: '2-digit',
@@ -225,9 +259,21 @@ function handleCellClick(cell) {
                 minute: '2-digit'
             });
 
-            return `с ${startFormatted} по ${endFormatted}`;
+            let duration = '';
+            if (diffDays > 0) {
+                duration += `${diffDays} дн.`;
+                if (remainingHours > 0) {
+                    duration += ` и ${remainingHours} ч.`;
+                }
+            } else {
+                duration += `${diffHours} ч.`;
+            }
+            let result = `${duration} - с ${startFormatted} по ${endFormatted}`;
+
+            return result;
         };
-        selectedInfo.innerHTML = `Выбрано: ${cells.length} ч — ${format(selectStartCell, selectEndCell)}`;
+
+        selectedInfo.innerHTML = `Выбрано: ${format(selectStartCell, selectEndCell)}`;
 
         if (selectStartCell && selectEndCell) {
             document.querySelectorAll('.time-slot.hover').forEach(cell => cell.classList.remove('hover'));
@@ -241,6 +287,14 @@ function handleCellClick(cell) {
     } else {
         clearSelection();
         handleCellClick(cell);
+    }
+}
+
+function checkDateAndTime(cells, cell) {
+    // Проверка на наличие бронированных ячеек
+    if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
+        showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+        return;
     }
 }
 
@@ -521,10 +575,82 @@ function scrollToCurrentHours() {
         const tmp = element.getBoundingClientRect()
         table.scrollTo(tmp.width * pastDate.length, tmp.top);
     }
-    console.log(pastDate)
+}
+
+function getMinHours(date) {
+    const day = new Date(date).getDay();
+    const isWeekend = day === 0 || day === 6; // 0 - воскресенье, 6 - суббота
+    const isHoliday = holidays.some(day => day === dayjs(date).format('YYYY-MM-DD'));
+    return isWeekend || isHoliday ? 4 : 3;
+}
+
+function initCustomZoom() {
+    const element = document.querySelector('.calendar-container');
+    const zoomContainer = document.querySelector('.zoom-container');
+    let scale = 1;
+    let originalWidth = 0;
+    let originalHeight = 0;
+    let initialPinchDistance = 0; // Для отслеживания начального расстояния между пальцами
+    let lastScale = scale; // Для отслеживания последнего состояния масштаба
+
+    setTimeout(() => {
+        originalWidth = JSON.parse(JSON.stringify(element.offsetWidth));
+        originalHeight = JSON.parse(JSON.stringify(element.offsetHeight));
+    }, 100);
+
+
+    // Устанавливаем начальный зум
+    element.style.transformOrigin = '0 0';
+    element.style.transform = `scale(${scale})`;
+
+    // // Обработчик для колесика мыши (масштабирование)
+    // element.addEventListener('wheel', (e) => {
+    //     e.preventDefault(); // Отключаем стандартное поведение скролла
+    //     const zoomFactor = 0.1; // Размер шага при масштабировании
+    //     const delta = e.deltaY < 0 ? zoomFactor : -zoomFactor; // Проверка направления колесика
+    //     // Изменение масштаба в зависимости от направления прокрутки
+    //     scale = Math.min(1, Math.max(0.5, scale + delta)); // Ограничиваем масштаб в диапазоне 0.5 - 1.5
+    //     updateZoom();
+    // });
+
+    // Обработчики для тач-событий (пинч-зум)
+    element.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            initialPinchDistance = getPinchDistance(e.touches);
+            lastScale = scale; // Запоминаем текущее состояние масштаба
+        }
+    });
+
+    element.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const currentPinchDistance = getPinchDistance(e.touches);
+            const pinchScale = currentPinchDistance / initialPinchDistance; // Вычисляем изменение масштаба
+            scale = Math.min(1, Math.max(0.5, lastScale * pinchScale)); // Ограничиваем масштаб
+            updateZoom();
+        }
+    });
+
+    // Функция для обновления масштаба
+    function updateZoom() {
+        element.style.width = `${originalWidth / scale}px`;
+        element.style.transform = `scale(${scale})`;
+        setTimeout(() => {
+            const clientRect = element.getBoundingClientRect();
+            zoomContainer.style.height = `${clientRect.height}px`;
+        })
+    }
+
+    // Функция для вычисления расстояния между двумя точками касания
+    function getPinchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCustomZoom();
     tableRender();
     modalListener();
     scrollToCurrentHours();

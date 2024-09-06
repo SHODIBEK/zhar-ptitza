@@ -32,6 +32,7 @@
         "lazysizes": "^5.3.2",
         "lodash": "^4.17.21",
         "parsleyjs": "^2.9.2",
+        "pinch-zoom-js": "^2.3.5",
         "plyr": "^3.6.8",
         "select2": "^4.1.0-rc.0",
         "splitting": "^1.0.6",
