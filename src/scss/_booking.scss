@@ -1182,6 +1182,13 @@
     }
 }
 
+.booking__submit--loading {
+    cursor: auto !important;
+    pointer-events: none !important;
+    background-color: gray !important;
+    border: none !important;
+}
+
 .booking__submit-btn {
     display: flex;
     align-items: center;
@@ -1205,6 +1212,7 @@
         cursor: auto !important;
         pointer-events: none !important;
         background-color: gray !important;
+        border: none !important;
     }
 
     .no-touch &:hover {
