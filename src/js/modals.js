@@ -20,6 +20,7 @@ export default function modals() {
             modal.classList.add('active');
             document.body.classList.add('modal-open');
             window.activeModal = modal;
+            document.querySelector('header').classList.add('page-header--white');
 
             requestAnimationFrame(() => {
                 document.querySelector('.page-header')?.offsetWidth;
@@ -45,6 +46,8 @@ export default function modals() {
         modal.classList.remove('active');
 
         window.activeModal = null;
+
+        document.querySelector('header').classList.remove('page-header--white');
 
         const closeModalEvent = new CustomEvent('closemodal');
         document.dispatchEvent(closeModalEvent);
