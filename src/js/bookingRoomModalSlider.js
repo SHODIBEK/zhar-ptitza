@@ -12,21 +12,14 @@ export default function bookingRoomModalSlider() {
         new Swiper(container, {
             slidesPerView: 'auto',
             centeredSlides: false,
-            loopedSlides: 10,
-            loopedSlidesLimit: false,
-            loopAdditionalSlides: 10,
+
             loop: true,
             speed: 500,
             navigation: {
                 nextEl: element.querySelector('.booking-room-modal__arrow--next'),
                 prevEl: element.querySelector('.booking-room-modal__arrow--prev')
             },
-            grabCursor: true,
-            breakpoints: {
-                641: {
-                    centeredSlides: true
-                }
-            }
+            grabCursor: true
         });
     });
 }
