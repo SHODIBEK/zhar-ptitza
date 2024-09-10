@@ -2367,3 +2367,17 @@
         display: none;
     }
 }
+
+.booking__checkout-promocode-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: 0.3s ease-in-out;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+        transition: 0.3s ease-in-out;
+    }
+}
