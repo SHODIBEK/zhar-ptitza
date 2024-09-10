@@ -1,17 +1,16 @@
 export default function handleModalScroll(modalSelector, headerSelector) {
-    const modals = document.querySelectorAll(modalSelector); // Получаем все модальные окна
-    const header = document.querySelector(headerSelector); // Получаем шапку
+    const modals = document.querySelectorAll(modalSelector);
+    const header = document.querySelector(headerSelector);
+    if (!modals.length || !header) return;
 
-    if (!modals.length || !header) return; // Проверяем, что элементы существуют
-
-    const headerHeight = header.offsetHeight; // Получаем высоту шапки
+    const headerHeight = header.offsetHeight;
 
     modals.forEach(modal => {
         modal.addEventListener('scroll', function() {
             if (modal.scrollTop > headerHeight) {
-                header.classList.add('fixed'); // Добавляем класс 'fixed' к шапке
+                header.classList.add('fixed');
             } else {
-                header.classList.remove('fixed'); // Удаляем класс 'fixed' с шапки
+                header.classList.remove('fixed');
             }
         });
     });

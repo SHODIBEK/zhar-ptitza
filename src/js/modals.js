@@ -55,6 +55,16 @@ export default function modals() {
         requestAnimationFrame(() => {
             document.querySelector('.page-header')?.offsetWidth;
         });
+
+        const header = document.querySelector('header');
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        const headerHeight = header.offsetHeight;
+
+        if (scrollPosition > headerHeight) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
     }
 
     window.openModal = openModal;
