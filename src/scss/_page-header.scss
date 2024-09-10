@@ -33,7 +33,9 @@
     }
 
     &--white {
-        background-color: #fff;
+        @include breakpoint(mobile) {
+            background-color: #fff;
+        }
     }
 }
 
