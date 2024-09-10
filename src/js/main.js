@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     news();
     apartments();
     maps();
-    header();
     scrollToTop();
     menuImages();
     parallaxImages();
@@ -117,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customTriggerInit();
     handleModalScroll('.booking-room-modal', '.page-header');
     eventPromoInput();
+    header();
 });
 
 let imgLoad = imagesLoaded(document.querySelector('.page-content'));

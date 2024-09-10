@@ -20,7 +20,11 @@ export default function modals() {
             modal.classList.add('active');
             document.body.classList.add('modal-open');
             window.activeModal = modal;
-            document.querySelector('header').classList.add('page-header--white');
+
+            const header = document.querySelector('header');
+            header.classList.add('page-header--white');
+
+            header.classList.remove('fixed');
 
             requestAnimationFrame(() => {
                 document.querySelector('.page-header')?.offsetWidth;

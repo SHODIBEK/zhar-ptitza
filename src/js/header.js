@@ -7,6 +7,8 @@ export default function header() {
     const innerHeader = document.querySelector('.inner-page .page-header');
     const header = document.querySelector('.page-header');
     const changeColorBlock = document.querySelector('.js-change-header-color');
+    const scrollPosition = window.scrollY || window.pageYOffset;
+
     if (!header || header.classList.contains('fixed')) return;
 
     ScrollTrigger.create({
@@ -35,5 +37,12 @@ export default function header() {
                 }
             }
         });
+    }
+
+    if (scrollPosition > header.offsetHeight) {
+        header.classList.add('fixed');
+        // console.log(header.classList);
+    } else {
+        header.classList.remove('fixed');
     }
 }

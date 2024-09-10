@@ -5,13 +5,19 @@ export default function handleModalScroll(modalSelector, headerSelector) {
 
     const headerHeight = header.offsetHeight;
 
+    function toggleHeaderClass(modal) {
+        if (modal.scrollTop > headerHeight) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+    }
+
     modals.forEach(modal => {
         modal.addEventListener('scroll', function() {
-            if (modal.scrollTop > headerHeight) {
-                header.classList.add('fixed');
-            } else {
-                header.classList.remove('fixed');
-            }
+            toggleHeaderClass(modal);
         });
+
+        toggleHeaderClass(modal);
     });
 }
