@@ -2377,7 +2377,24 @@
     &.is-active {
         opacity: 1;
         pointer-events: all;
+        animation: go 2s infinite ease-in-out;
         transform: translateX(0);
         transition: 0.3s ease-in-out;
+    }
+}
+
+@keyframes go {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-10px);
+    }
+    60% {
+        transform: translateX(-5px);
     }
 }
