@@ -1,7 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let holidays = []
-let disabledDays = ['2024-09-10'];
+let disabledDays = ['2024-09-16'];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -181,7 +181,7 @@ function handleCellClick(cell) {
 
     if (!selectStartCell) {
         if (['empty', 'pastDate', 'booked', 'notWorkingDay'].some(key => cell.classList.contains(key))) {
-            showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+            showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
             return;
         }
 
@@ -204,13 +204,13 @@ function handleCellClick(cell) {
 
             // Проверка на наличие бронированных ячеек
             if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
                 return;
             }
 
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+                showTooltip(cell, `Минимальное время <br> аренды – ${minHours} часа`);
                 return;
             }
             selectEndCell = selectStartCell;
@@ -220,7 +220,7 @@ function handleCellClick(cell) {
 
             // Проверка на наличие бронированных ячеек
             if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
                 return;
             }
 
@@ -231,7 +231,7 @@ function handleCellClick(cell) {
         cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+            showTooltip(cell, `Минимальное время <br> аренды – ${minHours} часа`);
             return;
         }
 
@@ -311,7 +311,7 @@ function handleCellClick(cell) {
 function checkDateAndTime(cells, cell) {
     // Проверка на наличие бронированных ячеек
     if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-        showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+        showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
         return;
     }
 }
@@ -492,7 +492,7 @@ function showTooltip(cell, message) {
     // Создание нового тултипа
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
-    tooltip.innerText = message;
+    tooltip.innerHTML = message;
     document.body.appendChild(tooltip);
 
     const rect = cell.getBoundingClientRect();

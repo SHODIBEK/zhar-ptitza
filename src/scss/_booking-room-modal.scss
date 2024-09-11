@@ -816,7 +816,7 @@
 
   @include breakpoint(mobile) {
     font-size: 1.1rem;
-    width: 135px;
+    width: max-content;
     padding: 0.4rem 0.8rem;
   }
 }
