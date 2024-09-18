@@ -73,6 +73,7 @@
     }
 
     .form-page__form-submit {
+        color: #fff;
         background-color: var(--text-color);
     }
 }
@@ -227,10 +228,14 @@ textarea.form-page__form-input {
 
 .form-page__form-policy-checkbox {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     cursor: pointer;
     user-select: none;
+
+    @include breakpoint(mobile) {
+        align-items: flex-start;
+    }
 }
 
 .form-page__form-policy-checkbox-input {
