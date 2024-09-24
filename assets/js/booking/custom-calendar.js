@@ -1,7 +1,7 @@
 let firstSelectedBookingDate = new Date();
 let startIntervalDate = new Date();
 let holidays = []
-let disabledDays = ['2024-09-10'];
+let disabledDays = ['2024-09-16'];
 let bookingDates = [
     {
         "start": "2024-08-29 12:00:00",
@@ -47,12 +47,12 @@ function tableRender() {
         "                                <span>{{{formatTime this}}}</span>\n" +
         "                            </th>\n" +
         "                        {{/each}}\n" +
-        "                        </tr>\n" +
+        "                        <td class='empty-td'></td></tr>\n" +
         "                    </thead>\n" +
         "                    <tbody class=\"date-rows\">\n" +
         "                        {{#each dates}}\n" +
         "                            <tr class=\"date-row\">\n" +
-        "                                <td class=\"date-cell {{isActiveDate this}}\">\n" +
+        "                                <td data-date=\"{{this}}\" class=\"date-cell {{isActiveDate this}} {{#if (isPastDateTime this '00:00' @root.bookingDates)}}pastDate{{/if}}\">\n" +
         "                                    <div><span>{{formatDate this}}</span></div>\n" +
         "                                </td>\n" +
         "                            {{#each ../times}}\n" +
@@ -60,7 +60,7 @@ function tableRender() {
         "                    data-date=\"{{../this}}\" data-time=\"{{subtractOneHour this}}\">\n" +
         "                </td>" +
         "                            {{/each}}\n" +
-        "                            </tr>\n" +
+        "                            <td class='empty-td'></td></tr>\n" +
         "                        {{/each}}\n" +
         "                    </tbody>";
 
@@ -82,7 +82,7 @@ function tableRender() {
     });
     Handlebars.registerHelper('formatTime', function (time) {
         const tmp = time.split(':');
-        if (tmp[0] == 24) {
+        if (+tmp[0] === 24) {
             tmp[0] = '00'
         }
         return `${tmp[0]}<sup>:${tmp[1]}</sup>`;
@@ -126,7 +126,6 @@ function tableRender() {
         return adjustTimeByOneHour(time);
     });
 
-
     const template = Handlebars.compile(source);
     const context = {
         times: [
@@ -146,6 +145,7 @@ function tableRender() {
     }
     checkMinDate();
 
+
     if (selectStartCell && selectEndCell) {
         const cells = getCellsInRange(selectStartCell, selectEndCell);
         cells.forEach(cell => cell.classList.add('selected'));
@@ -155,6 +155,20 @@ function tableRender() {
 }
 
 function addCellClickHandlers() {
+    // Добавляем обработчики кликов на ячейки с датами
+    document.querySelectorAll('.date-cell').forEach(cell => {
+        cell.addEventListener('click', function (event) {
+            const date = cell.dataset['date'];
+            if (new Date(date) <= new Date()) {
+                return;
+            }
+            startIntervalDate = new Date(date);
+            firstSelectedBookingDate = new Date(date);
+            tableRender();
+            loader();
+            checkMinDate();
+        });
+    });
     const cells = document.querySelectorAll('.time-slot');
     cells.forEach(cell => {
         cell.addEventListener('click', () => handleCellClick(cell));
@@ -181,7 +195,7 @@ function handleCellClick(cell) {
 
     if (!selectStartCell) {
         if (['empty', 'pastDate', 'booked', 'notWorkingDay'].some(key => cell.classList.contains(key))) {
-            showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+            showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
             return;
         }
 
@@ -204,13 +218,13 @@ function handleCellClick(cell) {
 
             // Проверка на наличие бронированных ячеек
             if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
                 return;
             }
 
             if (cells.length < minHours) {
                 selectEndCell = null;
-                showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+                showTooltip(cell, `Минимальное время <br> аренды – ${minHours} часа`);
                 return;
             }
             selectEndCell = selectStartCell;
@@ -220,7 +234,7 @@ function handleCellClick(cell) {
 
             // Проверка на наличие бронированных ячеек
             if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-                showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+                showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
                 return;
             }
 
@@ -231,7 +245,7 @@ function handleCellClick(cell) {
         cells = getCellsInRange(selectStartCell, selectEndCell);
         if (cells.length < minHours) {
             selectEndCell = null;
-            showTooltip(cell, `Минимальное время аренды – ${minHours} часа`);
+            showTooltip(cell, `Минимальное время <br> аренды – ${minHours} часа`);
             return;
         }
 
@@ -242,7 +256,7 @@ function handleCellClick(cell) {
         const className = '.selected-info-' + (isMobile() ? 2 : 1);
         const selectedInfo = document.querySelector(className);
         const format = function (startDate, endDate) {
-            const options = { day: 'numeric', month: 'long' };
+            const options = {day: 'numeric', month: 'long'};
             const start = new Date(startDate.dataset.date);
             const end = new Date(endDate.dataset.date);
             start.setHours(+startDate.dataset.time.split(':')[0], 0, 0, 0);
@@ -311,7 +325,7 @@ function handleCellClick(cell) {
 function checkDateAndTime(cells, cell) {
     // Проверка на наличие бронированных ячеек
     if (cells.some(cell => cell.classList.contains('booked') || cell.classList.contains('notWorkingDay'))) {
-        showTooltip(cell, 'Выбранный интервал недоступен для бронирования');
+        showTooltip(cell, 'Выбранный интервал <br> недоступен для бронирования');
         return;
     }
 }
@@ -397,9 +411,10 @@ function formatDate(date) {
 // Функция для получения 9-дневного интервала дат
 function getDateInterval(startIntervalDate) {
     const dates = [];
+    const start = new Date(startIntervalDate.setDate(startIntervalDate.getDate() - 1));
     for (let i = 0; i < 9; i++) {
-        let nextDate = new Date(startIntervalDate);
-        nextDate.setDate(startIntervalDate.getDate() + i);
+        let nextDate = new Date(start);
+        nextDate.setDate(start.getDate() + i);
         dates.push(nextDate);
     }
     return dates;
@@ -492,7 +507,7 @@ function showTooltip(cell, message) {
     // Создание нового тултипа
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
-    tooltip.innerText = message;
+    tooltip.innerHTML = message;
     document.body.appendChild(tooltip);
 
     const rect = cell.getBoundingClientRect();
