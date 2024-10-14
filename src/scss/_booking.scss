@@ -22,7 +22,7 @@
     color: var(--text-color);
 
     @include breakpoint(mobile) {
-        margin-bottom: 0.5rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -635,12 +635,13 @@
     &--calendar {
         background-size: 3rem 3rem;
         background-repeat: no-repeat;
-        background-position: right center;
+        background-position: right 2px;
         background-image: url('../img/calendar.svg');
         cursor: pointer;
 
         @include breakpoint(mobile) {
             background-size: 2.2rem 2.2rem;
+            background-position: right center;
         }
     }
 
@@ -835,6 +836,28 @@
 
     .booking__common-search-dropdown-checkbox-item {
         color: rgba(150, 138, 113, 0.3);
+    }
+}
+
+.booking__common-tel {
+    position: relative;
+
+    &_submit {
+        width: 3rem;
+        height: 3rem;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            transform: translateX(5px);
+            transition: 0.3s ease-in-out;
+        }
     }
 }
 
