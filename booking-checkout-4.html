@@ -389,267 +389,219 @@
             </div>            <main class="page-main ">
 
 
-        <section class="booking">
-            <div class="container">
-                <div class="booking__content">
-                    <div class="booking__heading">
-                      <h1 class="booking__title">
-                        Аренда банного номера
-                      </h1>
-                      <p class="booking__subtitle">Адрес: Жар-Птица, Нижняя Масловка, 15, Москва</p>
-                    </div>
-                    
-                    <div class="booking__inner">
-                        <form action="/" method="POST" class="booking__form">
-                            <div class="booking__common-search">
-                                <div class="booking__common-search-field" id="date-container">
-                                    <div class="booking__common-search-field-label">
-                                        Дата
+<section class="booking">
+    <div class="container">
+        <div class="booking__content booking__content--wide">
+            <div class="booking__heading">
+                <h1 class="booking__title">
+                    Подтверждение заказа
+                </h1>
+                <div class="booking__subtitle">
+                    Держим бронь 1:50
+                </div>
+            </div>
+            <div class="booking__inner booking__inner--checkout">
+                <div class="booking__checkout">
+                    <div class="booking__checkout-left-col">
+                        <div class="booking__checkout-info">
+                            <h2 class="booking__checkout-info-heading">
+                                Бронирование на 26.08.22
+                            </h2>
+                            <ul class="booking__checkout-info-list">
+                                <li class="booking__checkout-info-list-item">
+                                    <div class="booking__checkout-info-card">
+                                        <div class="booking__checkout-info-card-left-wrapper">
+
+
+                                            <div class="booking__checkout-info-card-image-container">
+                                                <img src="img/tickets/1.jpg" alt=""
+                                                    class="booking__checkout-info-card-image">
+                                            </div>
+                                            <div class="booking__checkout-info-card-title-wrapper">
+                                                <h4 class="booking__checkout-info-card-title">
+                                                    Аренда
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="booking__checkout-info-card-right-wrapper booking__checkout-info-card-right-wrapper--1fr">
+
+
+                                            <div class="booking__checkout-info-card-summary">
+                                                Слот 08:00 - 11:00 <br>
+                                                3 часа (внизу)
+                                            </div>
+                                        </div>
                                     </div>
-                                    <input type="text"
-                                        class="booking__common-search-input booking__common-search-input--calendar js-datepicker"
-                                        data-picker-container="#date-container" readonly="">
-                                </div>
-                                <div class="booking__common-search-field">
-                                    <div class="booking__common-search-field-label">
-                                        Быстрое бронирование
+                                </li>
+                            </ul>
+                            <div class="booking__checkout-actions">
+                                <a href="#" class="booking__checkout-back-link">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-left">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg>
+                                    изменить бронирование
+
+                                </a>
+                                <div class="booking__checkout-total">
+                                    <div class="booking__checkout-total-discount">
+                                        <div class="booking__checkout-total-discount-title">
+                                            Скидка:
+                                        </div>
+                                        <div class="booking__checkout-total-discount-value">
+                                            - 5 000 Руб
+                                        </div>
                                     </div>
-                                    <div class="booking__common-tel">
-                                        <input 
-                                            type="tel"
-                                            class="booking__common-search-input js-phone-input"
-                                            name="your-phone" placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone=""
-                                        >
-                                        <button class="booking__common-tel_submit" type="submit">
-                                            <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
-                                                <use xlink:href="#medium-arrow-right"></use>
-                                            </svg>
-                                        </button>
+                                    <div class="booking__checkout-total-price">
+                                        <div class="booking__checkout-total-price-title">
+                                            Итого:
+                                        </div>
+                                        <div class="booking__checkout-total-price-value">
+                                            10 000 Руб
+                                        </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            <div class="booking__room">
-                                <h3 class="booking__room-heading">
-                                    Выберете номер
-                                </h3>
-                                <div class="booking__room-grid">
-                                  <div class="booking__room-slider-card">
-                                    <div class="booking__room-slider-card-image-container booking__room-slider-card--novideo">
-                                        <img src="img/booking-room-slider-image.jpg" alt=""
-                                            class="booking__room-slider-card-image">
-                                        <div class="booking__room-slider-card-image-overlay"></div>
-                                    </div>
-                                    <div class="booking__room-slider-card-content">
-                                        <h4 class="booking__room-slider-card-title">
-                                            Шале
-                                        </h4>
-                                        <ul class="booking__room-slider-card-features-list">
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                до 10 гостей
-                                            </li>
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                от 5000 руб./час
-                                            </li>
-                                        </ul>
-                                        <div class="booking__room-slider-card-btns">
-                                            <a href="#booking-room-modal-1" class="booking__room-slider-card-link">
-                                                Подробнее
-                                            </a>
-                                            <button type="button" class="booking__room-slider-card-checkbox">
-                                                <span
-                                                    class="booking__room-slider-card-checkbox-content">
-                                                    Выбрать
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div class="booking__room-slider-card">
-                                    <div class="booking__room-slider-card-image-container">
-                                        <img src="img/booking-room-slider-image.jpg" alt=""
-                                            class="booking__room-slider-card-image">
-                                        <div class="booking__room-slider-card-image-overlay"></div>
-                                        <div class="booking__room-slider-card-video-wrapper">
-                                            <video preload="metadata" muted="">
-                                                <source src="assets/video/stories-video.mp4"
-                                                    type="video/mp4">
-                                            </video>
-                                        </div>
-                                    </div>
-                                    <div class="booking__room-slider-card-content">
-                                        <h4 class="booking__room-slider-card-title">
-                                            Скандинавия
-                                        </h4>
-                                        <ul class="booking__room-slider-card-features-list">
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                до 10 гостей
-                                            </li>
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                от 5000 руб./час
-                                            </li>
-                                        </ul>
-                                        <div class="booking__room-slider-card-btns">
-                                            <a href="#booking-room-modal-1" class="booking__room-slider-card-link">
-                                                Подробнее
-                                            </a>
-                                            <button type="button" class="booking__room-slider-card-checkbox">
-                                                <span
-                                                    class="booking__room-slider-card-checkbox-content">
-                                                    Выбрать
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div class="booking__room-slider-card">
-                                      <div class="booking__room-slider-card-image-container">
-                                          <img src="img/booking-room-slider-image.jpg" alt=""
-                                              class="booking__room-slider-card-image">
-                                          <div class="booking__room-slider-card-image-overlay"></div>
-                                          <div class="booking__room-slider-card-video-wrapper">
-                                              <video preload="metadata" muted="">
-                                                  <source src="assets/video/stories-video.mp4"
-                                                      type="video/mp4">
-                                              </video>
-                                          </div>
-                                      </div>
-                                      <div class="booking__room-slider-card-content">
-                                          <h4 class="booking__room-slider-card-title">
-                                              Шале
-                                          </h4>
-                                          <ul class="booking__room-slider-card-features-list">
-                                              <li class="booking__room-slider-card-features-list-item">
-                                                  до 10 гостей
-                                              </li>
-                                              <li class="booking__room-slider-card-features-list-item">
-                                                  от 5000 руб./час
-                                              </li>
-                                          </ul>
-                                          <div class="booking__room-slider-card-btns">
-                                              <a href="#booking-room-modal-1" class="booking__room-slider-card-link">
-                                                  Подробнее
-                                              </a>
-                                              <button type="button" class="booking__room-slider-card-checkbox">
-                                                  <span
-                                                      class="booking__room-slider-card-checkbox-content">
-                                                      Выбрать
-                                                  </span>
-                                              </button>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="booking__room-slider-card">
-                                    <div class="booking__room-slider-card-image-container">
-                                        <img src="img/booking-room-slider-image.jpg" alt=""
-                                            class="booking__room-slider-card-image">
-                                        <div class="booking__room-slider-card-image-overlay"></div>
-                                        <div class="booking__room-slider-card-video-wrapper">
-                                            <video preload="metadata" muted="">
-                                                <source src="assets/video/stories-video.mp4"
-                                                    type="video/mp4">
-                                            </video>
-                                        </div>
-                                    </div>
-                                    <div class="booking__room-slider-card-content">
-                                        <h4 class="booking__room-slider-card-title">
-                                            Шале
-                                        </h4>
-                                        <ul class="booking__room-slider-card-features-list">
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                до 10 гостей
-                                            </li>
-                                            <li class="booking__room-slider-card-features-list-item">
-                                                от 5000 руб./час
-                                            </li>
-                                        </ul>
-                                        <div class="booking__room-slider-card-btns">
-                                            <a href="#booking-room-modal-1" class="booking__room-slider-card-link">
-                                                Подробнее
-                                            </a>
-                                            <button type="button" class="booking__room-slider-card-checkbox">
-                                                <span
-                                                    class="booking__room-slider-card-checkbox-content">
-                                                    Выбрать
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                  </div>
+                            <div class="booking__checkout-conditions">
+                                <div class="booking__checkout-conditions-cards">
+                                    <h4 class="booking__checkout-conditions-cards-title">
+                                        Принимаем к оплате
+
+                                    </h4>
+                                    <ul class="booking__checkout-conditions-cards-list">
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/5.svg" alt="Банковская карта"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>Банковская карта</h4><p>МИР<span>, </span>Mastercard<span>, </span>Maestro<span>, </span>Visa<span>, </span>UnionPay<span>, </span>American Express<span>, </span>Dinners Club<span>, </span>Корти Милли<span>, </span>АрКа<span>, </span>ЭЛКАРТ</p>"
+                                            >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/6.svg" alt="СБП"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>СБП</h4><p>Приложение вашего банка</p>"
+                                            >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/7.svg" alt="SberPay"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>SberPay</h4><p>Приложение СберБанк Онлайн</p>"
+                                                >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/8.svg" alt="Tinkoff Pay"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>Tinkoff Pay</h4><p>Приложение Тинькофф</p>"
+                                                >
+                                        </li>
+                                        <li class="booking__checkout-conditions-cards-list-item">
+                                            <img src="img/cards/9.svg" alt="ЮMoney"
+                                                class="booking__checkout-conditions-cards-image"
+                                                data-tippy-content="<h4>ЮMoney</h4><p>Кошелёк или привязанная карта</p>"
+                                                >
+                                        </li>
+                                    </ul>
                                 </div>
+                                <div class="booking__checkout-conditions-links">
+                                    <a href="#" class="booking__checkout-conditions-rules-link">
+                                        Условия покупки билетов
+                                    </a>
+                                    <a href="#" class="booking__checkout-conditions-payment-info-link">
+                                        Об онлайн-оплате
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking__checkout-right-col">
+                        <form action="/" method="POST" class="booking__checkout-form" data-need-validation="">
+                            <h3 class="booking__checkout-form-heading">
+                                Ваши данные
+                            </h3>
+                            <div class="booking__checkout-form-fields">
+                                <div class="booking__checkout-form-field">
+                                    <input type="tel"
+                                        class="booking__checkout-form-input booking__checkout-form-input--phone js-phone-input"
+                                        placeholder="+7 (ххх) ххх хх хх" required="" data-parsley-phone="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="text"
+                                        class="booking__checkout-form-input booking__checkout-form-input--name"
+                                        placeholder="Имя" required="">
+                                </div>
+                                <div class="booking__checkout-form-field">
+                                    <input type="email"
+                                        class="booking__checkout-form-input booking__checkout-form-input--email"
+                                        placeholder="Email" required="">
+                                </div>
+                            </div>
+                            <div class="booking__checkout-form-promo">
+                                <input type="text" class="booking__checkout-form-promo-input js-promocode"
+                                    placeholder="Введите промокод">
+                                <button class="booking__checkout-form-promo-btn booking__checkout-promocode-button" type="button">
+                                    <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                                        <use xlink:href="#medium-arrow-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="correct incorrect" id="promoMessage" style="display:none;">Промокод активирован</p>
+                            <button class="booking__checkout-form-submit" type="submit">
+                                Оплатить
+                            </button>
+                            <div class="booking__checkout-form-policy">
+                                <label class="booking__checkout-form-policy-checkbox">
+                                    <input type="checkbox" class="booking__checkout-form-policy-checkbox-input"
+                                        required="" name="policy" value="1">
+                                    <span class="booking__checkout-form-policy-checkbox-content">
+                                        <span class="booking__checkout-form-policy-checkbox-mark">
+                                            <svg width="14" height="14" aria-hidden="true" class="icon-checkmark">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="booking__checkout-form-policy-checkbox-text">
+                                            Нажимая на кнопку “Оплатить” вы соглашаетесь с условиями <a
+                                                href="#">Публичной
+                                                оферты </a>
+                                        </span>
+                                    </span>
+
+                                </label>
                             </div>
                         </form>
-                        <div class="booking__loader">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
-                              <path d="M106 60C106 53.3726 103.314 48 100 48C96.6863 48 94 53.3726 94 60C94 66.6274 96.6863 72 100 72C103.314 72 106 66.6274 106 60Z" fill="#968A71"/>
-                              <g opacity="0.92">
-                                <path d="M125.196 68.359C128.51 62.6195 128.87 56.6235 126 54.9667C123.13 53.3098 118.118 56.6195 114.804 62.359C111.49 68.0985 111.13 74.0944 114 75.7513C116.87 77.4081 121.882 74.0985 125.196 68.359Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.84">
-                                <path d="M137.641 85.1962C143.381 81.8824 146.69 76.8698 145.033 74C143.376 71.1302 137.381 71.4901 131.641 74.8038C125.902 78.1176 122.592 83.1302 124.249 86C125.906 88.8698 131.902 88.5099 137.641 85.1962Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.76">
-                                <path d="M140 106C146.627 106 152 103.314 152 100C152 96.6863 146.627 94 140 94C133.373 94 128 96.6863 128 100C128 103.314 133.373 106 140 106Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.68">
-                                <path d="M131.641 125.196C137.381 128.51 143.376 128.87 145.033 126C146.69 123.13 143.381 118.118 137.641 114.804C131.902 111.49 125.906 111.13 124.249 114C122.592 116.87 125.902 121.882 131.641 125.196Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.6">
-                                <path d="M114.804 137.641C118.118 143.381 123.13 146.69 126 145.033C128.87 143.376 128.51 137.381 125.196 131.641C121.882 125.902 116.87 122.592 114 124.249C111.13 125.906 111.49 131.902 114.804 137.641Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.52">
-                                <path d="M94 140C94 146.627 96.6863 152 100 152C103.314 152 106 146.627 106 140C106 133.373 103.314 128 100 128C96.6863 128 94 133.373 94 140Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.44">
-                                <path d="M74.8038 131.641C71.4901 137.381 71.1302 143.376 74 145.033C76.8698 146.69 81.8824 143.381 85.1962 137.641C88.5099 131.902 88.8698 125.906 86 124.249C83.1302 122.592 78.1176 125.902 74.8038 131.641Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.36">
-                                <path d="M62.359 114.804C56.6195 118.118 53.3098 123.13 54.9667 126C56.6235 128.87 62.6195 128.51 68.359 125.196C74.0985 121.882 77.4081 116.87 75.7513 114C74.0944 111.13 68.0985 111.49 62.359 114.804Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.28">
-                                <path d="M60 94C53.3726 94 48 96.6863 48 100C48 103.314 53.3726 106 60 106C66.6274 106 72 103.314 72 100C72 96.6863 66.6274 94 60 94Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.2">
-                                <path d="M68.359 74.8038C62.6195 71.4901 56.6235 71.1302 54.9667 74C53.3098 76.8698 56.6195 81.8824 62.359 85.1962C68.0985 88.5099 74.0944 88.8698 75.7513 86C77.4081 83.1302 74.0985 78.1176 68.359 74.8038Z" fill="#968A71"/>
-                              </g>
-                              <g opacity="0.12">
-                                <path d="M85.1962 62.359C81.8824 56.6195 76.8698 53.3098 74 54.9667C71.1302 56.6235 71.4901 62.6195 74.8038 68.359C78.1176 74.0985 83.1302 77.4081 86 75.7513C88.8698 74.0944 88.5099 68.0985 85.1962 62.359Z" fill="#968A71"/>
-                              </g>
-                            </svg>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="subscribe">
-            <div class="container">
-                <div class="subscribe__content">
-                    <img src="img/image-logo.svg" alt="" class="subscribe__logo">
-                    <h4 class="subscribe__heading">
-                        Подписаться на&nbsp;рассылку
-                    </h4>
-                    <div class="subscribe__heading-text">
-                        <p>
-                            Чтобы не пропустить классные акции и предложения
-                        </p>
-                    </div>
-                    <form action="/" method="POST" class="subscribe__form" data-need-validation=""
-                        id="subscribe-errors">
-                        <div class="subscribe__form-row">
-                            <input type="email" name="email" class="subscribe__form-input" required=""
-                                placeholder="Email" data-parsley-errors-container="#subscribe-errors">
-                            <button class="subscribe__form-submit" type="submit">
-                                <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
-                                    <use xlink:href="#arrow-right"></use>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="subscribe__success">Спасибо! Вы успешно подписаны.</div>
-                    </form>
-                </div>
+<section class="subscribe">
+    <div class="container">
+        <div class="subscribe__content">
+            <img src="img/image-logo.svg" alt="" class="subscribe__logo">
+            <h4 class="subscribe__heading">
+                Подписаться на&nbsp;рассылку
+            </h4>
+            <div class="subscribe__heading-text">
+                <p>
+                    Чтобы не пропустить классные акции и предложения
+                </p>
             </div>
-        </section>
+            <form action="/" method="POST" class="subscribe__form" data-need-validation=""
+                id="subscribe-errors">
+                <div class="subscribe__form-row">
+                    <input type="email" name="email" class="subscribe__form-input" required=""
+                        placeholder="Email" data-parsley-errors-container="#subscribe-errors">
+                    <button class="subscribe__form-submit" type="submit">
+                        <svg width="14" height="14" aria-hidden="true" class="icon-arrow-right">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="subscribe__success">Спасибо! Вы успешно подписаны.</div>
+            </form>
+        </div>
+    </div>
+</section>
 
             </main>
             <footer class="page-footer">
@@ -1499,8 +1451,6 @@
             </div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://api-maps.yandex.ru/2.1/?apikey=86fba1b3-37fa-493b-9df4-601bc6d4c97c&lang=ru_RU" type="text/javascript"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-                <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js></script>
-                <script src=https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js></script>
             <script src="js/app.js"></script>
             <script src="assets/js/backend.js"></script>
         </div>
